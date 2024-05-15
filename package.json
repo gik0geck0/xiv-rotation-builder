@@ -5,16 +5,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rm -rf node_modules __lwr_cache__ site",
+    "clean": "rm -rf __lwr_cache__ site",
     "dev": "lwr dev",
     "dev:compat": "lwr dev --mode compat",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
+    "slds": ".\\scripts\\update-slds.sh",
     "start": "lwr start",
-    "stage": "yarn build && yarn start",
-    "stage:prod-compat": "yarn build:prod-compat && yarn start"
+    "stage": "npm run build && npm run start",
+    "stage:prod-compat": "npm run build:prod-compat && npm run start"
   },
   "dependencies": {
+    "lightning-base-components": "^1.22.3-alpha",
     "lwc": "6.6.3",
     "lwr": "0.12.2"
   },
