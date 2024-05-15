@@ -9,9 +9,9 @@
     },
     "routes": [
         {
-            "id": "example",
+            "id": "xiv-rotation-builder",
             "path": "/",
-            "rootComponent": "example/app",
+            "rootComponent": "xiv/rotationBuilder",
             "layoutTemplate": "$layoutsDir/main_layout.njk",
             "bootstrap": {
                 "syntheticShadow": true
