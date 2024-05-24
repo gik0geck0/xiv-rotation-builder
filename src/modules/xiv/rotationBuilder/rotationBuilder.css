@@ -8,3 +8,20 @@ main {
 h1 {
     color: #1798c1;
 }
+
+.sortable-list {
+	margin: 0 auto;
+}
+
+ul {
+  height: auto;
+  width: auto;
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	background-color: #f0f0f0;
+	cursor: grab;
+  display: inline;
+}
