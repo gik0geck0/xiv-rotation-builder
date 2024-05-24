@@ -33,7 +33,6 @@ class Player{
     }
 
     changeGaugeTotals(gaugeChange){
-        var gaugeName = gaugeChange[0]
-        var gaugeChangeValue = gaugeChange[1]
+        
     }
 }
