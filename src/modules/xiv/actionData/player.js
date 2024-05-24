@@ -6,8 +6,8 @@ class Player{
     constructor(job, mp, gaugeTotals){
         this.job = job
         this.mp = mp
-        this.maxMp = mp //Always going to start with full mp so that is the max
-        this.gaugeTotals = gaugeTotals //Should be an array of each gauge, each position will contain (name, amount)
+        this.maxMp = 10000 //Always going to start with full mp so that is the max Always going to be 10,000
+        this.gaugeTotals = gaugeTotals //Should be an hashmap of each gauge, each position will contain (name, amount)
         this.gaugeMaxs = gaugeTotals
     }
 
@@ -28,15 +28,12 @@ class Player{
         this.mp += mpChange
     }
 
-    restoreMP(){
-        this.mp = this.maxMp
-    }
-
     getGaugeTotals(){
         return this.gaugeTotals
     }
 
     changeGaugeTotals(gaugeChange){
-
+        var gaugeName = gaugeChange[0]
+        var gaugeChangeValue = gaugeChange[1]
     }
 }

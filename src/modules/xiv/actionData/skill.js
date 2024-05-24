@@ -97,7 +97,7 @@ class Skill{
                 if (line[j] === 'Additional'){
                     j+=2
                     if (line[j] === 'Restores' && line[j + 1] === 'MP'){
-                       this.player.restoreMP();
+                       this.player.changeMP(null)
                        break;
                     }
 
@@ -118,19 +118,19 @@ class Skill{
 
                     if (line[j] === 'Divine' && line[j + 1] === 'Might' && line[j + 2] === 'Potency:'){
                         j+=2
-                        this.alteredPotencies.push(['Divine Might', line[j]])
+                        this.alteredPotencies.push({'Divine Might' : line[j]})
                         break;
                     }
 
                     if (line[j] === 'Requiescat' && line[j + 1] === 'Potency:'){
                         j++
-                        this.alteredPotencies.push(['Requiescat', line[j]])
+                        this.alteredPotencies.push({'Requiescat' : line[j]})
                         break;
                     }
                 }
 
                 if (this.player.getJob === jobType.Warrior){
-
+                    
                 }
 
                 if (this.player.getJob === jobType.DarkKnight){
