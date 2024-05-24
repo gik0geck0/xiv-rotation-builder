@@ -98,11 +98,11 @@ class Skill{
                 }
             }
 
-            if (line.contains('Potency:') && !(line.contains('Cure'))){
-                
+            if (line.contains('Potency:') && !(line.contains('Cure')) && !(line.contains('Combo'))){
+                this.alteredPotencies.push({line[line.indexof('Potency:') - 1] : line[line.indexof('Potency:') + 1]})
             }
+        }
     }
-}
 
 
     //Getters
