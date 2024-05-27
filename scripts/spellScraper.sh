@@ -424,3 +424,8 @@ rm XIVExtra.txt
 rm XIVNums.txt
 rm XIVSkillIcon.txt
 rm XIVTraits.txt
+
+JobGuideDestination=../src/modules/xiv/actionData/jobGuide.json
+echo -n "export default " > $JobGuideDestination
+cat XIVFinal.json >> $JobGuideDestination
+rm XIVFinal.json
