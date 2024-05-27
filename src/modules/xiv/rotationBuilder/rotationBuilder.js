@@ -11,13 +11,19 @@ export default class HelloWorldApp extends LightningElement {
     job = "pld";
 }
 
+buttonGCD.addEventListener('click', () => {
+    const newGCD = new tempIcon("Holy Spirit", 'https://lds-img.finalfantasyxiv.com/d/b8ad098c5afaad79a847f3fb79298456c1e9d689.png', 2.5, 0);
+    IconList = [...document.querySelectorAll('tempIcon')];
+    sortableList.appendChild(newGCD.generateIcon());
+  }
+);
+
 sortableList.addEventListener(
 	"dragstart",
 	(e) => {
 		draggedItem = e.target;
 		setTimeout(() => {
-			e.target.style.display =
-				"none";
+			e.target.style.display = "none";
 		}, 0);
 });
 

@@ -14,8 +14,8 @@ h1 {
 }
 
 ul {
-  height: auto;
-  width: auto;
+    height: auto;
+    width: auto;
 	list-style-type: none;
 	padding: 0;
 }
@@ -23,5 +23,5 @@ ul {
 li {
 	background-color: #f0f0f0;
 	cursor: grab;
-  display: inline;
+    display: inline;
 }

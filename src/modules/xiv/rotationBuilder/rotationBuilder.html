@@ -1,23 +1,29 @@
 <template>
     <main>
-        <script>/* 
         <img src="/assets/recipes-logo.png" alt="logo" />
         <lightning-icon icon-name="action:approval" title="Approved"></lightning-icon>
         <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
         <lightning-button label="I'm a button"></lightning-button>
         <xiv-icon-list action-list={mockActionList} job={job}></xiv-icon-list>
-        */</script>
         <body>
             <button id="addGCDButton">Add GCD</button>
             <button id="addWeaveButton">Add Weave</button>
             <table>
               <div class="sortable-list">
                   <ul id="sortable">
+                        <li draggable="true">
+                            <img draggable="false" src="https://lds-img.finalfantasyxiv.com/d/bdda04f3b284e3cbf7d07e50d9bffb21b74ce869.png" alt="Skill">
+                        </li>
+                        <li draggable="true">
+                            <img draggable="false" src="https://lds-img.finalfantasyxiv.com/d/49cbc217420d69d69bb1bfcf6fba10358dcd2521.png" alt="Skill">
+                        </li>
+                        <li draggable="true">
+                            <img draggable="false" src="https://lds-img.finalfantasyxiv.com/d/49cbc217420d69d69bb1bfcf6fba10358dcd2521.png" alt="Skill">
+                        </li>
                       <!-- Add more list items as needed -->
                   </ul>
               </div>
             </table>
-              <script src="rotationalBuilder.js"></script>
         </body>
     </main>
 </template>

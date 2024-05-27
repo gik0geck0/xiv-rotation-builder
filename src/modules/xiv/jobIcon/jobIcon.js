@@ -6,6 +6,14 @@ export default class JobIcon extends LightningElement {
     @api actionId;
     @api hoverText;
 
+    constructor(name, url, cd, rc){
+        // SHOULD Loo
+        this.name = name;
+        this.url = url;
+        this.cooldown = cd;
+        this.recast = rc;
+    }
+
     // onclick
     // ondelete
     // ondrag?
@@ -16,5 +24,16 @@ export default class JobIcon extends LightningElement {
 
     get computedSize() {
         return "height:3em;margin:3em;"
+    }
+
+    generateIcon(){
+        const newImg = document.createElement('img');
+        newImg.setAttribute('draggable', 'false');
+        newImg.setAttribute('src', this.url);
+        const newListItem = document.createElement('li');
+        newListItem.setAttribute('draggable', 'true');
+        newListItem.setAttribute('class', 'JobIcon');
+        newListItem.appendChild(newImg);
+        return newListItem;
     }
 }
