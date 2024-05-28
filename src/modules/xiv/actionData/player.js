@@ -7,7 +7,7 @@ class Player{
         this.job = job
         this.mp = mp
         this.maxMp = 10000 //Always going to start with full mp so that is the max Always going to be 10,000
-        this.gaugeTotals = [] //Contains values of {gaugeName : gaugeAmount}
+        this.gaugeTotals = gaugeTotals //Contains values of {gaugeName : gaugeAmount}
         this.gaugeMaxs = [] //Same values as gaugeTotals but unchanging 
     }
 
@@ -33,6 +33,6 @@ class Player{
     }
 
     changeGaugeTotals(gauge, gaugeAmount){
-
+        gaugeTotals[gauge] += gaugeAmount;
     }
 }
