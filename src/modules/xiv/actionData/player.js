@@ -25,7 +25,12 @@ class Player{
     }
 
     changeMP(mpChange){
-        this.mp += mpChange
+        if (this.mp + mpChange > 10000){
+            this.mp = 10000
+        }
+        else{
+            this.mp += mpChange
+        }
     }
 
     getGaugeTotals(){

@@ -144,6 +144,15 @@ class Skill{
                     this.buffRequirement += tempWord
                 }
             }
+
+            //Gauge Cost check
+            if (line.contains('Gauge')){
+                var gaugeName = ''
+                for (let i = 0; i < line.indexof('Gauge') + 1; i++){
+                    gaugeName += line[i]
+                }
+                this.gaugeCost = {gaugeName : line[line.indexof('Cost') + 1]}
+            }
         }
     }
 
