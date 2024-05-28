@@ -37,6 +37,11 @@ class Player{
     }
 
     changeGaugeTotals(gauge, gaugeAmount){
-        gaugeTotals[gauge] += gaugeAmount;
+        if (gaugeTotals[gauge] + gaugeAmount > gaugeMaxs[gauge]){
+            gaugeTotals[gauge] = gaugeMaxs[gauge]
+        }
+        else{
+            gaugeTotals[gauge] += gaugeAmount;
+        }
     }
 }
