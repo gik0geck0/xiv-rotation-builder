@@ -7,7 +7,7 @@ export default class JobIcon extends LightningElement {
     @api hoverText;
 
     constructor(name, url, cd, rc){
-        // SHOULD Loo
+        // SHOULD Look up from a skillslist or from the JSON file eventually
         this.name = name;
         this.url = url;
         this.cooldown = cd;
