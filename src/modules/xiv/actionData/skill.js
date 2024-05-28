@@ -172,6 +172,10 @@ class Skill{
         return this.recastTime
     }
 
+    getEffect(){
+        return this.effect
+    }
+
     getRange(){
         return this.range
     }
@@ -186,5 +190,41 @@ class Skill{
 
     getStacks(){
         return this.stacks
+    }
+
+    getDuration(){
+        return this.duration
+    }
+
+    getSkillPotency(){
+        return this.skillPotency
+    }
+
+    getDurationPotency(){
+        return this.durationPotency
+    }
+
+    getAlteredPotencies(){
+        return this.alteredPotencies
+    }
+
+    getComboAction(){
+        return this.comboAction
+    }
+
+    getComboPotency(){
+        return this.comboPotency
+    }
+
+    getAdditionalEffect(){
+        return this.additionalEffect
+    }
+
+    getBuffActivation(){
+        return this.buffActivation
+    }
+
+    getBuffRequirement(){
+        return this.buffRequirement
     }
 }
