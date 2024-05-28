@@ -20,7 +20,6 @@ class Skill{
 
         //Varibles from the effect
         this.gaugeCost = null
-        this.stacks = null
         this.duration = null
         this.skillPotency = null
         this.durationPotency = null
@@ -195,10 +194,6 @@ class Skill{
 
     getGaugeCost(){
         return this.gaugeCost
-    }
-
-    getStacks(){
-        return this.stacks
     }
 
     getDuration(){

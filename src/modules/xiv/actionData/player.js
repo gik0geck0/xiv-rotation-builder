@@ -3,12 +3,11 @@ const jobType = Object.freeze({
 })
 
 class Player{
-    constructor(job, mp, gaugeTotals){
-        this.job = job
-        this.mp = mp
-        this.maxMp = 10000 //Always going to start with full mp so that is the max Always going to be 10,000
-        this.gaugeTotals = gaugeTotals //Contains values of {gaugeName : gaugeAmount}
-        this.gaugeMaxs = [] //Same values as gaugeTotals but unchanging 
+    constructor(){
+        this.job = null //Will be set by the user in the website
+        this.mp = 10000
+        this.gaugeTotals = [] //Contains values of {gaugeName : gaugeAmount}
+        this.gaugeMaxs = gaugeTotals //Same values as gaugeTotals but unchanging 
     }
 
     //General Getters and Setters
