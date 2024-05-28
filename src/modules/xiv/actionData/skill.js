@@ -31,7 +31,8 @@ class Skill{
         this.comboBonus = []
 
         this.additionalEffect = []
-        this.buffs = [] //Contains values of {buffName : stacks}
+        this.buffActivation = [] //Contains values of {buffName : stacks}
+        this.buffRequirement = null //Will be the name of a skill
 
         this.parseEffect()
     }
@@ -101,7 +102,11 @@ class Skill{
 
             //Altered Potencies Check
             if (line.contains('Potency:') && !(line.contains('Cure')) && !(line.contains('Combo'))){
-                this.alteredPotencies.push({line[line.indexof('Potency:') - 1] : line[line.indexof('Potency:') + 1]})
+                var potencyName = ''
+                for (let i = 0; i < line.indexof('Potency:'); i++){
+                    potencyName += line[i]
+                }
+                this.alteredPotencies.push({potencyName : line[line.indexof('Potency:') + 1]})
             }
 
             //Checks for buff/effect granting
@@ -114,7 +119,7 @@ class Skill{
                         }
                         buffName += line[i]
                     }
-                    this.buffs.push({buffName : line[line.indexof('Grants') + 1]})
+                    this.buffActivation.push({buffName : line[line.indexof('Grants') + 1]})
                 }
                 else{
                     var buffName = ''
@@ -124,12 +129,23 @@ class Skill{
                         }
                         buffName += line[i]
                     }
-                    this.buffs.push({buffName : 0})
+                    this.buffActivation.push({buffName : 0})
+                }
+            }
+
+            //Checks for buff/effect requirement to use
+            if (line.conatins('executed') && line.conatins('under') && line.conatins('effect')){
+                this.buffRequirement = ''
+                for (let i = line.indexof('of'); i < line.length; i++){
+                    var tempWord = line[i]
+                    if (tempWord.contains('.')){
+                        tempWord.replace('.', '')
+                    }
+                    this.buffRequirement += tempWord
                 }
             }
         }
     }
-
 
     //Getters
     getSkillImage(){
