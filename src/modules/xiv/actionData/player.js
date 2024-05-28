@@ -7,8 +7,8 @@ class Player{
         this.job = job
         this.mp = mp
         this.maxMp = 10000 //Always going to start with full mp so that is the max Always going to be 10,000
-        this.gaugeTotals = gaugeTotals //Should be an hashmap of each gauge, each position will contain (name, amount)
-        this.gaugeMaxs = gaugeTotals
+        this.gaugeTotals = [] //Contains values of {gaugeName : gaugeAmount}
+        this.gaugeMaxs = [] //Same values as gaugeTotals but unchanging 
     }
 
     //General Getters and Setters
@@ -32,7 +32,7 @@ class Player{
         return this.gaugeTotals
     }
 
-    changeGaugeTotals(gaugeChange){
-        
+    changeGaugeTotals(gauge, gaugeAmount){
+
     }
 }

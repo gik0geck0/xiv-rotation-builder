@@ -31,6 +31,7 @@ class Skill{
         this.comboBonus = []
 
         this.additionalEffect = []
+        this.buffs = [] //Contains values of {buffName : stacks}
 
         this.parseEffect()
     }
@@ -98,8 +99,33 @@ class Skill{
                 }
             }
 
+            //Altered Potencies Check
             if (line.contains('Potency:') && !(line.contains('Cure')) && !(line.contains('Combo'))){
                 this.alteredPotencies.push({line[line.indexof('Potency:') - 1] : line[line.indexof('Potency:') + 1]})
+            }
+
+            //Checks for buff/effect granting
+            if (line.contains('Grants') && !(line.contains('Bonus'))){
+                if(line.contains('stacks')){
+                    var buffName = ''
+                    for (let i = line.indexof('stacks') + 2; i < line.length; i++){
+                        if (line[i] == ','){
+                            break;
+                        }
+                        buffName += line[i]
+                    }
+                    this.buffs.push({buffName : line[line.indexof('Grants') + 1]})
+                }
+                else{
+                    var buffName = ''
+                    for (let i = line.indexof('Grants') + 1; i < line.length; i++){
+                        if (line[i] == ','){
+                            break;
+                        }
+                        buffName += line[i]
+                    }
+                    this.buffs.push({buffName : 0})
+                }
             }
         }
     }
