@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import skill from 'xiv/actionData';
 
 export default {
@@ -10,5 +11,17 @@ export default {
             cast: 1.5,
             recast: 2.5
         }
+=======
+import jobGuideJson from "./jobGuide";
+import { camelize } from "xiv/utils";
+
+// insert action IDs
+for (const jobName in jobGuideJson) {
+    const jobActions = jobGuideJson[jobName].actions;
+    for (const action of jobActions) {
+        action.id = camelize(action.name);
+>>>>>>> 76fb6f5b820f8502f1c020949fffaea2ac2b6b82
     }
-};
+}
+
+export const JobGuide = jobGuideJson;
