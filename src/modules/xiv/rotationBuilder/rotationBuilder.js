@@ -9,3 +9,4 @@ export default class HelloWorldApp extends LightningElement {
 		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
 	}
 }
+
