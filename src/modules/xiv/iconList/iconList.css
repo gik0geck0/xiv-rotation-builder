@@ -1,0 +1,5 @@
+.sortable-list {
+    list-style-type:none;
+    white-space:nowrap;
+    overflow-x:auto;
+}
