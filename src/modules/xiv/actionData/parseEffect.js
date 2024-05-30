@@ -1,4 +1,4 @@
-function parseEffect(skill){
+export default function parseEffect(skill){
     //Split the effect by line and then each line by spaces
     var splitEffect = (skill.getEffect()).split("<br>")
     for (let i = 0; i < splitEffect.length; i++){
@@ -67,7 +67,7 @@ function parseEffect(skill){
             for (let i = 0; i < line.indexof('Potency:'); i++){
                 potencyName += line[i]
             }
-            var newAlteredPotencies = (skill.getAlteredPotencies()).push({potencyName : line[line.indexof('Potency:') + 1]})
+            var newAlteredPotencies = (skill.getAlteredPotencies()).push([potencyName, line[line.indexof('Potency:') + 1]])
             skill.setAlteredPotencies(newAlteredPotencies)
             break;
         }
@@ -77,24 +77,24 @@ function parseEffect(skill){
             if(line.contains('stacks')){
                 var buffName = ''
                 for (let i = line.indexof('stacks') + 2; i < line.length; i++){
-                    if (line[i] == ','){
+                    if (line[i] === ','){
                         break;
                     }
                     buffName += line[i]
                 }
-                var newBuffActivation = (skill.getBuffActivation()).push({buffName : line[line.indexof('Grants') + 1]})
+                var newBuffActivation = (skill.getBuffActivation()).push([buffName , line[line.indexof('Grants') + 1]])
                 skill.setBuffActivation(newBuffActivation)
                 break;
             }
             else{
                 var buffName = ''
                 for (let i = line.indexof('Grants') + 1; i < line.length; i++){
-                    if (line[i] == ','){
+                    if (line[i] === ','){
                         break;
                     }
                     buffName += line[i]
                 }
-                var newBuffActivation = (skill.getBuffActivation()).push({buffName : 0})
+                var newBuffActivation = (skill.getBuffActivation()).push([buffName, 0])
                 skill.setBuffActivation(newBuffActivation)
                 break;
             }
@@ -120,7 +120,7 @@ function parseEffect(skill){
             for (let i = 0; i < line.indexof('Gauge') + 1; i++){
                 gaugeName += line[i]
             }
-            skill.setGaugeCost({gaugeName : line[line.indexof('Cost') + 1]})
+            skill.setGaugeCost([gaugeName , line[line.indexof('Cost') + 1]])
             break;
         }
     }

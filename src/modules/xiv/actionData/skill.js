@@ -1,9 +1,5 @@
-const skillType = Object.freeze({
-    WeaponSkill, Ability, Spell
-})
-
-class Skill{
-    constructor(skillImage, skillName, levelReq, skillType, castTime, recastTime, effect, range, radius){
+export default class Skill{
+    constructor(skillImage, skillName, levelReq, skillType, castTime, recastTime, mpCost, effect, range, radius){
         //Varaibles from the json
         this.skillImage = skillImage
         this.skillName = skillName
@@ -11,6 +7,7 @@ class Skill{
         this.skillType = skillType
         this.castTime = castTime
         this.recastTime = recastTime
+        this.mpCost = mpCost
         this.effect = effect
         this.range = range
         this.radius = radius
@@ -20,14 +17,14 @@ class Skill{
         this.duration = null
         this.skillPotency = null
         this.durationPotency = null
-        this.alteredPotencies = [] //An array containing values of (potency name, value)
+        this.alteredPotencies = [] //An array containing values of [potency name, value]
 
         this.comboAction = null //Will be another skill just store the name and can derefernce later
         this.comboPotency = null
         this.comboBonus = []
 
         this.additionalEffect = []
-        this.buffActivation = [] //Contains values of {buffName : stacks}
+        this.buffActivation = [] //Contains values of [buffName , stacks]
         this.buffRequirement = null //Will be the name of a skill
 
         this.parseEffect()
