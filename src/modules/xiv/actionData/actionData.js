@@ -1,11 +1,10 @@
-import Skill from 'xiv/actionData/skill.js';
-import parseEffect from 'xiv/actionData/parseEffect.js'
-
 export default {
     generationDate: "5/15/2024 8:29:00 -0600"
 };
 import jobGuideJson from "./jobGuide";
 import { camelize } from "xiv/utils";
+import Skill from 'xiv/actionData/skill.js';
+import parseEffect from 'xiv/actionData/parseEffect.js'
 
 // insert action IDs
 for (const jobName in jobGuideJson) {
@@ -45,6 +44,5 @@ for (const jobName in jobGuideJson) {
       action.buffRequirement = newSkill.getBuffRequirement()
   }
 }
-
 
 export const JobGuide = jobGuideJson;
