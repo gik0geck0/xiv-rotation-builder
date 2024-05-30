@@ -1,6 +1,8 @@
 <template>
-    <template for:each={actionList} for:item="action" for:index="idx">
-        <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description}>
-        </xiv-job-icon>
-    </template>
+    <ol class="sortable-list" ondragstart={dragStart} ondragend={dragEnd} ondragover={dragOver}>
+        <template for:each={actionList} for:item="action" for:index="idx">
+            <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description}>
+            </xiv-job-icon>
+        </template>
+    </ol>
 </template>
