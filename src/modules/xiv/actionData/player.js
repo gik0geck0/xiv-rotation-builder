@@ -7,7 +7,7 @@ class Player{
         this.job = null //Will be set by the user in the website
         this.mp = 10000
         this.gaugeTotals = [] //Contains values of {gaugeName : gaugeAmount}
-        this.gaugeMaxs = gaugeTotals //Same values as gaugeTotals but unchanging 
+        this.gaugeMaxs = gaugeTotals //Same values as gaugeTotals but unchanging Pull from json
     }
 
     //General Getters and Setters
