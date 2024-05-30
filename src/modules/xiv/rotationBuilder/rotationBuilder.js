@@ -3,8 +3,10 @@ import { getActionInfo } from 'xiv/actionRepository';
 
 
 export default class HelloWorldApp extends LightningElement {
-    mockActionList = ["Holy Spirit", "Holy Spirit", "Holy Spirit"].map(getActionInfo.bind(undefined, "pld"));
-    pldjob = "pld";
+    buffComboActionList = ["Fast Blade", "Fight or Flight", "Riot Blade"].map(getActionInfo.bind(undefined, "paladin"));
+    buffActionList = [ "Fight or Flight", "Riot Blade","Fast Blade",].map(getActionInfo.bind(undefined, "paladin"));
+    comboActionList = ["Fast Blade", "Riot Blade", "Fight or Flight"].map(getActionInfo.bind(undefined, "paladin"));
+    pldjob = "paladin";
 
 	addHolySpirit() {
 		//this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
@@ -12,20 +14,26 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     calcWithVals(){
-        this.calculatePotency(this.mockActionList,this.pldjob);
+        this.calculatePotency(this.buffComboActionList,this.pldjob);
     }
 
     calculatePotency(actionList, job){
 
-
+        let currTime = 1
         //Calculation
-        
+        console.log(actionList);
         let totalPotency = 0;
         let GCDPotency = 0;
         let currBuffs = [];
         for (let i = 0; i < actionList.length; i++ ){
-            let currAction = actionList[i].getActionInfo(actionList[i], job);
-            console.log(currAction)
+            let currAction = actionList[i]
+            if(currAction.hasOwnProperty("buff")){
+                currBuffs.push([currAction.name,currTime,currTime+parseInt(currAction.buffDur)])
+            }
+            for(let j = 0; j<currBuffs.length; j++ ){
+
+            }
+            currTime += 21
             /*
             //first check if it activates any buff
             if(currAction.getAdditionalEffect().contains("Grants")){

@@ -9,7 +9,8 @@ export default {
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 200."
+               "effect": "Delivers an attack with a potency of 200.",
+               "potency": "200"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/87405b9b9f00d9957df252ea0116e4137bc4dbd1.png",
@@ -19,7 +20,9 @@ export default {
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Increases damage dealt by 25%.<br>Duration: 20s"
+               "effect": "Increases damage dealt by 25%.<br>Duration: 20s",
+               "buff": "1.25",
+               "buffDur": "20" 
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/bdda04f3b284e3cbf7d07e50d9bffb21b74ce869.png",
@@ -29,7 +32,11 @@ export default {
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Fast Blade<br>Combo Potency: 300<br>Combo Bonus: Restores MP"
+               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Fast Blade<br>Combo Potency: 300<br>Combo Bonus: Restores MP",
+               "potency": "140",
+               "comboAction": "Fast Blade",
+               "comboPotency": "300"
+               
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/07c42572697cdcf5381955b09ed7c3028be8a0bb.png",
