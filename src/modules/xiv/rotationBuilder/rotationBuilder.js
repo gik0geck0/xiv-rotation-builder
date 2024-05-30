@@ -13,66 +13,61 @@ export default class HelloWorldApp extends LightningElement {
         console.log("ye")
 	}
 
-    calcWithVals(){
+    calcWithBoth(){
+        
         this.calculatePotency(this.buffComboActionList,this.pldjob);
+    }
+    calcWithBuff(){
+        
+        this.calculatePotency(this.buffActionList,this.pldjob);
+    }
+    calcWithCombo(){
+        
+        this.calculatePotency(this.comboActionList,this.pldjob);
     }
 
     calculatePotency(actionList, job){
 
         let currTime = 1
         //Calculation
-        console.log(actionList);
         let totalPotency = 0;
-        let GCDPotency = 0;
         let currBuffs = [];
+        let buffAmt = 1;
+        let lastAction = {};
         for (let i = 0; i < actionList.length; i++ ){
+            buffAmt = 1;
             let currAction = actionList[i]
             if(currAction.hasOwnProperty("buff")){
-                currBuffs.push([currAction.name,currTime,currTime+parseInt(currAction.buffDur)])
+                currBuffs.push([currAction,currTime,currTime+parseInt(currAction.buffDur)])
             }
             for(let j = 0; j<currBuffs.length; j++ ){
+                if(currTime <= currBuffs[j][2]){
+                    buffAmt = parseFloat(currBuffs[j][0].buff);
+                }
+            }
+            if(isNaN(buffAmt)){
+                buffAmt = 1;
+            }
 
-            }
-            currTime += 21
-            /*
-            //first check if it activates any buff
-            if(currAction.getAdditionalEffect().contains("Grants")){
-                //add the buff to the list
-                currBuffs.push(currAction.getAdditionalEffect(), currAction.duration());
-            }
-            //if it is a spell or weaponskill, assume it is a new GCD
-            if(currAction[type] == "spell" || currAction[type] == "weaponskill"){
-                totalPotency += GCDPotency;
-                GCDPotency = 0;
-                //check vs last action to see if it is a combo
-                if(currAction[comboAction] == lastAction[id]){
-                    GCDPotency = currAction[comboPotency];
+            if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
+                if(currAction.comboAction == lastAction.name && currAction.hasOwnProperty("comboAction")){
+                    totalPotency += (parseInt(currAction.comboPotency)) * buffAmt;
                 }
                 else{
-                    GCDPotency = currAction[potency];
+                    totalPotency += (parseInt(currAction.potency)) * buffAmt;
                 }
-    
                 lastAction = currAction;
             }
-            else if (currAction[type] == "ability"){
-                //weavable
-    
-                //see if it activates a buff
-    
-                //if not just add the potency to the GCD Potency
-                GCDPotency += currAction.getPotency();
-            }
-            else if (currAction == "wait"){
-                //decrease buff durations
-            }
-    
-            //decrease buff time and delete the buffs if they end
-            currBuffs.forEach(element => {
-                element.duration() -= GCDTime
-                if(element.duration() <=0){
-                    currBuffs.pop(element);
+            if (currAction.type == "Ability"){
+                if(currAction.hasOwnProperty("potency")){
+                    totalPotency += (parseInt(currAction.potency)) * buffAmt;
                 }
-            });*/
+            }
+
+
+            currTime += 11
         }
+
+        console.log(totalPotency)
     }
 }
