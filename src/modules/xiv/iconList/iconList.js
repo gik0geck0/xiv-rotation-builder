@@ -34,6 +34,7 @@ export default class IconList extends LightningElement {
         const movedItem = tempActionList.splice(currentIndex, 1)[0];
         //@api can't be modified by the component through modifiying functions like splice
         tempActionList.splice(destinationIndex, 0, movedItem);
+        console.log(tempActionList);
         this.actionList = tempActionList;
         this.draggedItem = null;
     }
