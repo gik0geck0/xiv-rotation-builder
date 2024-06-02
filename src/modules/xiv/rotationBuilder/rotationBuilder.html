@@ -3,6 +3,6 @@
     <lightning-icon icon-name="action:approval" title="Approved"></lightning-icon>
     <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
     <lightning-button label="Add Holy Spirit" onclick={addHolySpirit}></lightning-button>
-    <xiv-icon-tray action-list={mockActionList} job={job}></xiv-icon-tray>
+    <xiv-icon-tray onaddaction={addTimelineAction} job={job}></xiv-icon-tray>
     <xiv-icon-list action-list={mockActionList} job={job}></xiv-icon-list>
 </template>
