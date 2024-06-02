@@ -236,7 +236,10 @@ export default {
                "cast": "1.5s",
                "recast": "2.5s",
                "cost": "1000 MP",
-               "effect": "Deals unaspected damage with a potency of 350.<BR>Divine Might Potency: 450<br>Requiescat Potency: 650<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400"
+               "effect": "Deals unaspected damage with a potency of 350.<BR>Divine Might Potency: 450<br>Requiescat Potency: 650<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
+               "potency": "350",
+               "divinemight": "450",
+               "requiescat": "650"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/acbcd4de5a1839e4fd8c96ae05eb4109caed9ca1.png",
@@ -246,7 +249,10 @@ export default {
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s"
+               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
+               "potency": "320",
+               "grants": "requiescat",
+               "grantstack": 4
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b570dfda793945b3bb8fddef02b1a865b8a04b32.png",
