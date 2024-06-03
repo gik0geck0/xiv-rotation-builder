@@ -3,25 +3,16 @@ import { getActionInfo } from 'xiv/actionRepository';
 
 export default class HelloWorldApp extends LightningElement {
 
-    //test lists with different actions
+    //starting action list
     mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
-    buffActionList = [ "Fight or Flight", "Riot Blade","Fast Blade",].map(getActionInfo.bind(undefined, "paladin"));
-    comboActionList = ["Fast Blade", "Riot Blade", "Fight or Flight"].map(getActionInfo.bind(undefined, "paladin"));
     job = "paladin";
 
     //using the calc with the different
-    calcWithBoth(){
+    calcWithList(){
         
         this.calculatePotency(this.mockActionList,this.job);
     }
-    calcWithBuff(){
-        
-        this.calculatePotency(this.buffActionList,this.job);
-    }
-    calcWithCombo(){
-        
-        this.calculatePotency(this.comboActionList,this.job);
-    }
+    
 
     calculatePotency(actionList, job){
         console.log(actionList);

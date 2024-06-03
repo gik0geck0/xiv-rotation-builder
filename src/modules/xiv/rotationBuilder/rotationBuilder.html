@@ -2,12 +2,7 @@
     <img src="/assets/recipes-logo.png" alt="logo" />
     <lightning-icon icon-name="action:approval" title="Approved"></lightning-icon>
     <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
-    <lightning-button label="Add Holy Spirit" onclick={addHolySpirit}></lightning-button>
-    <lightning-button label="Both" onclick={calcWithBoth}></lightning-button>
-    <lightning-button label="Buff" onclick={calcWithBuff}></lightning-button>
-    <lightning-button label="Combo" onclick={calcWithCombo}></lightning-button>
-    <xiv-icon-list action-list={mockActionList} job={job}></xiv-icon-list>
     <xiv-icon-tray onaddaction={addTimelineAction} job={job}></xiv-icon-tray>
     <xiv-icon-list onspliceaction={spliceTimelineAction} onremoveaction={removeAction} action-list={mockActionList} job={job}></xiv-icon-list>
-
+    <lightning-button label="Calculate" onclick={calcWithList}></lightning-button>
 </template>
