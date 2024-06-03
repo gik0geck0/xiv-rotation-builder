@@ -22,7 +22,7 @@ export default {
                "cost": "-",
                "effect": "Increases damage dealt by 25%.<br>Duration: 20s",
                "buff": "1.25",
-               "buffDur": "20" 
+               "duration": "20" 
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/bdda04f3b284e3cbf7d07e50d9bffb21b74ce869.png",
@@ -251,8 +251,9 @@ export default {
                "cost": "-",
                "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
                "potency": "320",
-               "grants": "requiescat",
-               "grantstack": 4
+               "grants": {
+                    "requiescat": "4"
+               }
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b570dfda793945b3bb8fddef02b1a865b8a04b32.png",

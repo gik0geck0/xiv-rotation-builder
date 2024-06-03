@@ -3,26 +3,28 @@ import { getActionInfo } from 'xiv/actionRepository';
 
 
 export default class HelloWorldApp extends LightningElement {
-    buffComboActionList = ["Fast Blade", "Requiescat", "Holy Spirit"].map(getActionInfo.bind(undefined, "paladin"));
+
+    //test lists with different actions
+    mockActionList = ["Fast Blade", "Requiescat", "Holy Spirit"].map(getActionInfo.bind(undefined, "paladin"));
     buffActionList = [ "Fight or Flight", "Riot Blade","Fast Blade",].map(getActionInfo.bind(undefined, "paladin"));
     comboActionList = ["Fast Blade", "Riot Blade", "Fight or Flight"].map(getActionInfo.bind(undefined, "paladin"));
-    pldjob = "paladin";
+    job = "paladin";
 
 	addHolySpirit() {
 		//this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
 	}
-
+    //using the calc with the different
     calcWithBoth(){
         
-        this.calculatePotency(this.buffComboActionList,this.pldjob);
+        this.calculatePotency(this.mockActionList,this.job);
     }
     calcWithBuff(){
         
-        this.calculatePotency(this.buffActionList,this.pldjob);
+        this.calculatePotency(this.buffActionList,this.job);
     }
     calcWithCombo(){
         
-        this.calculatePotency(this.comboActionList,this.pldjob);
+        this.calculatePotency(this.comboActionList,this.job);
     }
 
     calculatePotency(actionList, job){
@@ -39,10 +41,14 @@ export default class HelloWorldApp extends LightningElement {
             buffAmt = 1;
             let currAction = actionList[i]
             if(currAction.hasOwnProperty("buff")){
-                currBuffs.push([currAction,currTime,currTime+parseInt(currAction.buffDur)])
+                currBuffs.push([currAction,currTime,currTime+parseInt(currAction.duration)])
             }
             if(currAction.hasOwnProperty("grants")){
-                currBuffs.push([currAction.grants, parseInt(currAction.grantstack)])
+                for(let k = 0; k <Object.keys(currAction.grants).length; k++){
+                    console.log(Object.keys(currAction.grants)[k]);
+                    console.log(parseInt((currAction.grants[Object.keys(currAction.grants)[k]])));
+                    currBuffs.push([Object.keys(currAction.grants)[k], parseInt((currAction.grants[Object.keys(currAction.grants)[k]]))])
+                }
             }
             for(let j = 0; j<currBuffs.length; j++ ){
                 if(currBuffs[j].length == 3){
@@ -57,9 +63,6 @@ export default class HelloWorldApp extends LightningElement {
                     }
                     stacksUsed = 0;
                 }
-            }
-            if(isNaN(buffAmt)){
-                buffAmt = 1;
             }
 
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
@@ -82,7 +85,6 @@ export default class HelloWorldApp extends LightningElement {
             }
 
             extraPotency = null;
-            currTime += 11
         }
 
         console.log(totalPotency)
