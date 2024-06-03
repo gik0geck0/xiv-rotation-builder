@@ -12,27 +12,31 @@ export default class IconList extends LightningElement {
 
     draggedItem;
 
+    tempActionList;
+
     dragStart(e) {
         this.draggedItem = e.target;
     }
 
     dragEnd(e) {
         e.preventDefault();
-        const listElements = [...this.template.querySelectorAll("li:not(.dragging)"),];
+        let tempActionList = [...this.actionList];
+        const listElements = [...this.template.querySelectorAll("xiv-job-icon"),];
         const currentIndex = listElements.findIndex((e) => e === this.draggedItem);
-        const destinationIndex = this.getClosestItemIndex(listElements, e.clientX);
+        let destinationIndex = this.getClosestItemIndex(listElements, e.clientX);
 
         if (destinationIndex < 0) {
-            if (e.clientX < this.draggedItem.getBoundingClientRect().left) {
+            if (e.clientX < this.template.querySelector(".sortable-list").getBoundingClientRect().left) {
                 destinationIndex = 0;
             } else {
                 destinationIndex = listElements.length;
             }
         } 
-
-        const movedItem = this.actionList.splice(currentIndex, 1)[0];
-        // TODO: the size of the list has changed, check a<b or a>b to adjust destinationIndex accordingly
-        this.actionList.splice(destinationIndex, 0, movedItem);
+        const movedItem = tempActionList.splice(currentIndex, 1)[0];
+        //@api can't be modified by the component through modifiying functions like splice
+        tempActionList.splice(destinationIndex, 0, movedItem);
+        console.log(tempActionList);
+        this.actionList = tempActionList;
         this.draggedItem = null;
     }
 

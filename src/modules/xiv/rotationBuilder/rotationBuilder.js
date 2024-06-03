@@ -1,16 +1,12 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 
-
 export default class HelloWorldApp extends LightningElement {
     buffComboActionList = ["Fast Blade", "Requiescat", "Holy Spirit"].map(getActionInfo.bind(undefined, "paladin"));
     buffActionList = [ "Fight or Flight", "Riot Blade","Fast Blade",].map(getActionInfo.bind(undefined, "paladin"));
     comboActionList = ["Fast Blade", "Riot Blade", "Fight or Flight"].map(getActionInfo.bind(undefined, "paladin"));
     pldjob = "paladin";
 
-	addHolySpirit() {
-		//this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
-	}
 
     calcWithBoth(){
         
@@ -87,4 +83,17 @@ export default class HelloWorldApp extends LightningElement {
 
         console.log(totalPotency)
     }
+}
+	mockActionList = ["Holy Spirit", "Holy Spirit", "Holy Spirit", "Fast Blade"].map(getActionInfo.bind(undefined, "paladin"));
+    job = "paladin";
+
+	addHolySpirit() {
+		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
+		this.mockActionList = [...this.mockActionList];
+	}
+
+	addTimelineAction(e) {
+		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
+		this.mockActionList = [...this.mockActionList];
+	}
 }
