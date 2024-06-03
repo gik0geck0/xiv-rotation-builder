@@ -1,0 +1,6 @@
+<template>
+        <template for:each={jobActions} for:item="action" for:index="idx">
+            <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description} onclick={addAction} name ={action.name}>
+            </xiv-job-icon>
+        </template>
+</template>
