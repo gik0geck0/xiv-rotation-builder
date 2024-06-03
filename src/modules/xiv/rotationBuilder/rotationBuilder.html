@@ -8,6 +8,6 @@
     <lightning-button label="Combo" onclick={calcWithCombo}></lightning-button>
     <xiv-icon-list action-list={mockActionList} job={job}></xiv-icon-list>
     <xiv-icon-tray onaddaction={addTimelineAction} job={job}></xiv-icon-tray>
-    <xiv-icon-list action-list={mockActionList} job={job}></xiv-icon-list>
+    <xiv-icon-list onspliceaction={spliceTimelineAction} onremoveaction={removeAction} action-list={mockActionList} job={job}></xiv-icon-list>
 
 </template>

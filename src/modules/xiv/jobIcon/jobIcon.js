@@ -15,6 +15,6 @@ export default class JobIcon extends LightningElement {
     }
 
     get computedSize() {
-        return "height:3em;margin:3em;"
+        return "height:2em;margin:2em;"
     }
 }
