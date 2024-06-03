@@ -1,7 +1,6 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 
-
 export default class HelloWorldApp extends LightningElement {
 
     //test lists with different actions
@@ -10,9 +9,6 @@ export default class HelloWorldApp extends LightningElement {
     comboActionList = ["Fast Blade", "Riot Blade", "Fight or Flight"].map(getActionInfo.bind(undefined, "paladin"));
     job = "paladin";
 
-	addHolySpirit() {
-		//this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
-	}
     //using the calc with the different
     calcWithBoth(){
         
@@ -89,4 +85,15 @@ export default class HelloWorldApp extends LightningElement {
 
         console.log(totalPotency)
     }
+
+
+	addHolySpirit() {
+		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
+		this.mockActionList = [...this.mockActionList];
+	}
+
+	addTimelineAction(e) {
+		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
+		this.mockActionList = [...this.mockActionList];
+	}
 }
