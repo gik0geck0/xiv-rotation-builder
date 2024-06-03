@@ -1,5 +1,4 @@
 import { LightningElement, api } from "lwc";
-import { getActionInfo } from 'xiv/actionRepository';
 import { getJobActions } from 'xiv/actionRepository';
 
 export default class IconTray extends LightningElement {

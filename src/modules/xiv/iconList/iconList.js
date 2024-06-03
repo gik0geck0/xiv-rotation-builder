@@ -10,8 +10,35 @@ export default class IconList extends LightningElement {
         return this.actionList.map((v, i) => Object.assign({t: i*2.5}, v));
     }
 
+    selectedIcons = [];
     draggedItem;
-    tempActionList;
+
+    selectIcon(e){
+        let currentIcons = [...this.template.querySelectorAll("xiv-job-icon")];
+        if(!this.selectedIcons.includes(e.target) && currentIcons.includes(e.target)){
+            e.target.style.setProperty('background', 'red');
+            this.selectedIcons.push(e.target);
+            console.log(this.selectedIcons);
+        }
+    }
+
+    deleteSelected(){ 
+        const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
+        for(let icon of this.selectedIcons){
+            let index = currentIcons.findIndex((e) => e === icon);
+            this.dispatchEvent(new CustomEvent('removeaction', {detail: {indexToRemove: index}}));
+        }
+        this.cancellSelected();
+    }
+
+    cancellSelected(){
+        console.log(this.selectedIcons);
+        for(let icon of this.selectedIcons){
+            console.log(icon);
+            icon.style.background = "none";
+        }
+        this.selectedIcons = [];
+    }
 
     dragStart(e) {
         this.draggedItem = e.target;
@@ -19,8 +46,7 @@ export default class IconList extends LightningElement {
 
     dragEnd(e) {
         e.preventDefault();
-        let tempActionList = [...this.actionList];
-        const listElements = [...this.template.querySelectorAll("xiv-job-icon"),];
+        const listElements = [...this.template.querySelectorAll("xiv-job-icon")];
         const currentIndex = listElements.findIndex((e) => e === this.draggedItem);
         let destinationIndex = this.getClosestItemIndex(listElements, e.clientX);
 
@@ -31,11 +57,7 @@ export default class IconList extends LightningElement {
                 destinationIndex = listElements.length;
             }
         } 
-        const movedItem = tempActionList.splice(currentIndex, 1)[0];
-        //@api can't be modified by the component through modifiying functions like splice
-        tempActionList.splice(destinationIndex, 0, movedItem);
-        console.log(tempActionList);
-        this.actionList = tempActionList;
+        this.dispatchEvent(new CustomEvent('spliceaction', {detail: {currentIndex: currentIndex, destinationIndex: destinationIndex}}));
         this.draggedItem = null;
     }
 
