@@ -3,8 +3,8 @@ export default {
 };
 import jobGuideJson from "./jobGuide";
 import { camelize } from "xiv/utils";
-import Skill from 'xiv/actionData/skill.js';
-import parseEffect from 'xiv/actionData/parseEffect.js'
+import Skill from './skill';
+import { parseEffect } from './parseEffect'
 
 // insert action IDs
 for (const jobName in jobGuideJson) {
@@ -18,8 +18,10 @@ for (const jobName in jobGuideJson) {
 for (const jobName in jobGuideJson) {
   const jobActions = jobGuideJson[jobName].actions;
   for (const action of jobActions) {
-      var newSkill = new Skill(action.icon, action.name, action.level, action.type, action.cast, action.recast, action.cost, action.effect);
-      parseEffect(newSkill)
+      //var newSkill = new Skill(action.icon, action.name, action.level, action.type, action.cast, action.recast, action.cost, action.effect, 0, 0);
+      parseEffect(action)
+    
+      /*
       action.gaugeCost = newSkill.getGaugeCost()
       action.duration = newSkill.getDuration()
       action.skillPotency = newSkill.getSkillPotency()
@@ -42,6 +44,7 @@ for (const jobName in jobGuideJson) {
       }
 
       action.buffRequirement = newSkill.getBuffRequirement()
+      */
   }
 }
 

@@ -21,13 +21,11 @@ export default class Skill{
 
         this.comboAction = null //Will be another skill just store the name and can derefernce later
         this.comboPotency = null
-        this.comboBonus = []
+        this.comboBonus = [] //Values of []
 
         this.additionalEffect = []
         this.buffActivation = [] //Contains values of [buffName , stacks]
         this.buffRequirement = null //Will be the name of a skill
-
-        this.parseEffect()
     }
 
     //Getters
@@ -93,6 +91,10 @@ export default class Skill{
 
     getComboPotency(){
         return this.comboPotency
+    }
+
+    getComboBonus(){
+        return this.comboBonus
     }
 
     getAdditionalEffect(){
