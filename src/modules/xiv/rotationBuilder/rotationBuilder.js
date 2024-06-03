@@ -4,7 +4,7 @@ import { getActionInfo } from 'xiv/actionRepository';
 export default class HelloWorldApp extends LightningElement {
 
     //test lists with different actions
-    mockActionList = ["Fast Blade", "Requiescat", "Holy Spirit"].map(getActionInfo.bind(undefined, "paladin"));
+    mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
     buffActionList = [ "Fight or Flight", "Riot Blade","Fast Blade",].map(getActionInfo.bind(undefined, "paladin"));
     comboActionList = ["Fast Blade", "Riot Blade", "Fight or Flight"].map(getActionInfo.bind(undefined, "paladin"));
     job = "paladin";
@@ -24,7 +24,7 @@ export default class HelloWorldApp extends LightningElement {
     }
 
     calculatePotency(actionList, job){
-
+        console.log(actionList);
         let currTime = 1
         //Calculation
         let totalPotency = 0;
@@ -41,8 +41,6 @@ export default class HelloWorldApp extends LightningElement {
             }
             if(currAction.hasOwnProperty("grants")){
                 for(let k = 0; k <Object.keys(currAction.grants).length; k++){
-                    console.log(Object.keys(currAction.grants)[k]);
-                    console.log(parseInt((currAction.grants[Object.keys(currAction.grants)[k]])));
                     currBuffs.push([Object.keys(currAction.grants)[k], parseInt((currAction.grants[Object.keys(currAction.grants)[k]]))])
                 }
             }
