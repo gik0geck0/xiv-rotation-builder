@@ -1,30 +1,26 @@
 export function parseEffect(action){
     //Split the effect by line and then each line by spaces
     if ((action.effect).includes("<BR>")){
-        (action.effect).replace('<BR>', '<br>')
+        action.effect = (action.effect).replace('<BR>', '<br>')
     }
     let splitEffect = (action.effect).split("<br>")
-    
+
     for (let i = 0; i < splitEffect.length; i++){
         splitEffect[i] = splitEffect[i].split(" ")
     }
 
     //Go through every line of the effect
     for (let i = 0; i < splitEffect.length; i++){
-        var line = splitEffect[i]
+        let line = splitEffect[i];
+
         if (line.includes('potency')){
-            var temp = (line[line.indexOf('potency') + 2])
-            if (temp.includes('.')){
-                temp.replace('.', '')
+            if (!((line[line.indexOf('potency') + 2]) === undefined)){
+                action.potency = ((line[line.indexOf('potency') + 2]).replace('.',''))
             }
-            action.potency = temp
-            console.log(temp)
-            break;
         }
 
         if (line.includes('Duration:')){
-            action.duration = (line[line.indexOf('Duration:')].replace('s', ''))
-            break;
+            action.duration = (line[line.indexOf('Duration:') + 1].replace('s', ''))
         }
 
         //Parse combo things
@@ -33,25 +29,71 @@ export function parseEffect(action){
                 //Add the entire combo skill to the comboAction
                 var actionName = ''
                 for (let k = line.indexOf('Action:') + 1; k < line.length; k++){
-                    actionName += (line[k] + ' ')
+                    actionName += line[k]
+                    if (k < line.length - 1){
+                        actionName += ' '
+                    }
                 }
                 action.comboAction = actionName
-                break;
             }
 
             if (line.includes('Potency:')){
-                action.comboPotency = (line[line.indexof('Potency:') + 1])
-                break;
+                action.comboPotency = (line[line.indexOf('Potency:') + 1])
             }
             
             if (line.includes('Bonus:')){
-                //Add the entire effect to the comboBonus
-                var bonusEffect = ''
+                //Parse the effect of the bonus
+                var bonusEffect = []
                 for (let k = line.indexOf('Bonus:') + 1; k < line.length; k++){
-                    bonusEffect += (line[k] + ' ')
+                    bonusEffect.push(line[k])
                 }
-                //action.comboBonus = (action.comboBonus).push(bonusEffect)
-                break;
+                //Check for buff/effect granting INSIDE COMBO BONUS
+                if (bonusEffect.includes('Grants')){
+                    //Buffs with stacks INSIDE COMBO BONUS
+                    if(bonusEffect.includes('stacks')){
+                        let buffName = ''
+                        for (let j = bonusEffect.indexOf('stacks') + 2; j < bonusEffect.length; j++){
+                            if (bonusEffect[j].includes(',')){
+                                buffName += bonusEffect[j].replace(',','')
+                                break;
+                            }
+                            buffName += bonusEffect[j]
+                        }
+                        action.comboBonus = {...action.comboBonus , [buffName] : bonusEffect[bonusEffect.indexOf('Grants') + 1]}
+                    }
+                    //Perecent damage increase buffs INSIDE COMBO BONUS
+                    else if (bonusEffect.includes('%') && bonusEffect.includes('damage')){
+                        let buffName = ''
+                        var m = bonusEffect.indexOf('Grants')
+                        while (!(bonusEffect[m].includes(','))){
+                            buffName += bonusEffect[m]
+                            m++
+                        }
+                        buffName += bonusEffect[m + 1].replace(',','')
+                        action.comboBonus = {...action.comboBonus , [buffName] : ((bonusEffect[bonusEffect.indexOf('dealt') + 2].replace('%',''))/100)}
+                    }
+                    //General buffs INSIDE COMBO BONUS
+                    else{
+                        let buffName = ''
+                        for (let j = bonusEffect.indexOf('Grants') + 1; j < bonusEffect.length; j++){
+                            if (bonusEffect[j].includes(',')){
+                                buffName += bonusEffect[j].replace(',','')
+                                break;
+                            }
+                            buffName += bonusEffect[j]
+                        }
+                        action.comboBonus = {...action.comboBonus , [buffName] : 0}
+                    }
+                }
+
+                //Check for gauge increases INSIDE COMBO BONUS
+                if (bonusEffect.includes('Gauge')){
+                    var gaugeName = ''
+                    for (let j = bonusEffect.indexOf('Increases') + 1; j < bonusEffect.indexOf('Gauge') + 1; j++){
+                        gaugeName += bonusEffect[j]
+                    }
+                    action.comboBonus = {...action.comboBonus , [gaugeName] : bonusEffect[bonusEffect.indexOf('Gauge') + 2]}
+                }
             }
         }
 
@@ -59,206 +101,85 @@ export function parseEffect(action){
         if (line.includes('Additional')){
             if (line.includes('Restores') && line.includes('MP')){
                 //player.changeMP(null) //Stretch goal to have the MP change per skill
-                break;
             }
 
             if (line.includes('Damage') && line.includes('over') && line.includes('time')){
                 i++
                 action.durationPotency = (Math.floor(splitEffect[i][1] / 3)) //per 3 seconds (time/3 - 1 potency guaranteed)
-                break;
             }
         }
 
         //Altered Potencies Check
         if (line.includes('Potency:') && !(line.includes('Cure')) && !(line.includes('Combo'))){
             var potencyName = ''
-            for (let i = 0; i < line.indexOf('Potency:'); i++){
-                potencyName += line[i]
+            for (let j = 0; j < line.indexOf('Potency:'); j++){
+                potencyName += line[j]
             }
-            //var tempAltered = (action.alteredPotencies).push([potencyName, line[line.indexOf('Potency:') + 1]])
             action[potencyName] =  line[line.indexOf('Potency:') + 1]
-            break;
         }
 
         //Checks for buff/effect granting
-        if (line.includes('Grants') && !(line.includes('Combo'))){
+        if (line.includes('Grants') && !(line.includes('Combo')) && !(line.includes('to'))){
+            //Buffs with stack component
             if(line.includes('stacks')){
                 var buffName = ''
-                for (let i = line.indexOf('stacks') + 2; i < line.length; i++){
-                    if (line[i] === ','){
+                for (let j = line.indexOf('stacks') + 2; j < line.length; j++){
+                    if (line[j].includes(',')){
+                        buffName += line[j].replace(',','')
                         break;
                     }
-                    buffName += line[i]
+                    buffName += line[j]
                 }
-                //var tempBuff = (action.buffActivation).push([buffName , line[line.indexOf('Grants') + 1]])
-                action.grants[buffName] = line[line.indexOf('Grants') + 1]
-                break;
+                action.grants = {...action.grants , [buffName] : line[line.indexOf('Grants') + 1]}
             }
+            //Percentage increase in damage buffs
+            else if (line.includes('%') && line.includes('damage')){
+                let buffName = ''
+                var m = line.indexOf('Grants')
+                while (!(line[m].includes(','))){
+                    buffName += line[m]
+                    m++
+                }
+                buffName += line[m + 1].replace(',','')
+                action.grants = {...action.grants , [buffName] : ((line[line.indexOf('dealt') + 2].replace('%',''))/100)}
+            }
+            //General types of buffs
             else{
-                var buffName = ''
-                for (let i = line.indexOf('Grants') + 1; i < line.length; i++){
-                    if (line[i] === ','){
+                let buffName = ''
+                for (let j = line.indexOf('Grants') + 1; j < line.length; j++){
+                    if (line[j].includes(',')){
+                        buffName += line[j].replace(',','')
                         break;
                     }
-                    buffName += line[i]
+                    buffName += line[j]
                 }
-                //var tempBuff = (action.buffActivation).push([buffName, 0])
-                action.grants[buffName] = 0
-                break;
+                action.grants = {...action.grants , [buffName] : 0}
             }
         }
 
         //Checks for buff/effect requirement to use
         if (line.includes('executed') && line.includes('under') && line.includes('effect')){
             var requirement = ''
-            for (let i = line.indexOf('of'); i < line.length; i++){
-                var tempWord = line[i]
+            for (let j = line.indexOf('of') + 1; j < line.length; j++){
+                var tempWord = line[j]
                 if (tempWord.includes('.')){
-                    tempWord.replace('.', '')
+                    tempWord = tempWord.replace('.', '')
                 }
                 requirement += tempWord
+                if (j < line.length - 1){
+                    requirement += " "
+                }
             }
-            action.buffRequirement = (requirement)
-            break;
+            action.buffRequirement = requirement
         }
 
         //Gauge Cost check
         if (line.includes('Gauge')){
             var gaugeName = ''
-            for (let i = 0; i < line.indexOf('Gauge') + 1; i++){
-                gaugeName += line[i]
+            for (let j = 0; j < line.indexOf('Gauge') + 1; j++){
+                gaugeName += line[j]
             }
-            action.gaugeCost = ([gaugeName , line[line.indexOf('Cost') + 1]])
-            break;
+            action[gaugeName] = line[line.indexOf('Cost:') + 1]
         }
     }
 }
-/*
-export function parseEffect(skill){
-    //Split the effect by line and then each line by spaces
-    var splitEffect = (skill.getEffect()).split("<br>")
-    for (let i = 0; i < splitEffect.length; i++){
-        splitEffect[i].split(" ")
-    }
-
-    //Go through every line of the effect
-    for (let i = 0; i < splitEffect.length; i++){
-        var line = splitEffect[i]
-        if (line.includes('potency')){
-            skill.setSkillPotency(line[line.indexOf('potency') + 2])
-            break;
-        }
-
-        if (line.includes('Duration:')){
-            skill.setDuration(line[line.indexOf('Duration:')].replace('s', ''))
-            break;
-        }
-
-        //Parse combo things
-        if (line.includes('Combo')){
-            if (line.includes('Action:')){
-                //Add the entire combo skill to the comboAction
-                var actionName = ''
-                for (let k = line.indexOf('Action:') + 1; k < line.length; k++){
-                    actionName += (line[k] + ' ')
-                }
-                skill.setComboAction(actionName)
-                break;
-            }
-
-            if (line.includes('Potency:')){
-                skill.setComboPotency(line[line.indexof('Potency:') + 1])
-                break;
-            }
-            
-            if (line.includes('Bonus:')){
-                //Add the entire effect to the comboBonus
-                var bonusEffect = ''
-                for (let k = line.indexOf('Bonus:') + 1; k < line.length; k++){
-                    bonusEffect += (line[k] + ' ')
-                }
-                var newBonusEffect = (skill.getComboBonus()).push(bonusEffect)
-                skill.setComboBonus(newBonusEffect)
-                break;
-            }
-        }
-
-        //Additional effect stuff
-        if (line.includes('Additional')){
-            if (line.includes('Restores') && line.includes('MP')){
-                //player.changeMP(null) //Stretch goal to have the MP change per skill
-                break;
-            }
-
-            if (line.includes('Damage') && line.includes('over') && line.includes('time')){
-                i++
-                skill.setDurationPotency(Math.floor(splitEffect[i][1] / 3)) //per 3 seconds (time/3 - 1 potency guaranteed)
-                break;
-            }
-        }
-
-        //Altered Potencies Check
-        if (line.includes('Potency:') && !(line.includes('Cure')) && !(line.includes('Combo'))){
-            var potencyName = ''
-            for (let i = 0; i < line.indexOf('Potency:'); i++){
-                potencyName += line[i]
-            }
-            var newAlteredPotencies = (skill.getAlteredPotencies()).push([potencyName, line[line.indexOf('Potency:') + 1]])
-            skill.setAlteredPotencies(newAlteredPotencies)
-            break;
-        }
-
-        //Checks for buff/effect granting
-        if (line.includes('Grants') && !(line.includes('Combo'))){
-            if(line.includes('stacks')){
-                var buffName = ''
-                for (let i = line.indexOf('stacks') + 2; i < line.length; i++){
-                    if (line[i] === ','){
-                        break;
-                    }
-                    buffName += line[i]
-                }
-                var newBuffActivation = (skill.getBuffActivation()).push([buffName , line[line.indexOf('Grants') + 1]])
-                skill.setBuffActivation(newBuffActivation)
-                break;
-            }
-            else{
-                var buffName = ''
-                for (let i = line.indexOf('Grants') + 1; i < line.length; i++){
-                    if (line[i] === ','){
-                        break;
-                    }
-                    buffName += line[i]
-                }
-                var newBuffActivation = (skill.getBuffActivation()).push([buffName, 0])
-                skill.setBuffActivation(newBuffActivation)
-                break;
-            }
-        }
-
-        //Checks for buff/effect requirement to use
-        if (line.includes('executed') && line.includes('under') && line.includes('effect')){
-            var requirement = ''
-            for (let i = line.indexOf('of'); i < line.length; i++){
-                var tempWord = line[i]
-                if (tempWord.includes('.')){
-                    tempWord.replace('.', '')
-                }
-                requirement += tempWord
-            }
-            skill.setBuffRequirement(requirement)
-            break;
-        }
-
-        //Gauge Cost check
-        if (line.includes('Gauge')){
-            var gaugeName = ''
-            for (let i = 0; i < line.indexOf('Gauge') + 1; i++){
-                gaugeName += line[i]
-            }
-            skill.setGaugeCost([gaugeName , line[line.indexOf('Cost') + 1]])
-            break;
-        }
-    }
-}
-*/
