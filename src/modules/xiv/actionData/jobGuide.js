@@ -9,8 +9,7 @@ export default {
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 200.",
-               "potency": "200"
+               "effect": "Delivers an attack with a potency of 200."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/87405b9b9f00d9957df252ea0116e4137bc4dbd1.png",
@@ -20,9 +19,7 @@ export default {
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Increases damage dealt by 25%.<br>Duration: 20s",
-               "buff": "1.25",
-               "duration": "20" 
+               "effect": "Increases damage dealt by 25%.<br>Duration: 20s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/bdda04f3b284e3cbf7d07e50d9bffb21b74ce869.png",
@@ -32,11 +29,7 @@ export default {
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Fast Blade<br>Combo Potency: 300<br>Combo Bonus: Restores MP",
-               "potency": "140",
-               "comboAction": "Fast Blade",
-               "comboPotency": "300"
-               
+               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Fast Blade<br>Combo Potency: 300<br>Combo Bonus: Restores MP"  
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/07c42572697cdcf5381955b09ed7c3028be8a0bb.png",
@@ -236,10 +229,7 @@ export default {
                "cast": "1.5s",
                "recast": "2.5s",
                "cost": "1000 MP",
-               "effect": "Deals unaspected damage with a potency of 350.<BR>Divine Might Potency: 450<br>Requiescat Potency: 650<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
-               "potency": "350",
-               "divinemight": "450",
-               "requiescat": "650"
+               "effect": "Deals unaspected damage with a potency of 350.<BR>Divine Might Potency: 450<br>Requiescat Potency: 650<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/acbcd4de5a1839e4fd8c96ae05eb4109caed9ca1.png",
@@ -249,11 +239,7 @@ export default {
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
-               "potency": "320",
-               "grants": {
-                    "requiescat": "4"
-               }
+               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b570dfda793945b3bb8fddef02b1a865b8a04b32.png",

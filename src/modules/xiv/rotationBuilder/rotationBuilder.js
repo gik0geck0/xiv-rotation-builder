@@ -1,6 +1,10 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 
+import { JobGuide } from "xiv/actionData";
+
+console.log(JobGuide)
+
 export default class HelloWorldApp extends LightningElement {
 
     //starting action list
