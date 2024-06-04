@@ -5,6 +5,7 @@ export default class HelloWorldApp extends LightningElement {
 
     //starting action list
     mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
+
     job = "paladin";
 
     //using the calc with the different
@@ -97,6 +98,8 @@ export default class HelloWorldApp extends LightningElement {
 		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
 		this.mockActionList = [...this.mockActionList];
 	}
+
+
 
 	removeAction(e){
 		console.log(e.detail.indexToRemove);
