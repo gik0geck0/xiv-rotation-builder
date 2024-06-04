@@ -54,10 +54,10 @@ export function parseEffect(action){
                         let buffName = ''
                         for (let j = bonusEffect.indexOf('stacks') + 2; j < bonusEffect.length; j++){
                             if (bonusEffect[j].includes(',')){
-                                buffName += bonusEffect[j].replace(',','')
+                                buffName += (bonusEffect[j].replace(',','')).toLowerCase()
                                 break;
                             }
-                            buffName += bonusEffect[j]
+                            buffName += bonusEffect[j].toLowerCase()
                         }
                         action.comboBonus = {...action.comboBonus , [buffName] : bonusEffect[bonusEffect.indexOf('Grants') + 1]}
                     }
@@ -66,10 +66,10 @@ export function parseEffect(action){
                         let buffName = ''
                         var m = bonusEffect.indexOf('Grants')
                         while (!(bonusEffect[m].includes(','))){
-                            buffName += bonusEffect[m]
+                            buffName += bonusEffect[m].toLowerCase()
                             m++
                         }
-                        buffName += bonusEffect[m + 1].replace(',','')
+                        buffName += (bonusEffect[m + 1].replace(',','')).toLowerCase()
                         action.comboBonus = {...action.comboBonus , [buffName] : (1 + ((bonusEffect[bonusEffect.indexOf('dealt') + 2].replace('%',''))/100))}
                     }
                     //General buffs INSIDE COMBO BONUS
@@ -77,10 +77,10 @@ export function parseEffect(action){
                         let buffName = ''
                         for (let j = bonusEffect.indexOf('Grants') + 1; j < bonusEffect.length; j++){
                             if (bonusEffect[j].includes(',')){
-                                buffName += bonusEffect[j].replace(',','')
+                                buffName += (bonusEffect[j].replace(',','')).toLowerCase()
                                 break;
                             }
-                            buffName += bonusEffect[j]
+                            buffName += bonusEffect[j].toLowerCase()
                         }
                         action.comboBonus = {...action.comboBonus , [buffName] : -1}
                     }
@@ -128,7 +128,7 @@ export function parseEffect(action){
                         buffName += (line[j].replace(',','')).toLowerCase()
                         break;
                     }
-                    buffName += line[j]
+                    buffName += line[j].toLowerCase()
                 }
                 action.grants = {...action.grants , [buffName] : line[line.indexOf('Grants') + 1]}
             }
@@ -151,7 +151,7 @@ export function parseEffect(action){
                         buffName += (line[j].replace(',','')).toLowerCase()
                         break;
                     }
-                    buffName += line[j]
+                    buffName += line[j].toLowerCase()
                 }
                 action.grants = {...action.grants , [buffName] : -1}
             }
