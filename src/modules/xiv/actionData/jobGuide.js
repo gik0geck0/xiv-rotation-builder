@@ -29,7 +29,7 @@ export default {
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Fast Blade<br>Combo Potency: 300<br>Combo Bonus: Restores MP"
+               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Fast Blade<br>Combo Potency: 300<br>Combo Bonus: Restores MP"  
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/07c42572697cdcf5381955b09ed7c3028be8a0bb.png",

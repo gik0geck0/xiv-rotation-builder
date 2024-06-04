@@ -12,7 +12,6 @@ export function parseEffect(action){
     //Go through every line of the effect
     for (let i = 0; i < splitEffect.length; i++){
         let line = splitEffect[i];
-
         if (line.includes('potency') && !(line.includes('Increases'))){
             if (!((line[line.indexOf('potency') + 2]) === undefined)){
                 action.potency = ((line[line.indexOf('potency') + 2]).replace('.',''))
