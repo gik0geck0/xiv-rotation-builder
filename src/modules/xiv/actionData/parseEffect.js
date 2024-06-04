@@ -13,7 +13,7 @@ export function parseEffect(action){
     for (let i = 0; i < splitEffect.length; i++){
         let line = splitEffect[i];
 
-        if (line.includes('potency')){
+        if (line.includes('potency') && !(line.includes('Increases'))){
             if (!((line[line.indexOf('potency') + 2]) === undefined)){
                 action.potency = ((line[line.indexOf('potency') + 2]).replace('.',''))
             }
@@ -125,7 +125,7 @@ export function parseEffect(action){
                 var buffName = ''
                 for (let j = line.indexOf('stacks') + 2; j < line.length; j++){
                     if (line[j].includes(',')){
-                        buffName += line[j].replace(',','')
+                        buffName += (line[j].replace(',','')).toLowerCase()
                         break;
                     }
                     buffName += line[j]
@@ -137,10 +137,10 @@ export function parseEffect(action){
                 let buffName = ''
                 var m = line.indexOf('Grants')
                 while (!(line[m].includes(','))){
-                    buffName += line[m]
+                    buffName += line[m].toLowerCase()
                     m++
                 }
-                buffName += line[m + 1].replace(',','')
+                buffName += (line[m + 1].replace(',','')).toLowerCase()
                 action.grants = {...action.grants, [buffName] : 1 + ((line[line.indexOf('dealt') + 2].replace('%',''))/100)}
             }
             //General types of buffs
@@ -148,7 +148,7 @@ export function parseEffect(action){
                 let buffName = ''
                 for (let j = line.indexOf('Grants') + 1; j < line.length; j++){
                     if (line[j].includes(',')){
-                        buffName += line[j].replace(',','')
+                        buffName += (line[j].replace(',','')).toLowerCase()
                         break;
                     }
                     buffName += line[j]
