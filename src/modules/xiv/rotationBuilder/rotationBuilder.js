@@ -84,6 +84,7 @@ export default class HelloWorldApp extends LightningElement {
         }
 
         console.log(totalPotency)
+        this.template.querySelector('lightning-card.potencyLabel').title="Potency: " + totalPotency;
     }
 
 
