@@ -4,5 +4,5 @@
     <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
     <lightning-button label="Add Holy Spirit" onclick={addHolySpirit}></lightning-button>
     <xiv-icon-tray onaddaction={addTimelineAction} job={job}></xiv-icon-tray>
-    <xiv-icon-list action-list={mockActionList} job={job}></xiv-icon-list>
+    <xiv-icon-list onspliceaction={spliceTimelineAction} onremoveaction={removeAction} action-list={mockActionList} job={job}></xiv-icon-list>
 </template>
