@@ -70,7 +70,7 @@ export function parseEffect(action){
                             m++
                         }
                         buffName += bonusEffect[m + 1].replace(',','')
-                        action.comboBonus = {...action.comboBonus , [buffName] : ((bonusEffect[bonusEffect.indexOf('dealt') + 2].replace('%',''))/100)}
+                        action.comboBonus = {...action.comboBonus , [buffName] : (1 + ((bonusEffect[bonusEffect.indexOf('dealt') + 2].replace('%',''))/100))}
                     }
                     //General buffs INSIDE COMBO BONUS
                     else{
@@ -82,7 +82,7 @@ export function parseEffect(action){
                             }
                             buffName += bonusEffect[j]
                         }
-                        action.comboBonus = {...action.comboBonus , [buffName] : 0}
+                        action.comboBonus = {...action.comboBonus , [buffName] : -1}
                     }
                 }
 
@@ -113,7 +113,7 @@ export function parseEffect(action){
         if (line.includes('Potency:') && !(line.includes('Cure')) && !(line.includes('Combo'))){
             var potencyName = ''
             for (let j = 0; j < line.indexOf('Potency:'); j++){
-                potencyName += line[j]
+                potencyName += line[j].toLowerCase()
             }
             action[potencyName] =  line[line.indexOf('Potency:') + 1]
         }
@@ -141,7 +141,7 @@ export function parseEffect(action){
                     m++
                 }
                 buffName += line[m + 1].replace(',','')
-                action.grants = {...action.grants , [buffName] : ((line[line.indexOf('dealt') + 2].replace('%',''))/100)}
+                action.grants = {...action.grants, [buffName] : 1 + ((line[line.indexOf('dealt') + 2].replace('%',''))/100)}
             }
             //General types of buffs
             else{
@@ -153,7 +153,7 @@ export function parseEffect(action){
                     }
                     buffName += line[j]
                 }
-                action.grants = {...action.grants , [buffName] : 0}
+                action.grants = {...action.grants , [buffName] : -1}
             }
         }
 
@@ -180,6 +180,11 @@ export function parseEffect(action){
                 gaugeName += line[j]
             }
             action[gaugeName] = line[line.indexOf('Cost:') + 1]
+        }
+
+        //Percentage increase in damage check
+        if (line.includes('Increases') && line.includes('damage') && line.includes('dealt')){
+            action.damageBuff = 1 + ((line[line.indexOf('dealt') + 2].replace('%',''))/100)
         }
     }
 }
