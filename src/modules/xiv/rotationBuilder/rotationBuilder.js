@@ -117,7 +117,3 @@ export default class HelloWorldApp extends LightningElement {
 		this.mockActionList = [...this.mockActionList];
 	}
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> f826b76ce84abe4552246e5b44c6756b0d31f3b3
