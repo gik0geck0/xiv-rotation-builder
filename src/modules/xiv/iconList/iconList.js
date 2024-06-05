@@ -19,7 +19,6 @@ export default class IconList extends LightningElement {
         if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
             currIcon.style.setProperty('background', 'red');
             this.selectedIcons.push(e.target);
-            console.log(this.selectedIcons);
         }
         else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
             currIcon.style.background = "none";

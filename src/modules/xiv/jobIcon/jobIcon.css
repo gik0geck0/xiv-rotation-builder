@@ -1,4 +1,6 @@
 .iconItem {
 	cursor: grab;
     display: inline;
+    height: 200px;
+    width: 200px;
 }
