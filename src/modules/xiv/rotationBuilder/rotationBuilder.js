@@ -92,6 +92,35 @@ export default class HelloWorldApp extends LightningElement {
         this.template.querySelector('lightning-card.potencyLabel').title="Potency: " + totalPotency;
     }
 
+	validation(actionList, job){
+        var gaugeList = []
+        var invalidActionList = []
+
+        //Adding gauges to a list so they can be tracked
+        for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
+            var currGauge = Object.keys(JobGuide[job].gauges)[i]
+            var tempArray = [currGauge, JobGuide[job].gauges[currGauge]]
+            gaugeList.push(tempArray)
+        }
+
+        //Checking validation
+		for (let i = 0; i < actionList.length; i++){
+            var currAction = actionList[i]
+
+            //Checking gauge requirements
+            for (let j = 0; j < gaugeList.length; j++){
+                var gaugeName = gaugeList[j][0] + 'Gauge'
+                if (actionList.hasOwnProperty(gaugeName)){
+                    if (gaugeList[j][0] - currAction[gaugeName] < 0){
+                        invalidActionList.push([currAction, 'Not enough gauge to cast action.'])
+                    }
+                    break;
+                }
+            } 
+        }
+
+        return invalidActionList
+	}
 
 	addHolySpirit() {
 		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));

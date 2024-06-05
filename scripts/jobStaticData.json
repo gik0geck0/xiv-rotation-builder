@@ -1,15 +1,8 @@
 {
     "paladin": {
         "gauges": {
-            "Oauth": {
+            "Oath": {
                 "cap": 100
-            },
-            "Sword Oath": {
-                "cap": 3
-            },
-            "Requiescat": {
-                "cap": 4,
-                "expiration": 30.0
             }
         }
     },
