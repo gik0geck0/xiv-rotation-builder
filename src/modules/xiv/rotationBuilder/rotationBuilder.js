@@ -2,6 +2,7 @@ import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
+import jobStaticData from "xiv/actionData/jobStaticData.js";
 
 console.log(JobGuide)
 
@@ -14,7 +15,8 @@ export default class HelloWorldApp extends LightningElement {
 
     //using the calc with the different
     calcWithList(){
-        errorArray = validate(actionList, job)
+        //THIS IS FOR TESTING PURPOSES. MOVE TO WHERE YOU ADD THE SKILLS!!!
+        var errorArray = this.validation(this.mockActionList, this.job)
         if (errorArray.length >= 1){
             this.calculatePotency(this.mockActionList,this.job);
         }
@@ -102,9 +104,11 @@ export default class HelloWorldApp extends LightningElement {
         var invalidActionList = []
 
         //Adding initial gauge amounts to a list so they can be tracked
-        for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
-            var currGauge = Object.keys(JobGuide[job].gauges)[i]
-            gaugeAmounts.push([currGauge, JobGuide[job].gauges[currGauge].intial])
+        console.log(jobStaticData.paladin)
+        console.log(Object.keys(jobStaticData[job].gauges))
+        for (let i = 0; i < Object.keys(jobStaticData[job].gauges).length; i++){
+            var currGauge = Object.keys(jobStaticData[job].gauges)[i]
+            gaugeAmounts.push([currGauge, jobStaticData[job].gauges[currGauge].intial])
         }
 
         //Checking validation
@@ -121,6 +125,19 @@ export default class HelloWorldApp extends LightningElement {
                     break;
                 }
             } 
+
+            //TEMP BUFF LIST REPLACE WITH JUSTIN DATA!!!!!!
+            var buffList = []
+
+            //Buff requirement check
+            if (currAction.hasOwnProperty('buffRequirement')){
+                if (!(buffList.contains(currAction.buffRequirement))){
+                    invalidActionList.push([currAction, 'The required buff is not active at this time.'])
+                }
+                else if(buffList.contains(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
+                    invalidActionList.push([currAction, 'You are missing the required stacks of this buff.'])
+                }
+            }
         }
 
         return invalidActionList
