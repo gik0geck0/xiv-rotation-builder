@@ -16,7 +16,6 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
 	removeAction(e){
-		console.log(e.detail.indexToRemove);
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
 	}
