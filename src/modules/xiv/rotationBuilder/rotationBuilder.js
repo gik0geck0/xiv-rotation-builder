@@ -93,14 +93,13 @@ export default class HelloWorldApp extends LightningElement {
     }
 
 	validation(actionList, job){
-        var gaugeList = []
+        var gaugeAmounts = []
         var invalidActionList = []
 
-        //Adding gauges to a list so they can be tracked
+        //Adding initial gauge amounts to a list so they can be tracked
         for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
             var currGauge = Object.keys(JobGuide[job].gauges)[i]
-            var tempArray = [currGauge, JobGuide[job].gauges[currGauge]]
-            gaugeList.push(tempArray)
+            gaugeAmounts.push([currGauge, JobGuide[job].gauges[currGauge].intial])
         }
 
         //Checking validation
