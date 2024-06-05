@@ -14,8 +14,13 @@ export default class HelloWorldApp extends LightningElement {
 
     //using the calc with the different
     calcWithList(){
-        
-        this.calculatePotency(this.mockActionList,this.job);
+        errorArray = validate(actionList, job)
+        if (errorArray.length >= 1){
+            this.calculatePotency(this.mockActionList,this.job);
+        }
+        else{
+            console.log(errorArray)
+        }
     }
     
 
