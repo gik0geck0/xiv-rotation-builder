@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
-import jobStaticData from "xiv/actionData/jobStaticData.js";
+import jobStaticData from "src/modules/xiv/actionData/jobStaticData";
 
 console.log(JobGuide)
 
@@ -125,7 +125,7 @@ export default class HelloWorldApp extends LightningElement {
                     break;
                 }
             } 
-
+            /*
             //TEMP BUFF LIST REPLACE WITH JUSTIN DATA!!!!!!
             var buffList = []
 
@@ -138,6 +138,7 @@ export default class HelloWorldApp extends LightningElement {
                     invalidActionList.push([currAction, 'You are missing the required stacks of this buff.'])
                 }
             }
+            */
         }
 
         return invalidActionList

@@ -131,5 +131,65 @@ export default {
                 "cap": 100
             }
         }
+    },
+    "bard":{
+        "gauges":{
+            "SoulVoice":{
+                "cap": 100
+            }
+        }
+    },
+    "machinist":{
+        "gauges":{
+            "Heat":{
+                "cap": 100
+            },
+            "Battery":{
+                "cap": 100
+            }
+        }
+    },
+    "dancer":{
+        "gauges":{
+            "FourfoldFeathers":{
+                "cap": 4
+            },
+            "Esprit":{
+                "cap": 100
+            },
+            "StandardStep":{
+                "cap": 2
+            },
+            "TechnicalStep":{
+                "cap": 4
+            }
+        }
+    },
+    "blackmage":{
+        "gauges":{
+            "Polyglot":{
+                "cap": 2
+            }
+        }
+    },
+    "summoner":{
+        "gauges":{
+            "Aetherflow":{
+                "cap": 2
+            }
+        }
+    },
+    "redmage":{
+        "gauges":{
+            "WhiteMana":{
+                "cap": 100
+            },
+            "BlackMana":{
+                "cap": 100
+            },
+            "ManaStack":{
+                "cap": 3
+            }
+        }
     }
 }
