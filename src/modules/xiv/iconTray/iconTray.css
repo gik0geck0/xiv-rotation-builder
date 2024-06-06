@@ -3,4 +3,10 @@
     overflow-y:auto;
     height:200px;
     width:200px;
+    margin: 0;
+    padding: 0;
+}
+
+.li{
+    height: 70px;
 }

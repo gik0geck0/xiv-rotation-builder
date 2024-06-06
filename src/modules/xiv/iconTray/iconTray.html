@@ -2,7 +2,7 @@
     <ul class="skills-list">
         <template for:each={jobActions} for:item="action" for:index="idx">
             <li key={action.t}>
-                <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description} onclick={addAction} name ={action.name}></xiv-job-icon>
+                <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description} onclick={addAction} name ={action.name} location="tray"></xiv-job-icon>
                 {action.name}
                 <lightning-helptext key={action.t} content={action.description}></lightning-helptext>
             </li>       

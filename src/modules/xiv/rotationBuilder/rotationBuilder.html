@@ -2,6 +2,7 @@
     <img src="/assets/recipes-logo.png" alt="logo" />
     <lightning-icon icon-name="action:approval" title="Approved"></lightning-icon>
     <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
+    <p>Selected job is: {job}</p>
     <xiv-icon-tray onaddaction={addTimelineAction} job={job} style="display:inline-block;margin-right:10px;"></xiv-icon-tray>
     <xiv-icon-list onspliceaction={spliceTimelineAction} onremoveaction={removeAction} action-list={mockActionList} job={job} style="display:inline-block;"></xiv-icon-list>
 </template>

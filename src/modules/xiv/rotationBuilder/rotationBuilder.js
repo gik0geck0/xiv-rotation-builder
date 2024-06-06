@@ -1,13 +1,17 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
+import { getJobNames } from 'xiv/actionRepository';
 
 export default class HelloWorldApp extends LightningElement {
+	job = "paladin";
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
-    job = "paladin";
 
-	addHolySpirit() {
-		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
-		this.mockActionList = [...this.mockActionList];
+	get options() {
+        return getJobNames();
+    }
+
+	handleChange(){
+
 	}
 
 	addTimelineAction(e) {

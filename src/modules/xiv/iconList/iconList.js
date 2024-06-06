@@ -17,7 +17,8 @@ export default class IconList extends LightningElement {
         let currentIcons = [...this.template.querySelectorAll("xiv-job-icon")];
         let currIcon = e.target;
         if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            currIcon.style.setProperty('background', 'red');
+            //currIcon.style.setProperty('background', 'red');
+            currIcon.style.setProperty('height', '100');
             this.selectedIcons.push(e.target);
         }
         else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
