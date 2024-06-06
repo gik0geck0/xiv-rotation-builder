@@ -12,9 +12,51 @@ export default class HelloWorldApp extends LightningElement {
 
     //using the calc with the different
     calcWithList(){
-        this.calculatePotency(this.mockActionList,this.job);
+        let timedList = this.findTimes(this.mockActionList);
+        this.calculatePotency(timedList,this.job);
     }
     
+    findTimes(actionList){
+        let currTime = 0;
+        let timedList = [[actionList[0],currTime]];
+        //time when you can use the skill again
+        let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
+        let lastGCD = [actionList[0].name, 0];
+        if(actionList[0].type == "Ability"){
+            lastGCD[1] = -1;
+        }
+        for(let i = 1; i < actionList.length; i++){
+            let currAction = actionList[i];
+            //if on CD
+            for(let j = 0; j < usedActions.length; j++){
+                if(currAction.name == usedActions[j][0] && currTime < usedActions[j][1]){
+                    currTime = usedActions[j][1];
+                }
+            }
+            //normal time incrementing logic
+            if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
+                currTime += 0.7;
+                if(currTime <= lastGCD[1]+2.5 && lastGCD[1] != -1){
+                    currTime = lastGCD[1]+2.5
+                }
+                let currPair = [currAction,(Math.round(currTime*10)/10)];
+                timedList.push(currPair);
+                lastGCD = currPair;
+            }
+            else{
+                currTime += 0.7;
+                let currPair = [currAction,(Math.round(currTime*10)/10)];
+                timedList.push(currPair);
+            }
+            usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)]);
+
+            
+
+        }
+        return timedList;
+        
+    }
+
     calculatePotency(actionList, job){
         let currTime = 0;
         //Calculation
@@ -27,15 +69,22 @@ export default class HelloWorldApp extends LightningElement {
         //Go through every item in the list
         for (let i = 0; i < actionList.length; i++ ){
             buffAmt = 1;
-            let currAction = actionList[i]
+            let currAction = actionList[i][0];
+            let currTime = actionList[i][1];
+
             //check if it starts a % based buff
-            if(currAction.hasOwnProperty("buff")){
+            if(currAction.hasOwnProperty("damageBuff")){
                 currBuffs.push([currAction,currTime,currTime+parseInt(currAction.duration)])
             }
             //check if it grants anything
             if(currAction.hasOwnProperty("grants")){
                 for(let k = 0; k <Object.keys(currAction.grants).length; k++){
-                    currBuffs.push([Object.keys(currAction.grants)[k], parseInt((currAction.grants[Object.keys(currAction.grants)[k]]))])
+                    if(parseInt((currAction.grants[Object.keys(currAction.grants)[k]])) != -1){
+                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseInt((currAction.grants[Object.keys(currAction.grants)[k]]))])
+                    }
+                    else{
+                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
+                    }
                 }
             }
             //goes through the list of buffs to see if any are active
@@ -43,7 +92,13 @@ export default class HelloWorldApp extends LightningElement {
                 //3 length means a start and end time
                 if(currBuffs[j].length == 3){
                     if(currTime <= currBuffs[j][2]){
-                        buffAmt = parseFloat(currBuffs[j][0].buff);
+                        if(currBuffs[j][0].hasOwnProperty("damageBuff")){
+                            buffAmt = parseFloat(currBuffs[j][0].damageBuff);
+                        }
+                        else{
+                            extraPotency = currBuffs[j][0];
+                        }
+                        
                     }
                 }
                 //2 length means a stack based buff
@@ -55,6 +110,7 @@ export default class HelloWorldApp extends LightningElement {
                     stacksUsed = 0;
                 }
             }
+            
             //loop for GCD Actions
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 //if there is a special potency
@@ -65,6 +121,16 @@ export default class HelloWorldApp extends LightningElement {
                 //if there is a combo potency
                 else if(currAction.comboAction == lastAction.name && currAction.hasOwnProperty("comboAction")){
                     totalPotency += (parseInt(currAction.comboPotency)) * buffAmt;
+                    if(currAction.hasOwnProperty("comboBonus")){
+                        for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
+                            if(parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])) != -1){
+                                currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]))])
+                            }
+                            else{
+                                currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
+                            }
+                        }
+                    }
                 }
                 //normal potency
                 else{
@@ -72,7 +138,6 @@ export default class HelloWorldApp extends LightningElement {
                 }
                 //save the last action for combo checking
                 lastAction = currAction;
-                currTime += 2.5;
             }
             //if non-GCD and it has a potency, add that potency
             if (currAction.type == "Ability"){
@@ -83,8 +148,6 @@ export default class HelloWorldApp extends LightningElement {
             //reset extra potency
             extraPotency = null;
         }
-
-        console.log(totalPotency)
         this.template.querySelector('lightning-card.potencyLabel').title="Potency: " + totalPotency;
     }
 	}
@@ -105,3 +168,4 @@ export default class HelloWorldApp extends LightningElement {
 		this.mockActionList = [...this.mockActionList];
 	}
 }
+
