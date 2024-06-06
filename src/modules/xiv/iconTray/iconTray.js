@@ -7,6 +7,7 @@ export default class IconTray extends LightningElement {
     jobActions = getJobActions("paladin");
 
     addAction(e){
+        console.log(e.target.location);
         const listElements = [...this.template.querySelectorAll("xiv-job-icon")];
         const currentIndex = listElements.findIndex((e) => e == e.target);
         this.dispatchEvent(new CustomEvent('addaction', {detail: {actionName: e.target.name}}));

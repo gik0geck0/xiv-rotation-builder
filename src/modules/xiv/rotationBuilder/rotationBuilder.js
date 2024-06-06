@@ -1,16 +1,14 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
+import { getJobNames } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
 
 console.log(JobGuide)
 
 export default class HelloWorldApp extends LightningElement {
-
-    //starting action list
-    mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
-
-    job = "paladin";
+	job = "paladin";
+	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 
     //using the calc with the different
     calcWithList(){
@@ -152,11 +150,6 @@ export default class HelloWorldApp extends LightningElement {
         }
         this.template.querySelector('lightning-card.potencyLabel').title="Potency: " + totalPotency;
     }
-
-
-	addHolySpirit() {
-		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
-		this.mockActionList = [...this.mockActionList];
 	}
 
 	addTimelineAction(e) {
@@ -164,10 +157,7 @@ export default class HelloWorldApp extends LightningElement {
 		this.mockActionList = [...this.mockActionList];
 	}
 
-
-
 	removeAction(e){
-		console.log(e.detail.indexToRemove);
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
 	}
