@@ -8,3 +8,9 @@ export function getActionInfo(job, action) {
 export function getJobActions(job) {
     return JobGuide[job].actions;
 }
+
+export function getJobNames(){
+    const data = JobGuide;
+    const outerCatergories = Object.keys(data);
+    return (outerCatergories);
+}
