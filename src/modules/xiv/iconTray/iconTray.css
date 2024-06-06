@@ -1,6 +1,6 @@
 .skills-list {
     list-style-type:none;
-    overflow-y:auto;
+    overflow-y: scroll;
     height:200px;
     width:200px;
     margin: 0;

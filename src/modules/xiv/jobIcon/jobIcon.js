@@ -29,8 +29,11 @@ export default class JobIcon extends LightningElement {
         if(this.location == "tray"){
             return "cursor: grab; display: inline; height: 80px; width: 80; margin: 10px; padding: 10px;";
         }
+        else if (this.location == "selected"){
+            return "cursor: grab; display: inline-flex; height: 80px; width: 80; margin: 10px; padding: 10px; background: red;";
+        }
         else{
-            return "cursor: grab; float:left; height: 80px; width: 80; margin: 10px; padding: 10px;";
+            return "cursor: grab; display: inline-flex; height: 80px; width: 80; margin: 10px; padding: 10px;";
         }
     }
 }

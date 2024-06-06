@@ -18,11 +18,11 @@ export default class IconList extends LightningElement {
         let currIcon = e.target;
         if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
             //currIcon.style.setProperty('background', 'red');
-            currIcon.style.setProperty('height', '100');
+            currIcon.location = "selected";
             this.selectedIcons.push(e.target);
         }
         else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            currIcon.style.background = "none";
+            currIcon.location = "list";
             this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
         }
     }
@@ -49,7 +49,7 @@ export default class IconList extends LightningElement {
     cancellSelected(){
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
         for(let icon of currentIcons){
-            icon.style.background = "none";
+            icon.location = "list";
         }
         this.selectedIcons = [];
     }
