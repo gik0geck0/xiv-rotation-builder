@@ -1,6 +1,9 @@
 .sortable-list {
     list-style-type:none;
     white-space:nowrap;
-    overflow-x:auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    height: 150px;
 }
-

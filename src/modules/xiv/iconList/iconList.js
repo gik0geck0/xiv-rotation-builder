@@ -15,27 +15,41 @@ export default class IconList extends LightningElement {
 
     selectIcon(e){
         let currentIcons = [...this.template.querySelectorAll("xiv-job-icon")];
-        if(!this.selectedIcons.includes(e.target) && currentIcons.includes(e.target)){
-            e.target.style.setProperty('background', 'red');
+        let currIcon = e.target;
+        if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
+            //currIcon.style.setProperty('background', 'red');
+            currIcon.location = "selected";
             this.selectedIcons.push(e.target);
-            console.log(this.selectedIcons);
+        }
+        else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
+            currIcon.location = "list";
+            this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
         }
     }
 
     deleteSelected(){ 
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
-        for(let icon of this.selectedIcons){
-            let index = currentIcons.findIndex((e) => e === icon);
-            this.dispatchEvent(new CustomEvent('removeaction', {detail: {indexToRemove: index}}));
+        let maxIndex = -1; 
+        let index = -1;
+        let length = this.selectedIcons.length;
+        for(let i = 0; i<length; i++){
+            maxIndex = -1;
+            for(let j = 0; j<length; j++){
+                if (maxIndex < currentIcons.findIndex((e) => e === this.selectedIcons[j])){
+                    maxIndex = currentIcons.findIndex((e) => e === this.selectedIcons[j]);
+                    index = j;
+                }
+            }
+            this.dispatchEvent(new CustomEvent('removeaction', {detail: {indexToRemove: maxIndex}}));
+            this.selectedIcons.splice(index, 1);
         }
         this.cancellSelected();
     }
 
     cancellSelected(){
-        console.log(this.selectedIcons);
-        for(let icon of this.selectedIcons){
-            console.log(icon);
-            icon.style.background = "none";
+        const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
+        for(let icon of currentIcons){
+            icon.location = "list";
         }
         this.selectedIcons = [];
     }

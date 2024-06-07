@@ -8,3 +8,7 @@ main {
 h1 {
     color: #1798c1;
 }
+
+.container {
+    display: inline-flex;
+}
