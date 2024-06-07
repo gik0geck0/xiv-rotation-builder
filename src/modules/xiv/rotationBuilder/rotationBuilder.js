@@ -13,7 +13,7 @@ export default class HelloWorldApp extends LightningElement {
     //using the calc with the different
     calcWithList(){
         let timedList = this.findTimes(this.mockActionList);
-        let invalidList = this.validation(this.mockActionList, this.job)
+        //Validation check
         if (invalidList.length === 0){
             this.calculatePotency(timedList,this.job);
         }
@@ -213,6 +213,18 @@ export default class HelloWorldApp extends LightningElement {
 	addTimelineAction(e) {
 		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
 		this.mockActionList = [...this.mockActionList];
+
+        console.log("ADD TIMELINE ACTION")
+
+        //Validation check
+        let invalidList = this.validation(this.mockActionList, this.job)
+        if (invalidList.length === 0){
+            let timedList = this.findTimes(this.mockActionList);
+            this.calculatePotency(timedList,this.job);
+        }
+        else{
+            console.log(invalidList)
+        }
 	}
 
 	removeAction(e){
@@ -224,5 +236,17 @@ export default class HelloWorldApp extends LightningElement {
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
+
+        console.log("SPLICE TIMELINE ACTION")
+
+        //Validation check
+        let invalidList = this.validation(this.mockActionList, this.job)
+        if (invalidList.length === 0){
+            let timedList = this.findTimes(this.mockActionList);
+            this.calculatePotency(timedList,this.job);
+        }
+        else{
+            console.log(invalidList)
+        }
 	}
 }
