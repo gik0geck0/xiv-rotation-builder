@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
 
@@ -8,18 +8,26 @@ console.log(JobGuide)
 
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
+     @api totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 
     //using the calc with the different
     calcWithList(){
         let timedList = this.findTimes(this.mockActionList);
         this.calculatePotency(timedList,this.job);
+
+
     }
     
     findTimes(actionList){
         let currTime = 0;
         let GCDTime = 2.5;
-        let waitTime = 0.7
+        let waitTime = 0.7;
+        if(actionList[0].cast == "Instant"){
+            currTime = waitTime;
+        }else{
+            currTime = parseFloat(actionList[0].cast);
+        }
         let timedList = [[actionList[0],currTime]];
         //time when you can use the skill again
         let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
@@ -47,7 +55,7 @@ export default class HelloWorldApp extends LightningElement {
                 }
                 //if GCD is not up, round to GCD 
                 if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
-                    currTime = lastGCD[1]+GCDTime;
+                    currTime = lastGCD[1]+GCDTime+waitTime;
                 }
                 //push to list and save this action as the last GCD
                 let currPair = [currAction,(Math.round(currTime*10)/10)];
@@ -136,7 +144,7 @@ export default class HelloWorldApp extends LightningElement {
         for (let i = 0; i < timedList.length; i++ ){
             buffAmt = 1;
             let currAction = timedList[i][0];
-            let currTime = timedList[i][1];
+            currTime = timedList[i][1];
             //goes through the list of buffs to see if any are active
             for(let j = 0; j<currBuffs.length; j++ ){
                 //3 length means a start and end time
@@ -189,24 +197,30 @@ export default class HelloWorldApp extends LightningElement {
             //reset extra potency
             extraPotency = null;
         }
-        this.template.querySelector('lightning-card.potencyLabel').title="Potency: " + totalPotency;
+        let PPS = (Math.round((totalPotency/currTime)*100)/100)
+        this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: " + totalPotency;
+        this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: " + PPS;
+
     }
 	
 
 	addTimelineAction(e) {
 		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
 		this.mockActionList = [...this.mockActionList];
+        this.calcWithList();
 	}
 
 	removeAction(e){
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
+        this.calcWithList();
 	}
 
 	spliceTimelineAction(e) {
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
+        this.calcWithList();
 	}
 }
 
