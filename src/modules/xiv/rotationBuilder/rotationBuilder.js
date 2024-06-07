@@ -170,6 +170,7 @@ export default class HelloWorldApp extends LightningElement {
                     stacksUsed = 0;
                 }
             }
+            
             //loop for GCD Actions
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 //if there is a special potency
