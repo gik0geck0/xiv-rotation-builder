@@ -198,9 +198,12 @@ export default class HelloWorldApp extends LightningElement {
 
 	validation(actionList, job){
         if (actionList.length === 0){
-            this.template.querySelector('lightning-card.potencyLabel').title="Potency: Add actions to recieve a potency.";
+            this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Add actions to recieve a potency.";
+            this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Add actions to recieve a pps.";
         }
         else{
+            let timedList = this.findTimes(this.mockActionList);
+
             //Adding initial gauge amounts to a list so they can be tracked
             var gaugeAmounts = []
             for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
@@ -210,14 +213,23 @@ export default class HelloWorldApp extends LightningElement {
 
             //Checking validation
             var invalidActionList = []
-            for (let i = 0; i < actionList.length; i++){
-                var currAction = actionList[i]
+            for (let i = 0; i < timedList.length; i++){
+                var currAction = timedList[i][0]
 
                 //Checking gauge requirements
                 for (let j = 0; j < gaugeAmounts.length; j++){
+                    //Storing new gauge amounts
+                    if (currAction.cast === 'Instant'){
+                        gaugeAmounts[Object.keys(gaugeAmounts[j])] = 5 * (Math.floor((timedList[i][1] - 0.7)/2.5))
+                    }
+                    else{
+                        gaugeAmounts[Object.keys(gaugeAmounts[j])] = 5 * (Math.floor((timedList[i][1] - currAction.cast)/2.5))
+                    }
+
+                    //Checking against new gauge amounts for enough to cast
                     var gaugeName = Object.keys(gaugeAmounts[j])[0]
                     if (currAction.hasOwnProperty(gaugeName)){
-                        if (gaugeAmounts[j][gaugeName] + currAction[gaugeName] < 0){
+                        if ((gaugeAmounts[Object.keys(gaugeAmounts[j])] + currAction[gaugeName]) < 0){
                             invalidActionList.push([currAction, i, `Not enough ${gaugeName} to cast action.`])
                         }
                         else{
@@ -242,7 +254,8 @@ export default class HelloWorldApp extends LightningElement {
             //Changing the highlights of the actions that are invalid
             if (invalidActionList.length > 0){
                 //Make the potency display area tell the user there are invalid actions
-                this.template.querySelector('lightning-card.potencyLabel').title="Potency: Unable to calculate potency with invalid action(s).";
+                this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Unable to calculate potency with invalid action(s).";
+                this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
                 
                 console.log(invalidActionList)
                 /*
@@ -255,7 +268,6 @@ export default class HelloWorldApp extends LightningElement {
             }
             //Run the calculate if valid
             else{
-                let timedList = this.findTimes(this.mockActionList);
                 this.calculatePotency(timedList,this.job);
             }
         }
