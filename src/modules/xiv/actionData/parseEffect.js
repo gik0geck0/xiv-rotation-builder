@@ -175,7 +175,7 @@ export function parseEffect(action){
         //Gauge Cost check
         if (line.includes('Gauge')){
             var gaugeName = ''
-            for (let j = 0; j < line.indexOf('Gauge') + 1; j++){
+            for (let j = 0; j < line.indexOf('Gauge'); j++){
                 gaugeName += line[j]
             }
             action[gaugeName] = line[line.indexOf('Cost:') + 1]

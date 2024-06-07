@@ -13,7 +13,13 @@ export default class HelloWorldApp extends LightningElement {
     //using the calc with the different
     calcWithList(){
         let timedList = this.findTimes(this.mockActionList);
-        this.calculatePotency(timedList,this.job);
+        let invalidList = this.validation(this.mockActionList, this.job)
+        if (invalidList.length === 0){
+            this.calculatePotency(timedList,this.job);
+        }
+        else{
+            console.log(invalidList)
+        }
     }
     
     findTimes(actionList){
@@ -153,14 +159,14 @@ export default class HelloWorldApp extends LightningElement {
 
 	validation(actionList, job){
         var gaugeAmounts = []
-        var invalidActionList = []
 
         //Adding initial gauge amounts to a list so they can be tracked
-        console.log(Object.keys(JobGuide[job].gauges))
         for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
             var currGauge = Object.keys(JobGuide[job].gauges)[i]
-            gaugeAmounts.push([currGauge, JobGuide[job].gauges[currGauge].intial])
+            gaugeAmounts.push({[currGauge] : 0})
         }
+
+        var invalidActionList = []
 
         //Checking validation
 		for (let i = 0; i < actionList.length; i++){
@@ -168,14 +174,14 @@ export default class HelloWorldApp extends LightningElement {
 
             //Checking gauge requirements
             for (let j = 0; j < gaugeAmounts.length; j++){
-                var gaugeName = gaugeAmounts[j][0]
-                if (actionList.hasOwnProperty(gaugeName)){
-                    if (gaugeAmounts[j][0] - currAction[gaugeName] < 0){
+                var gaugeName = Object.keys(gaugeAmounts[j])[0]
+                if (currAction.hasOwnProperty(gaugeName)){
+                    if (gaugeAmounts[j][gaugeName] - currAction[gaugeName] < 0){
                         //NEED TO STORE WHERE IN MOCKACTIONLIST THE ERROR OCCURS
                         invalidActionList.push([currAction, `Not enough ${gaugeName} to cast action.`])
                     }
                     else{
-                        gaugeAmounts[j][0] -= currAction[gaugeName]
+                        gaugeAmounts[j][gaugeName] -= currAction[gaugeName]
                     }
                     break;
                 }
