@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
 import { getJobActions } from 'xiv/actionRepository';
@@ -7,6 +7,7 @@ import { getJobActions } from 'xiv/actionRepository';
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
 	jobActions = getJobActions(this.job);
+  totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 	jobList = getJobNames();
 
@@ -21,10 +22,19 @@ export default class HelloWorldApp extends LightningElement {
     calcWithList(){
         let timedList = this.findTimes(this.mockActionList);
         this.calculatePotency(timedList,this.job);
+
+
     }
     
     findTimes(actionList){
         let currTime = 0;
+        let GCDTime = 2.5;
+        let waitTime = 0.7;
+        if(actionList[0].cast == "Instant"){
+            currTime = waitTime;
+        }else{
+            currTime = parseFloat(actionList[0].cast);
+        }
         let timedList = [[actionList[0],currTime]];
         //time when you can use the skill again
         let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
@@ -34,7 +44,7 @@ export default class HelloWorldApp extends LightningElement {
         }
         for(let i = 1; i < actionList.length; i++){
             let currAction = actionList[i];
-            //if on CD
+            //if on CD, go until CD is up
             for(let j = 0; j < usedActions.length; j++){
                 if(currAction.name == usedActions[j][0] && currTime < usedActions[j][1]){
                     currTime = usedActions[j][1];
@@ -42,67 +52,115 @@ export default class HelloWorldApp extends LightningElement {
             }
             //normal time incrementing logic
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
-                currTime += 0.7;
-                if(currTime <= lastGCD[1]+2.5 && lastGCD[1] != -1){
-                    currTime = lastGCD[1]+2.5
+                //if instant, just add the wait time
+                if(currAction.cast == "Instant"){
+                    currTime += waitTime;
                 }
+                //if not, add cast time
+                if(currAction.cast != "Instant"){
+                    currTime += parseFloat(currAction.cast);
+                }
+                //if GCD is not up, round to GCD 
+                if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
+                    currTime = lastGCD[1]+GCDTime+waitTime;
+                }
+                //push to list and save this action as the last GCD
                 let currPair = [currAction,(Math.round(currTime*10)/10)];
                 timedList.push(currPair);
                 lastGCD = currPair;
             }
             else{
-                currTime += 0.7;
+                //if it's a weavable, just add wait time and push it to the list
+                currTime += waitTime;
                 let currPair = [currAction,(Math.round(currTime*10)/10)];
                 timedList.push(currPair);
             }
-            usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)]);
-
-            
+            //next, we have to add it to the actions used list to see when we can use it again
+            //curr time is already the time it was before the skill + the cast time or wait time
+            if(currAction.cast != "Instant"){
+                //so if the cast time is greater than recast, it means that it will available
+                //by the time cast is up
+                if(parseFloat(currAction.recast) >= parseFloat(currAction.cast)){
+                    usedActions.push([currAction.name, currTime]);
+                }
+                //otherwise, it will just the the time before the skill plus recast
+                else{
+                    usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - parseFloat(currAction.cast));
+                }
+            }
+            //and if it is instant cast, it will just be the time before the cast plus the recast
+            else{
+                usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - waitTime);
+            }
 
         }
         return timedList;
         
     }
 
-    calculatePotency(actionList, job){
-        let currTime = 0;
-        //Calculation
-        let totalPotency = 0;
+    getBuffs(timedList){
         let currBuffs = [];
-        let buffAmt = 1;
-        let lastAction = {};
-        let extraPotency = null;
-        let stacksUsed = 0;
-        //Go through every item in the list
-        for (let i = 0; i < actionList.length; i++ ){
-            buffAmt = 1;
-            let currAction = actionList[i][0];
-            let currTime = actionList[i][1];
-
-            //check if it starts a % based buff
+        let lastAction = null;
+        for(let i = 0; i < timedList.length; i++ ){
+            let currAction = timedList[i][0];
+            let currTime = timedList[i][1];
             if(currAction.hasOwnProperty("damageBuff")){
-                currBuffs.push([currAction,currTime,currTime+parseInt(currAction.duration)])
+                currBuffs.push([currAction,currTime,currTime+parseFloat(currAction.duration)])
             }
             //check if it grants anything
             if(currAction.hasOwnProperty("grants")){
                 for(let k = 0; k <Object.keys(currAction.grants).length; k++){
                     if(parseInt((currAction.grants[Object.keys(currAction.grants)[k]])) != -1){
-                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseInt((currAction.grants[Object.keys(currAction.grants)[k]]))])
+                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseFloat((currAction.grants[Object.keys(currAction.grants)[k]]))])
                     }
                     else{
                         currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
                     }
                 }
             }
+            if(lastAction != null){
+                if(currAction.hasOwnProperty("comboBonus") && currAction.comboAction == lastAction.name){
+                    for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
+                        if(parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])) != -1){
+                            currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseFloat((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]))])
+                        }
+                        else{
+                            currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
+                        }
+                    }
+                }
+            }
+            if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
+                lastAction = currAction;
+            }
+        }
+        return currBuffs;
+    }
+
+    calculatePotency(timedList, job){
+        let currTime = 0;
+        //Calculation
+        let totalPotency = 0;
+        //get all buffs
+        let currBuffs = this.getBuffs(timedList);
+        let buffAmt = 1;
+        let lastAction = {};
+        let extraPotency = null;
+        let stacksUsed = 0;
+        //Go through every item in the list
+        for (let i = 0; i < timedList.length; i++ ){
+            buffAmt = 1;
+            let currAction = timedList[i][0];
+            currTime = timedList[i][1];
             //goes through the list of buffs to see if any are active
             for(let j = 0; j<currBuffs.length; j++ ){
                 //3 length means a start and end time
                 if(currBuffs[j].length == 3){
-                    if(currTime <= currBuffs[j][2]){
+                    if(currTime <= currBuffs[j][2] && currTime >= currBuffs[j][1]){
                         if(currBuffs[j][0].hasOwnProperty("damageBuff")){
                             buffAmt = parseFloat(currBuffs[j][0].damageBuff);
                         }
-                        else{
+                        else if(currAction.hasOwnProperty(currBuffs[j][0])){
                             extraPotency = currBuffs[j][0];
                         }
                         
@@ -112,7 +170,9 @@ export default class HelloWorldApp extends LightningElement {
                 else{
                     currBuffs[j][1] += stacksUsed;
                     if(currBuffs[j][1] >= 1){
-                        extraPotency = currBuffs[j][0];
+                        if(currAction.hasOwnProperty([currBuffs[j][0]])){
+                            extraPotency = currBuffs[j][0];
+                        }
                     }
                     stacksUsed = 0;
                 }
@@ -121,27 +181,17 @@ export default class HelloWorldApp extends LightningElement {
             //loop for GCD Actions
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 //if there is a special potency
-                if(extraPotency != null && currAction.hasOwnProperty([extraPotency])){
-                    totalPotency += (parseInt(currAction[extraPotency])) * buffAmt;
+                if(extraPotency != null){
+                    totalPotency += (parseFloat(currAction[extraPotency])) * buffAmt;
                     stacksUsed = -1;
                 }
                 //if there is a combo potency
                 else if(currAction.comboAction == lastAction.name && currAction.hasOwnProperty("comboAction")){
-                    totalPotency += (parseInt(currAction.comboPotency)) * buffAmt;
-                    if(currAction.hasOwnProperty("comboBonus")){
-                        for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
-                            if(parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])) != -1){
-                                currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]))])
-                            }
-                            else{
-                                currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
-                            }
-                        }
-                    }
+                    totalPotency += (parseFloat(currAction.comboPotency)) * buffAmt;
                 }
                 //normal potency
                 else{
-                    totalPotency += (parseInt(currAction.potency)) * buffAmt;
+                    totalPotency += (parseFloat(currAction.potency)) * buffAmt;
                 }
                 //save the last action for combo checking
                 lastAction = currAction;
@@ -149,29 +199,35 @@ export default class HelloWorldApp extends LightningElement {
             //if non-GCD and it has a potency, add that potency
             if (currAction.type == "Ability"){
                 if(currAction.hasOwnProperty("potency")){
-                    totalPotency += (parseInt(currAction.potency)) * buffAmt;
+                    totalPotency += (parseFloat(currAction.potency)) * buffAmt;
                 }
             }
             //reset extra potency
             extraPotency = null;
         }
-        this.template.querySelector('lightning-card.potencyLabel').title="Potency: " + totalPotency;
+        let PPS = (Math.round((totalPotency/currTime)*100)/100)
+        this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: " + totalPotency;
+        this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: " + PPS;
+
     }
 
 	addTimelineAction(e) {
 		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
 		this.mockActionList = [...this.mockActionList];
+        this.calcWithList();
 	}
 
 	removeAction(e){
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
+        this.calcWithList();
 	}
 
 	spliceTimelineAction(e) {
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
+        this.calcWithList();
 	}
 }
 

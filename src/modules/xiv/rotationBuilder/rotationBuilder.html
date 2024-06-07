@@ -1,6 +1,6 @@
 <template>
-    <img src="/assets/recipes-logo.png" alt="logo" />
-    <lightning-icon icon-name="action:approval" title="Approved"></lightning-icon>
+    
+    
     <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
     <label for="jobSelector">Selected job is:</label>
     <select name="jobSelector" id="jobSelector" onchange={changeJob}>
@@ -13,6 +13,6 @@
         <xiv-icon-tray class="tray" onaddaction={addTimelineAction} job={job} job-actions={jobActions}></xiv-icon-tray>
         <xiv-icon-list class="list" onspliceaction={spliceTimelineAction} onremoveaction={removeAction} action-list={mockActionList} job={job} style="display:inline-block;"></xiv-icon-list>
     </div>
-    <lightning-button label="Calculate" onclick={calcWithList}></lightning-button>
-    <lightning-card icon-name="utility:connected_apps" class="potencyLabel" title="Potency:"></lightning-card>
+    <lightning-card icon-name="utility:connected_apps" class="potencyLabel" title="Total Potency:"></lightning-card>
+    <lightning-card icon-name="utility:connected_apps" class="ppsLabel" title="Potency Per Second:"></lightning-card>
 </template>
