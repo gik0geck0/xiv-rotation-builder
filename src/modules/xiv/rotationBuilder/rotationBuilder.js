@@ -1,6 +1,7 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
+import IconList from 'xiv/iconList'
 
 import { JobGuide } from "xiv/actionData";
 
@@ -158,78 +159,87 @@ export default class HelloWorldApp extends LightningElement {
     }
 
 	validation(actionList, job){
-        var gaugeAmounts = []
-
-        //Adding initial gauge amounts to a list so they can be tracked
-        for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
-            var currGauge = Object.keys(JobGuide[job].gauges)[i]
-            gaugeAmounts.push({[currGauge] : 0})
+        if (actionList.length === 0){
+            this.template.querySelector('lightning-card.potencyLabel').title="Potency: Add actions to recieve a potency.";
         }
+        else{
+            //Adding initial gauge amounts to a list so they can be tracked
+            var gaugeAmounts = []
+            for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
+                var currGauge = Object.keys(JobGuide[job].gauges)[i]
+                gaugeAmounts.push({[currGauge] : 0})
+            }
 
-        var invalidActionList = []
+            //Checking validation
+            var invalidActionList = []
+            for (let i = 0; i < actionList.length; i++){
+                var currAction = actionList[i]
 
-        //Checking validation
-		for (let i = 0; i < actionList.length; i++){
-            var currAction = actionList[i]
-
-            //Checking gauge requirements
-            for (let j = 0; j < gaugeAmounts.length; j++){
-                var gaugeName = Object.keys(gaugeAmounts[j])[0]
-                if (currAction.hasOwnProperty(gaugeName)){
-                    if (gaugeAmounts[j][gaugeName] - currAction[gaugeName] < 0){
-                        //NEED TO STORE WHERE IN MOCKACTIONLIST THE ERROR OCCURS
-                        invalidActionList.push([currAction, `Not enough ${gaugeName} to cast action.`])
+                //Checking gauge requirements
+                for (let j = 0; j < gaugeAmounts.length; j++){
+                    var gaugeName = Object.keys(gaugeAmounts[j])[0]
+                    if (currAction.hasOwnProperty(gaugeName)){
+                        if (gaugeAmounts[j][gaugeName] - currAction[gaugeName] < 0){
+                            //NEED TO STORE WHERE IN MOCKACTIONLIST THE ERROR OCCURS
+                            invalidActionList.push([currAction, i, `Not enough ${gaugeName} to cast action.`])
+                        }
+                        else{
+                            gaugeAmounts[j][gaugeName] -= currAction[gaugeName]
+                        }
+                        break;
                     }
-                    else{
-                        gaugeAmounts[j][gaugeName] -= currAction[gaugeName]
+                } 
+
+                //Buff requirement check
+                var buffList = []
+                if (currAction.hasOwnProperty('buffRequirement')){
+                    if (!(buffList.contains(currAction.buffRequirement))){
+                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
                     }
-                    break;
-                }
-            } 
-
-            /*
-            var buffList = []
-
-            //Buff requirement check
-            if (currAction.hasOwnProperty('buffRequirement')){
-                if (!(buffList.contains(currAction.buffRequirement))){
-                    invalidActionList.push([currAction, 'The required buff is not active at this time.'])
-                }
-                else if(buffList.contains(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
-                    invalidActionList.push([currAction, 'You are missing the required stacks of this buff.'])
+                    else if(buffList.contains(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
+                        invalidActionList.push([currAction, i,'You are missing the required stacks of this buff.'])
+                    }
                 }
             }
-            */
+
+            //Changing the highlights of the actions that are invalid
+            if (invalidActionList.length > 0){
+                //Make the potency display area tell the user there are invalid actions
+                this.template.querySelector('lightning-card.potencyLabel').title="Potency: Unable to calculate potency with invalid action(s).";
+                
+                //Highlight the actions red if there is an error
+                let currentIcons = [...IconList.template.querySelectorAll("xiv-job-icon")];
+                let currIcon = e.target;
+                if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
+                    currIcon.location = "selected";
+                    this.selectedIcons.push(e.target);
+                }
+                else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
+                    currIcon.location = "list";
+                    this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
+                }
+                
+            }
+            //Run the calculate if valid
+            else{
+                let timedList = this.findTimes(this.mockActionList);
+                this.calculatePotency(timedList,this.job);
+            }
         }
-
-        return invalidActionList
-	}
-
-	addHolySpirit() {
-		this.mockActionList.push(getActionInfo(this.job, "Holy Spirit"));
-		this.mockActionList = [...this.mockActionList];
 	}
 
 	addTimelineAction(e) {
 		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
 		this.mockActionList = [...this.mockActionList];
 
-        console.log("ADD TIMELINE ACTION")
-
-        //Validation check
-        let invalidList = this.validation(this.mockActionList, this.job)
-        if (invalidList.length === 0){
-            let timedList = this.findTimes(this.mockActionList);
-            this.calculatePotency(timedList,this.job);
-        }
-        else{
-            console.log(invalidList)
-        }
+        this.validation(this.mockActionList, this.job)
 	}
 
 	removeAction(e){
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
+
+        this.validation(this.mockActionList, this.job)
 	}
 
 	spliceTimelineAction(e) {
@@ -237,16 +247,6 @@ export default class HelloWorldApp extends LightningElement {
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
 
-        console.log("SPLICE TIMELINE ACTION")
-
-        //Validation check
-        let invalidList = this.validation(this.mockActionList, this.job)
-        if (invalidList.length === 0){
-            let timedList = this.findTimes(this.mockActionList);
-            this.calculatePotency(timedList,this.job);
-        }
-        else{
-            console.log(invalidList)
-        }
+        this.validation(this.mockActionList, this.job)
 	}
 }
