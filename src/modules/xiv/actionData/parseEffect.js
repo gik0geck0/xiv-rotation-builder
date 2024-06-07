@@ -88,7 +88,7 @@ export function parseEffect(action){
                 //Check for gauge increases INSIDE COMBO BONUS
                 if (bonusEffect.includes('Gauge')){
                     var gaugeName = ''
-                    for (let j = bonusEffect.indexOf('Increases') + 1; j < bonusEffect.indexOf('Gauge') + 1; j++){
+                    for (let j = bonusEffect.indexOf('Increases') + 1; j < bonusEffect.indexOf('Gauge'); j++){
                         gaugeName += bonusEffect[j]
                     }
                     action.comboBonus = {...action.comboBonus , [gaugeName] : bonusEffect[bonusEffect.indexOf('Gauge') + 2]}

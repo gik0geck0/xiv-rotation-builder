@@ -2,7 +2,6 @@ import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
-import jobStaticData from "src/modules/xiv/actionData/jobStaticData";
 
 console.log(JobGuide)
 
@@ -15,14 +14,7 @@ export default class HelloWorldApp extends LightningElement {
 
     //using the calc with the different
     calcWithList(){
-        //THIS IS FOR TESTING PURPOSES. MOVE TO WHERE YOU ADD THE SKILLS!!!
-        var errorArray = this.validation(this.mockActionList, this.job)
-        if (errorArray.length >= 1){
-            this.calculatePotency(this.mockActionList,this.job);
-        }
-        else{
-            console.log(errorArray)
-        }
+        this.calculatePotency(this.mockActionList,this.job);
     }
     
 
@@ -104,11 +96,10 @@ export default class HelloWorldApp extends LightningElement {
         var invalidActionList = []
 
         //Adding initial gauge amounts to a list so they can be tracked
-        console.log(jobStaticData.paladin)
-        console.log(Object.keys(jobStaticData[job].gauges))
-        for (let i = 0; i < Object.keys(jobStaticData[job].gauges).length; i++){
-            var currGauge = Object.keys(jobStaticData[job].gauges)[i]
-            gaugeAmounts.push([currGauge, jobStaticData[job].gauges[currGauge].intial])
+        console.log(Object.keys(JobGuide[job].gauges))
+        for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
+            var currGauge = Object.keys(JobGuide[job].gauges)[i]
+            gaugeAmounts.push([currGauge, JobGuide[job].gauges[currGauge].intial])
         }
 
         //Checking validation
@@ -116,17 +107,21 @@ export default class HelloWorldApp extends LightningElement {
             var currAction = actionList[i]
 
             //Checking gauge requirements
-            for (let j = 0; j < gaugeList.length; j++){
-                var gaugeName = gaugeList[j][0] + 'Gauge' //REMOVE GAUGE FROM THE NAME IN PARSE EFFECT
+            for (let j = 0; j < gaugeAmounts.length; j++){
+                var gaugeName = gaugeAmounts[j][0]
                 if (actionList.hasOwnProperty(gaugeName)){
-                    if (gaugeList[j][0] - currAction[gaugeName] < 0){
+                    if (gaugeAmounts[j][0] - currAction[gaugeName] < 0){
                         //NEED TO STORE WHERE IN MOCKACTIONLIST THE ERROR OCCURS
                         invalidActionList.push([currAction, `Not enough ${gaugeName} to cast action.`])
+                    }
+                    else{
+                        gaugeAmounts[j][0] -= currAction[gaugeName]
                     }
                     break;
                 }
             } 
 
+            /*
             var buffList = []
 
             //Buff requirement check
@@ -138,6 +133,7 @@ export default class HelloWorldApp extends LightningElement {
                     invalidActionList.push([currAction, 'You are missing the required stacks of this buff.'])
                 }
             }
+            */
         }
 
         return invalidActionList
