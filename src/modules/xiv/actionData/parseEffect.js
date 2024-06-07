@@ -12,7 +12,7 @@ export function parseEffect(action){
     //Go through every line of the effect
     for (let i = 0; i < splitEffect.length; i++){
         let line = splitEffect[i];
-        if (line.includes('potency') && !(line.includes('Increases'))){
+        if (line.includes('potency') && !(line.includes('Increases')) && !(line.includes('Additional'))){
             if (!((line[line.indexOf('potency') + 2]) === undefined)){
                 action.potency = ((line[line.indexOf('potency') + 2]).replace('.',''))
             }
@@ -173,12 +173,19 @@ export function parseEffect(action){
         }
 
         //Gauge Cost check
-        if (line.includes('Gauge')){
+        if (line.includes('Gauge') && !(line.includes('Increases'))){
             var gaugeName = ''
             for (let j = 0; j < line.indexOf('Gauge'); j++){
                 gaugeName += line[j]
             }
-            action[gaugeName] = line[line.indexOf('Cost:') + 1]
+            action[gaugeName] = -line[line.indexOf('Cost:') + 1]
+        }
+        else if (line.includes('Gauge') && line.includes('Increases')){
+            var gaugeName = ''
+            for (let j = line.indexOf('Increases') + 1; j < line.indexOf('Gauge'); j++){
+                gaugeName += line[j]
+            }
+            action[gaugeName] = line[line.indexOf('Gauge') + 2].replace('.', '')
         }
 
         //Percentage increase in damage check

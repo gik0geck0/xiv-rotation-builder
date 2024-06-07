@@ -9,7 +9,7 @@ console.log(JobGuide)
 
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
-     @api totalPotency = 0;
+    @api totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
     
     findTimes(actionList){
@@ -217,25 +217,24 @@ export default class HelloWorldApp extends LightningElement {
                 for (let j = 0; j < gaugeAmounts.length; j++){
                     var gaugeName = Object.keys(gaugeAmounts[j])[0]
                     if (currAction.hasOwnProperty(gaugeName)){
-                        if (gaugeAmounts[j][gaugeName] - currAction[gaugeName] < 0){
-                            //NEED TO STORE WHERE IN MOCKACTIONLIST THE ERROR OCCURS
+                        if (gaugeAmounts[j][gaugeName] + currAction[gaugeName] < 0){
                             invalidActionList.push([currAction, i, `Not enough ${gaugeName} to cast action.`])
                         }
                         else{
-                            gaugeAmounts[j][gaugeName] -= currAction[gaugeName]
+                            gaugeAmounts[j][gaugeName] += currAction[gaugeName]
                         }
                         break;
                     }
                 } 
 
                 //Buff requirement check
-                var buffList = []
+                var buffList = this.getBuffs(this.findTimes(this.mockActionList))
                 if (currAction.hasOwnProperty('buffRequirement')){
-                    if (!(buffList.contains(currAction.buffRequirement))){
+                    if (!(buffList.includes(currAction.buffRequirement))){
                         invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
                     }
-                    else if(buffList.contains(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
-                        invalidActionList.push([currAction, i,'You are missing the required stacks of this buff.'])
+                    else if(buffList.includes(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
+                        invalidActionList.push([currAction, i, 'You are missing the required stacks of this buff.'])
                     }
                 }
             }
@@ -245,11 +244,14 @@ export default class HelloWorldApp extends LightningElement {
                 //Make the potency display area tell the user there are invalid actions
                 this.template.querySelector('lightning-card.potencyLabel').title="Potency: Unable to calculate potency with invalid action(s).";
                 
+                console.log(invalidActionList)
+                /*
                 //Highlight the actions red if there is an error
                 let currentIcons = [...IconList.template.querySelectorAll("xiv-job-icon")];
                 for (let i = 0; i < invalidActionList.length; i++){
                     currentIcons[invalidActionList[1]].location = 'invalid'
                 }
+                */
             }
             //Run the calculate if valid
             else{
