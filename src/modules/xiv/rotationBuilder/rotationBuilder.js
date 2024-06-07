@@ -209,16 +209,9 @@ export default class HelloWorldApp extends LightningElement {
                 
                 //Highlight the actions red if there is an error
                 let currentIcons = [...IconList.template.querySelectorAll("xiv-job-icon")];
-                let currIcon = e.target;
-                if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-                    currIcon.location = "selected";
-                    this.selectedIcons.push(e.target);
+                for (let i = 0; i < invalidActionList.length; i++){
+                    currentIcons[invalidActionList[1]].location = 'invalid'
                 }
-                else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-                    currIcon.location = "list";
-                    this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
-                }
-                
             }
             //Run the calculate if valid
             else{
