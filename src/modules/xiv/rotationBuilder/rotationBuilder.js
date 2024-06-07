@@ -1,16 +1,33 @@
 import { LightningElement, api } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
+import { getJobActions } from 'xiv/actionRepository';
 import IconList from 'xiv/iconList'
 
 import { JobGuide } from "xiv/actionData";
 
-console.log(JobGuide)
 
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
-    @api totalPotency = 0;
+	jobActions = getJobActions(this.job);
+  totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
+	jobList = getJobNames();
+
+	changeJob(e){
+		this.job = this.template.querySelector("select").value;
+		this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));
+		this.jobActions = getJobActions(this.job);
+		//this.dispatchEvent(new CustomEvent('changeJob', {detail: {job: this.job}}));
+	}
+
+    //using the calc with the different
+    calcWithList(){
+        let timedList = this.findTimes(this.mockActionList);
+        this.calculatePotency(timedList,this.job);
+
+
+    }
     
     findTimes(actionList){
         let currTime = 0;

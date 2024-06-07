@@ -2,9 +2,15 @@
     
     
     <lightning-card icon-name="utility:connected_apps" title="Hello World!"></lightning-card>
-    <p>Selected job is: {job}</p>
-    <div class="container">
-        <xiv-icon-tray class="tray" onaddaction={addTimelineAction} job={job}></xiv-icon-tray>
+    <label for="jobSelector">Selected job is:</label>
+    <select name="jobSelector" id="jobSelector" onchange={changeJob}>
+        <template for:each={jobList} for:item="jobName" for:index="idx">
+            <option key={jobName.t} value={jobName}>{jobName}</option>
+        </template>
+    </select>
+    <p></p>
+    <div id="container" class="container">
+        <xiv-icon-tray class="tray" onaddaction={addTimelineAction} job={job} job-actions={jobActions}></xiv-icon-tray>
         <xiv-icon-list class="list" onspliceaction={spliceTimelineAction} onremoveaction={removeAction} action-list={mockActionList} job={job} style="display:inline-block;"></xiv-icon-list>
     </div>
     <lightning-card icon-name="utility:connected_apps" class="potencyLabel" title="Total Potency:"></lightning-card>
