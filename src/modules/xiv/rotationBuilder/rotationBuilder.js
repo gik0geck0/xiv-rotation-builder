@@ -117,16 +117,16 @@ export default class HelloWorldApp extends LightningElement {
 
             //Checking gauge requirements
             for (let j = 0; j < gaugeList.length; j++){
-                var gaugeName = gaugeList[j][0] + 'Gauge'
+                var gaugeName = gaugeList[j][0] + 'Gauge' //REMOVE GAUGE FROM THE NAME IN PARSE EFFECT
                 if (actionList.hasOwnProperty(gaugeName)){
                     if (gaugeList[j][0] - currAction[gaugeName] < 0){
-                        invalidActionList.push([currAction, 'Not enough gauge to cast action.'])
+                        //NEED TO STORE WHERE IN MOCKACTIONLIST THE ERROR OCCURS
+                        invalidActionList.push([currAction, `Not enough ${gaugeName} to cast action.`])
                     }
                     break;
                 }
             } 
-            /*
-            //TEMP BUFF LIST REPLACE WITH JUSTIN DATA!!!!!!
+
             var buffList = []
 
             //Buff requirement check
@@ -138,7 +138,6 @@ export default class HelloWorldApp extends LightningElement {
                     invalidActionList.push([currAction, 'You are missing the required stacks of this buff.'])
                 }
             }
-            */
         }
 
         return invalidActionList
