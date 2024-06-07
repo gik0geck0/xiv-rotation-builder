@@ -258,6 +258,7 @@ export default class HelloWorldApp extends LightningElement {
                 this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
                 
                 console.log(invalidActionList)
+                
                 /*
                 //Highlight the actions red if there is an error
                 let currentIcons = [...IconList.template.querySelectorAll("xiv-job-icon")];
