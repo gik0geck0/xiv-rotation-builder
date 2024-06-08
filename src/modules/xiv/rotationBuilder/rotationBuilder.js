@@ -2,15 +2,15 @@ import { LightningElement, api } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
 import { getJobActions } from 'xiv/actionRepository';
-import IconList from 'xiv/iconList'
 
 import { JobGuide } from "xiv/actionData";
 
+console.log(JobGuide)
 
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
 	jobActions = getJobActions(this.job);
-  totalPotency = 0;
+    totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 	jobList = getJobNames();
 
@@ -215,6 +215,8 @@ export default class HelloWorldApp extends LightningElement {
     }
 
 	validation(actionList, job){
+        console.log(actionList)
+        
         if (actionList.length === 0){
             this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Add actions to recieve a potency.";
             this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Add actions to recieve a pps.";
@@ -277,13 +279,12 @@ export default class HelloWorldApp extends LightningElement {
                 
                 console.log(invalidActionList)
                 
-                /*
                 //Highlight the actions red if there is an error
-                let currentIcons = [...IconList.template.querySelectorAll("xiv-job-icon")];
                 for (let i = 0; i < invalidActionList.length; i++){
-                    currentIcons[invalidActionList[1]].location = 'invalid'
+                    console.log(this.mockActionList[invalidActionList[i][1]])
+                    this.mockActionList[invalidActionList[i][1]].location = 'invalid';
+                    this.mockActionList = [...this.mockActionList]
                 }
-                */
             }
             //Run the calculate if valid
             else{

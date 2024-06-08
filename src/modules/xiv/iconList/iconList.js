@@ -61,6 +61,7 @@ export default class IconList extends LightningElement {
     }
 
     dragStart(e) {
+        console.log(actionList)
         this.draggedItem = e.target;
     }
 

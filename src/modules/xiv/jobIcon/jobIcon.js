@@ -34,13 +34,13 @@ export default class JobIcon extends LightningElement {
 
     get liComputedSize(){
         if(this.location == "tray"){
-            return "cursor: grab; display: inline; height: 80px; width: 80; margin: 10px; padding: 10px;";
+            return "cursor: grab; display: inline; height: 80px; width: 80px; margin: 10px; padding: 10px;";
         }
         else if (this.location == "selected"){
-            return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-bottom: 40px; background: red; vertical-align: bottom; border";
+            return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-bottom: 40px; background: blue; vertical-align: bottom; border";
         }
         else if (this.location == 'invalid'){
-            return "cursor: grab; display: inline-flex; height: 80px; width: 80; margin: 10px; padding: 10px; background: red;";
+            return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-bottom: 40px; background: red; vertical-align: bottom; border";
         }
         else{
             return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-bottom: 40px; vertical-align: bottom;";
