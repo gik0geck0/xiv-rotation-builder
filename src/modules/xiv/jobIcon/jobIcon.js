@@ -23,10 +23,10 @@ export default class JobIcon extends LightningElement {
         }
         else{
             if(this.type == "Ability"){
-                return "height:50px; width:50px; margin:0px; padding:5px;";
+                return "height:50px; width:50px; margin:0px; padding:5px; vertical-align: top; ";
             }
             else{
-                return "height:70px; width:70px; margin:0px; padding:5px; margin-top:30px";
+                return "height:70px; width:70px; margin:0px; padding:5px; ";
             }
             
         }
@@ -37,10 +37,20 @@ export default class JobIcon extends LightningElement {
             return "cursor: grab; display: inline; height: 80px; width: 80; margin: 10px; padding: 10px;";
         }
         else if (this.location == "selected"){
-            return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-bottom: 40px; background: red; vertical-align: bottom; border";
+            if(this.type == "Ability"){
+                return "cursor: grab; display: inline-flex; height:50px; width:50px; margin:0px; padding:0px; background: skyblue; vertical-align: top; margin-top: 10px;";
+        }
+            else{
+                return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; background: skyblue; margin-top: 30px;";
+         }
         }
         else{
-            return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-bottom: 40px; vertical-align: bottom;";
+            if(this.type == "Ability"){
+                return "cursor: grab; display: inline-flex; height:50px; width:50px; margin:0px; padding:0px; vertical-align: top;  margin-top: 10px;";
+        }
+            else{
+                return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-top: 30px;";
+         }
         }
     }
 }
