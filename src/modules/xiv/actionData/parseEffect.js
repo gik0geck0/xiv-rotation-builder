@@ -190,7 +190,10 @@ export function parseEffect(action){
 
         //Percentage increase in damage check
         if (line.includes('Increases') && line.includes('damage') && line.includes('dealt')){
-            action.damageBuff = 1 + ((line[line.indexOf('dealt') + 2].replace('%',''))/100)
+            var buffVal = 1 + ((line[line.indexOf('dealt') + 2].replace('%',''))/100)
+            if (!(isNaN(buffVal))){
+                action.damageBuff = buffVal
+            }
         }
     }
 }

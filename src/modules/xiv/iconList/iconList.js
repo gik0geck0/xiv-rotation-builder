@@ -55,13 +55,14 @@ export default class IconList extends LightningElement {
     cancellSelected(){
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
         for(let icon of currentIcons){
-            icon.location = "list";
+            if (!(icon.location === 'invalid')){
+                icon.location = "list";
+            }
         }
         this.selectedIcons = [];
     }
 
     dragStart(e) {
-        console.log(actionList)
         this.draggedItem = e.target;
     }
 

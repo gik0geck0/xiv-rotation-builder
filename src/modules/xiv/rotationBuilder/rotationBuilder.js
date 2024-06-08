@@ -5,8 +5,6 @@ import { getJobActions } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
 
-console.log(JobGuide)
-
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
 	jobActions = getJobActions(this.job);
@@ -20,14 +18,6 @@ export default class HelloWorldApp extends LightningElement {
 		this.jobActions = getJobActions(this.job);
 		//this.dispatchEvent(new CustomEvent('changeJob', {detail: {job: this.job}}));
 	}
-
-    //using the calc with the different
-    calcWithList(){
-        let timedList = this.findTimes(this.mockActionList);
-        this.calculatePotency(timedList,this.job);
-
-
-    }
     
     findTimes(actionList){
         let currTime = 0;
@@ -215,14 +205,16 @@ export default class HelloWorldApp extends LightningElement {
     }
 
 	validation(actionList, job){
-        console.log(actionList)
-        
+        for (let i = 0; i < actionList.length; i++){
+            actionList[i].location = 'list'
+        }
+
         if (actionList.length === 0){
             this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Add actions to recieve a potency.";
             this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Add actions to recieve a pps.";
         }
         else{
-            let timedList = this.findTimes(this.mockActionList);
+            let timedList = this.findTimes(actionList);
 
             //Adding initial gauge amounts to a list so they can be tracked
             var gaugeAmounts = []
@@ -260,7 +252,7 @@ export default class HelloWorldApp extends LightningElement {
                 } 
 
                 //Buff requirement check
-                var buffList = this.getBuffs(this.findTimes(this.mockActionList))
+                var buffList = this.getBuffs(this.findTimes(actionList))
                 if (currAction.hasOwnProperty('buffRequirement')){
                     if (!(buffList.includes(currAction.buffRequirement))){
                         invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
@@ -277,13 +269,9 @@ export default class HelloWorldApp extends LightningElement {
                 this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Unable to calculate potency with invalid action(s).";
                 this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
                 
-                console.log(invalidActionList)
-                
                 //Highlight the actions red if there is an error
                 for (let i = 0; i < invalidActionList.length; i++){
-                    console.log(this.mockActionList[invalidActionList[i][1]])
-                    this.mockActionList[invalidActionList[i][1]].location = 'invalid';
-                    this.mockActionList = [...this.mockActionList]
+                    actionList[invalidActionList[i][1]].location = 'invalid';
                 }
             }
             //Run the calculate if valid
