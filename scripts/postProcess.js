@@ -11,7 +11,7 @@ const combined = mergeDeep(jobStaticData, XIVFinal);
 // TODO: process effects
 
 // create output file
-const fileName = "../src/modules/xiv/actionData/jobGuide2.js";
+const fileName = "../src/modules/xiv/actionData/jobGuide.js";
 // prefix with export clause
 fs.writeFileSync(fileName, "export default ");
 
