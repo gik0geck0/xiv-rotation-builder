@@ -11,6 +11,7 @@ for (const jobName in jobGuideJson) {
     for (const action of jobActions) {
         action.id = camelize(action.name);
         action.location = 'tray';
+        action.errorMessage = '';
         parseEffect(action)
     }
 }
