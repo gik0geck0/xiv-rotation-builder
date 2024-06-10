@@ -3,11 +3,12 @@ import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
 import { getJobActions } from 'xiv/actionRepository';
 
+import { JobGuide } from "xiv/actionData";
 
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
 	jobActions = getJobActions(this.job);
-  totalPotency = 0;
+    totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 	jobList = getJobNames();
 
@@ -17,14 +18,6 @@ export default class HelloWorldApp extends LightningElement {
 		this.jobActions = getJobActions(this.job);
 		//this.dispatchEvent(new CustomEvent('changeJob', {detail: {job: this.job}}));
 	}
-
-    //using the calc with the different
-    calcWithList(){
-        let timedList = this.findTimes(this.mockActionList);
-        this.calculatePotency(timedList,this.job);
-
-
-    }
     
     findTimes(actionList){
         let currTime = 0;
@@ -211,23 +204,102 @@ export default class HelloWorldApp extends LightningElement {
 
     }
 
+	validation(actionList, job){
+        for (let i = 0; i < actionList.length; i++){
+            actionList[i].location = 'list'
+        }
+
+        if (actionList.length === 0){
+            this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Add actions to recieve a potency.";
+            this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Add actions to recieve a pps.";
+        }
+        else{
+            let timedList = this.findTimes(actionList);
+
+            //Adding initial gauge amounts to a list so they can be tracked
+            var gaugeAmounts = []
+            for (let i = 0; i < Object.keys(JobGuide[job].gauges).length; i++){
+                var currGauge = Object.keys(JobGuide[job].gauges)[i]
+                gaugeAmounts.push({[currGauge] : 0})
+            }
+
+            //Checking validation
+            var invalidActionList = []
+            for (let i = 0; i < timedList.length; i++){
+                var currAction = timedList[i][0]
+
+                //Checking gauge requirements
+                for (let j = 0; j < gaugeAmounts.length; j++){
+                    //Storing new gauge amounts
+                    if (currAction.cast === 'Instant'){
+                        gaugeAmounts[Object.keys(gaugeAmounts[j])] = 5 * (Math.floor((timedList[i][1] - 0.7)/2.5))
+                    }
+                    else{
+                        gaugeAmounts[Object.keys(gaugeAmounts[j])] = 5 * (Math.floor((timedList[i][1] - currAction.cast)/2.5))
+                    }
+
+                    //Checking against new gauge amounts for enough to cast
+                    var gaugeName = Object.keys(gaugeAmounts[j])[0]
+                    if (currAction.hasOwnProperty(gaugeName)){
+                        if ((gaugeAmounts[Object.keys(gaugeAmounts[j])] + currAction[gaugeName]) < 0){
+                            invalidActionList.push([currAction, i, `Not enough ${gaugeName} to cast action.`])
+                        }
+                        else{
+                            gaugeAmounts[j][gaugeName] += currAction[gaugeName]
+                        }
+                        break;
+                    }
+                } 
+
+                //Buff requirement check
+                var buffList = this.getBuffs(this.findTimes(actionList))
+                if (currAction.hasOwnProperty('buffRequirement')){
+                    if (!(buffList.includes(currAction.buffRequirement))){
+                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                    }
+                    else if(buffList.includes(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
+                        invalidActionList.push([currAction, i, 'You are missing the required stacks of this buff.'])
+                    }
+                }
+            }
+
+            //Changing the highlights of the actions that are invalid
+            if (invalidActionList.length > 0){
+                //Make the potency display area tell the user there are invalid actions
+                this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Unable to calculate potency with invalid action(s).";
+                this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
+                
+                //Highlight the actions red if there is an error
+                for (let i = 0; i < invalidActionList.length; i++){
+                    actionList[invalidActionList[i][1]].location = 'invalid';
+                }
+            }
+            //Run the calculate if valid
+            else{
+                this.calculatePotency(timedList,this.job);
+            }
+        }
+	}
+
 	addTimelineAction(e) {
 		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
 		this.mockActionList = [...this.mockActionList];
-        this.calcWithList();
+
+        this.validation(this.mockActionList, this.job)
 	}
 
 	removeAction(e){
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
-        this.calcWithList();
+
+        this.validation(this.mockActionList, this.job)
 	}
 
 	spliceTimelineAction(e) {
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
-        this.calcWithList();
+
+        this.validation(this.mockActionList, this.job)
 	}
 }
-
