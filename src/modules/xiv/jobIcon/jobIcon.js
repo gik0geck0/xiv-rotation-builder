@@ -19,7 +19,7 @@ export default class JobIcon extends LightningElement {
 
     get imgComputedSize() {
         if(this.location == "tray"){
-            return "height:35px; width:35px; margin:0px; padding:0px;";;
+            return "height:35px; width:35px; margin:5px; padding:0px;";;
         }
         else{
             if(this.type == "Ability"){
@@ -28,13 +28,14 @@ export default class JobIcon extends LightningElement {
             else{
                 return "height:70px; width:70px; margin:0px; padding:5px; ";
             }
-            
+
         }
     }
 
+
     get liComputedSize(){
         if(this.location == "tray"){
-            return "cursor: grab; display: inline; height: 80px; width: 80px; margin: 10px; padding: 10px;";
+            return "cursor: grab; display: inline; height: 35px; width: 35px; margin: 10px; padding: 10px;";
         }
         else if (this.location == "selected"){
             if(this.type == "Ability"){
