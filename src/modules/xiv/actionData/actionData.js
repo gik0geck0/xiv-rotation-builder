@@ -11,6 +11,13 @@ for (const jobName in jobGuideJson) {
     for (const action of jobActions) {
         action.id = camelize(action.name);
         action.location = 'tray';
+        action.description = `Name: ${action.name}    
+        Level Req.: ${action.level}    
+        Type: ${action.type}     
+        Cast Time: ${action.cast}      
+        Recast Time: ${action.recast}          
+        Cost: ${action.cost}      
+        Effect: ${action.effect}`
         parseEffect(action)
     }
 }
