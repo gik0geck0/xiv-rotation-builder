@@ -132,7 +132,7 @@ export default class HelloWorldApp extends LightningElement {
         return currBuffs;
     }
 
-    calculatePotency(timedList, job){
+    calculatePotency(timedList){
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
@@ -272,9 +272,7 @@ export default class HelloWorldApp extends LightningElement {
                                     invalidActionList.push([currAction, i, 'You are missing stacks of the required buff.'])
                                 }
                                 else{
-                                    console.log("old stack: " + buffList[j][1])
                                     buffList[j][1] -= 1
-                                    console.log("new stack: " + buffList[j][1])
                                 }
                             }
                             else{ //Time buff
