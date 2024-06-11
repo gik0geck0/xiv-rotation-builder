@@ -53,6 +53,10 @@ export default class IconList extends LightningElement {
         this.cancellSelected();
     }
 
+    clearList(){
+        this.dispatchEvent(new CustomEvent('clearlist'));
+    }
+
     cancellSelected(){
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
         for(let icon of currentIcons){

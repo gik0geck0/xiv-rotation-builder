@@ -13,12 +13,12 @@ export default class HelloWorldApp extends LightningElement {
     totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 	jobList = getJobNames();
+    skillDetails = "";
 
 	changeJob(e){
 		this.job = this.template.querySelector("select").value;
 		this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));
 		this.jobActions = getJobActions(this.job);
-		//this.dispatchEvent(new CustomEvent('changeJob', {detail: {job: this.job}}));
 	}
     
     findTimes(actionList){
@@ -185,7 +185,7 @@ export default class HelloWorldApp extends LightningElement {
                     totalPotency += (parseFloat(currAction.comboPotency)) * buffAmt;
                 }
                 //normal potency
-                else{
+                else if(currAction.hasOwnProperty("potency")){
                     totalPotency += (parseFloat(currAction.potency)) * buffAmt;
                 }
                 //save the last action for combo checking
@@ -326,6 +326,11 @@ export default class HelloWorldApp extends LightningElement {
         this.validation(this.mockActionList, this.job)
 	}
 
+    clearList(e){
+        this.mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));;
+        this.validation(this.mockActionList, this.job);
+    }
+
 	spliceTimelineAction(e) {
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
@@ -333,4 +338,14 @@ export default class HelloWorldApp extends LightningElement {
 
         this.validation(this.mockActionList, this.job)
 	}
+
+    updateSkillCard(e){
+        console.log(e);
+        let card = this.template.querySelector(".skillCard");
+        card.title = e.detail.actionName;
+        let text = e.detail.actionDescription;
+        text = text.replaceAll(" n " , "\n");
+        text = text.replaceAll("<br>" , " ");
+        this.skillDetails = text;
+    }
 }
