@@ -78,12 +78,12 @@ export default class HelloWorldApp extends LightningElement {
                 }
                 //otherwise, it will just the the time before the skill plus recast
                 else{
-                    usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - parseFloat(currAction.cast));
+                    usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - parseFloat(currAction.cast))]);
                 }
             }
             //and if it is instant cast, it will just be the time before the cast plus the recast
             else{
-                usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - waitTime);
+                usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - waitTime)]);
             }
 
         }
@@ -215,6 +215,27 @@ export default class HelloWorldApp extends LightningElement {
         }
         else{
             let timedList = this.findTimes(actionList);
+            //Adding logic to set timeTaken and startTime
+            console.log(timedList);
+            for (let i = 0; i<timedList.length; i++){
+                let castTime = 0.7;
+                if(timedList[i][0].cast != "Instant"){
+                    castTime = parseFloat(timedList[i][0].cast);
+                }
+                if ( i == 0 ){
+                    //change in future for actions before the fight
+                    actionList[0].startTime = timedList[i][1] - castTime;
+                    actionList[i].timeTaken = castTime;
+                }
+                else{
+                    actionList[i].startTime = timedList[i][1] - castTime;
+                    actionList[i-1].timeTaken = actionList[i].startTime - actionList[i-1].startTime;
+                }
+                if (i == timedList.length-1){
+                    actionList[i].timeTaken = castTime;
+                }
+            }
+            console.log(actionList);
 
             //Adding initial gauge amounts to a list so they can be tracked
             var gaugeAmounts = []
@@ -309,7 +330,6 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
-        console.log(e);
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
