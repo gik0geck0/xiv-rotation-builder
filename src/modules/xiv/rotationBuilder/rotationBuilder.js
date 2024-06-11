@@ -183,7 +183,7 @@ export default class HelloWorldApp extends LightningElement {
                     totalPotency += (parseFloat(currAction.comboPotency)) * buffAmt;
                 }
                 //normal potency
-                else{
+                else if(currAction.hasOwnProperty("potency")){
                     totalPotency += (parseFloat(currAction.potency)) * buffAmt;
                 }
                 //save the last action for combo checking
@@ -294,6 +294,11 @@ export default class HelloWorldApp extends LightningElement {
 
         this.validation(this.mockActionList, this.job)
 	}
+
+    clearList(e){
+        this.mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));;
+        this.validation(this.mockActionList, this.job);
+    }
 
 	spliceTimelineAction(e) {
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
