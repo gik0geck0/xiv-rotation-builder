@@ -163,13 +163,12 @@ export function parseEffect(action){
                 var tempWord = line[j]
                 if (tempWord.includes('.')){
                     tempWord = tempWord.replace('.', '')
+                    requirement += tempWord
+                    break;
                 }
                 requirement += tempWord
-                if (j < line.length - 1){
-                    requirement += " "
-                }
             }
-            action.buffRequirement = requirement
+            action.buffRequirement = requirement.replace(/\s+/g, '').toLowerCase()
         }
 
         //Gauge Cost check
