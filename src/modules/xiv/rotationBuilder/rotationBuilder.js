@@ -131,6 +131,12 @@ export default class HelloWorldApp extends LightningElement {
     }
 
     calculatePotency(timedList, job){
+
+        /*
+        Things that still need to be implemented:
+        Damage over Time
+        Cast times being instant after certain skills
+        */
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
