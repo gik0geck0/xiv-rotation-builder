@@ -18,6 +18,7 @@ export default class JobIcon extends LightningElement {
     }
 
     get imgComputedSize() {
+        //TODO: Rewrite into CSS classes
         if(this.location == "tray"){
             return "height:35px; width:35px; margin:5px; padding:0px;";;
         }
@@ -34,6 +35,7 @@ export default class JobIcon extends LightningElement {
 
 
     get liComputedSize(){
+        //TODO: Rewrite into CSS classes
         if(this.location == "tray"){
             return "cursor: grab; display: inline; height: 35px; width: 35px; margin: 10px; padding: 10px;";
         }

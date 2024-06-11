@@ -11,12 +11,12 @@ export default class HelloWorldApp extends LightningElement {
     totalPotency = 0;
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 	jobList = getJobNames();
+    skillDetails = "";
 
 	changeJob(e){
 		this.job = this.template.querySelector("select").value;
 		this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));
 		this.jobActions = getJobActions(this.job);
-		//this.dispatchEvent(new CustomEvent('changeJob', {detail: {job: this.job}}));
 	}
     
     findTimes(actionList){
@@ -307,4 +307,14 @@ export default class HelloWorldApp extends LightningElement {
 
         this.validation(this.mockActionList, this.job)
 	}
+
+    updateSkillCard(e){
+        console.log(e);
+        let card = this.template.querySelector(".skillCard");
+        card.title = e.detail.actionName;
+        let text = e.detail.actionDescription;
+        text = text.replaceAll(" n " , "\n");
+        text = text.replaceAll("<br>" , " ");
+        this.skillDetails = text;
+    }
 }
