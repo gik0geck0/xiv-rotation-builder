@@ -1,7 +1,8 @@
 import { LightningElement, api } from "lwc";
 
 export default class JobIcon extends LightningElement {
-
+    @api starttime = 0;
+    @api timetaken = 0.7;
     @api name;
     @api location = "tray";
     @api jobAbv;
@@ -9,6 +10,7 @@ export default class JobIcon extends LightningElement {
     @api actionId;
     @api hoverText;
 
+    tenthOfASecondToPixelRatio = 100;
     // onclick
     // ondelete
     // ondrag?
@@ -36,31 +38,35 @@ export default class JobIcon extends LightningElement {
 
     get liComputedSize(){
         //TODO: Rewrite into CSS classes
+        let width = this.timetaken*this.tenthOfASecondToPixelRatio;
+        console.log(width)
+        console.log(this.timetaken)
+        console.log(this.tenthOfASecondToPixelRatio)
         if(this.location == "tray"){
             return "cursor: grab; display: inline; height: 35px; width: 35px; margin: 10px; padding: 10px;";
         }
         else if (this.location == "selected"){
             if(this.type == "Ability"){
-                return "cursor: grab; display: inline-flex; height:50px; width:50px; margin:0px; padding:0px; background: skyblue; vertical-align: top; margin-top: 10px;";
+                return `cursor: grab; display: inline-flex; height:50px; width:${width}px; margin:0px; padding:0px; background: skyblue; vertical-align: top; margin-top: 10px;`;
             }
             else{
-                return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; background: skyblue; margin-top: 30px;";
+                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; background: skyblue; margin-top: 30px;`;
             }
         }
         else if (this.location == "invalid"){
             if(this.type == "Ability"){
-                return "cursor: grab; display: inline-flex; height:50px; width:50px; margin:0px; padding:0px; background: red; vertical-align: top; margin-top: 10px;";
+                return `cursor: grab; display: inline-flex; height:50px; width:${width}px; margin:0px; padding:0px; background: red; vertical-align: top; margin-top: 10px;`;
             }
             else{
-                return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; background: red; margin-top: 30px;";
+                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; background: red; margin-top: 30px;`;
             }
         }
         else{
             if(this.type == "Ability"){
-                return "cursor: grab; display: inline-flex; height:50px; width:50px; margin:0px; padding:0px; vertical-align: top;  margin-top: 10px;";
+                return `cursor: grab; display: inline-flex; height:50px; width:${width}px; margin:0px; padding:0px; vertical-align: top;  margin-top: 10px;`;
             }
             else{
-                return "cursor: grab; display: inline-flex; height:70px; width:70px; margin:0px; padding:0px; margin-top: 30px;";
+                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; margin-top: 30px;`;
             }
         }
     }

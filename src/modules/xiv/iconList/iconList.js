@@ -8,10 +8,6 @@ export default class IconList extends LightningElement {
     @api job;
     @api invalidActionList;
 
-    setJob(){
-
-    }
-
     get actionTimeline() {
         // Make up a time component to use as a unique value
         return this.actionList.map((v, i) => Object.assign({t: i*2.5}, v));
