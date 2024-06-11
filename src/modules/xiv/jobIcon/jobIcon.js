@@ -29,14 +29,15 @@ export default class JobIcon extends LightningElement {
             else{
                 return "height:70px; width:70px; margin:0px; padding:5px; ";
             }
-            
+
         }
     }
+
 
     get liComputedSize(){
         //TODO: Rewrite into CSS classes
         if(this.location == "tray"){
-            return "cursor: grab; display: inline; height: 80px; width: 80px; margin: 10px; padding: 10px;";
+            return "cursor: grab; display: inline; height: 35px; width: 35px; margin: 10px; padding: 10px;";
         }
         else if (this.location == "selected"){
             if(this.type == "Ability"){
