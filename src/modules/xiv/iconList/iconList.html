@@ -1,8 +1,10 @@
 <template>
     <ol class="sortable-list" ondragstart={dragStart} ondragend={dragEnd} ondragover={dragOver} onkeydown={keyboardEvent}>
         <template for:each={actionList} for:item="action" for:index="idx">
-            <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description} onclick={selectIcon} location={action.location} style="height:100px;" type={action.type}>
+            <xiv-job-icon key={action.t} job-abv={job} action-id={action.id} hover-text={action.description} onclick={selectIcon} location={action.location} style="height:100px;" type={action.type} starttime={action.startTime} timetaken={action.timeTaken}>
+
             </xiv-job-icon>
+            <div key={action.t} index="idx" class="hoverText">{action.errorMessage}</div>
         </template>
     </ol>
     <lightning-button id="deleteIcons" variant="destructive" label="Delete" onclick={deleteSelected}></lightning-button>

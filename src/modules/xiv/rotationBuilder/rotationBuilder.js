@@ -5,6 +5,8 @@ import { getJobActions } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
 
+console.log(JobGuide)
+
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
 	jobActions = getJobActions(this.job);
@@ -87,12 +89,12 @@ export default class HelloWorldApp extends LightningElement {
                 }
                 //otherwise, it will just the the time before the skill plus recast
                 else{
-                    usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - parseFloat(currAction.cast));
+                    usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - parseFloat(currAction.cast))]);
                 }
             }
             //and if it is instant cast, it will just be the time before the cast plus the recast
             else{
-                usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - waitTime);
+                usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - waitTime)]);
             }
 
         }
@@ -115,7 +117,7 @@ export default class HelloWorldApp extends LightningElement {
             if(currAction.hasOwnProperty("grants")){
                 for(let k = 0; k <Object.keys(currAction.grants).length; k++){
                     if(parseInt((currAction.grants[Object.keys(currAction.grants)[k]])) != -1){
-                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseFloat((currAction.grants[Object.keys(currAction.grants)[k]]))])
+                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseFloat((currAction.grants[Object.keys(currAction.grants)[k]])), currTime, currTime+30])
                     }
                     else{
                         currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
@@ -127,7 +129,7 @@ export default class HelloWorldApp extends LightningElement {
                 if(currAction.hasOwnProperty("comboBonus") && currAction.comboAction == lastAction.name){
                     for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
                         if(parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])) != -1){
-                            currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseFloat((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]))])
+                            currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseFloat((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])), currTime, currTime+30])
                         }
                         else{
                             currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
@@ -143,6 +145,7 @@ export default class HelloWorldApp extends LightningElement {
         return currBuffs;
     }
 
+<<<<<<< HEAD
     calculatePotency(timedList, job){
 
         /*
@@ -150,6 +153,9 @@ export default class HelloWorldApp extends LightningElement {
         Damage over Time
         Cast times being instant after certain skills
         */
+=======
+    calculatePotency(timedList){
+>>>>>>> 949289b4818c0f8f044af7150e1c87e17752aa49
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
@@ -226,6 +232,7 @@ export default class HelloWorldApp extends LightningElement {
 	validation(actionList, job){
         for (let i = 0; i < actionList.length; i++){
             actionList[i].location = 'list'
+            actionList[i].errorMessage = ''
         }
 
         if (actionList.length === 0){
@@ -234,6 +241,27 @@ export default class HelloWorldApp extends LightningElement {
         }
         else{
             let timedList = this.findTimes(actionList);
+            //Adding logic to set timeTaken and startTime
+            console.log(timedList);
+            for (let i = 0; i<timedList.length; i++){
+                let castTime = 0.7;
+                if(timedList[i][0].cast != "Instant"){
+                    castTime = parseFloat(timedList[i][0].cast);
+                }
+                if ( i == 0 ){
+                    //change in future for actions before the fight
+                    actionList[0].startTime = timedList[i][1] - castTime;
+                    actionList[i].timeTaken = castTime;
+                }
+                else{
+                    actionList[i].startTime = timedList[i][1] - castTime;
+                    actionList[i-1].timeTaken = actionList[i].startTime - actionList[i-1].startTime;
+                }
+                if (i == timedList.length-1){
+                    actionList[i].timeTaken = castTime;
+                }
+            }
+            console.log(actionList);
 
             //Adding initial gauge amounts to a list so they can be tracked
             var gaugeAmounts = []
@@ -244,6 +272,7 @@ export default class HelloWorldApp extends LightningElement {
 
             //Checking validation
             var invalidActionList = []
+            var buffList = this.getBuffs(timedList)
             for (let i = 0; i < timedList.length; i++){
                 var currAction = timedList[i][0]
 
@@ -271,26 +300,52 @@ export default class HelloWorldApp extends LightningElement {
                 } 
 
                 //Buff requirement check
-                var buffList = this.getBuffs(this.findTimes(actionList))
                 if (currAction.hasOwnProperty('buffRequirement')){
-                    if (!(buffList.includes(currAction.buffRequirement))){
-                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                    var buffCheck = 0;
+                    //Iterate through the buffList
+                    for (let j = 0; j < buffList.length; j++){
+                        //If the buff is in the list
+                        if (buffList[j][0] === currAction.buffRequirement){
+                            buffCheck++;
+                            //Check if buff is a stack or time buff
+                            if (buffList[j].length === 4){ //Stack buff
+                                if (timedList[i][1] < buffList[j][2] || timedList[i][1] > buffList[j][3]){
+                                    invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                                }
+                                else if (buffList[j][1] < 1){
+                                    invalidActionList.push([currAction, i, 'You are missing stacks of the required buff.'])
+                                }
+                                else{
+                                    buffList[j][1] -= 1
+                                }
+                            }
+                            else{ //Time buff
+                                if (timedList[i][1] < buffList[j][1] || timedList[i][1] > buffList[j][2]){
+                                    invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                                }
+                            }
+                        }
                     }
-                    else if(buffList.includes(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
-                        invalidActionList.push([currAction, i, 'You are missing the required stacks of this buff.'])
+                    if (buffCheck < 1){
+                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
                     }
                 }
             }
 
             //Changing the highlights of the actions that are invalid
             if (invalidActionList.length > 0){
+
+                console.log(invalidActionList)
+
                 //Make the potency display area tell the user there are invalid actions
                 this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Unable to calculate potency with invalid action(s).";
                 this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
                 
                 //Highlight the actions red if there is an error
                 for (let i = 0; i < invalidActionList.length; i++){
+                    console.log(invalidActionList[i][1])
                     actionList[invalidActionList[i][1]].location = 'invalid';
+                    actionList[invalidActionList[i][1]].errorMessage = invalidActionList[i][2];
                 }
             }
             //Run the calculate if valid
@@ -299,6 +354,7 @@ export default class HelloWorldApp extends LightningElement {
             }
         }
 	}
+
 
 	addTimelineAction(e) {
         //Adds an action to the timeline and validates
@@ -332,8 +388,11 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
+<<<<<<< HEAD
         //Function to update the information about the skill
         console.log(e);
+=======
+>>>>>>> 949289b4818c0f8f044af7150e1c87e17752aa49
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
