@@ -9,7 +9,7 @@ export default class JobIcon extends LightningElement {
     @api type = "";
     @api actionId;
     @api hoverText;
-
+    gcdLength = 2.5;
     tenthOfASecondToPixelRatio = 100;
     // onclick
     // ondelete
@@ -22,7 +22,7 @@ export default class JobIcon extends LightningElement {
     get imgComputedSize() {
         //TODO: Rewrite into CSS classes
         if(this.location == "tray"){
-            return "height:35px; width:35px; margin:5px; padding:0px;";;
+            return "height:35px; width:35px; margin:5px; padding:0px;";
         }
         else{
             if(this.type == "Ability"){
@@ -50,7 +50,7 @@ export default class JobIcon extends LightningElement {
             }
             //Larger and centered image for GCD actions
             else{
-                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; background: skyblue; margin-top: 30px;`;
+                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; background: skyblue; margin-top: 30px; position:relative;`;
             }
         }
         //If it has an error, make the size correct and make it red
@@ -59,7 +59,7 @@ export default class JobIcon extends LightningElement {
                 return `cursor: grab; display: inline-flex; height:50px; width:${width}px; margin:0px; padding:0px; background: red; vertical-align: top; margin-top: 10px;`;
             }
             else{
-                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; background: red; margin-top: 30px;`;
+                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; background: red; margin-top: 30px; position:relative;`;
             }
         }
         //Normal case for the list if not invalid or selected
@@ -68,8 +68,21 @@ export default class JobIcon extends LightningElement {
                 return `cursor: grab; display: inline-flex; height:50px; width:${width}px; margin:0px; padding:0px; vertical-align: top;  margin-top: 10px;`;
             }
             else{
-                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; margin-top: 30px;`;
+                return `cursor: grab; display: inline-flex; height:70px; width:${width}px; margin:0px; padding:0px; margin-top: 30px; position:relative;`;
             }
         }
     }
+
+
+    get gcdComputedSize(){
+        if(this.location == "list"){
+            if(this.type != "Ability"){
+                return `width: ${(this.gcdLength-0.7)*this.tenthOfASecondToPixelRatio}px; height: 20px; background: green; visibility: visible; z-index: 1; position:absolute; left:${0.7*this.tenthOfASecondToPixelRatio}px; bottom: 5px;`;
+            }
+            else{
+                return "visibility: hidden;";
+            }
+        }
+    }
+
 }
