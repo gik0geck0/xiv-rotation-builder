@@ -39,9 +39,6 @@ export default class JobIcon extends LightningElement {
     get liComputedSize(){
         //TODO: Rewrite into CSS classes
         let width = this.timetaken*this.tenthOfASecondToPixelRatio;
-        console.log(width)
-        console.log(this.timetaken)
-        console.log(this.tenthOfASecondToPixelRatio)
         if(this.location == "tray"){
             return "cursor: grab; display: inline; height: 35px; width: 35px; margin: 10px; padding: 10px;";
         }
