@@ -57,17 +57,21 @@ export default class HelloWorldApp extends LightningElement {
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 //if instant, just add the wait time
                 if(currAction.cast == "Instant"){
-                    currTime += waitTime;
                     if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
-                        currTime = lastGCD[1]+GCDTime
+                        currTime = lastGCD[1]+GCDTime+waitTime;
+                    }
+                    else{
+                        currTime += waitTime;
                     }
                     lastTime = currTime - waitTime;
                 }
                 //if not, add cast time
                 else{
-                    currTime += parseFloat(currAction.cast);
                     if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
-                        currTime = lastGCD[1]+GCDTime
+                        currTime = lastGCD[1]+GCDTime + parseFloat(currAction.cast);
+                    }
+                    else{
+                        currTime += parseFloat(currAction.cast);
                     }
                     lastTime = currTime - parseFloat(currAction.cast);
                 }
