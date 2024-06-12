@@ -19,8 +19,8 @@ export default class IconList extends LightningElement {
     selectIcon(e){
         let currentIcons = [...this.template.querySelectorAll("xiv-job-icon")];
         let currIcon = e.target;
+        //Allows clicked icons to be added to the selected list, meaning they will be highlighted blue
         if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            //currIcon.style.setProperty('background', 'red');
             currIcon.location = "selected";
             this.selectedIcons.push(e.target);
         }
@@ -31,6 +31,7 @@ export default class IconList extends LightningElement {
     }
 
     deleteSelected(){ 
+        //searches through the list and deletes the selected icons
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
         let maxIndex = -1; 
         let index = -1;
@@ -43,6 +44,7 @@ export default class IconList extends LightningElement {
                     index = j;
                 }
             }
+            //dispatches an event to let the HTML know to update the timeline
             this.dispatchEvent(new CustomEvent('removeaction', {detail: {indexToRemove: maxIndex}}));
             this.selectedIcons.splice(index, 1);
         }
@@ -50,10 +52,12 @@ export default class IconList extends LightningElement {
     }
 
     clearList(){
+        //calls a function in rotation builder to set the list to an empty list
         this.dispatchEvent(new CustomEvent('clearlist'));
     }
 
     cancellSelected(){
+        //cleans up any deleted items that are still selected
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
         for(let icon of currentIcons){
             if (!(icon.location === 'invalid')){
@@ -64,10 +68,12 @@ export default class IconList extends LightningElement {
     }
 
     dragStart(e) {
+        //function for the start of a dragged event
         this.draggedItem = e.target;
     }
 
     dragEnd(e) {
+        //function for the end of a dragged event
         e.preventDefault();
         const listElements = [...this.template.querySelectorAll("xiv-job-icon")];
         const currentIndex = listElements.findIndex((e) => e === this.draggedItem);
@@ -89,6 +95,7 @@ export default class IconList extends LightningElement {
     }
 
     getClosestItemIndex(haystack, needle) {
+        //Finds which item to drop at
         return haystack.findIndex((item) => {
             const box = item.getBoundingClientRect();
             return needle > box.left && needle < box.right;

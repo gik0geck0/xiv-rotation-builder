@@ -5,8 +5,6 @@ import { getJobActions } from 'xiv/actionRepository';
 
 import { JobGuide } from "xiv/actionData";
 
-console.log(JobGuide)
-
 export default class HelloWorldApp extends LightningElement {
 	job = "paladin";
 	jobActions = getJobActions(this.job);
@@ -16,24 +14,33 @@ export default class HelloWorldApp extends LightningElement {
     skillDetails = "";
 
 	changeJob(e){
+        //Function to change the job, reset the action List and change the tray to the new job
 		this.job = this.template.querySelector("select").value;
 		this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));
 		this.jobActions = getJobActions(this.job);
 	}
     
     findTimes(actionList){
+        //starts at 0 time
         let currTime = 0;
+        //current GCD Time, can be changed if needed
         let GCDTime = 2.5;
+        //current wait time
         let waitTime = 0.7;
+        //First skill done outside of loop
+        //Figure out when the action is done
         if(actionList[0].cast == "Instant"){
             currTime = waitTime;
         }else{
             currTime = parseFloat(actionList[0].cast);
         }
+        //Add it to the timed list
         let timedList = [[actionList[0],currTime]];
         //time when you can use the skill again
         let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
+        //save the last GCD to know if a GCD has passed or not
         let lastGCD = [actionList[0].name, 0];
+        //If its an ability, save it with -1 to know it isn't a GCD
         if(actionList[0].type == "Ability"){
             lastGCD[1] = -1;
         }
@@ -89,6 +96,7 @@ export default class HelloWorldApp extends LightningElement {
             }
 
         }
+        console.log(timedList);
         return timedList;
         
     }
@@ -96,6 +104,7 @@ export default class HelloWorldApp extends LightningElement {
     getBuffs(timedList){
         let currBuffs = [];
         let lastAction = null;
+        //Go through the timed list
         for(let i = 0; i < timedList.length; i++ ){
             let currAction = timedList[i][0];
             let currTime = timedList[i][1];
@@ -113,6 +122,7 @@ export default class HelloWorldApp extends LightningElement {
                     }
                 }
             }
+            //Check same thing, but if it is a combo bonus
             if(lastAction != null){
                 if(currAction.hasOwnProperty("comboBonus") && currAction.comboAction == lastAction.name){
                     for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
@@ -125,6 +135,7 @@ export default class HelloWorldApp extends LightningElement {
                     }
                 }
             }
+            //Save the last action for combo based buffs
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 lastAction = currAction;
             }
@@ -133,6 +144,12 @@ export default class HelloWorldApp extends LightningElement {
     }
 
     calculatePotency(timedList){
+
+        /*
+        Things that still need to be implemented:
+        Damage over Time
+        Cast times being instant after certain skills
+        */
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
@@ -161,7 +178,7 @@ export default class HelloWorldApp extends LightningElement {
                         
                     }
                 }
-                //2 length means a stack based buff
+                //4 length means a stack based buff
                 else{
                     currBuffs[j][1] += stacksUsed;
                     if(currBuffs[j][1] >= 1){
@@ -311,16 +328,12 @@ export default class HelloWorldApp extends LightningElement {
 
             //Changing the highlights of the actions that are invalid
             if (invalidActionList.length > 0){
-
-                console.log(invalidActionList)
-
                 //Make the potency display area tell the user there are invalid actions
                 this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Unable to calculate potency with invalid action(s).";
                 this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
                 
                 //Highlight the actions red if there is an error
                 for (let i = 0; i < invalidActionList.length; i++){
-                    console.log(invalidActionList[i][1])
                     actionList[invalidActionList[i][1]].location = 'invalid';
                     actionList[invalidActionList[i][1]].errorMessage = invalidActionList[i][2];
                 }
@@ -334,13 +347,15 @@ export default class HelloWorldApp extends LightningElement {
 
 
 	addTimelineAction(e) {
-		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
+        //Adds an action to the timeline and validates
+		this.mockActionList.push(JSON.parse(JSON.stringify(getActionInfo(this.job, e.detail.actionName))));
 		this.mockActionList = [...this.mockActionList];
 
         this.validation(this.mockActionList, this.job)
 	}
 
 	removeAction(e){
+        //removes a list from the timeline and validates
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
 
@@ -348,11 +363,13 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     clearList(e){
+        //Clears out the list
         this.mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));;
         this.validation(this.mockActionList, this.job);
     }
 
 	spliceTimelineAction(e) {
+        //splices the action on the timeline
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
@@ -361,9 +378,11 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
+        //Function to update the information about the skill
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
+        //Replacing <br>'s with \n's to add new lines
         text = text.replaceAll(" n " , "\n");
         text = text.replaceAll("<br>" , " ");
         this.skillDetails = text;
