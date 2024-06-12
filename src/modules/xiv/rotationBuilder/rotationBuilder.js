@@ -14,24 +14,33 @@ export default class HelloWorldApp extends LightningElement {
     skillDetails = "";
 
 	changeJob(e){
+        //Function to change the job, reset the action List and change the tray to the new job
 		this.job = this.template.querySelector("select").value;
 		this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));
 		this.jobActions = getJobActions(this.job);
 	}
     
     findTimes(actionList){
+        //starts at 0 time
         let currTime = 0;
+        //current GCD Time, can be changed if needed
         let GCDTime = 2.5;
+        //current wait time
         let waitTime = 0.7;
+        //First skill done outside of loop
+        //Figure out when the action is done
         if(actionList[0].cast == "Instant"){
             currTime = waitTime;
         }else{
             currTime = parseFloat(actionList[0].cast);
         }
+        //Add it to the timed list
         let timedList = [[actionList[0],currTime]];
         //time when you can use the skill again
         let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
+        //save the last GCD to know if a GCD has passed or not
         let lastGCD = [actionList[0].name, 0];
+        //If its an ability, save it with -1 to know it isn't a GCD
         if(actionList[0].type == "Ability"){
             lastGCD[1] = -1;
         }
@@ -87,6 +96,7 @@ export default class HelloWorldApp extends LightningElement {
             }
 
         }
+        console.log(timedList);
         return timedList;
         
     }
@@ -94,6 +104,7 @@ export default class HelloWorldApp extends LightningElement {
     getBuffs(timedList){
         let currBuffs = [];
         let lastAction = null;
+        //Go through the timed list
         for(let i = 0; i < timedList.length; i++ ){
             let currAction = timedList[i][0];
             let currTime = timedList[i][1];
@@ -104,18 +115,19 @@ export default class HelloWorldApp extends LightningElement {
             if(currAction.hasOwnProperty("grants")){
                 for(let k = 0; k <Object.keys(currAction.grants).length; k++){
                     if(parseInt((currAction.grants[Object.keys(currAction.grants)[k]])) != -1){
-                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseFloat((currAction.grants[Object.keys(currAction.grants)[k]]))])
+                        currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), parseFloat((currAction.grants[Object.keys(currAction.grants)[k]])), currTime, currTime+30])
                     }
                     else{
                         currBuffs.push([Object.keys(currAction.grants)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
                     }
                 }
             }
+            //Check same thing, but if it is a combo bonus
             if(lastAction != null){
                 if(currAction.hasOwnProperty("comboBonus") && currAction.comboAction == lastAction.name){
                     for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
                         if(parseInt((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])) != -1){
-                            currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseFloat((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]))])
+                            currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), parseFloat((currAction.comboBonus[Object.keys(currAction.comboBonus)[k]])), currTime, currTime+30])
                         }
                         else{
                             currBuffs.push([Object.keys(currAction.comboBonus)[k].toLowerCase(), currTime, currTime+parseFloat(currAction.duration)])
@@ -123,6 +135,7 @@ export default class HelloWorldApp extends LightningElement {
                     }
                 }
             }
+            //Save the last action for combo based buffs
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 lastAction = currAction;
             }
@@ -130,7 +143,13 @@ export default class HelloWorldApp extends LightningElement {
         return currBuffs;
     }
 
-    calculatePotency(timedList, job){
+    calculatePotency(timedList){
+
+        /*
+        Things that still need to be implemented:
+        Damage over Time
+        Cast times being instant after certain skills
+        */
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
@@ -159,7 +178,7 @@ export default class HelloWorldApp extends LightningElement {
                         
                     }
                 }
-                //2 length means a stack based buff
+                //4 length means a stack based buff
                 else{
                     currBuffs[j][1] += stacksUsed;
                     if(currBuffs[j][1] >= 1){
@@ -207,6 +226,7 @@ export default class HelloWorldApp extends LightningElement {
 	validation(actionList, job){
         for (let i = 0; i < actionList.length; i++){
             actionList[i].location = 'list'
+            actionList[i].errorMessage = ''
         }
 
         if (actionList.length === 0){
@@ -246,6 +266,7 @@ export default class HelloWorldApp extends LightningElement {
 
             //Checking validation
             var invalidActionList = []
+            var buffList = this.getBuffs(timedList)
             for (let i = 0; i < timedList.length; i++){
                 var currAction = timedList[i][0]
 
@@ -273,13 +294,34 @@ export default class HelloWorldApp extends LightningElement {
                 } 
 
                 //Buff requirement check
-                var buffList = this.getBuffs(this.findTimes(actionList))
                 if (currAction.hasOwnProperty('buffRequirement')){
-                    if (!(buffList.includes(currAction.buffRequirement))){
-                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                    var buffCheck = 0;
+                    //Iterate through the buffList
+                    for (let j = 0; j < buffList.length; j++){
+                        //If the buff is in the list
+                        if (buffList[j][0] === currAction.buffRequirement){
+                            buffCheck++;
+                            //Check if buff is a stack or time buff
+                            if (buffList[j].length === 4){ //Stack buff
+                                if (timedList[i][1] < buffList[j][2] || timedList[i][1] > buffList[j][3]){
+                                    invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                                }
+                                else if (buffList[j][1] < 1){
+                                    invalidActionList.push([currAction, i, 'You are missing stacks of the required buff.'])
+                                }
+                                else{
+                                    buffList[j][1] -= 1
+                                }
+                            }
+                            else{ //Time buff
+                                if (timedList[i][1] < buffList[j][1] || timedList[i][1] > buffList[j][2]){
+                                    invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                                }
+                            }
+                        }
                     }
-                    else if(buffList.includes(currAction.buffRequirement) && buffList[buffList.indexOf(currAction.buffRequirement)] === 0){
-                        invalidActionList.push([currAction, i, 'You are missing the required stacks of this buff.'])
+                    if (buffCheck < 1){
+                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
                     }
                 }
             }
@@ -293,6 +335,7 @@ export default class HelloWorldApp extends LightningElement {
                 //Highlight the actions red if there is an error
                 for (let i = 0; i < invalidActionList.length; i++){
                     actionList[invalidActionList[i][1]].location = 'invalid';
+                    actionList[invalidActionList[i][1]].errorMessage = invalidActionList[i][2];
                 }
             }
             //Run the calculate if valid
@@ -302,14 +345,17 @@ export default class HelloWorldApp extends LightningElement {
         }
 	}
 
+
 	addTimelineAction(e) {
-		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
+        //Adds an action to the timeline and validates
+		this.mockActionList.push(JSON.parse(JSON.stringify(getActionInfo(this.job, e.detail.actionName))));
 		this.mockActionList = [...this.mockActionList];
 
         this.validation(this.mockActionList, this.job)
 	}
 
 	removeAction(e){
+        //removes a list from the timeline and validates
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
 
@@ -317,11 +363,13 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     clearList(e){
+        //Clears out the list
         this.mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));;
         this.validation(this.mockActionList, this.job);
     }
 
 	spliceTimelineAction(e) {
+        //splices the action on the timeline
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
@@ -330,9 +378,11 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
+        //Function to update the information about the skill
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
+        //Replacing <br>'s with \n's to add new lines
         text = text.replaceAll(" n " , "\n");
         text = text.replaceAll("<br>" , " ");
         this.skillDetails = text;
