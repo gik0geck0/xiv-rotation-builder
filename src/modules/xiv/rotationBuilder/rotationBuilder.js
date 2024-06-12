@@ -335,6 +335,7 @@ export default class HelloWorldApp extends LightningElement {
                 //Highlight the actions red if there is an error
                 for (let i = 0; i < invalidActionList.length; i++){
                     actionList[invalidActionList[i][1]].location = 'invalid';
+                    actionList[invalidActionList[i][1]].errorMessage = invalidActionList[i][2];
                 }
             }
             //Run the calculate if valid
@@ -360,9 +361,6 @@ export default class HelloWorldApp extends LightningElement {
 
         this.validation(this.mockActionList, this.job)
 	}
-
-
-    
 
     clearList(e){
         //Clears out the list
