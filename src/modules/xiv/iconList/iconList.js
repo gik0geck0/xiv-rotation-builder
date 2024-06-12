@@ -6,7 +6,6 @@ export default class IconList extends LightningElement {
     // TBD: should this just be action names so it's easy to shuffle? Or stay fully resolve to reduce constant lookups?
     @api actionList;
     @api job;
-    @api invalidActionList;
 
     setJob(){
 
@@ -29,7 +28,12 @@ export default class IconList extends LightningElement {
             this.selectedIcons.push(e.target);
         }
         else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            currIcon.location = "list";
+            if (this.actionList[currentIcons.indexOf(currIcon)].errorMessage.length > 0){
+                currIcon.location = 'invalid'
+            }
+            else{
+                currIcon.location = "list";
+            }
             this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
         }
     }
@@ -59,9 +63,14 @@ export default class IconList extends LightningElement {
 
     cancellSelected(){
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
-        for(let icon of currentIcons){
-            if (!(icon.location === 'invalid')){
-                icon.location = "list";
+        for (let i = 0; i < currentIcons.length; i++){
+            if (this.actionList[i].errorMessage.length > 0){
+                console.log("error")
+                currentIcons[i].location = 'invalid'
+            }
+            else{
+                console.log("no error")
+                currentIcons[i].location = 'list'
             }
         }
         this.selectedIcons = [];

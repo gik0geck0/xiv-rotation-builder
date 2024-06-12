@@ -291,15 +291,12 @@ export default class HelloWorldApp extends LightningElement {
             //Changing the highlights of the actions that are invalid
             if (invalidActionList.length > 0){
 
-                console.log(invalidActionList)
-
                 //Make the potency display area tell the user there are invalid actions
                 this.template.querySelector('lightning-card.potencyLabel').title="Total Potency: Unable to calculate potency with invalid action(s).";
                 this.template.querySelector('lightning-card.ppsLabel').title="Potency Per Second: Unable to calculate pps with invalid action(s).";
                 
                 //Highlight the actions red if there is an error
                 for (let i = 0; i < invalidActionList.length; i++){
-                    console.log(invalidActionList[i][1])
                     actionList[invalidActionList[i][1]].location = 'invalid';
                     actionList[invalidActionList[i][1]].errorMessage = invalidActionList[i][2];
                 }
@@ -340,7 +337,6 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
-        console.log(e);
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
