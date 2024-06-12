@@ -16,24 +16,33 @@ export default class HelloWorldApp extends LightningElement {
     skillDetails = "";
 
 	changeJob(e){
+        //Function to change the job, reset the action List and change the tray to the new job
 		this.job = this.template.querySelector("select").value;
 		this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));
 		this.jobActions = getJobActions(this.job);
 	}
     
     findTimes(actionList){
+        //starts at 0 time
         let currTime = 0;
+        //current GCD Time, can be changed if needed
         let GCDTime = 2.5;
+        //current wait time
         let waitTime = 0.7;
+        //First skill done outside of loop
+        //Figure out when the action is done
         if(actionList[0].cast == "Instant"){
             currTime = waitTime;
         }else{
             currTime = parseFloat(actionList[0].cast);
         }
+        //Add it to the timed list
         let timedList = [[actionList[0],currTime]];
         //time when you can use the skill again
         let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
+        //save the last GCD to know if a GCD has passed or not
         let lastGCD = [actionList[0].name, 0];
+        //If its an ability, save it with -1 to know it isn't a GCD
         if(actionList[0].type == "Ability"){
             lastGCD[1] = -1;
         }
@@ -80,15 +89,16 @@ export default class HelloWorldApp extends LightningElement {
                 }
                 //otherwise, it will just the the time before the skill plus recast
                 else{
-                    usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - parseFloat(currAction.cast));
+                    usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - parseFloat(currAction.cast))]);
                 }
             }
             //and if it is instant cast, it will just be the time before the cast plus the recast
             else{
-                usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)] - waitTime);
+                usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - waitTime)]);
             }
 
         }
+        console.log(timedList);
         return timedList;
         
     }
@@ -96,6 +106,7 @@ export default class HelloWorldApp extends LightningElement {
     getBuffs(timedList){
         let currBuffs = [];
         let lastAction = null;
+        //Go through the timed list
         for(let i = 0; i < timedList.length; i++ ){
             let currAction = timedList[i][0];
             let currTime = timedList[i][1];
@@ -113,6 +124,7 @@ export default class HelloWorldApp extends LightningElement {
                     }
                 }
             }
+            //Check same thing, but if it is a combo bonus
             if(lastAction != null){
                 if(currAction.hasOwnProperty("comboBonus") && currAction.comboAction == lastAction.name){
                     for(let k = 0; k <Object.keys(currAction.comboBonus).length; k++){
@@ -125,6 +137,7 @@ export default class HelloWorldApp extends LightningElement {
                     }
                 }
             }
+            //Save the last action for combo based buffs
             if(currAction.type == "Spell" || currAction.type == "Weaponskill"){
                 lastAction = currAction;
             }
@@ -133,6 +146,15 @@ export default class HelloWorldApp extends LightningElement {
     }
 
     calculatePotency(timedList){
+<<<<<<< HEAD
+=======
+
+        /*
+        Things that still need to be implemented:
+        Damage over Time
+        Cast times being instant after certain skills
+        */
+>>>>>>> 3ee7a506132e267b194a4030f42e79b5e5417a8e
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
@@ -161,7 +183,7 @@ export default class HelloWorldApp extends LightningElement {
                         
                     }
                 }
-                //2 length means a stack based buff
+                //4 length means a stack based buff
                 else{
                     currBuffs[j][1] += stacksUsed;
                     if(currBuffs[j][1] >= 1){
@@ -218,6 +240,27 @@ export default class HelloWorldApp extends LightningElement {
         }
         else{
             let timedList = this.findTimes(actionList);
+            //Adding logic to set timeTaken and startTime
+            console.log(timedList);
+            for (let i = 0; i<timedList.length; i++){
+                let castTime = 0.7;
+                if(timedList[i][0].cast != "Instant"){
+                    castTime = parseFloat(timedList[i][0].cast);
+                }
+                if ( i == 0 ){
+                    //change in future for actions before the fight
+                    actionList[0].startTime = timedList[i][1] - castTime;
+                    actionList[i].timeTaken = castTime;
+                }
+                else{
+                    actionList[i].startTime = timedList[i][1] - castTime;
+                    actionList[i-1].timeTaken = actionList[i].startTime - actionList[i-1].startTime;
+                }
+                if (i == timedList.length-1){
+                    actionList[i].timeTaken = castTime;
+                }
+            }
+            console.log(actionList);
 
             //Adding initial gauge amounts to a list so they can be tracked
             var gaugeAmounts = []
@@ -310,13 +353,15 @@ export default class HelloWorldApp extends LightningElement {
 
 
 	addTimelineAction(e) {
-		this.mockActionList.push(getActionInfo(this.job, e.detail.actionName));
+        //Adds an action to the timeline and validates
+		this.mockActionList.push(JSON.parse(JSON.stringify(getActionInfo(this.job, e.detail.actionName))));
 		this.mockActionList = [...this.mockActionList];
 
         this.validation(this.mockActionList, this.job)
 	}
 
 	removeAction(e){
+        //removes a list from the timeline and validates
 		this.mockActionList.splice(e.detail.indexToRemove, 1);
 		this.mockActionList = [...this.mockActionList];
 
@@ -324,11 +369,13 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     clearList(e){
+        //Clears out the list
         this.mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));;
         this.validation(this.mockActionList, this.job);
     }
 
 	spliceTimelineAction(e) {
+        //splices the action on the timeline
 		const movedItem = this.mockActionList.splice(e.detail.currentIndex, 1)[0];
 		this.mockActionList.splice(e.detail.destinationIndex, 0, movedItem);
 		this.mockActionList = [...this.mockActionList];
@@ -337,9 +384,14 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
+<<<<<<< HEAD
+=======
+        //Function to update the information about the skill
+>>>>>>> 3ee7a506132e267b194a4030f42e79b5e5417a8e
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
+        //Replacing <br>'s with \n's to add new lines
         text = text.replaceAll(" n " , "\n");
         text = text.replaceAll("<br>" , " ");
         this.skillDetails = text;
