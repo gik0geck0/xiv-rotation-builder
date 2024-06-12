@@ -146,15 +146,11 @@ export default class HelloWorldApp extends LightningElement {
     }
 
     calculatePotency(timedList){
-<<<<<<< HEAD
-=======
-
         /*
         Things that still need to be implemented:
         Damage over Time
         Cast times being instant after certain skills
         */
->>>>>>> 3ee7a506132e267b194a4030f42e79b5e5417a8e
         let currTime = 0;
         //Calculation
         let totalPotency = 0;
@@ -384,10 +380,7 @@ export default class HelloWorldApp extends LightningElement {
 	}
 
     updateSkillCard(e){
-<<<<<<< HEAD
-=======
         //Function to update the information about the skill
->>>>>>> 3ee7a506132e267b194a4030f42e79b5e5417a8e
         let card = this.template.querySelector(".skillCard");
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
