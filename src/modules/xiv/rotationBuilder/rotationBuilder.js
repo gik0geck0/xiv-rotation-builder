@@ -40,9 +40,10 @@ export default class HelloWorldApp extends LightningElement {
         //Add it to the timed list
         let timedList = [[actionList[0],currTime]];
         //time when you can use the skill again
-        let usedActions = [[actionList[0].name, currTime+parseFloat(actionList[0].recast)]];
+        let usedActions = [[actionList[0].name, parseFloat(actionList[0].recast)]];
         //save the last GCD to know if a GCD has passed or not
-        let lastGCD = [actionList[0].name, 0];
+        let lastTime = 0;
+        let lastGCD = [actionList[0].name, lastTime];
         //If its an ability, save it with -1 to know it isn't a GCD
         if(actionList[0].type == "Ability"){
             lastGCD[1] = -1;
@@ -60,19 +61,23 @@ export default class HelloWorldApp extends LightningElement {
                 //if instant, just add the wait time
                 if(currAction.cast == "Instant"){
                     currTime += waitTime;
+                    if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
+                        currTime = lastGCD[1]+GCDTime
+                    }
+                    lastTime = currTime - waitTime;
                 }
                 //if not, add cast time
-                if(currAction.cast != "Instant"){
+                else{
                     currTime += parseFloat(currAction.cast);
-                }
-                //if GCD is not up, round to GCD 
-                if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
-                    currTime = lastGCD[1]+GCDTime+waitTime;
+                    if(currTime <= lastGCD[1]+GCDTime && lastGCD[1] != -1){
+                        currTime = lastGCD[1]+GCDTime
+                    }
+                    lastTime = currTime - parseFloat(currAction.cast);
                 }
                 //push to list and save this action as the last GCD
                 let currPair = [currAction,(Math.round(currTime*10)/10)];
                 timedList.push(currPair);
-                lastGCD = currPair;
+                lastGCD = [currAction,(Math.round(lastTime*10)/10)];
             }
             else{
                 //if it's a weavable, just add wait time and push it to the list
@@ -90,12 +95,12 @@ export default class HelloWorldApp extends LightningElement {
                 }
                 //otherwise, it will just the the time before the skill plus recast
                 else{
-                    usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - parseFloat(currAction.cast))]);
+                    usedActions.push([currAction.name, (lastTime+ parseFloat(currAction.recast))]);
                 }
             }
             //and if it is instant cast, it will just be the time before the cast plus the recast
             else{
-                usedActions.push([currAction.name, (currTime + parseFloat(currAction.recast) - waitTime)]);
+                usedActions.push([currAction.name, (lastTime+ parseFloat(currAction.recast))]);
             }
 
         }
@@ -363,7 +368,7 @@ export default class HelloWorldApp extends LightningElement {
         this.validation(this.mockActionList, this.job)
 	}
 
-    clearList(e){
+    clearList(){
         //Clears out the list
         this.mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));;
         this.validation(this.mockActionList, this.job);
@@ -395,7 +400,7 @@ export default class HelloWorldApp extends LightningElement {
         this.errorDetails = `${e.detail.error}`;
     }
 
-    hideErrorCard(e){
+    hideErrorCard(){
         let card = this.template.querySelector(".errorCard")
         card.style.visibility = 'hidden'
         this.errorDetails = ''
