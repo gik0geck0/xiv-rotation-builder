@@ -14,6 +14,7 @@ export default class HelloWorldApp extends LightningElement {
 	mockActionList = [].map(getActionInfo.bind(undefined, "paladin"));
 	jobList = getJobNames();
     skillDetails = "";
+    errorDetails = "";
 
 	changeJob(e){
         //Function to change the job, reset the action List and change the tray to the new job
@@ -98,7 +99,6 @@ export default class HelloWorldApp extends LightningElement {
             }
 
         }
-        console.log(timedList);
         return timedList;
         
     }
@@ -237,7 +237,6 @@ export default class HelloWorldApp extends LightningElement {
         else{
             let timedList = this.findTimes(actionList);
             //Adding logic to set timeTaken and startTime
-            console.log(timedList);
             for (let i = 0; i<timedList.length; i++){
                 let castTime = 0.7;
                 if(timedList[i][0].cast != "Instant"){
@@ -256,7 +255,6 @@ export default class HelloWorldApp extends LightningElement {
                     actionList[i].timeTaken = castTime;
                 }
             }
-            console.log(actionList);
 
             //Adding initial gauge amounts to a list so they can be tracked
             var gaugeAmounts = []
@@ -285,7 +283,7 @@ export default class HelloWorldApp extends LightningElement {
                     var gaugeName = Object.keys(gaugeAmounts[j])[0]
                     if (currAction.hasOwnProperty(gaugeName)){
                         if ((gaugeAmounts[Object.keys(gaugeAmounts[j])] + currAction[gaugeName]) < 0){
-                            invalidActionList.push([currAction, i, `Not enough ${gaugeName} to cast action.`])
+                            invalidActionList.push([currAction, i, `Not enough ${gaugeName} to cast ${currAction.name}.`])
                         }
                         else{
                             gaugeAmounts[j][gaugeName] += currAction[gaugeName]
@@ -305,10 +303,11 @@ export default class HelloWorldApp extends LightningElement {
                             //Check if buff is a stack or time buff
                             if (buffList[j].length === 4){ //Stack buff
                                 if (timedList[i][1] < buffList[j][2] || timedList[i][1] > buffList[j][3]){
-                                    invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                                    invalidActionList.push([currAction, i, `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`])
                                 }
                                 else if (buffList[j][1] < 1){
-                                    invalidActionList.push([currAction, i, 'You are missing stacks of the required buff.'])
+                                    buffList[j][0]
+                                    invalidActionList.push([currAction, i, `You are missing stacks of the ${currAction.buffRequirement} to cast ${currAction.name}.`])
                                 }
                                 else{
                                     buffList[j][1] -= 1
@@ -316,13 +315,13 @@ export default class HelloWorldApp extends LightningElement {
                             }
                             else{ //Time buff
                                 if (timedList[i][1] < buffList[j][1] || timedList[i][1] > buffList[j][2]){
-                                    invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                                    invalidActionList.push([currAction, i, `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`])
                                 }
                             }
                         }
                     }
                     if (buffCheck < 1){
-                        invalidActionList.push([currAction, i, 'The required buff is not active at this time.'])
+                        invalidActionList.push([currAction, i, `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`])
                     }
                 }
             }
@@ -388,5 +387,17 @@ export default class HelloWorldApp extends LightningElement {
         text = text.replaceAll(" n " , "\n");
         text = text.replaceAll("<br>" , " ");
         this.skillDetails = text;
+    }
+
+    showErrorCard(e){
+        let card = this.template.querySelector(".errorCard")
+        card.style.visibility = 'visible'
+        this.errorDetails = `${e.detail.error}`;
+    }
+
+    hideErrorCard(e){
+        let card = this.template.querySelector(".errorCard")
+        card.style.visibility = 'hidden'
+        this.errorDetails = ''
     }
 }

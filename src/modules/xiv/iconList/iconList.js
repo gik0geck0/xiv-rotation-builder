@@ -111,4 +111,13 @@ export default class IconList extends LightningElement {
             return needle > box.left && needle < box.right;
         });
     }
+
+    displayError(e){
+        //Function to display a skills error while hovered over
+        this.dispatchEvent(new CustomEvent('displayerror', {detail: {error: e.target.errortext}}));
+    }
+
+    removeError(){
+        this.dispatchEvent(new CustomEvent('removeerror'));
+    }
 }
