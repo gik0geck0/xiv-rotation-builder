@@ -113,7 +113,9 @@ export default class IconList extends LightningElement {
 
     displayError(e){
         //Function to display a skills error while hovered over
-        this.dispatchEvent(new CustomEvent('displayerror', {detail: {error: e.target.errortext}}));
+        if (e.target.errortext.length > 1){
+            this.dispatchEvent(new CustomEvent('displayerror', {detail: {error: e.target.errortext}}));
+        }
     }
 
     removeError(){
