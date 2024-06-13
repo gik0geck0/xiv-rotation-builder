@@ -1,23 +1,11 @@
 .sortable-list {
     list-style-type: none;
     white-space: nowrap;
+    position: relative;
     overflow-x: auto;
     margin: 0;
     padding: 0;
     height: 150px;
     max-width: 700px;
     z-index: 1;
-}
-
-.hoverText {
-    display: none
-}
-
-.action:hover + .hoverText{
-    position: absolute;
-    display: inline-flex;
-    color: white;
-    font-size: 15px;
-    z-index: 0;
-    background: grey;
 }

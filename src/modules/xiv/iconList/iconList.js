@@ -24,7 +24,12 @@ export default class IconList extends LightningElement {
             this.selectedIcons.push(e.target);
         }
         else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            currIcon.location = "list";
+            if (this.actionList[currentIcons.indexOf(currIcon)].errorMessage.length > 0){
+                currIcon.location = 'invalid'
+            }
+            else{
+                currIcon.location = "list";
+            }
             this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
         }
     }
@@ -58,9 +63,14 @@ export default class IconList extends LightningElement {
     cancellSelected(){
         //cleans up any deleted items that are still selected
         const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
-        for(let icon of currentIcons){
-            if (!(icon.location === 'invalid')){
-                icon.location = "list";
+        for (let i = 0; i < currentIcons.length; i++){
+            if (this.actionList[i].errorMessage.length > 0){
+                console.log("error")
+                currentIcons[i].location = 'invalid'
+            }
+            else{
+                console.log("no error")
+                currentIcons[i].location = 'list'
             }
         }
         this.selectedIcons = [];
@@ -99,5 +109,16 @@ export default class IconList extends LightningElement {
             const box = item.getBoundingClientRect();
             return needle > box.left && needle < box.right;
         });
+    }
+
+    displayError(e){
+        //Function to display a skills error while hovered over
+        if (e.target.errortext.length > 1){
+            this.dispatchEvent(new CustomEvent('displayerror', {detail: {error: e.target.errortext}}));
+        }
+    }
+
+    removeError(){
+        this.dispatchEvent(new CustomEvent('removeerror'));
     }
 }
