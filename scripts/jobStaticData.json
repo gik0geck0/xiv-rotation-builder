@@ -6,16 +6,16 @@
             }
         }
     },
-    "warrior":{
-        "gauges":{
-            "Beast":{
+    "warrior": {
+        "gauges": {
+            "Beast": {
                 "cap": 100
             }
         }
     },
-    "darkknight":{
-        "gauges":{
-            "Blood":{
+    "darkknight": {
+        "gauges": {
+            "Blood": {
                 "cap": 100
             }
         }
@@ -27,167 +27,167 @@
             }
         }
     },
-    "whitemage":{
-        "gauges":{
-            "Lily":{
+    "whitemage": {
+        "gauges": {
+            "Lily": {
                 "cap": 3
             },
-            "BloodLily":{
+            "BloodLily": {
                 "cap": 1
             }
         }
     },
-    "scholar":{
-        "gauges":{
-            "Aetherflow":{
+    "scholar": {
+        "gauges": {
+            "Aetherflow": {
                 "cap": 3
             },
-            "Faerie":{
+            "Faerie": {
                 "cap": 100
             }
         }
     },
-    "astrologian":{
-        "gauges":{
-            "Lunar":{
+    "astrologian": {
+        "gauges": {
+            "Lunar": {
                 "cap": 1
             },
-            "Solar":{
+            "Solar": {
                 "cap": 1
             },
-            "Celestial":{
+            "Celestial": {
                 "cap": 1
             }
         }
     },
-    "sage":{
-        "gauges":{
-            "Addersgall":{
+    "sage": {
+        "gauges": {
+            "Addersgall": {
                 "cap": 3
             },
-            "Addersting":{
+            "Addersting": {
                 "cap": 3
             }
         }
     },
-    "monk":{
-        "gauges":{
-            "Chakra":{
+    "monk": {
+        "gauges": {
+            "Chakra": {
                 "cap": 5
             },
-            "Coeurl":{
+            "Coeurl": {
                 "cap": 3
             },
-            "Raptor":{
+            "Raptor": {
                 "cap": 3
             },
-            "Opo-Opo":{
+            "Opo-Opo": {
                 "cap": 3
             },
-            "LunarNadi":{
+            "LunarNadi": {
                 "cap": 1
             },
-            "SolarNadi":{
+            "SolarNadi": {
                 "cap": 1
             }
         }
     },
-    "dragoon":{
-        "gauges":{
-            "Firstminds'Focus":{
+    "dragoon": {
+        "gauges": {
+            "Firstminds'Focus": {
                 "cap": 2
             },
-            "FirstBroodsGaze":{
+            "FirstBroodsGaze": {
                 "cap": 2
             }
         }
     },
-    "ninja":{
-        "gauges":{
-            "Ninki":{
+    "ninja": {
+        "gauges": {
+            "Ninki": {
                 "cap": 100
             }
         }
     },
-    "samurai":{
-        "gauges":{
-            "Sen":{
+    "samurai": {
+        "gauges": {
+            "Sen": {
                 "cap": 3
             },
-            "Kenki":{
+            "Kenki": {
                 "cap": 100
             },
-            "Meditation":{
+            "Meditation": {
                 "cap": 3
             }
         }
     },
-    "reaper":{
-        "gauges":{
-            "Soul":{
+    "reaper": {
+        "gauges": {
+            "Soul": {
                 "cap": 100
             },
-            "Shroud":{
+            "Shroud": {
                 "cap": 100
             }
         }
     },
-    "bard":{
-        "gauges":{
-            "SoulVoice":{
+    "bard": {
+        "gauges": {
+            "SoulVoice": {
                 "cap": 100
             }
         }
     },
-    "machinist":{
-        "gauges":{
-            "Heat":{
+    "machinist": {
+        "gauges": {
+            "Heat": {
                 "cap": 100
             },
-            "Battery":{
+            "Battery": {
                 "cap": 100
             }
         }
     },
-    "dancer":{
-        "gauges":{
-            "FourfoldFeathers":{
+    "dancer": {
+        "gauges": {
+            "FourfoldFeathers": {
                 "cap": 4
             },
-            "Esprit":{
+            "Esprit": {
                 "cap": 100
             },
-            "StandardStep":{
+            "StandardStep": {
                 "cap": 2
             },
-            "TechnicalStep":{
+            "TechnicalStep": {
                 "cap": 4
             }
         }
     },
-    "blackmage":{
-        "gauges":{
-            "Polyglot":{
+    "blackmage": {
+        "gauges": {
+            "Polyglot": {
                 "cap": 2
             }
         }
     },
-    "summoner":{
-        "gauges":{
-            "Aetherflow":{
+    "summoner": {
+        "gauges": {
+            "Aetherflow": {
                 "cap": 2
             }
         }
     },
-    "redmage":{
-        "gauges":{
-            "WhiteMana":{
+    "redmage": {
+        "gauges": {
+            "WhiteMana": {
                 "cap": 100
             },
-            "BlackMana":{
+            "BlackMana": {
                 "cap": 100
             },
-            "ManaStack":{
+            "ManaStack": {
                 "cap": 3
             }
         }

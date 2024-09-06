@@ -1,4 +1,4 @@
-import pld from "./jobSnippets/pld/pld.json";
+import pld from './jobSnippets/pld/pld.json';
 /**
  * TS Def
  * JobResources: {
@@ -7,7 +7,7 @@ import pld from "./jobSnippets/pld/pld.json";
  *          "snippets": Snippet[]
  *      }
  * }
- * 
+ *
  * CustomAction: {
  *      [actionName: string]: {
  *          description: string;
@@ -16,7 +16,7 @@ import pld from "./jobSnippets/pld/pld.json";
  *          options?: string[]
  *      }
  * }
- * 
+ *
  * Snippet: {
  *      name: string;
  *      description: string;
@@ -26,7 +26,7 @@ import pld from "./jobSnippets/pld/pld.json";
  *          actions: TimelineAction[]
  *      }]
  * }
- * 
+ *
  * TimelineAction: {
  *      time: number;
  *      action?: string;
@@ -35,4 +35,4 @@ import pld from "./jobSnippets/pld/pld.json";
  */
 export const DefaultJobResources = {
     PLD: pld
-}
+};

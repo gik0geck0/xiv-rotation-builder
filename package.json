@@ -1,29 +1,50 @@
 {
-  "name": "xiv-rotation-builder",
-  "version": "0.0.1",
-  "license": "MIT",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "clean": "rm -rf __lwr_cache__ site",
-    "dev": "lwr dev",
-    "dev:compat": "lwr dev --mode compat",
-    "build": "lwr build --clean",
-    "build:prod-compat": "lwr build --clean --mode prod-compat",
-    "slds": ".\\scripts\\update-slds.sh",
-    "start": "lwr start",
-    "stage": "npm run build && npm run start",
-    "stage:prod-compat": "npm run build:prod-compat && npm run start"
-  },
-  "dependencies": {
-    "lightning-base-components": "^1.22.3-alpha",
-    "lwc": "6.6.3",
-    "lwr": "0.12.2"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "volta": {
-    "node": "18.18.2"
-  }
+    "name": "xiv-rotation-builder",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "repository": "https://github.com/gik0geck0/xiv-rotation-builder",
+    "homepage": "https://github.com/gik0geck0/xiv-rotation-builder",
+    "bugs": "https://github.com/gik0geck0/xiv-rotation-builder/issues",
+    "type": "module",
+    "scripts": {
+        "build": "tsc -b",
+        "clean": "rimraf -rf __lwr_cache__ site dist lib coverage tsconfig.tsbuildinfo",
+        "lint": "eslint ./src/**/*.ts ./src/**/*.js",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "slds": ".\\scripts\\update-slds.sh",
+        "start": "lwr dev",
+        "start:prod": "lwr start",
+        "test": "npm run build && npm run lint && npm run test:unit && npm run prettier:verify && npm run test:unit:coverage",
+        "test:unit": "jest",
+        "test:unit:coverage": "jest --coverage"
+    },
+    "dependencies": {
+        "lightning-base-components": "^1.22.3-alpha",
+        "lwc": "8.0.0",
+        "lwr": "0.13.7"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.1.0",
+        "@eslint/js": "^9.10.0",
+        "@lwc/jest-preset": "^16.1.0",
+        "@types/eslint": "^9.6.1",
+        "@types/jest": "^29.5.12",
+        "@typescript-eslint/eslint-plugin": "^8.4.0",
+        "@typescript-eslint/parser": "^8.4.0",
+        "eslint": "^9.10.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "globals": "^15.9.0",
+        "prettier": "^3.3.3",
+        "rimraf": "^6.0.1",
+        "typescript": "^5.5.4"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "volta": {
+        "node": "18.18.2"
+    }
 }

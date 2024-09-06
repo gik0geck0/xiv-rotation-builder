@@ -1,4 +1,4 @@
-import { JobGuide } from "xiv/actionData";
+import { JobGuide } from 'xiv/actionData';
 
 export function getActionInfo(job, action) {
     // TODO: merge w/ effect processing & re-key for faster lookup
@@ -9,8 +9,8 @@ export function getJobActions(job) {
     return JobGuide[job].actions;
 }
 
-export function getJobNames(){
+export function getJobNames() {
     const data = JobGuide;
     const outerCatergories = Object.keys(data);
-    return (outerCatergories);
+    return outerCatergories;
 }

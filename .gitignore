@@ -1,5 +1,6 @@
 __lwr_cache__/
 node_modules/
 site/
-# src/assets/
+build/
 .DS_Store
+tsconfig.tsbuildinfo

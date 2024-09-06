@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "noImplicitAny": false, // TODO: cleanup
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "sourceMap": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "composite": true,
+        "target": "ES2020",
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "build",
+        "paths": {
+            "xiv/actionData": [
+                "src/client/modules/xiv/actionData/actionData.ts"
+            ],
+            "xiv/actionRepository": [
+                "src/client/modules/xiv/actionRepository/actionRepository.ts"
+            ],
+            "xiv/defaultSnippets": [
+                "src/client/modules/xiv/defaultSnippets/defaultSnippets.ts"
+            ],
+            "xiv/iconList": ["src/client/modules/xiv/iconList/iconList.ts"],
+            "xiv/iconTray": ["src/client/modules/xiv/iconTray/iconTray.ts"],
+            "xiv/jobIcon": ["src/client/modules/xiv/jobIcon/jobIcon.ts"],
+            "xiv/rotationBuilder": [
+                "src/client/modules/xiv/rotationBuilder/rotationBuilder.ts"
+            ],
+            "xiv/utils": ["src/client/modules/xiv/utils/utils.ts"]
+        }
+    },
+    "include": ["src/modules/**/*"],
+    "exclude": [
+        "build",
+        "node_modules/**",
+        "**/__tests__/**",
+        "**/__benchmarks__/**",
+        "**/build/**",
+        "**/cjs/**"
+    ]
+}

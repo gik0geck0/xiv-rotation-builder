@@ -1,6 +1,4 @@
-import { LightningElement, api } from "lwc";
-
-
+import { LightningElement, api } from 'lwc';
 
 export default class IconList extends LightningElement {
     // TBD: should this just be action names so it's easy to shuffle? Or stay fully resolve to reduce constant lookups?
@@ -9,68 +7,87 @@ export default class IconList extends LightningElement {
 
     get actionTimeline() {
         // Make up a time component to use as a unique value
-        return this.actionList.map((v, i) => Object.assign({t: i*2.5}, v));
+        return this.actionList.map((v, i) => Object.assign({ t: i * 2.5 }, v));
     }
 
     selectedIcons = [];
     draggedItem;
 
-    selectIcon(e){
-        let currentIcons = [...this.template.querySelectorAll("xiv-job-icon")];
+    selectIcon(e) {
+        let currentIcons = [...this.template.querySelectorAll('xiv-job-icon')];
         let currIcon = e.target;
         //Allows clicked icons to be added to the selected list, meaning they will be highlighted blue
-        if(!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            currIcon.location = "selected";
+        if (
+            !this.selectedIcons.includes(currIcon) &&
+            currentIcons.includes(currIcon)
+        ) {
+            currIcon.location = 'selected';
             this.selectedIcons.push(e.target);
-        }
-        else if (this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)){
-            if (this.actionList[currentIcons.indexOf(currIcon)].errorMessage.length > 0){
-                currIcon.location = 'invalid'
-            }
-            else{
-                currIcon.location = "list";
+        } else if (
+            this.selectedIcons.includes(currIcon) &&
+            currentIcons.includes(currIcon)
+        ) {
+            if (
+                this.actionList[currentIcons.indexOf(currIcon)].errorMessage
+                    .length > 0
+            ) {
+                currIcon.location = 'invalid';
+            } else {
+                currIcon.location = 'list';
             }
             this.selectedIcons.splice(this.selectedIcons.indexOf(currIcon), 1);
         }
     }
 
-    deleteSelected(){ 
+    deleteSelected() {
         //searches through the list and deletes the selected icons
-        const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
-        let maxIndex = -1; 
+        const currentIcons = [
+            ...this.template.querySelectorAll('xiv-job-icon')
+        ];
+        let maxIndex = -1;
         let index = -1;
         let length = this.selectedIcons.length;
-        for(let i = 0; i<length; i++){
+        for (let i = 0; i < length; i++) {
             maxIndex = -1;
-            for(let j = 0; j<length; j++){
-                if (maxIndex < currentIcons.findIndex((e) => e === this.selectedIcons[j])){
-                    maxIndex = currentIcons.findIndex((e) => e === this.selectedIcons[j]);
+            for (let j = 0; j < length; j++) {
+                if (
+                    maxIndex <
+                    currentIcons.findIndex((e) => e === this.selectedIcons[j])
+                ) {
+                    maxIndex = currentIcons.findIndex(
+                        (e) => e === this.selectedIcons[j]
+                    );
                     index = j;
                 }
             }
             //dispatches an event to let the HTML know to update the timeline
-            this.dispatchEvent(new CustomEvent('removeaction', {detail: {indexToRemove: maxIndex}}));
+            this.dispatchEvent(
+                new CustomEvent('removeaction', {
+                    detail: { indexToRemove: maxIndex }
+                })
+            );
             this.selectedIcons.splice(index, 1);
         }
         this.cancellSelected();
     }
 
-    clearList(){
+    clearList() {
         //calls a function in rotation builder to set the list to an empty list
         this.dispatchEvent(new CustomEvent('clearlist'));
     }
 
-    cancellSelected(){
+    cancellSelected() {
         //cleans up any deleted items that are still selected
-        const currentIcons = [...this.template.querySelectorAll("xiv-job-icon")]
-        for (let i = 0; i < currentIcons.length; i++){
-            if (this.actionList[i].errorMessage.length > 0){
-                console.log("error")
-                currentIcons[i].location = 'invalid'
-            }
-            else{
-                console.log("no error")
-                currentIcons[i].location = 'list'
+        const currentIcons = [
+            ...this.template.querySelectorAll('xiv-job-icon')
+        ];
+        for (let i = 0; i < currentIcons.length; i++) {
+            if (this.actionList[i].errorMessage.length > 0) {
+                console.log('error');
+                currentIcons[i].location = 'invalid';
+            } else {
+                console.log('no error');
+                currentIcons[i].location = 'list';
             }
         }
         this.selectedIcons = [];
@@ -84,22 +101,41 @@ export default class IconList extends LightningElement {
     dragEnd(e) {
         //function for the end of a dragged event
         e.preventDefault();
-        const listElements = [...this.template.querySelectorAll("xiv-job-icon")];
-        const currentIndex = listElements.findIndex((e) => e === this.draggedItem);
-        let destinationIndex = this.getClosestItemIndex(listElements, e.clientX);
+        const listElements = [
+            ...this.template.querySelectorAll('xiv-job-icon')
+        ];
+        const currentIndex = listElements.findIndex(
+            (e) => e === this.draggedItem
+        );
+        let destinationIndex = this.getClosestItemIndex(
+            listElements,
+            e.clientX
+        );
 
         if (destinationIndex < 0) {
-            if (e.clientX < this.template.querySelector(".sortable-list").getBoundingClientRect().left) {
+            if (
+                e.clientX <
+                this.template
+                    .querySelector('.sortable-list')
+                    .getBoundingClientRect().left
+            ) {
                 destinationIndex = 0;
             } else {
                 destinationIndex = listElements.length;
             }
-        } 
-        this.dispatchEvent(new CustomEvent('spliceaction', {detail: {currentIndex: currentIndex, destinationIndex: destinationIndex}}));
+        }
+        this.dispatchEvent(
+            new CustomEvent('spliceaction', {
+                detail: {
+                    currentIndex: currentIndex,
+                    destinationIndex: destinationIndex
+                }
+            })
+        );
         this.draggedItem = null;
     }
 
-    dragOver(e) {
+    dragOver() {
         // show cursor for drop location?
     }
 
@@ -111,14 +147,18 @@ export default class IconList extends LightningElement {
         });
     }
 
-    displayError(e){
+    displayError(e) {
         //Function to display a skills error while hovered over
-        if (e.target.errortext.length > 1){
-            this.dispatchEvent(new CustomEvent('displayerror', {detail: {error: e.target.errortext}}));
+        if (e.target.errortext.length > 1) {
+            this.dispatchEvent(
+                new CustomEvent('displayerror', {
+                    detail: { error: e.target.errortext }
+                })
+            );
         }
     }
 
-    removeError(){
+    removeError() {
         this.dispatchEvent(new CustomEvent('removeerror'));
     }
 }
