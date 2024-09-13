@@ -1,13 +1,12 @@
-export function parseEffect(action) {
+import { Action } from 'xiv/actionDataTypes';
+
+export function parseEffect(action: Action): void {
     //Split the effect by line and then each line by spaces
     if (action.effect.includes('<BR>')) {
         action.effect = action.effect.replace('<BR>', '<br>');
     }
-    let splitEffect = action.effect.split('<br>');
 
-    for (let i = 0; i < splitEffect.length; i++) {
-        splitEffect[i] = splitEffect[i].split(' ');
-    }
+    let splitEffect: string[][] = action.effect.split('<br>').map(line => line.split(' '));
 
     //Go through every line of the effect
     for (let i = 0; i < splitEffect.length; i++) {
@@ -56,7 +55,7 @@ export function parseEffect(action) {
 
             if (line.includes('Bonus:')) {
                 //Parse the effect of the bonus
-                var bonusEffect = [];
+                let bonusEffect: string[] = [];
                 for (let k = line.indexOf('Bonus:') + 1; k < line.length; k++) {
                     bonusEffect.push(line[k]);
                 }
@@ -100,13 +99,10 @@ export function parseEffect(action) {
                             .toLowerCase();
                         action.comboBonus = {
                             ...action.comboBonus,
-                            [buffName]:
-                                1 +
-                                bonusEffect[
-                                    bonusEffect.indexOf('dealt') + 2
-                                ].replace('%', '') /
-                                    100
+                            [buffName]: 
+                                1 + parseFloat(bonusEffect[bonusEffect.indexOf('dealt') + 2].replace('%', '')) / 100
                         };
+                            
                     }
                     //General buffs INSIDE COMBO BONUS
                     else {
@@ -162,7 +158,7 @@ export function parseEffect(action) {
                 line.includes('time')
             ) {
                 i++;
-                action.durationPotency = Math.floor(splitEffect[i][1] / 3); //per 3 seconds (time/3 - 1 potency guaranteed)
+                action.durationPotency = Math.floor(parseFloat(splitEffect[i][1]) / 3); //per 3 seconds (time/3 - 1 potency guaranteed)
             }
         }
 
@@ -213,7 +209,7 @@ export function parseEffect(action) {
                     ...action.grants,
                     [buffName]:
                         1 +
-                        line[line.indexOf('dealt') + 2].replace('%', '') / 100
+                        parseFloat(line[line.indexOf('dealt') + 2].replace('%', '')) / 100
                 };
             }
             //General types of buffs
@@ -280,7 +276,7 @@ export function parseEffect(action) {
             line.includes('dealt')
         ) {
             var buffVal =
-                1 + line[line.indexOf('dealt') + 2].replace('%', '') / 100;
+                1 + parseFloat(line[line.indexOf('dealt') + 2].replace('%', '')) / 100;
             if (!isNaN(buffVal)) {
                 action.damageBuff = buffVal;
             }

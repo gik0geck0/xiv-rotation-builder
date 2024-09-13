@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "experimentalDecorators": true,
+        //"experimentalDecorators": true,
         "strict": true,
         "resolveJsonModule": true,
         "noImplicitAny": false, // TODO: cleanup
@@ -18,18 +18,37 @@
         "rootDir": "src",
         "outDir": "build",
         "paths": {
-            "xiv/actionData": ["src/modules/xiv/actionData/actionData.ts"],
-            "xiv/actionRepository": ["src/modules/xiv/actionRepository/actionRepository.ts"],
-            "xiv/defaultSnippets": ["src/modules/xiv/defaultSnippets/defaultSnippets.ts"],
+            "xiv/actionData": [
+                "src/modules/xiv/actionData/actionData.ts"
+            ],
+            "xiv/jobGuide": [
+                "src/modules/xiv/actionData/jobGuide.js"
+            ],
+            "xiv/actionDataTypes": [
+                "src/modules/xiv/actionData/actionDataTypes.ts"
+            ],
+            "xiv/actionRepository": [
+                "src/modules/xiv/actionRepository/actionRepository.ts"
+            ],
+            "xiv/parseEffect": [
+                "src/modules/xiv/actionData/parseEffect.ts"
+            ],
+            "xiv/defaultSnippets": [
+                "src/modules/xiv/defaultSnippets/defaultSnippets.ts"
+            ],
+            "xiv/pldTypes": [
+                "src/modules/xiv/defaultSnippets/jobSnippets/pld/pldTypes.ts"
+            ],
             "xiv/iconList": ["src/modules/xiv/iconList/iconList.ts"],
             "xiv/iconTray": ["src/modules/xiv/iconTray/iconTray.ts"],
             "xiv/jobIcon": ["src/modules/xiv/jobIcon/jobIcon.ts"],
-            "xiv/rotationBuilder": ["src/modules/xiv/rotationBuilder/rotationBuilder.ts"],
-            "xiv/utils": ["src/modules/xiv/utils/utils.ts"],
-            "xiv/optimizer": ["src/modules/xiv/optimizer.ts"]
+            "xiv/rotationBuilder": [
+                "src/modules/xiv/rotationBuilder/rotationBuilder.ts"
+            ],
+            "xiv/utils": ["src/modules/xiv/utils/utils.ts"]
         }
     },
-    "include": ["src/modules/**/*"],
+    "include": ["src/modules/**/*", "src/modules/xiv/defaultSnippets/jobSnippets/**/*.json"],
     "exclude": [
         "build",
         "node_modules/**",
