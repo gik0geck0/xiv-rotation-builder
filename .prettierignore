@@ -1,0 +1,9 @@
+# Jest coverage
+coverage/
+
+build/
+__lwr_cache__
+node_modules/
+pageObjects/*
+src/assets/
+.github
