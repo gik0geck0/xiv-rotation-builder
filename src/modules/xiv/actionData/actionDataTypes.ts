@@ -20,6 +20,8 @@ export interface Action {
     buffRequirement?: string;
     damageBuff?: number;
     durationPotency?: number;
+    startTime?: number;
+    timeTaken?: number;
 }
 
 export interface JobGuideJson {
