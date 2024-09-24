@@ -16,7 +16,7 @@
         {
             "id": "xiv-rotation-builder",
             "path": "/",
-            "rootComponent": "xiv/rotationBuilder",
+            "rootComponent": "xiv/optimizer",
             "layoutTemplate": "$layoutsDir/main_layout.njk",
             "bootstrap": {
                 "syntheticShadow": true
@@ -38,5 +38,12 @@
             "file": "$rootDir/src/assets/icons/utility-sprite/svg/symbols.svg",
             "urlPath": "/lightning.utilitySprite"
         }
+    ], 
+    "moduleProviders": [
+        ["@lwrjs/router/module-provider", { "routesDir": "$rootDir/config/router" }],
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
     ]
+    
 }
