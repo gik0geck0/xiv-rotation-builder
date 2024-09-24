@@ -1,0 +1,30 @@
+<!-- optimizer.html -->
+<template>
+    <div class="container">
+        <h1>Optimizer Form</h1>
+        <form onsubmit={handleSubmit}>
+            <label for="selection">Choose an option:</label>
+            <select id="selection" name="selection">
+                <option value="">--Select an option--</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+
+            <fieldset>
+                <legend>Choose a setting:</legend>
+                <label>
+                    <input type="radio" name="setting" value="setting1" required /> Setting 1
+                </label>
+                <label>
+                    <input type="radio" name="setting" value="setting2" /> Setting 2
+                </label>
+                <label>
+                    <input type="radio" name="setting" value="setting3" /> Setting 3
+                </label>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</template>
