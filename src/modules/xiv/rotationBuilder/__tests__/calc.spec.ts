@@ -6,6 +6,9 @@
 // import HelloWorldApp  from '../rotationBuilder';
 // import { parseEffect } from '../../actionData/parseEffect';
 
+import { DefaultJobResources } from "xiv/defaultSnippets";
+import { getActionInfo } from "xiv/actionRepository";
+
 describe('xiv/rotationBuilder', () => {
 
     beforeEach(() => {
@@ -17,10 +20,25 @@ describe('xiv/rotationBuilder', () => {
         jest.clearAllMocks();
     });
 
-
     describe('sanity check', () => {
         it('should work', () => {
             expect(true).toEqual(true);
         });
+    });
+
+    describe('snippet test', () => {
+
+        test('pld opener potency', () => {
+            const pldBalanceOpener = DefaultJobResources.PLD.snippets[3];
+            const actionList = pldBalanceOpener.versions[0].actions.map((snippetAction) => {
+                return getActionInfo("paladin", snippetAction.action);
+            });
+            console.log("Actions: ", actionList);
+            const sumPotency = actionList.reduce((accum, a) => {
+                return accum + parseFloat(a.comboPotency || a.potency);
+            }, 0);
+            expect(sumPotency).toEqual(500);
+        })
+
     });
 });

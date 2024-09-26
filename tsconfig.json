@@ -19,21 +19,21 @@
         "outDir": "build",
         "paths": {
             "xiv/actionData": [
-                "src/client/modules/xiv/actionData/actionData.ts"
+                "src/modules/xiv/actionData/actionData.ts"
             ],
             "xiv/actionRepository": [
-                "src/client/modules/xiv/actionRepository/actionRepository.ts"
+                "src/modules/xiv/actionRepository/actionRepository.ts"
             ],
             "xiv/defaultSnippets": [
-                "src/client/modules/xiv/defaultSnippets/defaultSnippets.ts"
+                "src/modules/xiv/defaultSnippets/defaultSnippets.ts"
             ],
-            "xiv/iconList": ["src/client/modules/xiv/iconList/iconList.ts"],
-            "xiv/iconTray": ["src/client/modules/xiv/iconTray/iconTray.ts"],
-            "xiv/jobIcon": ["src/client/modules/xiv/jobIcon/jobIcon.ts"],
+            "xiv/iconList": ["src/modules/xiv/iconList/iconList.ts"],
+            "xiv/iconTray": ["src/modules/xiv/iconTray/iconTray.ts"],
+            "xiv/jobIcon": ["src/modules/xiv/jobIcon/jobIcon.ts"],
             "xiv/rotationBuilder": [
-                "src/client/modules/xiv/rotationBuilder/rotationBuilder.ts"
+                "src/modules/xiv/rotationBuilder/rotationBuilder.ts"
             ],
-            "xiv/utils": ["src/client/modules/xiv/utils/utils.ts"]
+            "xiv/utils": ["src/modules/xiv/utils/utils.ts"]
         }
     },
     "include": ["src/modules/**/*"],
