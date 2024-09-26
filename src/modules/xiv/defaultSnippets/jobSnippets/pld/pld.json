@@ -179,14 +179,17 @@
         {
             "name": "123",
             "description": "shorthand for 1-2-3 combo",
-            "actions": [
-                {
-                    "shortcut": "12"
-                },
-                {
-                    "action": "Royal Authority"
-                }
-            ]
+            "versions": [{
+                "name": "v0",
+                "actions": [
+                    {
+                        "shortcut": "12"
+                    },
+                    {
+                        "action": "Royal Authority"
+                    }
+                ]
+            }]
         },
         {
             "name": "Atonements",

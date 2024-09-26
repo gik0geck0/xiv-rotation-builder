@@ -29,7 +29,7 @@ describe('xiv/rotationBuilder', () => {
     describe('snippet test', () => {
 
         test('pld opener potency', () => {
-            const pldBalanceOpener = DefaultJobResources.PLD.snippets[3];
+            const pldBalanceOpener = DefaultJobResources.PLD.snippets.find((s) => s.name === "12");
             const actionList = pldBalanceOpener.versions[0].actions.map((snippetAction) => {
                 return getActionInfo("paladin", snippetAction.action);
             });
