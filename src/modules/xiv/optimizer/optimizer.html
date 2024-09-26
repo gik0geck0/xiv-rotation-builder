@@ -1,14 +1,13 @@
-<!-- optimizer.html -->
 <template>
     <div class="container">
-        <h1>Optimizer Form</h1>
+        <h1>Rotation Optimizer</h1>
         <form onsubmit={handleSubmit}>
-            <label for="selection">Choose an option:</label>
+            <label for="selection">Choose a Job:</label>
             <select id="selection" name="selection">
-                <option value="">--Select an option--</option>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option value="">--Select a Job--</option>
+                <option value="option1">job 1</option>
+                <option value="option2">job 2</option>
+                <option value="option3">this list will be dynamically built after ts refactor is done</option>
             </select>
 
             <fieldset>
@@ -23,6 +22,22 @@
                     <input type="radio" name="setting" value="setting3" /> Setting 3
                 </label>
             </fieldset>
+
+            <div class="slider-container">
+                <label for="duration">Select Duration:  
+                    <span id="durationValue"> 60</span> seconds
+                </label>
+                <input 
+                    type="range" 
+                    id="duration" 
+                    name="duration" 
+                    min="1" 
+                    max="840" 
+                    step="1" 
+                    value="60"
+                    oninput={handleSliderChange}
+                />
+            </div>
 
             <button type="submit">Submit</button>
         </form>
