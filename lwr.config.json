@@ -16,7 +16,7 @@
         {
             "id": "xiv-rotation-builder",
             "path": "/",
-            "rootComponent": "xiv/optimizer",
+            "rootComponent": "xiv/app",
             "layoutTemplate": "$layoutsDir/main_layout.njk",
             "bootstrap": {
                 "syntheticShadow": true
