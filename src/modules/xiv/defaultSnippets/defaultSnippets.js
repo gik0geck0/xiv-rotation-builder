@@ -35,5 +35,8 @@ import pld from './jobSnippets/pld/pld.json';
  */
 export const DefaultJobResources = {
     PLD: pld,
-    BLM: blm
+    BLM: blm,
+    WHM: whm,
+    RPR: rpr,
+    BRD: brd
 };
