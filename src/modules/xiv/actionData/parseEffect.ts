@@ -1,4 +1,4 @@
-import { Action } from 'xiv/actionDataTypes';
+import type { Action } from './actionDataTypes';
 
 export function parseEffect(action: Action): void {
     //Split the effect by line and then each line by spaces

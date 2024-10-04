@@ -1,4 +1,4 @@
-import { JobGuideJson, Action } from 'xiv/actionDataTypes';
+import type { JobGuideJson, Action } from '../actionData/actionDataTypes';
 import { JobGuide } from 'xiv/actionData';
 
 export function getActionInfo(job: keyof JobGuideJson, action: string): Action | undefined {

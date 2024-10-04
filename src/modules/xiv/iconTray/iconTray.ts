@@ -1,7 +1,7 @@
 // iconTray.ts
 import { LightningElement, api } from 'lwc';
 import { getJobActions } from 'xiv/actionRepository';
-import { Action } from 'xiv/actionDataTypes';
+import type { Action } from 'xiv/actionData';
 
 export default class IconTray extends LightningElement {
     @api job: string = 'paladin';
