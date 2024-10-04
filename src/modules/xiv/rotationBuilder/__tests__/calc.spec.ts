@@ -61,9 +61,14 @@ describe('xiv/rotationBuilder', () => {
         // Paladin snippet tests
         testSnippetPotency('pld 12 potency', '12', 'PLD', 'paladin', 0, 500); // Pre-7.0 '12'
         testSnippetPotency('pld opener potency', 'balanceOpener', 'PLD', 'paladin', 1, 12485); // Current Opener
+        testSnippetPotency('pld combo', 'Quick Combo', 'PLD', 'paladin', 0, 3010); // Quick Combo
 
         // White Mage snippet tests
         testSnippetPotency('whm opener potency', 'BalanceOpener', 'WHM', 'whitemage', 0, 6115); // Current Opener
+
+        // Samurai snippet tests
+        testSnippetPotency('sam full sen', 'Full Sen', 'SAM', 'samurai', 0, 3385.60);
+        testSnippetPotency('sam same sen', 'Same Sen', 'SAM', 'samurai', 0, 1910);
 
         // Reaper snippet tests
         testSnippetPotency('rpr opener potency', 'BalanceOpener', 'RPR', 'reaper', 0, 13143.70); // Current Opener
@@ -73,7 +78,7 @@ describe('xiv/rotationBuilder', () => {
 
         // Black Mage snippet tests
         testSnippetPotency('blm opener potency', 'BalanceOpener', 'BLM', 'blackmage', 0, 9424); // Current Opener
-        
-
+        testSnippetPotency('blm despair', 'Early Despair', 'BLM', 'blackmage', 0, 910);
+        testSnippetPotency('blm aspect mastery', 'Aspect Mastery III', 'BLM', 'blackmage', 0, 2608);
     });
 });
