@@ -2,6 +2,7 @@ import { camelize } from '../utils';
 
 describe('xiv/utils', () => {
     describe('camelize', () => {
+
         it('camelizes lowercase words', () => {
             expect(camelize('some words that foo bar')).toEqual(
                 'someWordsThatFooBar'
