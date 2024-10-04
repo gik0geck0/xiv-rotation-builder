@@ -13,7 +13,7 @@ interface Action {
 }
 
 export default class IconList extends LightningElement {
-    @api actionList!: Action[];
+    @api actionList: Action[] = [];
     @api job!: string;
 
     selectedIcons: HTMLElement[] = [];
@@ -24,7 +24,8 @@ export default class IconList extends LightningElement {
     }
 
     selectIcon(e: Event) {
-        const currentIcons = [...this.template.querySelectorAll('xiv-job-icon')];
+        const currentIcons = [...(this.template?.querySelectorAll('xiv-job-icon') || [])];
+
         const currIcon = e.target as HTMLElement;
 
         if (!this.selectedIcons.includes(currIcon) && currentIcons.includes(currIcon)) {
@@ -42,7 +43,8 @@ export default class IconList extends LightningElement {
     }
 
     deleteSelected() {
-        const currentIcons = [...this.template.querySelectorAll('xiv-job-icon')];
+        const currentIcons = [...(this.template?.querySelectorAll('xiv-job-icon') || [])];
+
         let maxIndex = -1;
         let index = -1;
         let length = this.selectedIcons.length;
@@ -68,7 +70,7 @@ export default class IconList extends LightningElement {
     }
 
     cancellSelected() {
-        const currentIcons = [...this.template.querySelectorAll('xiv-job-icon')];
+        const currentIcons = [...(this.template?.querySelectorAll('xiv-job-icon') || [])];
         for (let i = 0; i < currentIcons.length; i++) {
             if (this.actionList[i].errorMessage.length > 0) {
                 currentIcons[i].setAttribute('location', 'invalid');
@@ -85,13 +87,13 @@ export default class IconList extends LightningElement {
 
     dragEnd(e: DragEvent) {
         e.preventDefault();
-        const listElements = [...this.template.querySelectorAll('xiv-job-icon')];
+        const listElements = Array.from(this.template?.querySelectorAll('xiv-job-icon') as NodeListOf<HTMLElement>);
         const currentIndex = listElements.findIndex(item => item === this.draggedItem);
 
         let destinationIndex = this.getClosestItemIndex(listElements, e.clientX);
 
         if (destinationIndex < 0) {
-            const sortableList = this.template.querySelector('.sortable-list') as HTMLElement;
+            const sortableList = this.template?.querySelector('.sortable-list') as HTMLElement;
             if (e.clientX < sortableList.getBoundingClientRect().left) {
                 destinationIndex = 0;
             } else {
@@ -123,7 +125,7 @@ export default class IconList extends LightningElement {
 
     displayError(e: Event) {
         const target = e.target as HTMLElement;
-        if (target.getAttribute('errortext')?.length > 1) {
+        if ((target.getAttribute('errortext') ?? '').length > 1)  {
             this.dispatchEvent(
                 new CustomEvent('displayerror', { detail: { error: target.getAttribute('errortext') } })
             );

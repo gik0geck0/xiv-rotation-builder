@@ -1,7 +1,6 @@
 import { LightningElement } from 'lwc';
-import { getActionInfo, getJobNames, getJobActions } from '../actionRepository/actionRepository';
-//import { JobGuide } from 'xiv/actionData';
-import { Action } from '../actionData/actionDataTypes'; // Assuming you have an Action interface
+import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
+import { Action } from 'xiv/actionDataTypes'; // Assuming you have an Action interface
 
 function hasOwnProperty(obj: any, property: string): boolean {
     return Object.prototype.hasOwnProperty.call(obj, property);
@@ -11,14 +10,14 @@ export default class RotationBuilder extends LightningElement {
     job: string = 'paladin';
     jobActions: Action[] = getJobActions(this.job);
     totalPotency: number = 0;
-    mockActionList: Action[] = [].map(() => getActionInfo('paladin', ''));
-    jobList: string[] = getJobNames();
+    mockActionList: Action[] = [].map(() => getActionInfo('paladin', '')).filter((action): action is Action => action !== undefined);
+    jobList: string[] = getJobNames() as string[];
     skillDetails: string = '';
     errorDetails: string = '';
 
     changeJob() {
-        this.job = (this.template.querySelector('select') as HTMLSelectElement).value;
-        this.mockActionList = [].map(() => getActionInfo(this.job, ''));
+        this.job = (this.template?.querySelector('select') as HTMLSelectElement).value;
+        this.mockActionList = [].map(() => getActionInfo(this.job, '')).filter((action): action is Action => action !== undefined);
         this.jobActions = getJobActions(this.job);
     }
 
@@ -96,10 +95,10 @@ export default class RotationBuilder extends LightningElement {
             const currTime = timedList[i][1];
 
             if (hasOwnProperty(currAction, 'damageBuff')) {
-                currBuffs.push([currAction, currTime, currTime + parseFloat(currAction.duration)]);
+                currBuffs.push([currAction, currTime, currTime + parseFloat(currAction.duration || '0')]);
             }
 
-            if (hasOwnProperty(currAction, 'grants')) {
+            if (hasOwnProperty(currAction, 'grants') && currAction.grants) {
                 for (let k = 0; k < Object.keys(currAction.grants).length; k++) {
                     currBuffs.push([
                         Object.keys(currAction.grants)[k].toLowerCase(),
@@ -110,7 +109,7 @@ export default class RotationBuilder extends LightningElement {
                 }
             }
 
-            if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name) {
+            if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name && currAction.comboBonus) {
                 for (let k = 0; k < Object.keys(currAction.comboBonus).length; k++) {
                     currBuffs.push([
                         Object.keys(currAction.comboBonus)[k].toLowerCase(),
@@ -160,25 +159,25 @@ export default class RotationBuilder extends LightningElement {
                     totalPotency += parseFloat(currAction[extraPotency]) * buffAmt;
                     stacksUsed = -1;
                 } else if (currAction.comboAction === lastAction.name && hasOwnProperty(currAction, 'comboAction')) {
-                    totalPotency += parseFloat(currAction.comboPotency) * buffAmt;
+                    totalPotency += parseFloat(currAction.comboPotency || '0') * buffAmt;
                 } else if (hasOwnProperty(currAction, 'potency')) {
-                    totalPotency += parseFloat(currAction.potency) * buffAmt;
+                    totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
                 }
                 lastAction = currAction;
             }
 
             if (currAction.type === 'Ability') {
                 if (hasOwnProperty(currAction, 'potency')) {
-                    totalPotency += parseFloat(currAction.potency) * buffAmt;
+                    totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
                 }
             }
             extraPotency = null;
         }
 
         const PPS = Math.round((totalPotency / currTime) * 100) / 100;
-        (this.template.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
+        (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
             `Total Potency: ${totalPotency}`;
-        (this.template.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
+        (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
             `Potency Per Second: ${PPS}`;
     }
 
@@ -189,9 +188,9 @@ export default class RotationBuilder extends LightningElement {
         });
 
         if (actionList.length === 0) {
-            (this.template.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
+            (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
                 'Total Potency: Add actions to receive a potency.';
-            (this.template.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
+            (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
                 'Potency Per Second: Add actions to receive a pps.';
         } else {
             const timedList = this.findTimes(actionList);
@@ -202,7 +201,7 @@ export default class RotationBuilder extends LightningElement {
                     actionList[0].timeTaken = castTime;
                 } else {
                     actionList[i].startTime = timedAction[1] - castTime;
-                    actionList[i - 1].timeTaken = actionList[i].startTime - actionList[i - 1].startTime;
+                    actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
                 }
                 if (i === timedList.length - 1) {
                     actionList[i].timeTaken = castTime;
@@ -230,7 +229,7 @@ export default class RotationBuilder extends LightningElement {
     }
 
     clearList(): void {
-        this.mockActionList = [].map(() => getActionInfo('paladin', ''));
+        this.mockActionList = [].map(() => getActionInfo('paladin', '')).filter((action): action is Action => action !== undefined);
         this.validation(this.mockActionList, this.job);
     }
 
@@ -243,7 +242,7 @@ export default class RotationBuilder extends LightningElement {
     }
 
     updateSkillCard(e: CustomEvent): void {
-        const card = this.template.querySelector('.skillCard') as HTMLElement;
+        const card = this.template?.querySelector('.skillCard') as HTMLElement;
         card.title = e.detail.actionName;
         let text = e.detail.actionDescription;
         text = text.replaceAll(' n ', '\n');
@@ -252,13 +251,13 @@ export default class RotationBuilder extends LightningElement {
     }
 
     showErrorCard(e: CustomEvent): void {
-        const card = this.template.querySelector('.errorCard') as HTMLElement;
+        const card = this.template?.querySelector('.errorCard') as HTMLElement;
         card.style.visibility = 'visible';
         this.errorDetails = `${e.detail.error}`;
     }
 
     hideErrorCard(): void {
-        const card = this.template.querySelector('.errorCard') as HTMLElement;
+        const card = this.template?.querySelector('.errorCard') as HTMLElement;
         card.style.visibility = 'hidden';
         this.errorDetails = '';
     }

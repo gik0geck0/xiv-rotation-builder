@@ -1,5 +1,5 @@
-import { JobGuideJson, Action } from '../actionData/actionDataTypes';
-import { JobGuide } from '../actionData/actionData';
+import { JobGuideJson, Action } from 'xiv/actionDataTypes';
+import { JobGuide } from 'xiv/actionData';
 
 export function getActionInfo(job: keyof JobGuideJson, action: string): Action | undefined {
     // TODO: merge w/ effect processing & re-key for faster lookup

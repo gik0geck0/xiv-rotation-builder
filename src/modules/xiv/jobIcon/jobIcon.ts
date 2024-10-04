@@ -1,5 +1,5 @@
 // jobIcon.ts
-import { LightningElement, api } from 'lwc';
+import { api, LightningElement } from 'lwc';
 
 export default class JobIcon extends LightningElement {
     @api starttime: number = 0;

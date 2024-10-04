@@ -1,4 +1,4 @@
-import { Action } from './actionDataTypes';
+import { Action } from 'xiv/actionDataTypes';
 
 export function parseEffect(action: Action): void {
     //Split the effect by line and then each line by spaces
@@ -55,7 +55,7 @@ export function parseEffect(action: Action): void {
 
             if (line.includes('Bonus:')) {
                 //Parse the effect of the bonus
-                var bonusEffect = [];
+                let bonusEffect: string[] = [];
                 for (let k = line.indexOf('Bonus:') + 1; k < line.length; k++) {
                     bonusEffect.push(line[k]);
                 }
@@ -99,13 +99,10 @@ export function parseEffect(action: Action): void {
                             .toLowerCase();
                         action.comboBonus = {
                             ...action.comboBonus,
-                            [buffName]:
-                                1 +
-                                bonusEffect[
-                                    bonusEffect.indexOf('dealt') + 2
-                                ].replace('%', '') /
-                                    100
+                            [buffName]: 
+                                1 + parseFloat(bonusEffect[bonusEffect.indexOf('dealt') + 2].replace('%', '')) / 100
                         };
+                            
                     }
                     //General buffs INSIDE COMBO BONUS
                     else {
