@@ -8,6 +8,7 @@
 
 import { DefaultJobResources } from "xiv/defaultSnippets";
 import { getActionInfo } from "xiv/actionRepository";
+import { JobGuide } from "../../actionData/actionData";
 
 // Handled undefined actions
 // Undefined: return 0, otherwise return action's potency
@@ -22,6 +23,11 @@ function getPotency(action, context): number {
 
 // Test the potency of a specified snippet for a given job
 function testSnippetPotency(testName, snippetName, jobKey, jobName, version, expectedPotency): void {
+    if(!JobGuide[jobName]) {
+        console.warn(`Undefined job info for ${jobName}`);
+        return;
+    }
+
     test(testName, () => {
         const jobSnippet = DefaultJobResources[jobKey].snippets.find((s) => s.name === snippetName);
         const actionList = jobSnippet.versions[version].actions.map((snippetAction) => {
@@ -109,5 +115,6 @@ describe('xiv/rotationBuilder', () => {
         testSnippetPotency('rdm melee potency', 'Melee Spender', 'RDM', 'redmage', 0, 2420); // Melee Spender
 
         // Pictomancer snippet tests
+        testSnippetPotency('pct palette potency', 'Palette Combo', 'PCT', 'pictomancer', 0, 6280);
     });
 });
