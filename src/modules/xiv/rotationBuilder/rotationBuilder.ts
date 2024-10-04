@@ -1,6 +1,6 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
-import { Action } from 'xiv/actionDataTypes'; // Assuming you have an Action interface
+import type { Action } from 'xiv/actionData'; // Assuming you have an Action interface
 
 function hasOwnProperty(obj: any, property: string): boolean {
     return Object.prototype.hasOwnProperty.call(obj, property);
