@@ -63,12 +63,30 @@ describe('xiv/rotationBuilder', () => {
         testSnippetPotency('pld opener potency', 'balanceOpener', 'PLD', 'paladin', 1, 12485); // Current Opener
         testSnippetPotency('pld combo', 'Quick Combo', 'PLD', 'paladin', 0, 3010); // Quick Combo
 
+        // Warrior snippet tests
+        testSnippetPotency('war 123 potency', '123', 'WAR', 'warrior', 0, 1040); // 123
+
+        // Dark Knight snippet tests
+        testSnippetPotency('drk combo breaker potency', 'Combo Breaker', 'DRK', 'darkknight', 0, 800); // Combo Breaker
+
+        // Gunbreaker snippet tests
+        testSnippetPotency('gnb cartridge potency', 'Cartridge Spender', 'GNB', 'gunbreaker', 0, 2770); // Cartridge Spender
+
         // White Mage snippet tests
         testSnippetPotency('whm opener potency', 'BalanceOpener', 'WHM', 'whitemage', 0, 6115); // Current Opener
 
+        // Astrologian snippet tests
+        testSnippetPotency('ast earthly star', 'Earthly Star', 'AST', 'astrologian', 0, 3980); // Earthly Star
+
+        // Sage snippet tests
+        testSnippetPotency('sge dosis potency', 'Dosis Spam', 'SGE', 'sage', 0, 2100); // Dosis Spam
+
+        // Dragoon snippet tests
+        testSnippetPotency('drg thrust potency', 'Thrust Combo', 'DRG', 'dragoon', 0, 1790); // Thrust Combo
+
         // Samurai snippet tests
-        testSnippetPotency('sam full sen', 'Full Sen', 'SAM', 'samurai', 0, 3385.60);
-        testSnippetPotency('sam same sen', 'Same Sen', 'SAM', 'samurai', 0, 1910);
+        testSnippetPotency('sam full sen', 'Full Sen', 'SAM', 'samurai', 0, 3385.60); // Full Sen
+        testSnippetPotency('sam same sen', 'Same Sen', 'SAM', 'samurai', 0, 1910); // Same Sen
 
         // Reaper snippet tests
         testSnippetPotency('rpr opener potency', 'BalanceOpener', 'RPR', 'reaper', 0, 13143.70); // Current Opener
@@ -76,9 +94,20 @@ describe('xiv/rotationBuilder', () => {
         // Bard snippet tests
         testSnippetPotency('brd opener potency', 'BalanceOpener', 'BRD', 'bard', 0, 7005.80); // Current Opener
 
+        // Machinist snippet tests
+        testSnippetPotency('mch chainsaw potency', 'Chainsaw', 'MCH', 'machinist', 0, 1200);
+
+        // Dancer snippet tests
+        testSnippetPotency('dnc step potency', 'Standard Step', 'DNC', 'dancer', 0, 850); // Standard Step
+
         // Black Mage snippet tests
         testSnippetPotency('blm opener potency', 'BalanceOpener', 'BLM', 'blackmage', 0, 9424); // Current Opener
-        testSnippetPotency('blm despair', 'Early Despair', 'BLM', 'blackmage', 0, 910);
-        testSnippetPotency('blm aspect mastery', 'Aspect Mastery III', 'BLM', 'blackmage', 0, 2608);
+        testSnippetPotency('blm despair', 'Early Despair', 'BLM', 'blackmage', 0, 910); // Despair
+        testSnippetPotency('blm aspect mastery', 'Aspect Mastery III', 'BLM', 'blackmage', 0, 2608); // Aspect Mastery
+    
+        // Red Mage snippet tests
+        testSnippetPotency('rdm melee potency', 'Melee Spender', 'RDM', 'redmage', 0, 2420); // Melee Spender
+
+        // Pictomancer snippet tests
     });
 });
