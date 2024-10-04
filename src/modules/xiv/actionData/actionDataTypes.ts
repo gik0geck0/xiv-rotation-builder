@@ -1,12 +1,5 @@
-export interface GaugeDefinition {
-    cap: number;
-}
-
-export interface GaugeCollection {
-    [gaugeName: string]: GaugeDefinition;
-}
-
-export interface RawJobAction {
+export interface Action {
+    id?: string;
     icon: string;
     name: string;
     level: string;
@@ -15,24 +8,26 @@ export interface RawJobAction {
     recast: string;
     cost: string;
     effect: string;
+    description?: string;
+    location?: string;
+    errorMessage?: string;
+    potency?: string;
+    duration?: string;
+    comboAction?: string;
+    comboPotency?: string;
+    comboBonus?: Record<string, any>;
+    grants?: Record<string, any>;
+    buffRequirement?: string;
+    damageBuff?: number;
+    durationPotency?: number;
+    startTime?: number;
+    timeTaken?: number;
 }
 
-export interface JobAction extends RawJobAction {
-    id: string;
-    location: string;
-    errorMessage: string;
-    description: string;
-}
-
-export interface RawJobTrait {
-    icon: string;
-    name: string;
-    level: string;
-    effect: string;
-}
-
-export interface RawJobDefinition {
-    gauges: GaugeCollection;
-    actions: RawJobAction[];
-    traits: RawJobTrait[];
+export interface JobGuideJson {
+    [jobName: string]: {
+        gauges: Record<string, any>;
+        actions: Action[];
+        traits?: Record<string, any>[];
+    };
 }
