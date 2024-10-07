@@ -1,6 +1,31 @@
 import { LightningElement } from 'lwc';
+import { getJobNames } from 'xiv/actionRepository';
 
 export default class Optimizer extends LightningElement {
+    //Select job 
+    job = 'paladin';
+    jobList = getJobNames();
+
+    //Select opt strategy
+    optStrategyValue = '';
+
+    get options() {
+        return [
+            { label: 'Prioritize Simulation Breadth', optStrategyValue: 'breadth' },
+            { label: 'Prioritize Simulation Depth', optStrategyValue: 'depth' },
+            { label: 'Balanced Simulation', optStrategyValue: 'balanced' }, 
+        ];
+    }
+
+    //Input slider 
+    myValue = 20; //initial value
+
+    handleChange(event) {
+        this.myValue = event.detail.value;
+    }
+
+
+
     sliderValue: number = 60;  // Initial value of the duration input
 
     handleSubmit(event: Event): void {
