@@ -21,23 +21,11 @@
             "xiv/actionData": [
                 "src/modules/xiv/actionData/actionData.ts"
             ],
-            "xiv/jobGuide": [
-                "src/modules/xiv/actionData/jobGuide.js"
-            ],
-            "xiv/actionDataTypes": [
-                "src/modules/xiv/actionData/actionDataTypes.ts"
-            ],
             "xiv/actionRepository": [
                 "src/modules/xiv/actionRepository/actionRepository.ts"
             ],
-            "xiv/parseEffect": [
-                "src/modules/xiv/actionData/parseEffect.ts"
-            ],
             "xiv/defaultSnippets": [
                 "src/modules/xiv/defaultSnippets/defaultSnippets.ts"
-            ],
-            "xiv/pldTypes": [
-                "src/modules/xiv/defaultSnippets/jobSnippets/pld/pldTypes.ts"
             ],
             "xiv/iconList": ["src/modules/xiv/iconList/iconList.ts"],
             "xiv/iconTray": ["src/modules/xiv/iconTray/iconTray.ts"],
