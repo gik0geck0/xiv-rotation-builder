@@ -20,10 +20,10 @@ export default class IconTray extends LightningElement {
     }
 
     addAction(e: Event) {
-        const target = e.target as HTMLElement;
+        const target = e.target as any;
         this.dispatchEvent(
             new CustomEvent('addaction', {
-                detail: { actionName: target.getAttribute('name') }
+                detail: { actionName: target.name }
             })
         );
     }
