@@ -1,4 +1,4 @@
-{
+export default {
     "customActions": {
         "filler": {
             "description": "Any GCD",
