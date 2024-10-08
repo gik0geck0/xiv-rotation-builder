@@ -25,6 +25,12 @@ for (const jobName in jobGuideJson) {
         Cost: ${action.cost}      
         Effect: ${action.effect}`;
         parseEffect(action);
+
+        // Set boolean flags for Action type and cast time
+        action.isInstant = action.cast === 'Instant';
+        action.isAbility = action.type === 'Ability';
+        action.isSpell = action.type === 'Spell';
+        action.isWeaponskill = action.type === 'Weaponskill';
     }
 }
 
