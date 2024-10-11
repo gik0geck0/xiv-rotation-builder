@@ -124,10 +124,10 @@ export default class IconList extends LightningElement {
     }
 
     displayError(e: Event) {
-        const target = e.target as HTMLElement;
-        if ((target.getAttribute('errortext') ?? '').length > 1)  {
+        const target = e.target as any;
+        if (target.errortext?.length > 1)  {
             this.dispatchEvent(
-                new CustomEvent('displayerror', { detail: { error: target.getAttribute('errortext') } })
+                new CustomEvent('displayerror', { detail: { error: target.errortext } })
             );
         }
     }
