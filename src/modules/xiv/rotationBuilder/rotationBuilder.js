@@ -2,8 +2,8 @@ import { LightningElement } from 'lwc';
 import { getActionInfo } from 'xiv/actionRepository';
 import { getJobNames } from 'xiv/actionRepository';
 import { getJobActions } from 'xiv/actionRepository';
-
 import { JobGuide } from 'xiv/actionData';
+import { DefaultJobResources } from 'xiv/defaultSnippets';
 
 function hasOwnProperty(obj, property) {
     return Object.prototype.hasOwnProperty.call(obj, property);
@@ -19,6 +19,7 @@ export default class HelloWorldApp extends LightningElement {
     errorDetails = '';
 
     changeJob() {
+        console.log("Default jobs: " + DefaultJobResources);
         //Function to change the job, reset the action List and change the tray to the new job
         this.job = this.template.querySelector('select').value;
         this.mockActionList = [].map(getActionInfo.bind(undefined, this.job));

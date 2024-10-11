@@ -1,4 +1,4 @@
-import pld from './jobSnippets/pld/pld.json';
+import pld from './pld.js';
 /**
  * TS Def
  * JobResources: {
