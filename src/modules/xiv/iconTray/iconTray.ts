@@ -8,12 +8,12 @@ export default class IconTray extends LightningElement {
     @api jobActions: Action[] = getJobActions('paladin');
 
     displayDetails(e: Event) {
-        const target = e.target as HTMLElement;
+        const target = e.target as any;
         this.dispatchEvent(
             new CustomEvent('displaydetail', {
                 detail: {
-                    actionName: target.getAttribute('name'),
-                    actionDescription: target.getAttribute('hovertext')
+                    actionName: target.name,
+                    actionDescription: target.hovertext
                 }
             })
         );
