@@ -1,13 +1,18 @@
+import { JobGuideJson, Action } from './actionDataTypes'; // Importing types
+import { camelize } from 'xiv/utils';
+import { parseEffect } from './parseEffect';
+import jobGuideJson from './jobGuide'; // Assuming jobGuideJson is already typed in jobGuide
+
+// re-export for consumers
+export type { Action, JobGuideJson } from './actionDataTypes';
+
 export default {
     generationDate: '5/15/2024 8:29:00 -0600'
 };
-import jobGuideJson from './jobGuide';
-import { camelize } from 'xiv/utils';
-import { parseEffect } from './parseEffect';
 
 // insert action IDs
 for (const jobName in jobGuideJson) {
-    const jobActions = jobGuideJson[jobName].actions;
+    const jobActions: Action[] = jobGuideJson[jobName].actions;
     for (const action of jobActions) {
         action.id = camelize(action.name);
         action.location = 'tray';
@@ -23,4 +28,4 @@ for (const jobName in jobGuideJson) {
     }
 }
 
-export const JobGuide = jobGuideJson;
+export const JobGuide: JobGuideJson = jobGuideJson;
