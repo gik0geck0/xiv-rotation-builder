@@ -26,7 +26,7 @@ export default class RotationBuilder extends LightningElement {
         const GCDTime = 2.5;
         const waitTime = 0.7;
 
-        if (actionList[0].cast === 'Instant') {
+        if (actionList[0].isInstant) {
             currTime = waitTime;
         } else {
             currTime = parseFloat(actionList[0].cast);
@@ -38,7 +38,7 @@ export default class RotationBuilder extends LightningElement {
         ];
 
         let lastGCD: [string, number] = [actionList[0].name, currTime];
-        if (actionList[0].type === 'Ability') {
+        if (actionList[0].isAbility) {
             lastGCD[1] = -1;
         }
 
@@ -51,8 +51,8 @@ export default class RotationBuilder extends LightningElement {
                 }
             }
 
-            if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
-                if (currAction.cast === 'Instant') {
+            if (currAction.isSpell || currAction.isWeaponskill) {
+                if (currAction.isInstant) {
                     if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
                         currTime = lastGCD[1] + GCDTime + waitTime;
                     } else {
@@ -72,7 +72,7 @@ export default class RotationBuilder extends LightningElement {
                 timedList.push([currAction, Math.round(currTime * 10) / 10]);
             }
 
-            if (currAction.cast !== 'Instant') {
+            if (!currAction.isInstant) {
                 if (parseFloat(currAction.recast) >= parseFloat(currAction.cast)) {
                     usedActions.push([currAction.name, currTime]);
                 } else {
@@ -120,7 +120,7 @@ export default class RotationBuilder extends LightningElement {
                 }
             }
 
-            if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
+            if (currAction.isSpell || currAction.isWeaponskill) {
                 lastAction = currAction;
             }
         }
@@ -154,7 +154,7 @@ export default class RotationBuilder extends LightningElement {
                 }
             }
 
-            if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
+            if (currAction.isSpell || currAction.isWeaponskill) {
                 if (extraPotency != null) {
                     totalPotency += parseFloat(currAction[extraPotency]) * buffAmt;
                     stacksUsed = -1;
@@ -166,7 +166,7 @@ export default class RotationBuilder extends LightningElement {
                 lastAction = currAction;
             }
 
-            if (currAction.type === 'Ability') {
+            if (currAction.isAbility) {
                 if (hasOwnProperty(currAction, 'potency')) {
                     totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
                 }
@@ -195,7 +195,7 @@ export default class RotationBuilder extends LightningElement {
         } else {
             const timedList = this.findTimes(actionList);
             timedList.forEach((timedAction, i) => {
-                const castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast);
+                const castTime = timedAction[0].isInstant ? 0.7 : parseFloat(timedAction[0].cast);
                 if (i === 0) {
                     actionList[0].startTime = timedAction[1] - castTime;
                     actionList[0].timeTaken = castTime;
