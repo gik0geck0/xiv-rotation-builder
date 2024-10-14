@@ -8,6 +8,10 @@ export interface Action {
     recast: string;
     cost: string;
     effect: string;
+    isInstant: boolean;
+    isAbility: boolean;
+    isSpell: boolean;
+    isWeaponskill: boolean;
     description?: string;
     location?: string;
     errorMessage?: string;
