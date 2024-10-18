@@ -98,22 +98,26 @@ export default class RotationBuilder extends LightningElement {
                 currBuffs.push([currAction, currTime, currTime + (currAction.durationNumeric || 0)]);
             }
 
-            if (hasOwnProperty(currAction, 'grants') && currAction.grants) {
-                for (let k = 0; k < Object.keys(currAction.grants).length; k++) {
+            if (hasOwnProperty(currAction, 'grants') && currAction.grantsNumeric) {
+                const grantKeys = Object.keys(currAction.grantsNumeric);
+
+                for (let k = 0; k < grantKeys.length; k++) {
                     currBuffs.push([
-                        Object.keys(currAction.grants)[k].toLowerCase(),
-                        parseFloat(currAction.grants[Object.keys(currAction.grants)[k]]),
+                        grantKeys[k].toLowerCase(),
+                        currAction.grantsNumeric[grantKeys[k]],
                         currTime,
                         currTime + 30
                     ]);
                 }
             }
 
-            if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name && currAction.comboBonus) {
-                for (let k = 0; k < Object.keys(currAction.comboBonus).length; k++) {
+            if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name && currAction.comboBonusNumeric) {
+                const comboKeys = Object.keys(currAction.comboBonusNumeric);
+
+                for (let k = 0; k < comboKeys.length; k++) {
                     currBuffs.push([
-                        Object.keys(currAction.comboBonus)[k].toLowerCase(),
-                        parseFloat(currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]),
+                        comboKeys[k].toLowerCase(),
+                        currAction.comboBonusNumeric[comboKeys[k]],
                         currTime,
                         currTime + 30
                     ]);
@@ -146,7 +150,7 @@ export default class RotationBuilder extends LightningElement {
                 if (currBuffs[j].length === 3) {
                     if (currTime <= currBuffs[j][2] && currTime >= currBuffs[j][1]) {
                         if (hasOwnProperty(currBuffs[j][0], 'damageBuff')) {
-                            buffAmt = parseFloat(currBuffs[j][0].damageBuff);
+                            buffAmt = currBuffs[j][0].damageBuff;
                         } else if (hasOwnProperty(currAction, currBuffs[j][0])) {
                             extraPotency = currBuffs[j][0];
                         }
@@ -156,7 +160,7 @@ export default class RotationBuilder extends LightningElement {
 
             if (currAction.isSpell || currAction.isWeaponskill) {
                 if (extraPotency != null) {
-                    totalPotency += parseFloat(currAction[extraPotency]) * buffAmt;
+                    totalPotency += currAction[extraPotency] * buffAmt;
                     stacksUsed = -1;
                 } else if (currAction.comboAction === lastAction.name && hasOwnProperty(currAction, 'comboAction')) {
                     totalPotency += (currAction.comboPotencyNumeric || 0) * buffAmt;
