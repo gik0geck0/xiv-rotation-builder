@@ -29,12 +29,12 @@ export default class RotationBuilder extends LightningElement {
         if (actionList[0].isInstant) {
             currTime = waitTime;
         } else {
-            currTime = parseFloat(actionList[0].cast);
+            currTime = (actionList[0].castNumeric || 0);
         }
 
         let timedList: [Action, number][] = [[actionList[0], currTime]];
         let usedActions: [string, number][] = [
-            [actionList[0].name, parseFloat(actionList[0].recast)]
+            [actionList[0].name, (actionList[0].recastNumeric || 0)]
         ];
 
         let lastGCD: [string, number] = [actionList[0].name, currTime];
@@ -60,9 +60,9 @@ export default class RotationBuilder extends LightningElement {
                     }
                 } else {
                     if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
-                        currTime = lastGCD[1] + GCDTime + parseFloat(currAction.cast);
+                        currTime = lastGCD[1] + GCDTime + (currAction.castNumeric || 0);
                     } else {
-                        currTime += parseFloat(currAction.cast);
+                        currTime += (currAction.castNumeric || 0);
                     }
                 }
                 timedList.push([currAction, Math.round(currTime * 10) / 10]);
@@ -73,13 +73,13 @@ export default class RotationBuilder extends LightningElement {
             }
 
             if (!currAction.isInstant) {
-                if (parseFloat(currAction.recast) >= parseFloat(currAction.cast)) {
+                if ((currAction.recastNumeric || 0) >= (currAction.castNumeric || 0)) {
                     usedActions.push([currAction.name, currTime]);
                 } else {
-                    usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)]);
+                    usedActions.push([currAction.name, currTime + (currAction.recastNumeric || 0)]);
                 }
             } else {
-                usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)]);
+                usedActions.push([currAction.name, currTime + (currAction.recastNumeric || 0)]);
             }
         }
 
@@ -95,7 +95,7 @@ export default class RotationBuilder extends LightningElement {
             const currTime = timedList[i][1];
 
             if (hasOwnProperty(currAction, 'damageBuff')) {
-                currBuffs.push([currAction, currTime, currTime + parseFloat(currAction.duration || '0')]);
+                currBuffs.push([currAction, currTime, currTime + (currAction.durationNumeric || 0)]);
             }
 
             if (hasOwnProperty(currAction, 'grants') && currAction.grants) {
@@ -159,16 +159,16 @@ export default class RotationBuilder extends LightningElement {
                     totalPotency += parseFloat(currAction[extraPotency]) * buffAmt;
                     stacksUsed = -1;
                 } else if (currAction.comboAction === lastAction.name && hasOwnProperty(currAction, 'comboAction')) {
-                    totalPotency += parseFloat(currAction.comboPotency || '0') * buffAmt;
+                    totalPotency += (currAction.comboPotencyNumeric || 0) * buffAmt;
                 } else if (hasOwnProperty(currAction, 'potency')) {
-                    totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
+                    totalPotency += (currAction.potencyNumeric || 0) * buffAmt;
                 }
                 lastAction = currAction;
             }
 
             if (currAction.isAbility) {
                 if (hasOwnProperty(currAction, 'potency')) {
-                    totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
+                    totalPotency += (currAction.potencyNumeric || 0) * buffAmt;
                 }
             }
             extraPotency = null;
@@ -195,7 +195,7 @@ export default class RotationBuilder extends LightningElement {
         } else {
             const timedList = this.findTimes(actionList);
             timedList.forEach((timedAction, i) => {
-                const castTime = timedAction[0].isInstant ? 0.7 : parseFloat(timedAction[0].cast);
+                const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
                 if (i === 0) {
                     actionList[0].startTime = timedAction[1] - castTime;
                     actionList[0].timeTaken = castTime;
