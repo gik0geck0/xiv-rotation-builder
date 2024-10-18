@@ -15,8 +15,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.",
+                "id": "fastBlade",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fast Blade    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.",
+                "potency": "220",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/87405b9b9f00d9957df252ea0116e4137bc4dbd1.png",
@@ -27,8 +37,25 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Increases damage dealt by 25%.<br>Duration: 20s<br>Additional Effect: Grants Goring Blade Ready<br>Duration: 30s",
+                "id": "fightOrFlight",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fight or Flight    \n            Level Req.: 2    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Increases damage dealt by 25%.<br>Duration: 20s<br>Additional Effect: Grants Goring Blade Ready<br>Duration: 30s",
+                "damageBuff": 1.25,
+                "duration": "30",
+                "grants": {
+                    "goringbladeready": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "goringbladeready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bdda04f3b284e3cbf7d07e50d9bffb21b74ce869.png",
@@ -39,8 +66,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 170.<br>Combo Action: Fast Blade<br>Combo Potency: 330<br>Combo Bonus: Restores MP",
+                "id": "riotBlade",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Riot Blade    \n            Level Req.: 4    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 170.<br>Combo Action: Fast Blade<br>Combo Potency: 330<br>Combo Bonus: Restores MP",
+                "potency": "170",
+                "comboAction": "Fast Blade",
+                "comboPotency": "330",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 170,
+                "comboPotencyNumeric": 330,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/07c42572697cdcf5381955b09ed7c3028be8a0bb.png",
@@ -51,8 +91,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "id": "totalEclipse",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Total Eclipse    \n            Level Req.: 6    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/49cbc217420d69d69bb1bfcf6fba10358dcd2521.png",
@@ -63,8 +113,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Additional Effect: Stun<br>Duration: 6s",
+                "id": "shieldBash",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shield Bash    \n            Level Req.: 10    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Additional Effect: Stun<br>Duration: 6s",
+                "potency": "100",
+                "duration": "6",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 6,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1e60c8b0c72bbc52497a163755dc855f5cdf7091.png",
@@ -75,8 +137,16 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Significantly increases enmity generation.<br>Effect ends upon reuse.",
+                "id": "ironWill",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Iron Will    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Significantly increases enmity generation.<br>Effect ends upon reuse.",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0b880866e9d45ac7b9b664dcf536acc46ecb4679.png",
@@ -87,8 +157,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Cancels the effect of Iron Will.",
+                "id": "releaseIronWill",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Release Iron Will    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Cancels the effect of Iron Will.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d95d796eae4df45f2419a8c6df1cdf4afc7b0523.png",
@@ -99,8 +177,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a ranged attack with a potency of 100.<br>Additional Effect: Increased enmity",
+                "id": "shieldLob",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shield Lob    \n            Level Req.: 15    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a ranged attack with a potency of 100.<br>Additional Effect: Increased enmity",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b35b9fa5ce7169d660177032734661f18a79ee5b.png",
@@ -111,8 +199,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Riot Blade<br>Combo Potency: 330",
+                "id": "rageOfHalone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rage of Halone    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Combo Action: Riot Blade<br>Combo Potency: 330",
+                "potency": "100",
+                "comboAction": "Riot Blade",
+                "comboPotency": "330",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 330,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d7e7cf097286ae99e6637242596a14832a9edf8f.png",
@@ -123,8 +224,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 270.<br>Additional Effect: Restores MP",
+                "id": "spiritsWithin",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Spirits Within    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 270.<br>Additional Effect: Restores MP",
+                "potency": "270",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 270,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e622516a93fd2298b9fd40e0d2d60c3fc8485c5a.png",
@@ -135,8 +246,19 @@ export default {
                 "recast": "5s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 15%.<br>Duration: 6s<br>Oath Gauge Cost: 50",
+                "id": "sheltron",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sheltron    \n            Level Req.: 35    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 5s          \n            Cost: -      \n            Effect: Reduces damage taken by 15%.<br>Duration: 6s<br>Oath Gauge Cost: 50",
+                "duration": "6",
+                "Oath": -50,
                 "castNumeric": 0,
-                "recastNumeric": 5
+                "recastNumeric": 5,
+                "durationNumeric": 6,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/913eb4344bb6c8710f250115fa22484b026f08bd.png",
@@ -147,8 +269,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 30%.<br>Duration: 15s",
+                "id": "sentinel",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sentinel    \n            Level Req.: 38    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 30%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c0f8a1aa0ba0a20c0d8580e63932678c5c4a8b9b.png",
@@ -158,9 +290,30 @@ export default {
                 "cast": "Instant",
                 "recast": "2.5s",
                 "cost": "-",
-                "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Total Eclipse<br>Combo Potency: 170<BR>Combo Bonus: Restores MP<br>Combo Bonus: Grants Divine Might<br>Divine Might Effect: Allows next Holy Spirit or Holy Circle to be cast immediately with increased potency<br>Duration: 30s",
+                "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Total Eclipse<br>Combo Potency: 170<br>Combo Bonus: Restores MP<br>Combo Bonus: Grants Divine Might<br>Divine Might Effect: Allows next Holy Spirit or Holy Circle to be cast immediately with increased potency<br>Duration: 30s",
+                "id": "prominence",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Prominence    \n            Level Req.: 40    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Total Eclipse<br>Combo Potency: 170<BR>Combo Bonus: Restores MP<br>Combo Bonus: Grants Divine Might<br>Divine Might Effect: Allows next Holy Spirit or Holy Circle to be cast immediately with increased potency<br>Duration: 30s",
+                "potency": "100",
+                "comboAction": "Total Eclipse",
+                "comboPotency": "170",
+                "comboBonus": {
+                    "divinemight": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 170,
+                "comboBonusNumeric": {
+                    "divinemight": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/81b581992c0df5ad867ed18ad229f6d6f7fd3eea.png",
@@ -171,8 +324,19 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Take all damage intended for another party member as long as said member remains within 10 yalms.<br>Does not activate with certain attacks.<br>Duration: 12s<br>Oath Gauge Cost: 50",
+                "id": "cover",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Cover    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Take all damage intended for another party member as long as said member remains within 10 yalms.<br>Does not activate with certain attacks.<br>Duration: 12s<br>Oath Gauge Cost: 50",
+                "duration": "12",
+                "Oath": -50,
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 12,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/af5ddb89ddd5ade6706afe571f45aa6028e1925b.png",
@@ -183,8 +347,21 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140 to all nearby enemies.<br>Additional Effect: Damage over time<br>Potency: 30<br>Duration: 15s",
+                "id": "circleOfScorn",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Circle of Scorn    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140 to all nearby enemies.<br>Additional Effect: Damage over time<br>Potency: 30<br>Duration: 15s",
+                "potency": "140",
+                "durationPotency": 10,
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 15,
+                "potencyNumeric": 140,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/249bf48c39ec44b9b32f0681ea256850ed6aa8f8.png",
@@ -194,9 +371,19 @@ export default {
                 "cast": "Instant",
                 "recast": "420s",
                 "cost": "-",
-                "effect": "Renders you impervious to most attacks.<BR>Duration: 10s",
+                "effect": "Renders you impervious to most attacks.<br>Duration: 10s",
+                "id": "hallowedGround",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hallowed Ground    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 420s          \n            Cost: -      \n            Effect: Renders you impervious to most attacks.<BR>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 420
+                "recastNumeric": 420,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b0a3dcb47763055bc61ee9f90ba0ee3b46050197.png",
@@ -207,8 +394,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Block incoming attacks.<br>Duration: 10s",
+                "id": "bulwark",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bulwark    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Block incoming attacks.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/eb067afbfb5a4198760b2e28e9c3cf669d9866b8.png",
@@ -219,8 +416,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 700.<br>Can only be executed while under the effect of Goring Blade Ready.",
+                "id": "goringBlade",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Goring Blade    \n            Level Req.: 54    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 700.<br>Can only be executed while under the effect of Goring Blade Ready.",
+                "potency": "700",
+                "buffRequirement": "goringbladeready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 700,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/495faab61344751872ca0867e2d5e59b04c6940c.png",
@@ -231,8 +439,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Creates a barrier around self and all party members near you that absorbs damage equivalent to 10% of your maximum HP.<br>Duration: 30s<br>Additional Effect: Restores target's HP<br>Cure Potency: 400",
+                "id": "divineVeil",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Divine Veil    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Creates a barrier around self and all party members near you that absorbs damage equivalent to 10% of your maximum HP.<br>Duration: 30s<br>Additional Effect: Restores target's HP<br>Cure Potency: 400",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3c20e8bf8f5f130db398ac4ba5df14e403b7666a.png",
@@ -243,8 +461,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "2000 MP",
                 "effect": "Restores target's HP.<br>Cure Potency: 1,000<br>Additional Effect: Restores to self 50% of HP restored to target if target is a party member",
+                "id": "clemency",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Clemency    \n            Level Req.: 58    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 2000 MP      \n            Effect: Restores target's HP.<br>Cure Potency: 1,000<br>Additional Effect: Restores to self 50% of HP restored to target if target is a party member",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3fe523f08ebd0b93125ae42d5bcf8e18dce08a02.png",
@@ -255,8 +481,31 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200.<br>Combo Action: Riot Blade<br>Combo Potency: 460<br>Combo Bonus: Grants Atonement Ready<br>Duration: 30s<br>Combo Bonus: Grants Divine Might<br>Divine Might Effect: Allows next Holy Spirit or Holy Circle to be cast immediately with increased potency<br>Duration: 30s",
+                "id": "royalAuthority",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Royal Authority    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200.<br>Combo Action: Riot Blade<br>Combo Potency: 460<br>Combo Bonus: Grants Atonement Ready<br>Duration: 30s<br>Combo Bonus: Grants Divine Might<br>Divine Might Effect: Allows next Holy Spirit or Holy Circle to be cast immediately with increased potency<br>Duration: 30s",
+                "potency": "200",
+                "comboAction": "Riot Blade",
+                "comboPotency": "460",
+                "comboBonus": {
+                    "atonementready": -1,
+                    "divinemight": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 200,
+                "comboPotencyNumeric": 460,
+                "comboBonusNumeric": {
+                    "atonementready": -1,
+                    "divinemight": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fdb9b8347b33dae63e25debeab15aa75c270f39a.png",
@@ -267,8 +516,19 @@ export default {
                 "recast": "10s",
                 "cost": "-",
                 "effect": "Reduces target party member's damage taken by 10%.<br>Duration: 8s<br>Additional Effect: Increases damage reduction by an additional 10% if Rampart or Guardian are active<br>Additional Effect: Grants Knight's Resolve to target<br>Knight's Resolve Effect: Reduces damage taken by 10%<br>Duration: 4s<br>Additional Effect: Grants Knight's Benediction to target<br>Knight's Benediction Effect: Gradually restores HP<br>Cure Potency: 250<br>Duration: 12s<br>Oath Gauge Cost: 50",
+                "id": "intervention",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Intervention    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 10s          \n            Cost: -      \n            Effect: Reduces target party member's damage taken by 10%.<br>Duration: 8s<br>Additional Effect: Increases damage reduction by an additional 10% if Rampart or Guardian are active<br>Additional Effect: Grants Knight's Resolve to target<br>Knight's Resolve Effect: Reduces damage taken by 10%<br>Duration: 4s<br>Additional Effect: Grants Knight's Benediction to target<br>Knight's Benediction Effect: Gradually restores HP<br>Cure Potency: 250<br>Duration: 12s<br>Oath Gauge Cost: 50",
+                "duration": "12",
+                "Oath": -50,
                 "castNumeric": 0,
-                "recastNumeric": 10
+                "recastNumeric": 10,
+                "durationNumeric": 12,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b8ad098c5afaad79a847f3fb79298456c1e9d689.png",
@@ -278,9 +538,21 @@ export default {
                 "cast": "1.5s",
                 "recast": "2.5s",
                 "cost": "1000 MP",
-                "effect": "Deals unaspected damage with a potency of 400.<BR>Divine Might Potency: 500<br>Requiescat Potency: 700<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
+                "effect": "Deals unaspected damage with a potency of 400.<br>Divine Might Potency: 500<br>Requiescat Potency: 700<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
+                "id": "holySpirit",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holy Spirit    \n            Level Req.: 64    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals unaspected damage with a potency of 400.<BR>Divine Might Potency: 500<br>Requiescat Potency: 700<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
+                "potency": "400",
+                "divinemight": "500",
+                "requiescat": "700",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 400,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/acbcd4de5a1839e4fd8c96ae05eb4109caed9ca1.png",
@@ -291,8 +563,28 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
+                "id": "requiescat",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Requiescat    \n            Level Req.: 68    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
+                "potency": "320",
+                "grants": {
+                    "requiescat": "4",
+                    "confiteorready": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "potencyNumeric": 320,
+                "grantsNumeric": {
+                    "requiescat": 4,
+                    "confiteorready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b570dfda793945b3bb8fddef02b1a865b8a04b32.png",
@@ -303,8 +595,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases block rate to 100% and creates a designated area in a cone behind you in which party members will only suffer 85% of all damage inflicted.<br>Duration: 18s<br>Effect ends upon using another action or moving (including facing a different direction).<br>Cancels auto-attack upon execution.",
+                "id": "passageOfArms",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Passage of Arms    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases block rate to 100% and creates a designated area in a cone behind you in which party members will only suffer 85% of all damage inflicted.<br>Duration: 18s<br>Effect ends upon using another action or moving (including facing a different direction).<br>Cancels auto-attack upon execution.",
+                "duration": "18",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 18,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/afd455f208e2720a10a1b26e9a231fefac4d5be7.png",
@@ -315,8 +617,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Deals unaspected damage with a potency of 100 to all nearby enemies.<br>Divine Might Potency: 200<br>Requiescat Potency: 300<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
+                "id": "holyCircle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holy Circle    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals unaspected damage with a potency of 100 to all nearby enemies.<br>Divine Might Potency: 200<br>Requiescat Potency: 300<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400",
+                "potency": "100",
+                "divinemight": "200",
+                "requiescat": "300",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c841f5c954aa4e31bd1d82ffd00f863eb944a386.png",
@@ -327,8 +641,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "id": "intervene",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Intervene    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f59cb1517f2f26c490a87d58366b5bccff372f19.png",
@@ -339,8 +663,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 460.<br>Additional Effect: Restores MP<br>Additional Effect: Grants Supplication Ready<br>Duration: 30s<br>Can only be executed while under the effect of Atonement Ready.",
+                "id": "atonement",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Atonement    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 460.<br>Additional Effect: Restores MP<br>Additional Effect: Grants Supplication Ready<br>Duration: 30s<br>Can only be executed while under the effect of Atonement Ready.",
+                "potency": "460",
+                "grants": {
+                    "supplicationready": -1
+                },
+                "duration": "30",
+                "buffRequirement": "atonementready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 460,
+                "grantsNumeric": {
+                    "supplicationready": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a13b67a351de7eaf60e51a8662e722785ec3826f.png",
@@ -351,8 +694,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 500.<br>Additional Effect: Restores MP<br>Additional Effect: Grants Sepulchre Ready<br>Duration: 30s<br>Can only be executed while under the effect of Supplication Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Atonement changes to Supplication when requirements for execution are met.",
+                "id": "supplication",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Supplication    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 500.<br>Additional Effect: Restores MP<br>Additional Effect: Grants Sepulchre Ready<br>Duration: 30s<br>Can only be executed while under the effect of Supplication Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Atonement changes to Supplication when requirements for execution are met.",
+                "potency": "500",
+                "grants": {
+                    "sepulchreready": -1
+                },
+                "duration": "30",
+                "buffRequirement": "supplicationready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "sepulchreready": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/445847900654988d4b1a2950d57f69793a425d00.png",
@@ -363,8 +725,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 540.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Sepulchre Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Supplication changes to Sepulchre when requirements for execution are met.",
+                "id": "sepulchre",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sepulchre    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 540.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Sepulchre Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Supplication changes to Sepulchre when requirements for execution are met.",
+                "potency": "540",
+                "buffRequirement": "sepulchreready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 540,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/362579dcb6dc2b7c9ea6eac6917c7b9c61f7ce1b.png",
@@ -375,8 +748,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 500 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 1,000<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br>Can only be executed while under the effect of Confiteor Ready. Effect fades upon execution.",
+                "id": "confiteor",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Confiteor    \n            Level Req.: 80    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 500 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 1,000<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br>Can only be executed while under the effect of Confiteor Ready. Effect fades upon execution.",
+                "potency": "500",
+                "requiescat": "1,000",
+                "buffRequirement": "confiteorready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 500,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/14b024e300783025b7601464e5656b4650a44ba6.png",
@@ -387,8 +772,27 @@ export default {
                 "recast": "5s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 15%.<br>Duration: 8s<br>Additional Effect: Grants Knight's Resolve<br>Knight's Resolve Effect: Reduces damage taken by 15%<br>Duration: 4s<br>Additional Effect: Grants Knight's Benediction<br>Knight's Benediction Effect: Gradually restores HP<br>Cure Potency: 250<br>Duration: 12s<br>Oath Gauge Cost: 50",
+                "id": "holySheltron",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holy Sheltron    \n            Level Req.: 82    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 5s          \n            Cost: -      \n            Effect: Reduces damage taken by 15%.<br>Duration: 8s<br>Additional Effect: Grants Knight's Resolve<br>Knight's Resolve Effect: Reduces damage taken by 15%<br>Duration: 4s<br>Additional Effect: Grants Knight's Benediction<br>Knight's Benediction Effect: Gradually restores HP<br>Cure Potency: 250<br>Duration: 12s<br>Oath Gauge Cost: 50",
+                "duration": "12",
+                "grants": {
+                    "knight'sresolve": -1,
+                    "knight'sbenediction": -1
+                },
+                "Oath": -50,
                 "castNumeric": 0,
-                "recastNumeric": 5
+                "recastNumeric": 5,
+                "durationNumeric": 12,
+                "grantsNumeric": {
+                    "knight'sresolve": -1,
+                    "knight'sbenediction": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/83f192d9d24c16d893a153b1bdc2d9044c5afdf8.png",
@@ -399,8 +803,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 450 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Restores MP",
+                "id": "expiacion",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Expiacion    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 450 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Restores MP",
+                "potency": "450",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 450,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/da000e2e4522b9fd7af04e34af3c44b47539f903.png",
@@ -411,8 +825,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 260 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 760<br>Combo Action: Confiteor<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br><br>※This action cannot be assigned to a hotbar.<br>※Confiteor changes to Blade of Faith when requirements for execution are met.",
+                "id": "bladeOfFaith",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blade of Faith    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 260 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 760<br>Combo Action: Confiteor<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br><br>※This action cannot be assigned to a hotbar.<br>※Confiteor changes to Blade of Faith when requirements for execution are met.",
+                "potency": "260",
+                "requiescat": "760",
+                "comboAction": "Confiteor",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 260,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0bf0b65c83df6a8b4a9581c6540c71905d08fd35.png",
@@ -423,8 +849,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 380 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 880<br>Combo Action: Blade of Faith<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br><br>※This action cannot be assigned to a hotbar.<br>※Blade of Faith changes to Blade of Truth when requirements for execution are met.",
+                "id": "bladeOfTruth",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blade of Truth    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 380 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 880<br>Combo Action: Blade of Faith<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br><br>※This action cannot be assigned to a hotbar.<br>※Blade of Faith changes to Blade of Truth when requirements for execution are met.",
+                "potency": "380",
+                "requiescat": "880",
+                "comboAction": "Blade of Faith",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 380,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4a853788cdd79f2e8904b6d1f37764e1ffd505d3.png",
@@ -435,8 +873,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 500 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 1,000<br>Combo Action: Blade of Truth<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br>Additional Effect: Grants Blade of Honor Ready<br>Duration: 30s<br><br>※This action cannot be assigned to a hotbar.<br>※Blade of Truth changes to Blade of Valor when requirements for execution are met.",
+                "id": "bladeOfValor",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blade of Valor    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 500 for the first enemy, and 50% less for all remaining enemies.<br>Requiescat Potency: 1,000<br>Combo Action: Blade of Truth<br>Additional Effect: Restores own HP<br>Cure Potency: 400<br>Additional Effect: Grants Blade of Honor Ready<br>Duration: 30s<br><br>※This action cannot be assigned to a hotbar.<br>※Blade of Truth changes to Blade of Valor when requirements for execution are met.",
+                "potency": "500",
+                "requiescat": "1,000",
+                "comboAction": "Blade of Truth",
+                "grants": {
+                    "bladeofhonorready": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "bladeofhonorready": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4c5945e5decd30562898378c54cc3308aa210ff1.png",
@@ -447,8 +905,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 40%.<br>Duration: 15s<br>Additional Effect: Erects a magicked barrier which nullifies damage equivalent to a heal of 1,000 potency<br>Duration: 15s",
+                "id": "guardian",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Guardian    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 40%.<br>Duration: 15s<br>Additional Effect: Erects a magicked barrier which nullifies damage equivalent to a heal of 1,000 potency<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a888fa731d0d80fd277caa00abbca126be5b0b3c.png",
@@ -459,8 +927,28 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 580 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Duration: 30s<br>Requiescat Effect: Increases the potency of Holy Spirit, Holy Circle, and all Confiteor combo actions, and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
+                "id": "imperator",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Imperator    \n            Level Req.: 96    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 580 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Duration: 30s<br>Requiescat Effect: Increases the potency of Holy Spirit, Holy Circle, and all Confiteor combo actions, and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s",
+                "potency": "580",
+                "grants": {
+                    "requiescat": "4",
+                    "confiteorready": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "potencyNumeric": 580,
+                "grantsNumeric": {
+                    "requiescat": 4,
+                    "confiteorready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/18481cd008426e41c0773107a91b20e2b9d59f7e.png",
@@ -471,8 +959,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 1,000 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Blade of Honor Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Imperator changes to Blade of Honor when requirements for execution are met.",
+                "id": "bladeOfHonor",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blade of Honor    \n            Level Req.: 100    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 1,000 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Blade of Honor Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Imperator changes to Blade of Honor when requirements for execution are met.",
+                "potency": "1,000",
+                "buffRequirement": "bladeofhonorready",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/37546679ae5e431c0903b20fa2c91a88c5a8e001.png",
@@ -483,8 +982,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "id": "rampart",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rampart    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/af837b3dd467ee9cdf865a06eb2b1633dd2b492a.png",
@@ -495,8 +1004,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 5s",
+                "id": "lowBlow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Low Blow    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 5s",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b45fea903bcf1edd9e08110cf95e8bba9a73c0d.png",
@@ -507,8 +1026,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
+                "id": "provoke",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Provoke    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8442bcce1ec21a449546af9afb79ae9ea8c226cb.png",
@@ -519,8 +1046,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Interrupts the use of a target's action.",
+                "id": "interject",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Interject    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Interrupts the use of a target's action.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6b83d9368623d5cd20a426d26916021b59a14963.png",
@@ -531,8 +1066,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "id": "reprisal",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reprisal    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -543,8 +1088,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -555,8 +1110,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Diverts 25% of enmity to target party member.",
+                "id": "shirk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shirk    \n            Level Req.: 48    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Diverts 25% of enmity to target party member.",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -710,8 +1273,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.",
+                "id": "heavySwing",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heavy Swing    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.",
+                "potency": "220",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/39dae45d3a3309357462861dac9bb9b159030ea8.png",
@@ -722,8 +1295,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 190.<br>Combo Action: Heavy Swing<br>Combo Potency: 340<br>Combo Bonus: Increases Beast Gauge by 10",
+                "id": "maim",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Maim    \n            Level Req.: 4    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 190.<br>Combo Action: Heavy Swing<br>Combo Potency: 340<br>Combo Bonus: Increases Beast Gauge by 10",
+                "potency": "190",
+                "comboAction": "Heavy Swing",
+                "comboPotency": "340",
+                "comboBonus": {
+                    "Beast": "10"
+                },
+                "Beast": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 190,
+                "comboPotencyNumeric": 340,
+                "comboBonusNumeric": {
+                    "Beast": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c5a2c3896b62318a88ea9e48159ff7efd0962be1.png",
@@ -734,8 +1327,24 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants 3 stacks of Berserk, each stack guaranteeing weaponskill attacks are critical and direct hits.<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>Duration: 15s<br>Additional Effect: Extends Surging Tempest duration by 10s to a maximum of 60s",
+                "id": "berserk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Berserk    \n            Level Req.: 6    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants 3 stacks of Berserk, each stack guaranteeing weaponskill attacks are critical and direct hits.<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>Duration: 15s<br>Additional Effect: Extends Surging Tempest duration by 10s to a maximum of 60s",
+                "grants": {
+                    "berserk": "3"
+                },
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "berserk": 3
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/335c367406c5d952f11b8fd2dadaabb89e1cecbc.png",
@@ -746,8 +1355,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 110 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "id": "overpower",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Overpower    \n            Level Req.: 10    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 110 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "potency": "110",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 110,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e6cc16e225417ce3c68cde5eb28df034f349d25d.png",
@@ -758,8 +1377,16 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Significantly increases enmity generation.<br>Effect ends upon reuse.",
+                "id": "defiance",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Defiance    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Significantly increases enmity generation.<br>Effect ends upon reuse.",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1965311bb3fb720ba65258cb8f427bb986fa36c4.png",
@@ -770,8 +1397,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Cancels the effect of Defiance.",
+                "id": "releaseDefiance",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Release Defiance    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Cancels the effect of Defiance.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/de42e4febcf54cf4af3189f9d2adfa4ca5975c25.png",
@@ -782,8 +1417,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a ranged attack with a potency of 150.<br>Additional Effect: Increased enmity",
+                "id": "tomahawk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Tomahawk    \n            Level Req.: 15    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a ranged attack with a potency of 150.<br>Additional Effect: Increased enmity",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/14d9c5aa40a8f86aa13890aa9bedc9f6579ed289.png",
@@ -793,9 +1438,29 @@ export default {
                 "cast": "Instant",
                 "recast": "2.5s",
                 "cost": "-",
-                "effect": "Delivers an attack with a potency of 200.<br>Combo Action: Maim<br>Combo Potency: 480<br>Combo Bonus: Restores own HP<br>Cure Potency: 250<BR>Combo Bonus: Increases Beast Gauge by 20",
+                "effect": "Delivers an attack with a potency of 200.<br>Combo Action: Maim<br>Combo Potency: 480<br>Combo Bonus: Restores own HP<br>Cure Potency: 250<br>Combo Bonus: Increases Beast Gauge by 20",
+                "id": "storm'SPath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Storm's Path    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200.<br>Combo Action: Maim<br>Combo Potency: 480<br>Combo Bonus: Restores own HP<br>Cure Potency: 250<BR>Combo Bonus: Increases Beast Gauge by 20",
+                "potency": "200",
+                "comboAction": "Maim",
+                "comboPotency": "480",
+                "comboBonus": {
+                    "Beast": "20"
+                },
+                "Beast": "20",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 200,
+                "comboPotencyNumeric": 480,
+                "comboBonusNumeric": {
+                    "Beast": 20
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9412945d8b5a61fbb118907bd33046110ff83434.png",
@@ -806,8 +1471,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Increases maximum HP by 20% and restores the amount increased.<br>Additional Effect: Increases HP recovery via healing actions on self by 20%<br>Duration: 10s",
+                "id": "thrillOfBattle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thrill of Battle    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Increases maximum HP by 20% and restores the amount increased.<br>Additional Effect: Increases HP recovery via healing actions on self by 20%<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c72ea7de2c06ad8a03bc55598297aba5bf00b0b6.png",
@@ -818,8 +1493,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 330.<br>Beast Gauge Cost: 50",
+                "id": "innerBeast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Inner Beast    \n            Level Req.: 35    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 330.<br>Beast Gauge Cost: 50",
+                "potency": "330",
+                "Beast": -50,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 330,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/72a939d0010304553c5b88fae576f5a25f453e10.png",
@@ -830,8 +1516,20 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 30% and delivers an attack with a potency of 55 every time you suffer physical damage.<br>Duration: 15s",
+                "id": "vengeance",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Vengeance    \n            Level Req.: 38    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 30% and delivers an attack with a potency of 55 every time you suffer physical damage.<br>Duration: 15s",
+                "potency": "55",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "potencyNumeric": 55,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b9efeaf988763dc594fc2497b603cfda4253064f.png",
@@ -842,8 +1540,32 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Overpower<br>Combo Potency: 140<br>Combo Bonus: Grants Surging Tempest, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Surging Tempest duration by 30s to a maximum of 60s.<br>Combo Bonus: Increases Beast Gauge by 20",
+                "id": "mythrilTempest",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Mythril Tempest    \n            Level Req.: 40    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Overpower<br>Combo Potency: 140<br>Combo Bonus: Grants Surging Tempest, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Surging Tempest duration by 30s to a maximum of 60s.<br>Combo Bonus: Increases Beast Gauge by 20",
+                "potency": "100",
+                "comboAction": "Overpower",
+                "comboPotency": "140",
+                "comboBonus": {
+                    "surgingtempest": -1,
+                    "Beast": "20"
+                },
+                "duration": "30",
+                "Beast": "20",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 140,
+                "comboBonusNumeric": {
+                    "surgingtempest": -1,
+                    "Beast": 20
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/91b5673b1dfb08c80d7b8fc2bdc936f46906317f.png",
@@ -854,8 +1576,18 @@ export default {
                 "recast": "240s",
                 "cost": "-",
                 "effect": "Brace yourself for an enemy onslaught, preventing most attacks from reducing your HP to less than 1.<br>Duration: 10s<br>When a target is selected, halts their movement with chains.",
+                "id": "holmgang",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holmgang    \n            Level Req.: 42    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 240s          \n            Cost: -      \n            Effect: Brace yourself for an enemy onslaught, preventing most attacks from reducing your HP to less than 1.<br>Duration: 10s<br>When a target is selected, halts their movement with chains.",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 240
+                "recastNumeric": 240,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/caee561eee94d7ecc27ac396982ebe39df5c6893.png",
@@ -866,8 +1598,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 160 to all nearby enemies.<br>Beast Gauge Cost: 50",
+                "id": "steelCyclone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Steel Cyclone    \n            Level Req.: 45    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 160 to all nearby enemies.<br>Beast Gauge Cost: 50",
+                "potency": "160",
+                "Beast": -50,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/05faebea82787675c2331bb4ddb7778b70ab53f0.png",
@@ -878,8 +1621,32 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200.<br>Combo Action: Maim<br>Combo Potency: 480<br>Combo Bonus: Grants Surging Tempest, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Surging Tempest duration by 30s to a maximum of 60s.<br>Combo Bonus: Increases Beast Gauge by 10",
+                "id": "storm'SEye",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Storm's Eye    \n            Level Req.: 50    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200.<br>Combo Action: Maim<br>Combo Potency: 480<br>Combo Bonus: Grants Surging Tempest, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Surging Tempest duration by 30s to a maximum of 60s.<br>Combo Bonus: Increases Beast Gauge by 10",
+                "potency": "200",
+                "comboAction": "Maim",
+                "comboPotency": "480",
+                "comboBonus": {
+                    "surgingtempest": -1,
+                    "Beast": "10"
+                },
+                "duration": "30",
+                "Beast": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 200,
+                "comboPotencyNumeric": 480,
+                "comboBonusNumeric": {
+                    "surgingtempest": -1,
+                    "Beast": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ecd32b95358ef9b2756b005daef73afdde9fab80.png",
@@ -890,8 +1657,26 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Increases Beast Gauge by 50.<br>Additional Effect: Grants Nascent Chaos<br>Duration: 30s<br>Nascent Chaos Effect: When Beast Gauge is 50 or greater, changes Decimate to Chaotic Cyclone and Fell Cleave to Inner Chaos<br>Maximum Charges: 2<br>Can only be executed while in combat.",
+                "id": "infuriate",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Infuriate    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Increases Beast Gauge by 50.<br>Additional Effect: Grants Nascent Chaos<br>Duration: 30s<br>Nascent Chaos Effect: When Beast Gauge is 50 or greater, changes Decimate to Chaotic Cyclone and Fell Cleave to Inner Chaos<br>Maximum Charges: 2<br>Can only be executed while in combat.",
+                "Beast": "50",
+                "grants": {
+                    "nascentchaos": -1
+                },
+                "duration": "30",
+                "NascentChaosEffect:WhenBeast": null,
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "nascentchaos": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5d146522a8fc94788d96043b93034176eab59a10.png",
@@ -902,8 +1687,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 580.<br>Beast Gauge Cost: 50",
+                "id": "fellCleave",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fell Cleave    \n            Level Req.: 54    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 580.<br>Beast Gauge Cost: 50",
+                "potency": "580",
+                "Beast": -50,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 580,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1d9a63cc19bbec0e2f99d192040c26e306e2e675.png",
@@ -914,8 +1710,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 10%.<br>Duration: 6s<br>Additional Effect: Restores HP with each weaponskill successfully delivered<br>Cure Potency: 400<br>Shares a recast timer with Nascent Flash.",
+                "id": "rawIntuition",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Raw Intuition    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Reduces damage taken by 10%.<br>Duration: 6s<br>Additional Effect: Restores HP with each weaponskill successfully delivered<br>Cure Potency: 400<br>Shares a recast timer with Nascent Flash.",
+                "duration": "6",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 6,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b549a16dfa8cbde55ec19b81bad325c5480d98e2.png",
@@ -926,8 +1732,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Restores own HP.<br>Cure Potency: 1,200<br>Additional Effect: Gradually restores HP<br>Cure Potency: 200<br>Duration: 15s",
+                "id": "equilibrium",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Equilibrium    \n            Level Req.: 58    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Restores own HP.<br>Cure Potency: 1,200<br>Additional Effect: Gradually restores HP<br>Cure Potency: 200<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f4fdd09a56a0b83a0cbe11a83f706dc0fb6781f5.png",
@@ -938,8 +1754,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to all nearby enemies with a potency of 180.<br>Beast Gauge Cost: 50",
+                "id": "decimate",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Decimate    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to all nearby enemies with a potency of 180.<br>Beast Gauge Cost: 50",
+                "potency": "180",
+                "Beast": -50,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 180,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d0a1dad0fa6c8294ceb31b6879c765a02498e3fb.png",
@@ -950,8 +1777,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 3<br>Cannot be executed while bound.",
+                "id": "onslaught",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Onslaught    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 3<br>Cannot be executed while bound.",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ba0b3b08d9b2ef02636e06148bc739680390fdd3.png",
@@ -962,8 +1799,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 400.<br>Shares a recast timer with Orogeny.",
+                "id": "upheaval",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Upheaval    \n            Level Req.: 64    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 400.<br>Shares a recast timer with Orogeny.",
+                "potency": "400",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 400,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f71e2c46512c1e937c0ff316be668d853869c637.png",
@@ -974,8 +1821,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Creates a barrier around self and all nearby party members that absorbs damage totaling 15% of maximum HP.<br>Dispels Thrill of Battle, Damnation, and Bloodwhetting, increasing damage absorbed by 2% for each effect removed. <br>Duration: 30s<br>Additional Effect: Gradually restores HP<br>Cure Potency: 100<br>Duration: 15s<br>Additional Effect: Restores target's HP<br>Cure Potency: 300",
+                "id": "shakeItOff",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shake It Off    \n            Level Req.: 68    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Creates a barrier around self and all nearby party members that absorbs damage totaling 15% of maximum HP.<br>Dispels Thrill of Battle, Damnation, and Bloodwhetting, increasing damage absorbed by 2% for each effect removed. <br>Duration: 30s<br>Additional Effect: Gradually restores HP<br>Cure Potency: 100<br>Duration: 15s<br>Additional Effect: Restores target's HP<br>Cure Potency: 300",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/809168ffb23f67e3d4b720b3caa4a0a1773fea4c.png",
@@ -986,8 +1843,28 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants 3 stacks of Inner Release, each stack allowing the use of Fell Cleave or Decimate without cost and guaranteeing they are critical and direct hits.<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Grants Inner Strength, nullifying Stun, Sleep, Bind, Heavy, and most knockback and draw-in effects<br>Duration: 15s<br>Additional Effect: Extends Surging Tempest duration by 10s to a maximum of 60s<br>Additional Effect: Grants Primal Rend Ready<br>Duration: 30s<br>Additional Effect: Grants a stack of Burgeoning Fury upon successfully landing Fell Cleave or Decimate, up to a maximum of 3<br>At maximum stacks, become Wrathful, changing Inner Release to Primal Wrath.",
+                "id": "innerRelease",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Inner Release    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants 3 stacks of Inner Release, each stack allowing the use of Fell Cleave or Decimate without cost and guaranteeing they are critical and direct hits.<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Grants Inner Strength, nullifying Stun, Sleep, Bind, Heavy, and most knockback and draw-in effects<br>Duration: 15s<br>Additional Effect: Extends Surging Tempest duration by 10s to a maximum of 60s<br>Additional Effect: Grants Primal Rend Ready<br>Duration: 30s<br>Additional Effect: Grants a stack of Burgeoning Fury upon successfully landing Fell Cleave or Decimate, up to a maximum of 3<br>At maximum stacks, become Wrathful, changing Inner Release to Primal Wrath.",
+                "grants": {
+                    "innerrelease": "3",
+                    "innerstrength": -1,
+                    "primalrendready": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "innerrelease": 3,
+                    "innerstrength": -1,
+                    "primalrendready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a5ea711252d08de0f9fd2e65313690c19b9f8773.png",
@@ -998,8 +1875,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a critical direct hit with a potency of 300 to all nearby enemies.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Reduces the recast time of Infuriate by 5 seconds<br>Beast Gauge Cost: 50<br>Can only be executed while under the effect of Nascent Chaos. Effect fades upon execution.<br><br>※This action cannot be assigned to a hotbar.<br>※Decimate changes to Chaotic Cyclone when requirements for execution are met.",
+                "id": "chaoticCyclone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Chaotic Cyclone    \n            Level Req.: 72    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a critical direct hit with a potency of 300 to all nearby enemies.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Reduces the recast time of Infuriate by 5 seconds<br>Beast Gauge Cost: 50<br>Can only be executed while under the effect of Nascent Chaos. Effect fades upon execution.<br><br>※This action cannot be assigned to a hotbar.<br>※Decimate changes to Chaotic Cyclone when requirements for execution are met.",
+                "potency": "300",
+                "Beast": -50,
+                "buffRequirement": "nascentchaos",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0a4356e3696cea8f2c8cea9be200e773da6c7caa.png",
@@ -1010,8 +1899,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Grants Nascent Flash to self and Nascent Glint to target party member.<br>Nascent Flash Effect: Restores HP with each weaponskill successfully delivered<br>Cure Potency: 400<br>Nascent Glint Effect: Restores HP equaling 100% of that recovered by Nascent Flash while also reducing damage taken by 10%<br>Duration: 8s<br>Additional Effect: Grants Stem the Flow to target, reducing damage taken by 10%<br>Duration: 4s<br>Additional Effect: Grants Stem the Tide to target, nullifying damage equivalent to a heal of 400 potency<br>Duration: 20s<br>Shares a recast timer with Bloodwhetting.",
+                "id": "nascentFlash",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Nascent Flash    \n            Level Req.: 76    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Grants Nascent Flash to self and Nascent Glint to target party member.<br>Nascent Flash Effect: Restores HP with each weaponskill successfully delivered<br>Cure Potency: 400<br>Nascent Glint Effect: Restores HP equaling 100% of that recovered by Nascent Flash while also reducing damage taken by 10%<br>Duration: 8s<br>Additional Effect: Grants Stem the Flow to target, reducing damage taken by 10%<br>Duration: 4s<br>Additional Effect: Grants Stem the Tide to target, nullifying damage equivalent to a heal of 400 potency<br>Duration: 20s<br>Shares a recast timer with Bloodwhetting.",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/70a629706b7fa0dc566d988dbf32da064d0c3458.png",
@@ -1022,8 +1921,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a critical direct hit with a potency of 660.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Reduces the recast time of Infuriate by 5 seconds<br>Beast Gauge Cost: 50<br>Can only be executed while under the effect of Nascent Chaos. Effect fades upon execution.<br><br>※This action cannot be assigned to a hotbar.<br>※Fell Cleave changes to Inner Chaos when requirements for execution are met.",
+                "id": "innerChaos",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Inner Chaos    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a critical direct hit with a potency of 660.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Reduces the recast time of Infuriate by 5 seconds<br>Beast Gauge Cost: 50<br>Can only be executed while under the effect of Nascent Chaos. Effect fades upon execution.<br><br>※This action cannot be assigned to a hotbar.<br>※Fell Cleave changes to Inner Chaos when requirements for execution are met.",
+                "potency": "660",
+                "Beast": -50,
+                "buffRequirement": "nascentchaos",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 660,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/439c677f7cd4da8e9be9b92245865d2eb1ebceca.png",
@@ -1034,8 +1945,26 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 10%.<br>Duration: 8s<br>Additional Effect: Restores HP with each weaponskill successfully delivered<br>Cure Potency: 400<br>Additional Effect: Grants Stem the Flow<br>Stem the Flow Effect: Reduces damage taken by 10%<br>Duration: 4s<br>Additional Effect: Grants Stem the Tide<br>Stem the Tide Effect: Creates a barrier around self that absorbs damage equivalent to a heal of 400 potency<br>Duration: 20s<br>Shares a recast timer with Nascent Flash.",
+                "id": "bloodwhetting",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodwhetting    \n            Level Req.: 82    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Reduces damage taken by 10%.<br>Duration: 8s<br>Additional Effect: Restores HP with each weaponskill successfully delivered<br>Cure Potency: 400<br>Additional Effect: Grants Stem the Flow<br>Stem the Flow Effect: Reduces damage taken by 10%<br>Duration: 4s<br>Additional Effect: Grants Stem the Tide<br>Stem the Tide Effect: Creates a barrier around self that absorbs damage equivalent to a heal of 400 potency<br>Duration: 20s<br>Shares a recast timer with Nascent Flash.",
+                "duration": "20",
+                "grants": {
+                    "stemtheflow": -1,
+                    "stemthetide": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 20,
+                "grantsNumeric": {
+                    "stemtheflow": -1,
+                    "stemthetide": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a746763655d8eb64a4f2577f4a19d445866aa8e5.png",
@@ -1046,8 +1975,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 150 to all nearby enemies.<br>Shares a recast timer with Upheaval.",
+                "id": "orogeny",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Orogeny    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 150 to all nearby enemies.<br>Shares a recast timer with Upheaval.",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e6ccdb7bd1a86153af07f02f06583113ac86c8eb.png",
@@ -1058,8 +1997,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Jumps to the target and delivers a critical direct hit to target and all enemies nearby it with a potency of 700 for the first enemy, and 70% less for all remaining enemies.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Grants Primal Ruination Ready<br>Duration: 20s<br>Can only be executed while under the effect of Primal Rend Ready, granted by Inner Release.<br>Cannot be executed while bound.",
+                "id": "primalRend",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Primal Rend    \n            Level Req.: 90    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Jumps to the target and delivers a critical direct hit to target and all enemies nearby it with a potency of 700 for the first enemy, and 70% less for all remaining enemies.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>Additional Effect: Grants Primal Ruination Ready<br>Duration: 20s<br>Can only be executed while under the effect of Primal Rend Ready, granted by Inner Release.<br>Cannot be executed while bound.",
+                "potency": "700",
+                "grants": {
+                    "primalruinationready": -1
+                },
+                "duration": "20",
+                "buffRequirement": "primalrendready,grantedbyinnerrelease",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 20,
+                "potencyNumeric": 700,
+                "grantsNumeric": {
+                    "primalruinationready": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a4f5302a169e6ee5667e03976e7455aacc394604.png",
@@ -1070,8 +2028,26 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 40% and delivers an attack with a potency of 55 every time you suffer physical damage.<br>Duration: 15s<br>Additional Effect: Grants Primeval Impulse when the effect expires or damage is taken<br>Primeval Impulse Effect: Healing over time<br>Cure Potency: 300<br>Duration: 15s",
+                "id": "damnation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Damnation    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 40% and delivers an attack with a potency of 55 every time you suffer physical damage.<br>Duration: 15s<br>Additional Effect: Grants Primeval Impulse when the effect expires or damage is taken<br>Primeval Impulse Effect: Healing over time<br>Cure Potency: 300<br>Duration: 15s",
+                "potency": "55",
+                "duration": "15",
+                "grants": {
+                    "primevalimpulsewhentheeffectexpiresordamageistaken": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "potencyNumeric": 55,
+                "grantsNumeric": {
+                    "primevalimpulsewhentheeffectexpiresordamageistaken": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e9e68562064da9f0787632d983da080105fc2389.png",
@@ -1082,8 +2058,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack to all nearby enemies with a potency of 700 for the first enemy, and 70% less for all remaining enemies.<br>Can only be executed when Wrathful.<br><br>※This action cannot be assigned to a hotbar.<br>※Inner Release changes to Primal Wrath when requirements for execution are met.",
+                "id": "primalWrath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Primal Wrath    \n            Level Req.: 96    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack to all nearby enemies with a potency of 700 for the first enemy, and 70% less for all remaining enemies.<br>Can only be executed when Wrathful.<br><br>※This action cannot be assigned to a hotbar.<br>※Inner Release changes to Primal Wrath when requirements for execution are met.",
+                "potency": "700",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 700,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5eb4d961217f31467ecf479d45f89767f5f9c0d7.png",
@@ -1094,8 +2080,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a critical direct hit to target and all enemies nearby it with a potency of 780 for the first enemy, and 70% less for all remaining enemies.<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>Can only be executed while under the effect of Primal Ruination Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Primal Rend changes to Primal Ruination when requirements for execution are met.",
+                "id": "primalRuination",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Primal Ruination    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a critical direct hit to target and all enemies nearby it with a potency of 780 for the first enemy, and 70% less for all remaining enemies.<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>Can only be executed while under the effect of Primal Ruination Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Primal Rend changes to Primal Ruination when requirements for execution are met.",
+                "potency": "780",
+                "buffRequirement": "primalruinationready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 780,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/37546679ae5e431c0903b20fa2c91a88c5a8e001.png",
@@ -1106,8 +2103,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "id": "rampart",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rampart    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/af837b3dd467ee9cdf865a06eb2b1633dd2b492a.png",
@@ -1118,8 +2125,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 5s",
+                "id": "lowBlow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Low Blow    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 5s",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b45fea903bcf1edd9e08110cf95e8bba9a73c0d.png",
@@ -1130,8 +2147,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
+                "id": "provoke",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Provoke    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8442bcce1ec21a449546af9afb79ae9ea8c226cb.png",
@@ -1142,8 +2167,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Interrupts the use of a target's action.",
+                "id": "interject",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Interject    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Interrupts the use of a target's action.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6b83d9368623d5cd20a426d26916021b59a14963.png",
@@ -1154,8 +2187,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "id": "reprisal",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reprisal    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -1166,8 +2209,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -1178,8 +2231,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Diverts 25% of enmity to target party member.",
+                "id": "shirk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shirk    \n            Level Req.: 48    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Diverts 25% of enmity to target party member.",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -1327,8 +2388,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300.",
+                "id": "hardSlash",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hard Slash    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300.",
+                "potency": "300",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e2a305d72e05ef339e0692bd5f7ed9626b6eb9ea.png",
@@ -1339,8 +2410,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 240.<br>Combo Action: Hard Slash<br>Combo Potency: 380<br>Combo Bonus: Restores MP",
+                "id": "syphonStrike",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Syphon Strike    \n            Level Req.: 2    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 240.<br>Combo Action: Hard Slash<br>Combo Potency: 380<br>Combo Bonus: Restores MP",
+                "potency": "240",
+                "comboAction": "Hard Slash",
+                "comboPotency": "380",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 240,
+                "comboPotencyNumeric": 380,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/600c6a17bd8c4e08c783d1fb8891f12eea132a9a.png",
@@ -1351,8 +2435,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 120 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "id": "unleash",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Unleash    \n            Level Req.: 6    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 120 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "potency": "120",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 120,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b6d1592d4fcbcafe1e3b0958d688c50346fe2bd4.png",
@@ -1363,8 +2457,16 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Significantly increases enmity generation.<br>Effect ends upon reuse.",
+                "id": "grit",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Grit    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Significantly increases enmity generation.<br>Effect ends upon reuse.",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/13a97691011df3c616e3181fd21b5f6805ce5799.png",
@@ -1375,8 +2477,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Cancels the effect of Grit.",
+                "id": "releaseGrit",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Release Grit    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Cancels the effect of Grit.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6203d55695d1cdde37d875f7b4b4253606266ad0.png",
@@ -1387,8 +2497,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 150.<br>Additional Effect: Increased enmity<br>Additional Effect: Reduces the recast time of Shadowstride by 5 seconds",
+                "id": "unmend",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Unmend    \n            Level Req.: 15    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 150.<br>Additional Effect: Increased enmity<br>Additional Effect: Reduces the recast time of Shadowstride by 5 seconds",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8c6a197869a69116f52b41b3fef2ce03c29b5212.png",
@@ -1399,8 +2519,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 260.<br>Combo Action: Syphon Strike<br>Combo Potency: 480<br>Combo Bonus: Restores own HP<br>Cure Potency: 300<br>Combo Bonus: Increases Blood Gauge by 20",
+                "id": "souleater",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Souleater    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 260.<br>Combo Action: Syphon Strike<br>Combo Potency: 480<br>Combo Bonus: Restores own HP<br>Cure Potency: 300<br>Combo Bonus: Increases Blood Gauge by 20",
+                "potency": "260",
+                "comboAction": "Syphon Strike",
+                "comboPotency": "480",
+                "comboBonus": {
+                    "Blood": "20"
+                },
+                "Blood": "20",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 260,
+                "comboPotencyNumeric": 480,
+                "comboBonusNumeric": {
+                    "Blood": 20
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/438927fdaa593ec9d1bd020e1c60fad9ca495f3f.png",
@@ -1411,8 +2551,26 @@ export default {
                 "recast": "1s",
                 "cost": "3000 MP",
                 "effect": "Deals unaspected damage with a potency of 100 to all enemies in a straight line before you.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Edge of Darkness.",
+                "id": "floodOfDarkness",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Flood of Darkness    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: 3000 MP      \n            Effect: Deals unaspected damage with a potency of 100 to all enemies in a straight line before you.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Edge of Darkness.",
+                "potency": "100",
+                "grants": {
+                    "darkside": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "grantsNumeric": {
+                    "darkside": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c0c4dd65cec09b11aa7ecfecf6526aff4c59b83f.png",
@@ -1423,8 +2581,25 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants 3 stacks of Blood Weapon, each stack increasing Blood Gauge by 10 and restoring MP upon landing weaponskills or spells.<br>Duration: 15s<br>Effect does not stack when hitting multiple targets with a single attack.",
+                "id": "bloodWeapon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blood Weapon    \n            Level Req.: 35    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants 3 stacks of Blood Weapon, each stack increasing Blood Gauge by 10 and restoring MP upon landing weaponskills or spells.<br>Duration: 15s<br>Effect does not stack when hitting multiple targets with a single attack.",
+                "grants": {
+                    "bloodweapon": "3"
+                },
+                "Grants3stacksofBloodWeapon,eachstackincreasingBlood": null,
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "bloodweapon": 3
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7ea7904a9e066bb33d542755b5984ad78c711a45.png",
@@ -1435,8 +2610,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 30%.<br>Duration: 15s",
+                "id": "shadowWall",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadow Wall    \n            Level Req.: 38    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 30%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cc2fff4dcbf82d405c36a0d153fb28af5fcb9068.png",
@@ -1447,8 +2632,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 120 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Unleash<br>Combo Potency: 160<br>Combo Bonus: Restores MP<br>Combo Bonus: Increases Blood Gauge by 20",
+                "id": "stalwartSoul",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stalwart Soul    \n            Level Req.: 40    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 120 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Unleash<br>Combo Potency: 160<br>Combo Bonus: Restores MP<br>Combo Bonus: Increases Blood Gauge by 20",
+                "potency": "120",
+                "comboAction": "Unleash",
+                "comboPotency": "160",
+                "comboBonus": {
+                    "Blood": "20"
+                },
+                "Blood": "20",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 120,
+                "comboPotencyNumeric": 160,
+                "comboBonusNumeric": {
+                    "Blood": 20
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e62374eb5036fcaa1201fec390bc266620501abe.png",
@@ -1459,8 +2664,26 @@ export default {
                 "recast": "1s",
                 "cost": "3000 MP",
                 "effect": "Deals unaspected damage with a potency of 300.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Flood of Darkness.",
+                "id": "edgeOfDarkness",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Edge of Darkness    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: 3000 MP      \n            Effect: Deals unaspected damage with a potency of 300.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Flood of Darkness.",
+                "potency": "300",
+                "grants": {
+                    "darkside": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 300,
+                "grantsNumeric": {
+                    "darkside": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/adb1f756a8cfa746f5ec2f97e487e41c06026a61.png",
@@ -1471,8 +2694,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces magic vulnerability by 20%.<br>Duration: 10s",
+                "id": "darkMind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dark Mind    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces magic vulnerability by 20%.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/968fc4ccd880ca468fff7b34680e793a80ffdab1.png",
@@ -1483,8 +2716,24 @@ export default {
                 "recast": "300s",
                 "cost": "-",
                 "effect": "Grants the effect of Living Dead.<br>When HP is reduced to 0 while under the effect of Living Dead, instead of becoming KO'd, your status will change to Walking Dead.<br>Living Dead Duration: 10s<br>Additional Effect: Restores HP with each weaponskill successfully delivered or spell cast<br>Cure Potency: 1500<br>While under the effect of Walking Dead, most attacks will not lower your HP below 1. If, before the Walking Dead timer runs out, an amount of HP totaling your maximum HP is restored, the effect will change to Undead Rebirth. If this amount is not restored, you will be KO'd.<br>Walking Dead Duration: 10s<br>While under the effect of Undead Rebirth, most attacks will not lower your HP below 1.<br>Undead Rebirth Duration: Time remaining on Walking Dead",
+                "id": "livingDead",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Living Dead    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 300s          \n            Cost: -      \n            Effect: Grants the effect of Living Dead.<br>When HP is reduced to 0 while under the effect of Living Dead, instead of becoming KO'd, your status will change to Walking Dead.<br>Living Dead Duration: 10s<br>Additional Effect: Restores HP with each weaponskill successfully delivered or spell cast<br>Cure Potency: 1500<br>While under the effect of Walking Dead, most attacks will not lower your HP below 1. If, before the Walking Dead timer runs out, an amount of HP totaling your maximum HP is restored, the effect will change to Undead Rebirth. If this amount is not restored, you will be KO'd.<br>Walking Dead Duration: 10s<br>While under the effect of Undead Rebirth, most attacks will not lower your HP below 1.<br>Undead Rebirth Duration: Time remaining on Walking Dead",
+                "grants": {
+                    "theeffectoflivingdead.": -1
+                },
+                "duration": "Time",
                 "castNumeric": 0,
-                "recastNumeric": 300
+                "recastNumeric": 300,
+                "durationNumeric": 0,
+                "grantsNumeric": {
+                    "theeffectoflivingdead.": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8c3e2f641cea5b3c0693034e6feafeff359341c5.png",
@@ -1495,8 +2744,20 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Creates a patch of salted earth at your feet, dealing unaspected damage with a potency of 50 to any enemies who enter.<br>Duration: 15s",
+                "id": "saltedEarth",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Salted Earth    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Creates a patch of salted earth at your feet, dealing unaspected damage with a potency of 50 to any enemies who enter.<br>Duration: 15s",
+                "potency": "50",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "potencyNumeric": 50,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/52870f24b14efd37172003e974b8c45ca3d38010.png",
@@ -1507,8 +2768,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Rush to a targeted enemy's location.<br>Additional Effect: Increased enmity<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "id": "shadowstride",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadowstride    \n            Level Req.: 54    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Rush to a targeted enemy's location.<br>Additional Effect: Increased enmity<br>Maximum Charges: 2<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/17543c65847814b073fe6481402a347c7efc9225.png",
@@ -1519,8 +2788,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 240 to target and all enemies nearby it.<br>Additional Effect: Restores own HP<br>Cure Potency: 200<br>Additional Effect: Restores MP<br>Shares a recast timer with Carve and Spit.",
+                "id": "abyssalDrain",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Abyssal Drain    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 240 to target and all enemies nearby it.<br>Additional Effect: Restores own HP<br>Cure Potency: 200<br>Additional Effect: Restores MP<br>Shares a recast timer with Carve and Spit.",
+                "potency": "240",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "potencyNumeric": 240,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6bbe53b6e1f87598b98967ae9d29e4337a7afadd.png",
@@ -1531,8 +2810,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers a threefold attack with a potency of 540.<br>Additional Effect: Restores MP<br>Shares a recast timer with Abyssal Drain.",
+                "id": "carveAndSpit",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Carve and Spit    \n            Level Req.: 60    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers a threefold attack with a potency of 540.<br>Additional Effect: Restores MP<br>Shares a recast timer with Abyssal Drain.",
+                "potency": "540",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "potencyNumeric": 540,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4e5cbcae7dcf48cf8e3522d308f0c86df9114f0d.png",
@@ -1543,8 +2832,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 580.<br>Blood Gauge Cost: 50",
+                "id": "bloodspiller",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodspiller    \n            Level Req.: 62    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 580.<br>Blood Gauge Cost: 50",
+                "potency": "580",
+                "Blood": -50,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 580,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ea30bbaacc0da577820f8b027cec26738c1be840.png",
@@ -1555,8 +2855,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 240 to all nearby enemies.<br>Blood Gauge Cost: 50",
+                "id": "quietus",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Quietus    \n            Level Req.: 64    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 240 to all nearby enemies.<br>Blood Gauge Cost: 50",
+                "potency": "240",
+                "Blood": -50,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 240,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fbf4ae3878ecc04c6201114ce6b0aadf26bef857.png",
@@ -1567,8 +2878,25 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants 3 stacks of Delirium and Blood Weapon.<br>Delirium Effect: Changes Bloodspiller to Scarlet Delirium and Quietus to Impalement<br>Duration: 15s<br>Blood Weapon Effect: Each stack increases Blood Gauge by 10 and restores MP upon landing weaponskills or spells<br>Duration: 15s<br>Effect does not stack when hitting multiple targets with a single attack.",
+                "id": "delirium",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Delirium    \n            Level Req.: 68    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants 3 stacks of Delirium and Blood Weapon.<br>Delirium Effect: Changes Bloodspiller to Scarlet Delirium and Quietus to Impalement<br>Duration: 15s<br>Blood Weapon Effect: Each stack increases Blood Gauge by 10 and restores MP upon landing weaponskills or spells<br>Duration: 15s<br>Effect does not stack when hitting multiple targets with a single attack.",
+                "grants": {
+                    "deliriumandbloodweapon.": "3"
+                },
+                "duration": "15",
+                "BloodWeaponEffect:EachstackincreasesBlood": null,
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "deliriumandbloodweapon.": 3
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f82c8fbcd6549c8cd72108a937aade172f8b98a8.png",
@@ -1578,9 +2906,25 @@ export default {
                 "cast": "Instant",
                 "recast": "15s",
                 "cost": "3000 MP",
-                "effect": "Creates a barrier around self or target party member that absorbs damage totaling 25% of target's maximum HP.<br>Duration: 7s<BR>Grants Dark Arts when barrier is completely absorbed.<br>Dark Arts Effect: Consume Dark Arts instead of MP to execute Edge of Shadow or Flood of Shadow",
+                "effect": "Creates a barrier around self or target party member that absorbs damage totaling 25% of target's maximum HP.<br>Duration: 7s<br>Grants Dark Arts when barrier is completely absorbed.<br>Dark Arts Effect: Consume Dark Arts instead of MP to execute Edge of Shadow or Flood of Shadow",
+                "id": "theBlackestNight",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: The Blackest Night    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: 3000 MP      \n            Effect: Creates a barrier around self or target party member that absorbs damage totaling 25% of target's maximum HP.<br>Duration: 7s<BR>Grants Dark Arts when barrier is completely absorbed.<br>Dark Arts Effect: Consume Dark Arts instead of MP to execute Edge of Shadow or Flood of Shadow",
+                "duration": "7",
+                "grants": {
+                    "darkartswhenbarrieriscompletelyabsorbed.": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "durationNumeric": 7,
+                "grantsNumeric": {
+                    "darkartswhenbarrieriscompletelyabsorbed.": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/de4960def285cc69e33455acae0f50808a6cd623.png",
@@ -1591,8 +2935,26 @@ export default {
                 "recast": "1s",
                 "cost": "3000 MP",
                 "effect": "Deals unaspected damage with a potency of 160 to all enemies in a straight line before you.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Edge of Shadow.",
+                "id": "floodOfShadow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Flood of Shadow    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: 3000 MP      \n            Effect: Deals unaspected damage with a potency of 160 to all enemies in a straight line before you.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Edge of Shadow.",
+                "potency": "160",
+                "grants": {
+                    "darkside": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 160,
+                "grantsNumeric": {
+                    "darkside": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e4536e75673663bf1b91d1a78a565dabc2f041f6.png",
@@ -1603,8 +2965,26 @@ export default {
                 "recast": "1s",
                 "cost": "3000 MP",
                 "effect": "Deals unaspected damage with a potency of 460.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Flood of Shadow.",
+                "id": "edgeOfShadow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Edge of Shadow    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: 3000 MP      \n            Effect: Deals unaspected damage with a potency of 460.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Flood of Shadow.",
+                "potency": "460",
+                "grants": {
+                    "darkside": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 460,
+                "grantsNumeric": {
+                    "darkside": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1dc1a1d830e5355e2cd251531e85932c24ba1b8d.png",
@@ -1615,8 +2995,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces magic damage taken by self and nearby party members by 10%.<br>Duration: 15s",
+                "id": "darkMissionary",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dark Missionary    \n            Level Req.: 76    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces magic damage taken by self and nearby party members by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5150a7bff7be43d689f896e7be140f4720a23f6e.png",
@@ -1627,8 +3017,27 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Conjure a simulacrum of your darkside to fight alongside you.<br>Duration: 20s<br>Additional Effect: Grants Scorn<br>Duration: 30s<br>Simulacrum Attack Potency: 420<br>Additional Effect: Simulacrum is able to execute Shadowbringer and Disesteem<br>Shadowbringer Potency: 570 for the first enemy, and 25% less for all remaining enemies<br>Disesteem Potency: 620 for the first enemy, and 25% less for all remaining enemies",
+                "id": "livingShadow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Living Shadow    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Conjure a simulacrum of your darkside to fight alongside you.<br>Duration: 20s<br>Additional Effect: Grants Scorn<br>Duration: 30s<br>Simulacrum Attack Potency: 420<br>Additional Effect: Simulacrum is able to execute Shadowbringer and Disesteem<br>Shadowbringer Potency: 570 for the first enemy, and 25% less for all remaining enemies<br>Disesteem Potency: 620 for the first enemy, and 25% less for all remaining enemies",
+                "duration": "30",
+                "grants": {
+                    "scorn": -1
+                },
+                "simulacrumattack": "420",
+                "shadowbringer": "570",
+                "disesteem": "620",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "scorn": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5a42ca000eb7ab0c80e3952539ed260af3d4c5e8.png",
@@ -1639,8 +3048,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces damage taken by target party member or self by 10%.<br>Duration: 10s<br>Maximum Charges: 2",
+                "id": "oblation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Oblation    \n            Level Req.: 82    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces damage taken by target party member or self by 10%.<br>Duration: 10s<br>Maximum Charges: 2",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bb0216fb548f749ceb5bf25f071af462129be59b.png",
@@ -1651,8 +3070,18 @@ export default {
                 "recast": "20s",
                 "cost": "-",
                 "effect": "All enemies standing in the corrupted patch of Salted Earth take additional unaspected damage with a potency of 500 for the first enemy, and 50% less for all remaining enemies.",
+                "id": "saltAndDarkness",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Salt and Darkness    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 20s          \n            Cost: -      \n            Effect: All enemies standing in the corrupted patch of Salted Earth take additional unaspected damage with a potency of 500 for the first enemy, and 50% less for all remaining enemies.",
+                "potency": "500",
                 "castNumeric": 0,
-                "recastNumeric": 20
+                "recastNumeric": 20,
+                "potencyNumeric": 500,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bb5281f6fd7eb6900cbda1c39722b4d3c7e51b6e.png",
@@ -1663,8 +3092,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 2<br>Can only be executed while under the effect of Darkside.",
+                "id": "shadowbringer",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadowbringer    \n            Level Req.: 90    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Deals unaspected damage to all enemies in a straight line before you with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 2<br>Can only be executed while under the effect of Darkside.",
+                "potency": "600",
+                "buffRequirement": "darkside",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/093f2ddb0a06f04a76fe41fd5c31f7fceb46d2ea.png",
@@ -1675,8 +3115,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 40%.<br>Duration: 15s<br>Additional Effect: Grants Vigilant<br>Duration: 20s<br>Vigilant Effect: Restores HP when HP falls below 50% or upon effect duration expiration<br>Cure Potency: 1,200",
+                "id": "shadowedVigil",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadowed Vigil    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 40%.<br>Duration: 15s<br>Additional Effect: Grants Vigilant<br>Duration: 20s<br>Vigilant Effect: Restores HP when HP falls below 50% or upon effect duration expiration<br>Cure Potency: 1,200",
+                "duration": "20",
+                "grants": {
+                    "vigilant": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "grantsNumeric": {
+                    "vigilant": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/457d3fa4f25afb9c4494105c0afc15644bbaad7a.png",
@@ -1687,8 +3143,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 600.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Bloodspiller changes to Scarlet Delirium while under the effect of Delirium.",
+                "id": "scarletDelirium",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Scarlet Delirium    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 600.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Bloodspiller changes to Scarlet Delirium while under the effect of Delirium.",
+                "potency": "600",
+                "buffRequirement": "delirium",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cc157e7338d9b4c32f880aed1838519933bc6797.png",
@@ -1699,8 +3166,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 700.<br>Combo Action: Scarlet Delirium<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Scarlet Delirium changes to Comeuppance when requirements for execution are met.",
+                "id": "comeuppance",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Comeuppance    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 700.<br>Combo Action: Scarlet Delirium<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Scarlet Delirium changes to Comeuppance when requirements for execution are met.",
+                "potency": "700",
+                "comboAction": "Scarlet Delirium",
+                "buffRequirement": "delirium",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 700,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2510476b643976c09c1b42f6eb9f011b7de6902c.png",
@@ -1711,8 +3190,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 800.<br>Combo Action: Comeuppance<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Comeuppance changes to Torcleaver when requirements for execution are met.",
+                "id": "torcleaver",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Torcleaver    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 800.<br>Combo Action: Comeuppance<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Comeuppance changes to Torcleaver when requirements for execution are met.",
+                "potency": "800",
+                "comboAction": "Comeuppance",
+                "buffRequirement": "delirium",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 800,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/77ef69ee0efdb439996373d7e47f2744a7604b10.png",
@@ -1723,8 +3214,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 320 to all nearby enemies.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Quietus changes to Impalement when requirements for execution are met.",
+                "id": "impalement",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Impalement    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 320 to all nearby enemies.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Quietus changes to Impalement when requirements for execution are met.",
+                "potency": "320",
+                "buffRequirement": "delirium",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 320,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/acf9474555312bfc65c8d4e8e93cf368f819f503.png",
@@ -1735,8 +3237,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals physical damage to all enemies in a straight line before you with a potency of 1,000 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while Scorn is active.",
+                "id": "disesteem",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Disesteem    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals physical damage to all enemies in a straight line before you with a potency of 1,000 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while Scorn is active.",
+                "potency": "1,000",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/37546679ae5e431c0903b20fa2c91a88c5a8e001.png",
@@ -1747,8 +3259,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "id": "rampart",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rampart    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/af837b3dd467ee9cdf865a06eb2b1633dd2b492a.png",
@@ -1759,8 +3281,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 5s",
+                "id": "lowBlow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Low Blow    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 5s",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b45fea903bcf1edd9e08110cf95e8bba9a73c0d.png",
@@ -1771,8 +3303,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
+                "id": "provoke",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Provoke    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8442bcce1ec21a449546af9afb79ae9ea8c226cb.png",
@@ -1783,8 +3323,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Interrupts the use of a target's action.",
+                "id": "interject",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Interject    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Interrupts the use of a target's action.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6b83d9368623d5cd20a426d26916021b59a14963.png",
@@ -1795,8 +3343,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "id": "reprisal",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reprisal    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -1807,8 +3365,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -1819,8 +3387,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Diverts 25% of enmity to target party member.",
+                "id": "shirk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shirk    \n            Level Req.: 48    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Diverts 25% of enmity to target party member.",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -1932,8 +3508,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300.",
+                "id": "keenEdge",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Keen Edge    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300.",
+                "potency": "300",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ab1c97d8f6007446d9f7c324adc29299e6be8e10.png",
@@ -1944,8 +3530,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Increases damage dealt by 20%.<br>Duration: 20s<br>Additional Effect: Grants Ready to Break<br>Duration: 30s",
+                "id": "noMercy",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: No Mercy    \n            Level Req.: 2    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Increases damage dealt by 20%.<br>Duration: 20s<br>Additional Effect: Grants Ready to Break<br>Duration: 30s",
+                "damageBuff": 1.2,
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/729d76d5161a59cbed8b5f369e8476acf5ea24b2.png",
@@ -1956,8 +3553,23 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 240.<br>Combo Action: Keen Edge<br>Combo Potency: 380<br>Combo Bonus: Restores own HP<br>Cure Potency: 200<br>Combo Bonus: Creates a barrier which nullifies damage equaling HP restored<br>Duration: 30s",
+                "id": "brutalShell",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Brutal Shell    \n            Level Req.: 4    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 240.<br>Combo Action: Keen Edge<br>Combo Potency: 380<br>Combo Bonus: Restores own HP<br>Cure Potency: 200<br>Combo Bonus: Creates a barrier which nullifies damage equaling HP restored<br>Duration: 30s",
+                "potency": "240",
+                "comboAction": "Keen Edge",
+                "comboPotency": "380",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 240,
+                "comboPotencyNumeric": 380,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/62855107ef85d3d74b0eb9d14f030368ddb6ff5a.png",
@@ -1968,8 +3580,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Increases parry rate by 50% while reducing damage taken by 10%.<br>Duration: 20s",
+                "id": "camouflage",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Camouflage    \n            Level Req.: 6    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Increases parry rate by 50% while reducing damage taken by 10%.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a38cbdd5b185413becb8c56388d1043259dd25b1.png",
@@ -1980,8 +3602,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "id": "demonSlice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Demon Slice    \n            Level Req.: 10    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b44946a0b3966b9638d4bc04d4b8c5858bfc3ad0.png",
@@ -1992,8 +3624,16 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Significantly increases enmity generation.<br>Effect ends upon reuse.",
+                "id": "royalGuard",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Royal Guard    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Significantly increases enmity generation.<br>Effect ends upon reuse.",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bf2a6455e06637fe409340c4dba7530e55d8bfee.png",
@@ -2004,8 +3644,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Cancels the effect of Royal Guard.",
+                "id": "releaseRoyalGuard",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Release Royal Guard    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Cancels the effect of Royal Guard.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/da2f213272cf4d4c2c5df5ccf597dd8e01ddb58b.png",
@@ -2016,8 +3664,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a ranged attack with a potency of 150.<br>Additional Effect: Increased enmity",
+                "id": "lightningShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lightning Shot    \n            Level Req.: 15    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a ranged attack with a potency of 150.<br>Additional Effect: Increased enmity",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fdc5cd0d9017c98bc96d4e0f20122e2f83667128.png",
@@ -2028,8 +3686,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 250.",
+                "id": "dangerZone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Danger Zone    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 250.",
+                "potency": "250",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 250,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/57a492f3dd90592bb2b3255f3e2f342dd6b800f9.png",
@@ -2040,8 +3708,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 240.<br>Combo Action: Brutal Shell<br>Combo Potency: 460<br>Combo Bonus: Adds a Cartridge to your Powder Gauge",
+                "id": "solidBarrel",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Solid Barrel    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 240.<br>Combo Action: Brutal Shell<br>Combo Potency: 460<br>Combo Bonus: Adds a Cartridge to your Powder Gauge",
+                "potency": "240",
+                "comboAction": "Brutal Shell",
+                "comboPotency": "460",
+                "comboBonus": {},
+                "ComboBonus:AddsaCartridgetoyourPowder": null,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 240,
+                "comboPotencyNumeric": 460,
+                "comboBonusNumeric": {
+                    "AddsaCartridgetoyourPowder": 0
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/43828414469ebc6fd88ef500ab2e941177b833ec.png",
@@ -2052,8 +3738,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 460.<br>Additional Effect: Grants Ready to Blast<br>Duration: 10s<br>Effect of Ready to Blast ends upon execution of any weaponskill.<br>Cartridge Cost: 1",
+                "id": "burstStrike",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Burst Strike    \n            Level Req.: 30    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 460.<br>Additional Effect: Grants Ready to Blast<br>Duration: 10s<br>Effect of Ready to Blast ends upon execution of any weaponskill.<br>Cartridge Cost: 1",
+                "potency": "460",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 10,
+                "potencyNumeric": 460,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d16438334b399cb5524acb6d77485b6c56a2be4a.png",
@@ -2064,8 +3762,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 30%.<br>Duration: 15s",
+                "id": "nebula",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Nebula    \n            Level Req.: 38    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 30%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/46bce3e1c9f5ca00fbc00c7f52fc765c47aba80a.png",
@@ -2076,8 +3784,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Demon Slice<br>Combo Potency: 160<br>Combo Bonus: Adds a Cartridge to your Powder Gauge",
+                "id": "demonSlaughter",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Demon Slaughter    \n            Level Req.: 40    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Increased enmity<br>Combo Action: Demon Slice<br>Combo Potency: 160<br>Combo Bonus: Adds a Cartridge to your Powder Gauge",
+                "potency": "100",
+                "comboAction": "Demon Slice",
+                "comboPotency": "160",
+                "comboBonus": {},
+                "ComboBonus:AddsaCartridgetoyourPowder": null,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 160,
+                "comboBonusNumeric": {
+                    "AddsaCartridgetoyourPowder": 0
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e220754db76f98256dd7258171a61a9de8dd898c.png",
@@ -2088,8 +3814,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants Regen to target.<br>Cure Potency: 200<br>Duration: 18s<br>Maximum Charges: 2",
+                "id": "aurora",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Aurora    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants Regen to target.<br>Cure Potency: 200<br>Duration: 18s<br>Maximum Charges: 2",
+                "duration": "18",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 18,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/58257f726f8a2f793622a654e5b0b2df36b372ad.png",
@@ -2100,8 +3836,18 @@ export default {
                 "recast": "360s",
                 "cost": "-",
                 "effect": "Reduces HP to 1 and renders you impervious to most attacks.<br>Duration: 10s",
+                "id": "superbolide",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Superbolide    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 360s          \n            Cost: -      \n            Effect: Reduces HP to 1 and renders you impervious to most attacks.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 360
+                "recastNumeric": 360,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7edeee63ceea914fd74fc091aa99a84b290a57b1.png",
@@ -2112,8 +3858,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300.<br>Additional Effect: Damage over time<br>Potency: 60<br>Duration: 30s<br>Can only be executed when Ready to Break.",
+                "id": "sonicBreak",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sonic Break    \n            Level Req.: 54    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300.<br>Additional Effect: Damage over time<br>Potency: 60<br>Duration: 30s<br>Can only be executed when Ready to Break.",
+                "potency": "300",
+                "durationPotency": 20,
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/905366f09c4875cbe0ba664aa043c8bd22aefc1c.png",
@@ -2124,8 +3883,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Rush to a targeted enemy's location.<br>Additional Effect: Increased enmity<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "id": "trajectory",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Trajectory    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Rush to a targeted enemy's location.<br>Additional Effect: Increased enmity<br>Maximum Charges: 2<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/31a707fb47363e30af254750784a60ff55f60ec9.png",
@@ -2136,8 +3903,20 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 500.<br>Additional Effect: Grants Ready to Rip<br>Duration: 10s<br>Effect of Ready to Rip ends upon execution of any weaponskill.<br>Cartridge Cost: 1<br>This weaponskill does not share a recast timer with any other actions.",
+                "id": "gnashingFang",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Gnashing Fang    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 500.<br>Additional Effect: Grants Ready to Rip<br>Duration: 10s<br>Effect of Ready to Rip ends upon execution of any weaponskill.<br>Cartridge Cost: 1<br>This weaponskill does not share a recast timer with any other actions.",
+                "potency": "500",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 10,
+                "potencyNumeric": 500,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fe183577affbcd066b131c997ca32283dba5c768.png",
@@ -2148,8 +3927,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 560.<br>Combo Action: Gnashing Fang<br>Combo Bonus: Grants Ready to Tear<br>Duration: 10s<br>Effect of Ready to Tear ends upon execution of any weaponskill.<br><br>※This action cannot be assigned to a hotbar.<br>※Gnashing Fang changes to Savage Claw when requirements for execution are met.",
+                "id": "savageClaw",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Savage Claw    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 560.<br>Combo Action: Gnashing Fang<br>Combo Bonus: Grants Ready to Tear<br>Duration: 10s<br>Effect of Ready to Tear ends upon execution of any weaponskill.<br><br>※This action cannot be assigned to a hotbar.<br>※Gnashing Fang changes to Savage Claw when requirements for execution are met.",
+                "potency": "560",
+                "comboAction": "Gnashing Fang",
+                "comboBonus": {
+                    "readytotear": -1
+                },
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 10,
+                "potencyNumeric": 560,
+                "comboBonusNumeric": {
+                    "readytotear": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/137262f0ad98e13fd0ace2dc4f7f786d0bcec9a5.png",
@@ -2160,8 +3958,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 620.<br>Combo Action: Savage Claw<br>Combo Bonus: Grants Ready to Gouge<br>Duration: 10s<br>Effect of Ready to Gouge ends upon execution of any weaponskill.<br><br>※This action cannot be assigned to a hotbar.<br>※Savage Claw changes to Wicked Talon when requirements for execution are met.",
+                "id": "wickedTalon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Wicked Talon    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 620.<br>Combo Action: Savage Claw<br>Combo Bonus: Grants Ready to Gouge<br>Duration: 10s<br>Effect of Ready to Gouge ends upon execution of any weaponskill.<br><br>※This action cannot be assigned to a hotbar.<br>※Savage Claw changes to Wicked Talon when requirements for execution are met.",
+                "potency": "620",
+                "comboAction": "Savage Claw",
+                "comboBonus": {
+                    "readytogouge": -1
+                },
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 10,
+                "potencyNumeric": 620,
+                "comboBonusNumeric": {
+                    "readytogouge": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b3fa2bb1c9e838fc01439b7d39a495b444c73c6a.png",
@@ -2172,8 +3989,21 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 150 to all nearby enemies.<br>Additional Effect: Damage over time<br>Potency: 60<br>Duration: 15s",
+                "id": "bowShock",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bow Shock    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 150 to all nearby enemies.<br>Additional Effect: Damage over time<br>Potency: 60<br>Duration: 15s",
+                "potency": "150",
+                "durationPotency": 20,
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/04bbce4afc048a15cdccdd0495e679f90b115963.png",
@@ -2184,8 +4014,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces magic damage taken by self and nearby party members by 10%.<br>Duration: 15s",
+                "id": "heartOfLight",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heart of Light    \n            Level Req.: 64    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces magic damage taken by self and nearby party members by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/059baae88deccf4ffdc31f8afd0074ec4589f81f.png",
@@ -2196,8 +4036,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Reduces damage taken by a party member or self by 15%.<br>Duration: 7s<br>Additional Effect: When targeting a party member while under the effect of Brutal Shell, that effect is also granted to the target<br>Duration: 30s",
+                "id": "heartOfStone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heart of Stone    \n            Level Req.: 68    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Reduces damage taken by a party member or self by 15%.<br>Duration: 7s<br>Additional Effect: When targeting a party member while under the effect of Brutal Shell, that effect is also granted to the target<br>Duration: 30s",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8e38ca32b4021206901a4761dbef4d0c783b8620.png",
@@ -2208,8 +4058,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Allows the firing of successive rounds with your gunblade.<br>Gnashing Fang may be followed by Jugular Rip.<br>Savage Claw may be followed by Abdomen Tear.<br>Wicked Talon may be followed by Eye Gouge.<br>Burst Strike may be followed by Hypervelocity.<br>Fated Circle may be followed by Fated Brand.",
+                "id": "continuation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Continuation    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Allows the firing of successive rounds with your gunblade.<br>Gnashing Fang may be followed by Jugular Rip.<br>Savage Claw may be followed by Abdomen Tear.<br>Wicked Talon may be followed by Eye Gouge.<br>Burst Strike may be followed by Hypervelocity.<br>Fated Circle may be followed by Fated Brand.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/75e8b1b0530a1eb26a7d87aa7a3a50cfb8d3bff7.png",
@@ -2220,8 +4078,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 240.<br>Can only be executed when Ready to Rip.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Jugular Rip when requirements for execution are met.",
+                "id": "jugularRip",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Jugular Rip    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 240.<br>Can only be executed when Ready to Rip.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Jugular Rip when requirements for execution are met.",
+                "potency": "240",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 240,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e8472939441b3136fb9b2bfa52851e500e001279.png",
@@ -2232,8 +4100,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 280.<br>Can only be executed when Ready to Tear.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Abdomen Tear when requirements for execution are met.",
+                "id": "abdomenTear",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Abdomen Tear    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 280.<br>Can only be executed when Ready to Tear.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Abdomen Tear when requirements for execution are met.",
+                "potency": "280",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 280,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0c7e1462abaa7984e64644f3cb9e4a066ec16c59.png",
@@ -2244,8 +4122,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 320.<br>Can only be executed when Ready to Gouge.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Eye Gouge when requirements for execution are met.",
+                "id": "eyeGouge",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eye Gouge    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 320.<br>Can only be executed when Ready to Gouge.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Eye Gouge when requirements for execution are met.",
+                "potency": "320",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 320,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/72b126aa8a17d9d94ee177b98af27d512aa6e01f.png",
@@ -2256,8 +4144,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300 to all nearby enemies.<br>Additional Effect: Grants Ready to Raze<br>Duration: 10s<br>Effect of Ready to Raze ends upon execution of any weaponskill.<br>Cartridge Cost: 1",
+                "id": "fatedCircle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fated Circle    \n            Level Req.: 72    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300 to all nearby enemies.<br>Additional Effect: Grants Ready to Raze<br>Duration: 10s<br>Effect of Ready to Raze ends upon execution of any weaponskill.<br>Cartridge Cost: 1",
+                "potency": "300",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 10,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/90de52fbbbc0de9309a2b2aceb1b0146e3b7283a.png",
@@ -2268,8 +4168,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Draws aetheric energy from target, adding 3 Cartridges to your Powder Gauge.<br>Additional Effect: Grants Ready to Reign<br>Duration: 30s",
+                "id": "bloodfest",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodfest    \n            Level Req.: 76    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Draws aetheric energy from target, adding 3 Cartridges to your Powder Gauge.<br>Additional Effect: Grants Ready to Reign<br>Duration: 30s",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d35fea54a4ec47a5d8227e13b5dba247a5c8a5a6.png",
@@ -2280,8 +4190,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 800.",
+                "id": "blastingZone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blasting Zone    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 800.",
+                "potency": "800",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 800,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/493de7202ca9b1e4bed75fdd4e5b1e7a8c61d58a.png",
@@ -2292,8 +4212,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Reduces damage taken by target party member or self by 15%.<br>Duration: 8s<br>Additional Effect: When targeting a party member while under the effect of Brutal Shell, that effect is also granted to the target<br>Duration: 30s<br>Additional Effect: Grants Clarity of Corundum to target<br>Clarity of Corundum Effect: Reduces damage taken by 15%<br>Duration: 4s<br>Additional Effect: Grants Catharsis of Corundum to target<br>Catharsis of Corundum Effect: Restores HP when HP falls below 50% or upon effect duration expiration<br>Cure Potency: 900<br>Duration: 20s",
+                "id": "heartOfCorundum",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heart of Corundum    \n            Level Req.: 82    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Reduces damage taken by target party member or self by 15%.<br>Duration: 8s<br>Additional Effect: When targeting a party member while under the effect of Brutal Shell, that effect is also granted to the target<br>Duration: 30s<br>Additional Effect: Grants Clarity of Corundum to target<br>Clarity of Corundum Effect: Reduces damage taken by 15%<br>Duration: 4s<br>Additional Effect: Grants Catharsis of Corundum to target<br>Catharsis of Corundum Effect: Restores HP when HP falls below 50% or upon effect duration expiration<br>Cure Potency: 900<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7d7143520a9ec0306e977c10b4594ad0b5eee50f.png",
@@ -2304,8 +4234,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.<br>Can only be executed when Ready to Blast.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Hypervelocity when requirements for execution are met.",
+                "id": "hypervelocity",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hypervelocity    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.<br>Can only be executed when Ready to Blast.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Hypervelocity when requirements for execution are met.",
+                "potency": "220",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9431f382886a5bac654058624ed21082deaae9d9.png",
@@ -2316,8 +4256,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers an attack to all nearby enemies with a potency of 1,200 for the first enemy, and 15% less for all remaining enemies.<br>Cartridge Cost: 2<br>This weaponskill does not share a recast timer with any other actions.",
+                "id": "doubleDown",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Double Down    \n            Level Req.: 90    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers an attack to all nearby enemies with a potency of 1,200 for the first enemy, and 15% less for all remaining enemies.<br>Cartridge Cost: 2<br>This weaponskill does not share a recast timer with any other actions.",
+                "potency": "1,200",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c6aa9ac9d9d3b144c6c5d955616edbecbb40d19a.png",
@@ -2328,8 +4278,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 40%.<br>Additional Effect: Increases maximum HP by 20% and restores the amount increased.<br>Duration: 15s",
+                "id": "greatNebula",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Great Nebula    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 40%.<br>Additional Effect: Increases maximum HP by 20% and restores the amount increased.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/212d089b8f857465c135f0aed8a6a201e8cfdc90.png",
@@ -2340,8 +4300,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 120 to all nearby enemies.<br>Can only be executed when Ready to Raze.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Fated Brand when requirements for execution are met.",
+                "id": "fatedBrand",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fated Brand    \n            Level Req.: 96    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 120 to all nearby enemies.<br>Can only be executed when Ready to Raze.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Fated Brand when requirements for execution are met.",
+                "potency": "120",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/df78916692df98ce5e4990edbb531dba1d535e8e.png",
@@ -2352,8 +4322,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 800 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed when Ready to Reign.",
+                "id": "reignOfBeasts",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reign of Beasts    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 800 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed when Ready to Reign.",
+                "potency": "800",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 800,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/10aad4140dd5bacfad70315a6a6da6bd3c4e59a0.png",
@@ -2364,8 +4344,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 1,000 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Reign of Beasts<br><br>※This action cannot be assigned to a hotbar.<br>※Reign of Beasts changes to Noble Blood when requirements for execution are met.",
+                "id": "nobleBlood",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Noble Blood    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 1,000 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Reign of Beasts<br><br>※This action cannot be assigned to a hotbar.<br>※Reign of Beasts changes to Noble Blood when requirements for execution are met.",
+                "potency": "1,000",
+                "comboAction": "Reign of Beasts",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/105394eb5da461f87c00f49826e7ba06e4c93577.png",
@@ -2376,8 +4367,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 1,200 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Noble Blood<br><br>※This action cannot be assigned to a hotbar.<br>※Noble Blood changes to Lion Heart when requirements for execution are met.",
+                "id": "lionHeart",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lion Heart    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 1,200 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Noble Blood<br><br>※This action cannot be assigned to a hotbar.<br>※Noble Blood changes to Lion Heart when requirements for execution are met.",
+                "potency": "1,200",
+                "comboAction": "Noble Blood",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/37546679ae5e431c0903b20fa2c91a88c5a8e001.png",
@@ -2388,8 +4390,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "id": "rampart",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rampart    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces damage taken by 20%.<br>Additional Effect: Increases HP recovery via healing actions on self by 15%<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/af837b3dd467ee9cdf865a06eb2b1633dd2b492a.png",
@@ -2400,8 +4412,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 5s",
+                "id": "lowBlow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Low Blow    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 5s",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "durationNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b45fea903bcf1edd9e08110cf95e8bba9a73c0d.png",
@@ -2412,8 +4434,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
+                "id": "provoke",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Provoke    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8442bcce1ec21a449546af9afb79ae9ea8c226cb.png",
@@ -2424,8 +4454,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Interrupts the use of a target's action.",
+                "id": "interject",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Interject    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Interrupts the use of a target's action.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6b83d9368623d5cd20a426d26916021b59a14963.png",
@@ -2436,8 +4474,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "id": "reprisal",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reprisal    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces damage dealt by nearby enemies by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -2448,8 +4496,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -2460,8 +4518,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Diverts 25% of enmity to target party member.",
+                "id": "shirk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shirk    \n            Level Req.: 48    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Diverts 25% of enmity to target party member.",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -2582,8 +4648,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals earth damage with a potency of 140.",
+                "id": "stone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stone    \n            Level Req.: 1    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals earth damage with a potency of 140.",
+                "potency": "140",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a2d0e0ed56915f523e8a7326bbdd09eff0534eda.png",
@@ -2594,8 +4670,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Restores target's HP.<br>Cure Potency: 500<br>Additional Effect: 15% chance next Cure II will cost no MP<br>Duration: 15s",
+                "id": "cure",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Cure    \n            Level Req.: 2    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Restores target's HP.<br>Cure Potency: 500<br>Additional Effect: 15% chance next Cure II will cost no MP<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/78107cd063a81b78b99eb7cb5da15f2bec403c70.png",
@@ -2606,8 +4692,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals wind damage with a potency of 50.<br>Additional Effect: Wind damage over time<br>Potency: 30<br>Duration: 30s",
+                "id": "aero",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Aero    \n            Level Req.: 4    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals wind damage with a potency of 50.<br>Additional Effect: Wind damage over time<br>Potency: 30<br>Duration: 30s",
+                "potency": "50",
+                "": "30",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 50,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6c5fd075bab7c063aef743a1de5e36958354b42b.png",
@@ -2618,8 +4717,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "900 MP",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 400",
+                "id": "medica",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Medica    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 900 MP      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 400",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/34bdc3ad370b701a106f32daa68e73055ab72331.png",
@@ -2630,8 +4737,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "2400 MP",
                 "effect": "Resurrects target to a weakened state.",
+                "id": "raise",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Raise    \n            Level Req.: 12    \n            Type: Spell     \n            Cast Time: 8s      \n            Recast Time: 2.5s          \n            Cost: 2400 MP      \n            Effect: Resurrects target to a weakened state.",
                 "castNumeric": 8,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ce8e52e199a7d9e548537bc77197f4d7965dea58.png",
@@ -2642,8 +4757,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals earth damage with a potency of 190.",
+                "id": "stoneIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stone II    \n            Level Req.: 18    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals earth damage with a potency of 190.",
+                "potency": "190",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 190,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a70a8e3dcb347c11047f00945f9435687f21f06d.png",
@@ -2654,8 +4779,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Restores target's HP.<br>Cure Potency: 800",
+                "id": "cureIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Cure II    \n            Level Req.: 30    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Restores target's HP.<br>Cure Potency: 800",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7be14bf07b21fa5c78cd7f7891279704da6cadb9.png",
@@ -2666,8 +4799,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces spell cast time and recast time, and auto-attack delay by 20%.<br>Duration: 15s<br>Additional Effect: Grants 3 stacks of Sacred Sight<br>Duration: 30s",
+                "id": "presenceOfMind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Presence of Mind    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces spell cast time and recast time, and auto-attack delay by 20%.<br>Duration: 15s<br>Additional Effect: Grants 3 stacks of Sacred Sight<br>Duration: 30s",
+                "duration": "30",
+                "grants": {
+                    "sacredsight": "3"
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "sacredsight": 3
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/53bb0b4fc881c4c06d64c915864968cced6c6201.png",
@@ -2678,8 +4827,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Grants healing over time effect to target.<br>Cure Potency: 250<br>Duration: 18s",
+                "id": "regen",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Regen    \n            Level Req.: 35    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Grants healing over time effect to target.<br>Cure Potency: 250<br>Duration: 18s",
+                "duration": "18",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 18,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/33c3597ee1004e364a6331f732f077666e798acd.png",
@@ -2690,8 +4849,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "1500 MP",
                 "effect": "Restores own or target party member's HP and all party members nearby target.<br>Cure Potency: 600",
+                "id": "cureIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Cure III    \n            Level Req.: 40    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 1500 MP      \n            Effect: Restores own or target party member's HP and all party members nearby target.<br>Cure Potency: 600",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d69b1e0884f3f4edac543210cd9b42d74c2b3f25.png",
@@ -2702,8 +4869,16 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Quickly dash 15 yalms forward.<br>Cannot be executed while bound.",
+                "id": "aetherialShift",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Aetherial Shift    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Quickly dash 15 yalms forward.<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bb161bfc68766590d81cb1f7d6049711c949039b.png",
@@ -2714,8 +4889,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 140 to all nearby enemies.<br>Additional Effect: Stun<br>Duration: 4s",
+                "id": "holy",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holy    \n            Level Req.: 45    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 140 to all nearby enemies.<br>Additional Effect: Stun<br>Duration: 4s",
+                "potency": "140",
+                "duration": "4",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 4,
+                "potencyNumeric": 140,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7e4202353c63451702e9944dc93551a18951efcf.png",
@@ -2726,8 +4913,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals wind damage with a potency of 50.<br>Additional Effect: Wind damage over time<br>Potency: 50<br>Duration: 30s",
+                "id": "aeroIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Aero II    \n            Level Req.: 46    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals wind damage with a potency of 50.<br>Additional Effect: Wind damage over time<br>Potency: 50<br>Duration: 30s",
+                "potency": "50",
+                "": "50",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 50,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/530234ed64e2b5b5aaacf978a90d87932734272f.png",
@@ -2738,8 +4938,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 250<br>Additional Effect: Regen<br>Cure Potency: 150<br>Duration: 15s",
+                "id": "medicaIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Medica II    \n            Level Req.: 50    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 250<br>Additional Effect: Regen<br>Cure Potency: 150<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/44e09756739b6b8924b82471572e7103ac5ca1fb.png",
@@ -2750,8 +4960,16 @@ export default {
                 "recast": "180s",
                 "cost": "-",
                 "effect": "Restores all of a target's HP.",
+                "id": "benediction",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Benediction    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 180s          \n            Cost: -      \n            Effect: Restores all of a target's HP.",
                 "castNumeric": 0,
-                "recastNumeric": 180
+                "recastNumeric": 180,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a9c7b172b8c82aaa311a578fe3b42f5f30266e93.png",
@@ -2762,8 +4980,17 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Restores target's HP.<br>Cure Potency: 800<br>Additional Effect: Nourishes the Blood Lily<br>Healing Gauge Cost: 1 Lily",
+                "id": "afflatusSolace",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Afflatus Solace    \n            Level Req.: 52    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Restores target's HP.<br>Cure Potency: 800<br>Additional Effect: Nourishes the Blood Lily<br>Healing Gauge Cost: 1 Lily",
+                "Healing": -1,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cf3242dc922e88211cb5b2c4aa67f9ae79fb88fb.png",
@@ -2774,8 +5001,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Envelops a designated area in a veil of succor, granting healing over time to self and any party members who enter.<br>Cure Potency: 100<br>Duration: 24s <br>Additional Effect: Increases HP recovery via healing actions on party members in the designated area by 10%",
+                "id": "asylum",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Asylum    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Envelops a designated area in a veil of succor, granting healing over time to self and any party members who enter.<br>Cure Potency: 100<br>Duration: 24s <br>Additional Effect: Increases HP recovery via healing actions on party members in the designated area by 10%",
+                "duration": "24",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 24,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f38006e73efc8e122777b9c23097a4c40bc9c9c4.png",
@@ -2786,8 +5023,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "300 MP",
                 "effect": "Deals earth damage with a potency of 220.",
+                "id": "stoneIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stone III    \n            Level Req.: 54    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 300 MP      \n            Effect: Deals earth damage with a potency of 220.",
+                "potency": "220",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 220,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4c9f83b599b37adfa6597ea7e884331cac170a12.png",
@@ -2798,8 +5045,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 400 to all nearby enemies.<br>Additional Effect: Restores own HP and the HP of nearby party members<br>Cure Potency: 400<br>Additional Effect: Restores 5% of maximum MP",
+                "id": "assize",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Assize    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 400 to all nearby enemies.<br>Additional Effect: Restores own HP and the HP of nearby party members<br>Cure Potency: 400<br>Additional Effect: Restores 5% of maximum MP",
+                "potency": "400",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "potencyNumeric": 400,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/539a73220a23fd185c17bed962b140bf7b4673d2.png",
@@ -2810,8 +5067,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Next action is executed without MP cost.<br>Duration: 12s<br>Maximum Charges: 2",
+                "id": "thinAir",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thin Air    \n            Level Req.: 58    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Next action is executed without MP cost.<br>Duration: 12s<br>Maximum Charges: 2",
+                "duration": "12",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 12,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6e00b907b75a6906045955d68cf68af66ba6aa9e.png",
@@ -2822,8 +5089,16 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Restores target's HP.<br>Cure Potency: 700<br>Maximum Charges: 2",
+                "id": "tetragrammaton",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Tetragrammaton    \n            Level Req.: 60    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Restores target's HP.<br>Cure Potency: 700<br>Maximum Charges: 2",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/33eacc1401b5fe03a2dd54e317cd60ccbb912c44.png",
@@ -2834,8 +5109,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals earth damage with a potency of 260.",
+                "id": "stoneIv",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stone IV    \n            Level Req.: 64    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals earth damage with a potency of 260.",
+                "potency": "260",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 260,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/065d9df35159a3bc53d59984a18b35581b442a73.png",
@@ -2846,8 +5131,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Creates a barrier around self or target party member that absorbs damage equivalent to a heal of 500 potency.<br>Duration: 15s<br>Maximum Charges: 2",
+                "id": "divineBenison",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Divine Benison    \n            Level Req.: 66    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Creates a barrier around self or target party member that absorbs damage equivalent to a heal of 500 potency.<br>Duration: 15s<br>Maximum Charges: 2",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2144617daa9bac9ea7bc1f063a9e0cd033fcd363.png",
@@ -2858,8 +5153,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants Confession to self and nearby party members.<br>Duration: 10s<br>Party members under the effect of Confession will receive additional healing upon receiving HP recovery via Medica, Medica III, Cure III, or Afflatus Rapture.<br>Cure Potency: 200",
+                "id": "plenaryIndulgence",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Plenary Indulgence    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants Confession to self and nearby party members.<br>Duration: 10s<br>Party members under the effect of Confession will receive additional healing upon receiving HP recovery via Medica, Medica III, Cure III, or Afflatus Rapture.<br>Cure Potency: 200",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/de737874f0025d808d0bddac1d4156fec9464d00.png",
@@ -2870,8 +5175,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 75.<br>Additional Effect: Unaspected damage over time<br>Potency: 75<br>Duration: 30s",
+                "id": "dia",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dia    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 75.<br>Additional Effect: Unaspected damage over time<br>Potency: 75<br>Duration: 30s",
+                "potency": "75",
+                "": "75",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 75,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c1f9bdbca11c2c7944e3e95cf7599a6a3849e5a2.png",
@@ -2882,8 +5200,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 290.",
+                "id": "glare",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Glare    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 290.",
+                "potency": "290",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 290,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e01507664cb997891de06ec522b71619279969bc.png",
@@ -2894,8 +5222,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 1,320 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed when the Blood Lily is in full bloom.",
+                "id": "afflatusMisery",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Afflatus Misery    \n            Level Req.: 74    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 1,320 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed when the Blood Lily is in full bloom.",
+                "potency": "1,320",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9582c5aa6ffa9abf82db6140916020235a003a20.png",
@@ -2906,8 +5244,17 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 400<br>Additional Effect: Nourishes the Blood Lily<br>Healing Gauge Cost: 1 Lily",
+                "id": "afflatusRapture",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Afflatus Rapture    \n            Level Req.: 76    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 400<br>Additional Effect: Nourishes the Blood Lily<br>Healing Gauge Cost: 1 Lily",
+                "Healing": -1,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/78e099cba536b64fe978d05487c51b28a66f29df.png",
@@ -2918,8 +5265,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases healing magic potency by 20%, while reducing damage taken by self and all party members within a radius of 50 yalms by 10%.<br>Duration: 20s<br>Additional Effect: Grants Divine Grace<br>Duration: 30s",
+                "id": "temperance",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Temperance    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases healing magic potency by 20%, while reducing damage taken by self and all party members within a radius of 50 yalms by 10%.<br>Duration: 20s<br>Additional Effect: Grants Divine Grace<br>Duration: 30s",
+                "duration": "30",
+                "grants": {
+                    "divinegrace": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "divinegrace": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/dfafd20ceefae82548deba9511d3d765c4535b3a.png",
@@ -2930,8 +5293,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 330.",
+                "id": "glareIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Glare III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 330.",
+                "potency": "330",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 330,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/eceb9103dbf8066a8b6c8bce2e84df7552f1a074.png",
@@ -2942,8 +5315,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 150 to all nearby enemies.<br>Additional Effect: Stun<br>Duration: 4s",
+                "id": "holyIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holy III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 150 to all nearby enemies.<br>Additional Effect: Stun<br>Duration: 4s",
+                "potency": "150",
+                "duration": "4",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 4,
+                "potencyNumeric": 150,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f87f8e18282665458cc9c358ff1a2b8a78833491.png",
@@ -2954,8 +5339,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Reduces damage taken by a party member or self by 15%.<br>Duration: 8s",
+                "id": "aquaveil",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Aquaveil    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Reduces damage taken by a party member or self by 15%.<br>Duration: 8s",
+                "duration": "8",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 8,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4d31a93f520e700ac70ab1604bdb6811f124ebb4.png",
@@ -2966,8 +5361,18 @@ export default {
                 "recast": "180s",
                 "cost": "-",
                 "effect": "Places a healing blossom at the designated location and grants 5 stacks of Liturgy of the Bell to self.<br>Duration: 20s<br>Taking damage will expend 1 stack of Liturgy of the Bell to heal self and all party members within a radius of 20 yalms.<br>Cure Potency: 400<br>The effect of this action can only be triggered once per second.<br>Any remaining stacks of Liturgy of the Bell will trigger an additional healing effect when time expires or upon executing this action a second time.<br>Cure Potency: 200 for every remaining stack of Liturgy of the Bell<br>This action does not share a recast timer with any other actions.",
+                "id": "liturgyOfTheBell",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Liturgy of the Bell    \n            Level Req.: 90    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 180s          \n            Cost: -      \n            Effect: Places a healing blossom at the designated location and grants 5 stacks of Liturgy of the Bell to self.<br>Duration: 20s<br>Taking damage will expend 1 stack of Liturgy of the Bell to heal self and all party members within a radius of 20 yalms.<br>Cure Potency: 400<br>The effect of this action can only be triggered once per second.<br>Any remaining stacks of Liturgy of the Bell will trigger an additional healing effect when time expires or upon executing this action a second time.<br>Cure Potency: 200 for every remaining stack of Liturgy of the Bell<br>This action does not share a recast timer with any other actions.",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 180
+                "recastNumeric": 180,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8114a12aa7d10fbe87b9edfe0fc6257adec7a06f.png",
@@ -2978,8 +5383,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 640 for the first enemy, and 40% less for all remaining enemies.<br>Can only be executed while Sacred Sight is active.",
+                "id": "glareIv",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Glare IV    \n            Level Req.: 92    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 640 for the first enemy, and 40% less for all remaining enemies.<br>Can only be executed while Sacred Sight is active.",
+                "potency": "640",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 640,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/afd378388b20cba91d3988c04efeff1256eae7b3.png",
@@ -2990,8 +5405,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 250<br>Additional Effect: Regen<br>Cure Potency: 175<br>Duration: 15s",
+                "id": "medicaIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Medica III    \n            Level Req.: 96    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 250<br>Additional Effect: Regen<br>Cure Potency: 175<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/94e9cc4b561ab6fca2c4a92cdbb2c86cd7825df9.png",
@@ -3002,8 +5427,24 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Creates a barrier around self and all party members near you that absorbs damage equivalent to a heal of 400 potency.<br>Duration: 10s<br>Additional Effect: Grants Divine Aura when barrier effect expires<br>Divine Aura Effect: Healing over time<br>Cure Potency: 200<br>Duration: 15s<br>Can only be executed while Divine Grace is active.",
+                "id": "divineCaress",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Divine Caress    \n            Level Req.: 100    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Creates a barrier around self and all party members near you that absorbs damage equivalent to a heal of 400 potency.<br>Duration: 10s<br>Additional Effect: Grants Divine Aura when barrier effect expires<br>Divine Aura Effect: Healing over time<br>Cure Potency: 200<br>Duration: 15s<br>Can only be executed while Divine Grace is active.",
+                "duration": "15",
+                "grants": {
+                    "divineaurawhenbarriereffectexpires": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "divineaurawhenbarriereffectexpires": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9bd731d47094c2c11b5cd9fb0d1d277bf9c6c89d.png",
@@ -3014,8 +5455,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "600 MP",
                 "effect": "Afflicts target with Sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "id": "repose",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Repose    \n            Level Req.: 8    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 600 MP      \n            Effect: Afflicts target with Sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "duration": "30",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2a6603bc786d73eb3829141482b3d5be5d484199.png",
@@ -3026,8 +5477,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Removes a single detrimental effect from target.",
+                "id": "esuna",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Esuna    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 1s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Removes a single detrimental effect from target.",
                 "castNumeric": 1,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3629c6854aa559656623925e2489b60c2fa91e18.png",
@@ -3038,8 +5497,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "id": "lucidDreaming",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lucid Dreaming    \n            Level Req.: 14    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "": "55",
+                "duration": "21",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 21,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/27d401b3cfbf90c846ffeaa9f661afb4bd77ce98.png",
@@ -3050,8 +5520,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Next spell is cast immediately.<br>Duration: 10s",
+                "id": "swiftcast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Swiftcast    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Next spell is cast immediately.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/477d1e7f7115db19c344c0f5cadfcfa2ac0cdcc0.png",
@@ -3062,8 +5542,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "id": "surecast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Surecast    \n            Level Req.: 44    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "duration": "6",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 6,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/23f8a26b9a0107b6076f5f2e715e14d9be0edc25.png",
@@ -3074,8 +5564,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly draws target party member to your side. Cannot be used outside of combat or when target is suffering from certain enfeeblements.",
+                "id": "rescue",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rescue    \n            Level Req.: 48    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly draws target party member to your side. Cannot be used outside of combat or when target is suffering from certain enfeeblements.",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -3232,8 +5730,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "300 MP",
                 "effect": "Deals unaspected damage with a potency of 300.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "id": "dosis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dosis    \n            Level Req.: 1    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 300 MP      \n            Effect: Deals unaspected damage with a potency of 300.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "potency": "300",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c750ddbd308f469bfe54e263e98f2b1dc42ecfd3.png",
@@ -3244,8 +5752,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Restores target's HP.<br>Cure Potency: 450",
+                "id": "diagnosis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Diagnosis    \n            Level Req.: 2    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Restores target's HP.<br>Cure Potency: 450",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bd80c68721d02a37275edfa07de82a39adbceb1c.png",
@@ -3256,8 +5772,22 @@ export default {
                 "recast": "5s",
                 "cost": "-",
                 "effect": "Grants self the effect of Kardia and a selected party member or self the effect of Kardion, restoring HP after landing certain magic attacks.<br>Cure Potency: 170",
+                "id": "kardia",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Kardia    \n            Level Req.: 4    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 5s          \n            Cost: -      \n            Effect: Grants self the effect of Kardia and a selected party member or self the effect of Kardion, restoring HP after landing certain magic attacks.<br>Cure Potency: 170",
+                "grants": {
+                    "selftheeffectofkardiaandaselectedpartymemberorselftheeffectofkardion": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 5
+                "recastNumeric": 5,
+                "grantsNumeric": {
+                    "selftheeffectofkardiaandaselectedpartymemberorselftheeffectofkardion": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7f8253801283aa010e5a6ff40dafda493f1d58a4.png",
@@ -3268,8 +5798,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300",
+                "id": "prognosis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Prognosis    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3b5dbe0188fba544474a1c3304af88544838e5cc.png",
@@ -3280,8 +5818,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "2400 MP",
                 "effect": "Resurrects target to a weakened state.",
+                "id": "egeiro",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Egeiro    \n            Level Req.: 12    \n            Type: Spell     \n            Cast Time: 8s      \n            Recast Time: 2.5s          \n            Cost: 2400 MP      \n            Effect: Resurrects target to a weakened state.",
                 "castNumeric": 8,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b2acbee8acf84344ed1cbf15e97a5f88fe0f2e22.png",
@@ -3292,8 +5838,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Gradually restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Duration: 15s",
+                "id": "physis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Physis    \n            Level Req.: 20    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Gradually restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9f221a8b7c540f90f808d332e802b3626fef4431.png",
@@ -3304,8 +5860,18 @@ export default {
                 "recast": "40s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 400 for the first enemy, and 30% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Maximum Charges: 2<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "id": "phlegma",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Phlegma    \n            Level Req.: 26    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 400 for the first enemy, and 30% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Maximum Charges: 2<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "potency": "400",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "potencyNumeric": 400,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3d9da11ae40aa687171f1bf2a5655b6f0e442d79.png",
@@ -3316,8 +5882,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Augments certain offensive and healing magic actions.<br>Dosis III is upgraded to Eukrasian Dosis III.<br>Dyskrasia II is upgraded to Eukrasian Dyskrasia.<br>Diagnosis is upgraded to Eukrasian Diagnosis.<br>Prognosis is upgraded to Eukrasian Prognosis II.<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "id": "eukrasia",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasia    \n            Level Req.: 30    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Augments certain offensive and healing magic actions.<br>Dosis III is upgraded to Eukrasian Dosis III.<br>Dyskrasia II is upgraded to Eukrasian Dyskrasia.<br>Diagnosis is upgraded to Eukrasian Diagnosis.<br>Prognosis is upgraded to Eukrasian Prognosis II.<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0a0085828964c504f045a98b67feaf6c26c2307d.png",
@@ -3328,8 +5902,19 @@ export default {
                 "recast": "1.5s",
                 "cost": "900 MP",
                 "effect": "Restores target's HP.<br>Cure Potency: 300<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 180％ of the amount of HP restored. When critical HP is restored, also grants Differential Diagnosis, nullifying damage equaling 180% the amount of HP restored.<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Prognosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Diagnosis changes to Eukrasian Diagnosis when requirements for execution are met.",
+                "id": "eukrasianDiagnosis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Diagnosis    \n            Level Req.: 30    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 900 MP      \n            Effect: Restores target's HP.<br>Cure Potency: 300<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 180％ of the amount of HP restored. When critical HP is restored, also grants Differential Diagnosis, nullifying damage equaling 180% the amount of HP restored.<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Prognosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Diagnosis changes to Eukrasian Diagnosis when requirements for execution are met.",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/723cccd2fe9542159daffcd22f44ff52d8a2f6a1.png",
@@ -3340,8 +5925,19 @@ export default {
                 "recast": "1.5s",
                 "cost": "900 MP",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 320% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with those of Eukrasian Diagnosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Prognosis changes to Eukrasian Prognosis when requirements for execution are met.",
+                "id": "eukrasianPrognosis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Prognosis    \n            Level Req.: 30    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 900 MP      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 320% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with those of Eukrasian Diagnosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Prognosis changes to Eukrasian Prognosis when requirements for execution are met.",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3cffb9cb106612236b80ce85e1881e0d7760512f.png",
@@ -3352,8 +5948,20 @@ export default {
                 "recast": "1.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage over time.<br>Potency: 40<br>Duration: 30s<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dosis changes to Eukrasian Dosis when requirements for execution are met.",
+                "id": "eukrasianDosis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Dosis    \n            Level Req.: 30    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage over time.<br>Potency: 40<br>Duration: 30s<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dosis changes to Eukrasian Dosis when requirements for execution are met.",
+                "": "40",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4f39d0024ea7741facfb247d0056064e831c3765.png",
@@ -3364,8 +5972,26 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Grants 4 stacks of Soteria, each stack increasing the cure potency of Kardion effects granted by you by 70%.<br>Duration: 15s",
+                "id": "soteria",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Soteria    \n            Level Req.: 35    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Grants 4 stacks of Soteria, each stack increasing the cure potency of Kardion effects granted by you by 70%.<br>Duration: 15s",
+                "potency": "Kardion",
+                "grants": {
+                    "soteria": "4"
+                },
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "potencyNumeric": 0,
+                "grantsNumeric": {
+                    "soteria": 4
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/347d5069652ea0716aa462ba3dd96fc148156b0f.png",
@@ -3376,8 +6002,16 @@ export default {
                 "recast": "45s",
                 "cost": "-",
                 "effect": "Rush to a targeted enemy's or party member's location.<br>Unable to cast if bound.",
+                "id": "icarus",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Icarus    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 45s          \n            Cost: -      \n            Effect: Rush to a targeted enemy's or party member's location.<br>Unable to cast if bound.",
                 "castNumeric": 0,
-                "recastNumeric": 45
+                "recastNumeric": 45,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00cd1d056243c5e06b9bbb52a6112ddb35dbcbe9.png",
@@ -3388,8 +6022,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Restores target's HP.<br>Cure Potency: 600<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
+                "id": "druochole",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Druochole    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Restores target's HP.<br>Cure Potency: 600<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/849a554b53462ae2c240dc06558bf710c0f98e5e.png",
@@ -3400,8 +6042,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 160 to all nearby enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "id": "dyskrasia",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dyskrasia    \n            Level Req.: 46    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 160 to all nearby enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "potency": "160",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b49859cbf63de26b230527650742576590166760.png",
@@ -3412,8 +6064,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Reduces damage taken by self and nearby party members by 10%.<br>Duration: 15s<br>Effect cannot be stacked with Taurochole.<br>Additional Effect: Regen<br>Cure Potency: 100<br>Duration: 15s<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
+                "id": "kerachole",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Kerachole    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Reduces damage taken by self and nearby party members by 10%.<br>Duration: 15s<br>Effect cannot be stacked with Taurochole.<br>Additional Effect: Regen<br>Cure Potency: 100<br>Duration: 15s<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4ee83614031659334dda42affd3314aebcaf98f4.png",
@@ -3424,8 +6086,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 400<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
+                "id": "ixochole",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Ixochole    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 400<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/958000045b75c90c1ce059d11d2f2ed488d72a65.png",
@@ -3436,8 +6106,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Increases healing magic potency of your next healing spell by 50%.<br>Duration: 30s",
+                "id": "zoe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Zoe    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Increases healing magic potency of your next healing spell by 50%.<br>Duration: 30s",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/863096a46c76144097ba25d6d9d5fe1f997cda9e.png",
@@ -3448,8 +6128,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Restores own HP and the HP of nearby party members by removing Eukrasian Diagnosis and Eukrasian Prognosis effects granted by you.<br>Eukrasian Diagnosis Cure Potency: 450<br>Eukrasian Prognosis Cure Potency: 350<br>Targets not under the effect of Eukrasian Diagnosis or Eukrasian Prognosis will not be healed.",
+                "id": "pepsis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Pepsis    \n            Level Req.: 58    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Restores own HP and the HP of nearby party members by removing Eukrasian Diagnosis and Eukrasian Prognosis effects granted by you.<br>Eukrasian Diagnosis Cure Potency: 450<br>Eukrasian Prognosis Cure Potency: 350<br>Targets not under the effect of Eukrasian Diagnosis or Eukrasian Prognosis will not be healed.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ece8fe6d911ad6497e35a13d82572d2373d2a2a4.png",
@@ -3460,8 +6148,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Gradually restores own HP and the HP of all nearby party members.<br>Cure Potency: 130<br>Duration: 15s<br>Additional Effect: Increases HP recovered by healing actions by 10%<br>Duration: 15s",
+                "id": "physisIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Physis II    \n            Level Req.: 60    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Gradually restores own HP and the HP of all nearby party members.<br>Cure Potency: 130<br>Duration: 15s<br>Additional Effect: Increases HP recovered by healing actions by 10%<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fe3b0d2ce97deba2e6b4cfbc39e65e2abd32b31b.png",
@@ -3472,8 +6170,18 @@ export default {
                 "recast": "45s",
                 "cost": "-",
                 "effect": "Restores own or target party member's HP.<br>Cure Potency: 700<br>Additional Effect: Reduces target's damage taken by 10%<br>Duration: 15s<br>Effect cannot be stacked with Kerachole.<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
+                "id": "taurochole",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Taurochole    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 45s          \n            Cost: -      \n            Effect: Restores own or target party member's HP.<br>Cure Potency: 700<br>Additional Effect: Reduces target's damage taken by 10%<br>Duration: 15s<br>Effect cannot be stacked with Kerachole.<br>Additional Effect: Restores 7% of maximum MP<br>Addersgall Cost: 1",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 45
+                "recastNumeric": 45,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bedfcd09b95bf0fa2290753478364965c82a739b.png",
@@ -3484,8 +6192,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 300 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Addersting Cost: 1",
+                "id": "toxikon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Toxikon    \n            Level Req.: 66    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 300 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Addersting Cost: 1",
+                "potency": "300",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/31657e2f5ec2ec375960c927a6ed532883d8d271.png",
@@ -3496,8 +6214,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Erects a magicked barrier around self or target party member that absorbs damage equivalent to a heal of 300 potency.<br>Additional Effect: Grants 5 stacks of Haimatinon<br>Duration: 15s<br>When the barrier is completely absorbed, a stack of Haimatinon is consumed and a new barrier is applied.<br>When the effect duration expires, a healing effect is then applied.<br>Cure Potency: 150 per remaining stack of Haimatinon",
+                "id": "haima",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Haima    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Erects a magicked barrier around self or target party member that absorbs damage equivalent to a heal of 300 potency.<br>Additional Effect: Grants 5 stacks of Haimatinon<br>Duration: 15s<br>When the barrier is completely absorbed, a stack of Haimatinon is consumed and a new barrier is applied.<br>When the effect duration expires, a healing effect is then applied.<br>Cure Potency: 150 per remaining stack of Haimatinon",
+                "grants": {
+                    "haimatinon": "5"
+                },
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "haimatinon": 5
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0323f174ced3df37c1c6699f4c4dc980e58b9b7b.png",
@@ -3508,8 +6242,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "id": "dosisIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dosis II    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 320.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "potency": "320",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 320,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f1948c2f7f527f0dab918a0224c6021ff4e808b9.png",
@@ -3520,8 +6264,18 @@ export default {
                 "recast": "40s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 490 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Maximum Charges: 2<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "id": "phlegmaIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Phlegma II    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 490 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Maximum Charges: 2<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "potency": "490",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "potencyNumeric": 490,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/407976b29bc9e0d8cb51ddf0ad5312f90d4bee89.png",
@@ -3532,8 +6286,20 @@ export default {
                 "recast": "1.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage over time.<br>Potency: 60<br>Duration: 30s<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dosis II changes to Eukrasian Dosis II when requirements for execution are met.",
+                "id": "eukrasianDosisIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Dosis II    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage over time.<br>Potency: 60<br>Duration: 30s<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dosis II changes to Eukrasian Dosis II when requirements for execution are met.",
+                "": "60",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/de5abe27cae326e6906d5627c6bf02dc4e98cc2b.png",
@@ -3544,8 +6310,22 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Grants 1 stack of Addersgall.",
+                "id": "rhizomata",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rhizomata    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Grants 1 stack of Addersgall.",
+                "grants": {
+                    "1stackofaddersgall.": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "grantsNumeric": {
+                    "1stackofaddersgall.": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/849030dfa96d3cc4cee84939ef23c0554d9a3821.png",
@@ -3556,8 +6336,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling the amount of HP restored<br>Duration: 30s<br>Additional Effect: Reduces damage taken by self and nearby party members by 10%<br>Duration: 20s",
+                "id": "holos",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Holos    \n            Level Req.: 76    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling the amount of HP restored<br>Duration: 30s<br>Additional Effect: Reduces damage taken by self and nearby party members by 10%<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/62887c572b00028c1a9a531420b9e9b545a991b6.png",
@@ -3568,8 +6358,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Erects a magicked barrier around self and all party members near you that absorbs damage equivalent to a heal of 200 potency.<br>Additional Effect: Grants 5 stacks of Panhaimatinon<br>Duration: 15s<br>When the barrier is completely absorbed, a stack of Panhaimatinon is consumed and a new barrier is applied.<br>When the effect duration expires, a healing effect is then applied.<br>Cure Potency: 100 per remaining stack of Panhaimatinon",
+                "id": "panhaima",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Panhaima    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Erects a magicked barrier around self and all party members near you that absorbs damage equivalent to a heal of 200 potency.<br>Additional Effect: Grants 5 stacks of Panhaimatinon<br>Duration: 15s<br>When the barrier is completely absorbed, a stack of Panhaimatinon is consumed and a new barrier is applied.<br>When the effect duration expires, a healing effect is then applied.<br>Cure Potency: 100 per remaining stack of Panhaimatinon",
+                "grants": {
+                    "panhaimatinon": "5"
+                },
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "panhaimatinon": 5
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fb33abf61a92db08d67e07c031761606961158d7.png",
@@ -3580,8 +6386,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 360.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "id": "dosisIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dosis III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 360.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "potency": "360",
                 "castNumeric": 1.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 360,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7a2ab72f418459265a3ab33cb5f73955114ffc72.png",
@@ -3592,8 +6408,18 @@ export default {
                 "recast": "40s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Maximum Charges: 2<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "id": "phlegmaIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Phlegma III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Maximum Charges: 2<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "potency": "600",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2671a79b114893a97f5b09bcf484e7871dd99b9e.png",
@@ -3604,8 +6430,20 @@ export default {
                 "recast": "1.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage over time.<br>Potency: 75<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Dyskrasia.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dosis III changes to Eukrasian Dosis III when requirements for execution are met.",
+                "id": "eukrasianDosisIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Dosis III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage over time.<br>Potency: 75<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Dyskrasia.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dosis III changes to Eukrasian Dosis III when requirements for execution are met.",
+                "": "75",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3061c16b09ce276506076a0a2cdf8e87b410778b.png",
@@ -3616,8 +6454,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 170 to all nearby enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "id": "dyskrasiaIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dyskrasia II    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 170 to all nearby enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170",
+                "potency": "170",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 170,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c8c74517022e0d8f5fd8f379225a64f12eff5e0a.png",
@@ -3628,8 +6476,20 @@ export default {
                 "recast": "1.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage over time to all nearby enemies.<br>Potency: 40<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Dosis III.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dyskrasia II changes to Eukrasian Dyskrasia when requirements for execution are met.",
+                "id": "eukrasianDyskrasia",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Dyskrasia    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage over time to all nearby enemies.<br>Potency: 40<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Dosis III.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Dyskrasia II changes to Eukrasian Dyskrasia when requirements for execution are met.",
+                "": "40",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c5b8440e4fcf071ca470f8ea71f4d7634c2f8763.png",
@@ -3640,8 +6500,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 360 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Addersting Cost: 1",
+                "id": "toxikonIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Toxikon II    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 360 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Addersting Cost: 1",
+                "potency": "360",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 360,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/db444cd7e3849561b5394b75c2e7eaabbdf394e8.png",
@@ -3652,8 +6522,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Increases HP recovery via healing actions for a party member or self by 20%.<br>Duration: 10s",
+                "id": "krasis",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Krasis    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Increases HP recovery via healing actions for a party member or self by 20%.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6380ca8ba90f73c92c654a648b26bfab7aa8bd97.png",
@@ -3664,8 +6544,18 @@ export default {
                 "recast": "120s",
                 "cost": "700 MP",
                 "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 360 for the first enemy, and 40% less for all remaining enemies.<br>Additional Effect: Restores own HP and the HP of all party members within a radius of 20 yalms<br>Cure Potency: 600<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "id": "pneuma",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Pneuma    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: 1.5s      \n            Recast Time: 120s          \n            Cost: 700 MP      \n            Effect: Deals unaspected damage to all enemies in a straight line before you with a potency of 360 for the first enemy, and 40% less for all remaining enemies.<br>Additional Effect: Restores own HP and the HP of all party members within a radius of 20 yalms<br>Cure Potency: 600<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "potency": "360",
                 "castNumeric": 1.5,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "potencyNumeric": 360,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9d4fec42b917590f53bfa7ccc1691c083afd7a3c.png",
@@ -3676,8 +6566,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.",
+                "id": "psyche",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Psyche    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.",
+                "potency": "600",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/dc49cdcdfa8ec3a8d32f6e8b405ddda6971e23f0.png",
@@ -3688,8 +6588,19 @@ export default {
                 "recast": "1.5s",
                 "cost": "900 MP",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 360% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with those of Eukrasian Diagnosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Prognosis changes to Eukrasian Prognosis II when requirements for execution are met.",
+                "id": "eukrasianPrognosisIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Eukrasian Prognosis II    \n            Level Req.: 96    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: 900 MP      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 360% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with those of Eukrasian Diagnosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Prognosis changes to Eukrasian Prognosis II when requirements for execution are met.",
+                "duration": "30",
+                "buffRequirement": "eukrasia",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a3dd5ff88eb7a7cce95536d48fe81665e3feb3ca.png",
@@ -3700,8 +6611,24 @@ export default {
                 "recast": "180s",
                 "cost": "-",
                 "effect": "Increases healing magic potency by 20%.<br>Duration: 20s<br>Additional Effect: Grants self and nearby party members the effect of Eudaimonia, restoring HP after landing spells<br>Cure Potency: 150<br>Duration: 20s",
+                "id": "philosophia",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Philosophia    \n            Level Req.: 100    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 180s          \n            Cost: -      \n            Effect: Increases healing magic potency by 20%.<br>Duration: 20s<br>Additional Effect: Grants self and nearby party members the effect of Eudaimonia, restoring HP after landing spells<br>Cure Potency: 150<br>Duration: 20s",
+                "duration": "20",
+                "grants": {
+                    "selfandnearbypartymemberstheeffectofeudaimonia": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 180
+                "recastNumeric": 180,
+                "durationNumeric": 20,
+                "grantsNumeric": {
+                    "selfandnearbypartymemberstheeffectofeudaimonia": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9bd731d47094c2c11b5cd9fb0d1d277bf9c6c89d.png",
@@ -3712,8 +6639,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "600 MP",
                 "effect": "Afflicts target with Sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "id": "repose",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Repose    \n            Level Req.: 8    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 600 MP      \n            Effect: Afflicts target with Sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "duration": "30",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2a6603bc786d73eb3829141482b3d5be5d484199.png",
@@ -3724,8 +6661,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Removes a single detrimental effect from target.",
+                "id": "esuna",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Esuna    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 1s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Removes a single detrimental effect from target.",
                 "castNumeric": 1,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3629c6854aa559656623925e2489b60c2fa91e18.png",
@@ -3736,8 +6681,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "id": "lucidDreaming",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lucid Dreaming    \n            Level Req.: 14    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "": "55",
+                "duration": "21",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 21,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/27d401b3cfbf90c846ffeaa9f661afb4bd77ce98.png",
@@ -3748,8 +6704,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Next spell is cast immediately.<br>Duration: 10s",
+                "id": "swiftcast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Swiftcast    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Next spell is cast immediately.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/477d1e7f7115db19c344c0f5cadfcfa2ac0cdcc0.png",
@@ -3760,8 +6726,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "id": "surecast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Surecast    \n            Level Req.: 44    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "duration": "6",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 6,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/23f8a26b9a0107b6076f5f2e715e14d9be0edc25.png",
@@ -3772,8 +6748,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly draws target party member to your side. Cannot be used outside of combat or when target is suffering from certain enfeeblements.",
+                "id": "rescue",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rescue    \n            Level Req.: 48    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly draws target party member to your side. Cannot be used outside of combat or when target is suffering from certain enfeeblements.",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -3912,8 +6896,21 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.<br>Opo-opo's Fury Potency: 420<br>Opo-opo Form Bonus: Guarantees a critical hit<br>Damage dealt is increased when under an effect that raises critical hit rate.<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "id": "bootshine",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bootshine    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.<br>Opo-opo's Fury Potency: 420<br>Opo-opo Form Bonus: Guarantees a critical hit<br>Damage dealt is increased when under an effect that raises critical hit rate.<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "potency": "220",
+                "opo-opo'sfury": "420",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f0ebdb32af553d84dfd59abb4d868c6be17bf334.png",
@@ -3924,8 +6921,21 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300.<br>Raptor's Fury Potency: 500<br>Can only be executed when in raptor form.<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "id": "trueStrike",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: True Strike    \n            Level Req.: 4    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300.<br>Raptor's Fury Potency: 500<br>Can only be executed when in raptor form.<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "potency": "300",
+                "raptor'sfury": "500",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/eea79a3861a427c42750d650af3b17c611ac1f73.png",
@@ -3936,8 +6946,22 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 270.<br>330 when executed from a target's flank.<br>Coeurl's Fury Potency: 420<br>Flank Coeurl's Fury Potency: 480<br>Can only be executed when in coeurl form.<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "id": "snapPunch",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Snap Punch    \n            Level Req.: 6    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 270.<br>330 when executed from a target's flank.<br>Coeurl's Fury Potency: 420<br>Flank Coeurl's Fury Potency: 480<br>Can only be executed when in coeurl form.<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "potency": "270",
+                "coeurl'sfury": "420",
+                "flankcoeurl'sfury": "480",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 270,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3f5525f96d26fa3bb52df3cd390fbabd126be062.png",
@@ -3948,8 +6972,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
+                "id": "steeledMeditation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Steeled Meditation    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c5bf98a4d13a858dc2c4932408eefe77c4f173c1.png",
@@ -3960,8 +6992,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 180.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "id": "steelPeak",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Steel Peak    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 180.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "potency": "180",
+                "buffRequirement": "fivechakra",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 180,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d649439b0004da7643cbeaafe73e4e93f2572e61.png",
@@ -3972,8 +7015,26 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 420.<br>Can only be executed when in raptor form.<br>Additional Effect: Grants a stack of Raptor's Fury<br>Raptor's Fury Effect: Increases potency of Rising Raptor by 200<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "id": "twinSnakes",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Twin Snakes    \n            Level Req.: 18    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 420.<br>Can only be executed when in raptor form.<br>Additional Effect: Grants a stack of Raptor's Fury<br>Raptor's Fury Effect: Increases potency of Rising Raptor by 200<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "potency": "420",
+                "grants": {
+                    "astackofraptor'sfury": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 420,
+                "grantsNumeric": {
+                    "astackofraptor'sfury": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/92b45621e9e88401316dc9bede7253b10d4facd8.png",
@@ -3984,8 +7045,21 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 110 to all nearby targets.<br>Opo-opo Form Potency: 120<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "id": "armOfTheDestroyer",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm of the Destroyer    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 110 to all nearby targets.<br>Opo-opo Form Potency: 120<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "potency": "110",
+                "opo-opoform": "120",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 110,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/883edfbb5dec0daed23aa0447d6e7b28cf16b8d3.png",
@@ -3996,8 +7070,26 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 360.<br>420 when executed from a target's rear.<br>Can only be executed when in coeurl form.<br>Additional Effect: Grants 2 stacks of Coeurl's Fury<br>Coeurl's Fury Effect: Increases potency of Pouncing Coeurl by 150<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "id": "demolish",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Demolish    \n            Level Req.: 30    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 360.<br>420 when executed from a target's rear.<br>Can only be executed when in coeurl form.<br>Additional Effect: Grants 2 stacks of Coeurl's Fury<br>Coeurl's Fury Effect: Increases potency of Pouncing Coeurl by 150<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "potency": "360",
+                "grants": {
+                    "coeurl'sfury": "2"
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 360,
+                "grantsNumeric": {
+                    "coeurl'sfury": 2
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5a0f246b748bb726d3626d3713bc71138f6bb86f.png",
@@ -4008,8 +7100,20 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 150 to all nearby enemies.<br>Can only be executed when in coeurl form.<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "id": "rockbreaker",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rockbreaker    \n            Level Req.: 30    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 150 to all nearby enemies.<br>Can only be executed when in coeurl form.<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "potency": "150",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9a4a20e6ff8843d06e066fd0ffb6f8f6944acac4.png",
@@ -4020,8 +7124,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Rush to a targeted enemy's or party member's location.<br>Maximum Charges: 3<br>Cannot be executed while bound.",
+                "id": "thunderclap",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thunderclap    \n            Level Req.: 35    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Rush to a targeted enemy's or party member's location.<br>Maximum Charges: 3<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e496f61cb81a7d95c751a64c3c416faa851216f0.png",
@@ -4032,8 +7144,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
+                "id": "inspiritedMeditation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Inspirited Meditation    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d5392c32b9d05bda3c0a4ee45c1d13cce2dee9e1.png",
@@ -4044,8 +7164,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all enemies in a straight line before you.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "id": "howlingFist",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Howling Fist    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all enemies in a straight line before you.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "potency": "100",
+                "buffRequirement": "fivechakra",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/576fee56715e5d7a353c36daab4c4e3a5546738e.png",
@@ -4056,8 +7187,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Increases HP recovery via healing actions by 10% for self and nearby party members.<br>Duration: 15s",
+                "id": "mantra",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Mantra    \n            Level Req.: 42    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Increases HP recovery via healing actions by 10% for self and nearby party members.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fe6108fe3ff3591e8a6d3155c5764e53baf41397.png",
@@ -4068,8 +7209,20 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140 to all nearby enemies.<br>Can only be executed when in raptor form.<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "id": "four-PointFury",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Four-point Fury    \n            Level Req.: 45    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140 to all nearby enemies.<br>Can only be executed when in raptor form.<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "potency": "140",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 140,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a6e218fec5415ba80ebdf6364458022bbd5b32d2.png",
@@ -4080,8 +7233,26 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 320.<br>Opo-opo Form Bonus: Grants a stack of Opo-opo's Fury<br>Opo-opo's Fury Effect: Increases potency of Leaping Opo by 200<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "id": "dragonKick",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dragon Kick    \n            Level Req.: 50    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 320.<br>Opo-opo Form Bonus: Grants a stack of Opo-opo's Fury<br>Opo-opo's Fury Effect: Increases potency of Leaping Opo by 200<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "potency": "320",
+                "grants": {
+                    "astackofopo-opo'sfury": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 320,
+                "grantsNumeric": {
+                    "astackofopo-opo'sfury": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a66c7c878615dad8345d7dce2aced30714572312.png",
@@ -4092,8 +7263,25 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Grants 3 stacks of Perfect Balance, each stack allowing the execution of a weaponskill that requires a certain form, without being in that form.<br>Duration: 20s<br>Additional Effect: Grants Opo-opo Chakra, Coeurl Chakra, or Raptor Chakra depending on the form changed to upon executing actions<br>Changing to Opo-opo Form grants Coeurl Chakra.<br>Changing to Raptor Form grants Opo-opo Chakra.<br>Changing to Coeurl Form grants Raptor Chakra.<br>Maximum Charges: 2<br>Can only be executed while in combat and when not under the effect of any Beast Chakra.",
+                "id": "perfectBalance",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Perfect Balance    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Grants 3 stacks of Perfect Balance, each stack allowing the execution of a weaponskill that requires a certain form, without being in that form.<br>Duration: 20s<br>Additional Effect: Grants Opo-opo Chakra, Coeurl Chakra, or Raptor Chakra depending on the form changed to upon executing actions<br>Changing to Opo-opo Form grants Coeurl Chakra.<br>Changing to Raptor Form grants Opo-opo Chakra.<br>Changing to Coeurl Form grants Raptor Chakra.<br>Maximum Charges: 2<br>Can only be executed while in combat and when not under the effect of any Beast Chakra.",
+                "grants": {
+                    "perfectbalance": "3"
+                },
+                "duration": "20",
+                "buffRequirement": "anybeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 20,
+                "grantsNumeric": {
+                    "perfectbalance": 3
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/da141fe139c2b20081a175704336a0af21f0f801.png",
@@ -4104,8 +7292,18 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Grants Formless Fist to self, allowing the execution of a weaponskill that requires a certain form, without being in that form.<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.",
+                "id": "formShift",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Form Shift    \n            Level Req.: 52    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Grants Formless Fist to self, allowing the execution of a weaponskill that requires a certain form, without being in that form.<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3f5525f96d26fa3bb52df3cd390fbabd126be062.png",
@@ -4116,8 +7314,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
+                "id": "forbiddenMeditation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Forbidden Meditation    \n            Level Req.: 54    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/20a6e6104d8cad0e109bd0f56e1d26689017b871.png",
@@ -4128,8 +7334,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 400.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "id": "theForbiddenChakra",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: The Forbidden Chakra    \n            Level Req.: 54    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 400.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "potency": "400",
+                "buffRequirement": "fivechakra",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 400,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e42e291b8a444b9daf5c4bed5170e92d5c11872e.png",
@@ -4140,8 +7357,16 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Strike the enemy with a technique fueled by the power of your Beast Chakra.<br>The technique used is determined by the number of different types of Beast Chakra opened.<br>1 Beast Chakra Type: Elixir Burst<br>2 Beast Chakra Types: Celestial Revolution<br>3 Beast Chakra Types: Rising Phoenix<br>3 Beast Chakra and Both Nadi: Phantom Rush",
+                "id": "masterfulBlitz",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Masterful Blitz    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Strike the enemy with a technique fueled by the power of your Beast Chakra.<br>The technique used is determined by the number of different types of Beast Chakra opened.<br>1 Beast Chakra Type: Elixir Burst<br>2 Beast Chakra Types: Celestial Revolution<br>3 Beast Chakra Types: Rising Phoenix<br>3 Beast Chakra and Both Nadi: Phantom Rush",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c048e791bb8e3acbc39aed1eaf2e413c79367d23.png",
@@ -4152,8 +7377,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 1,200 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of Lunar Nadi and Solar Nadi, as well as three Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Tornado Kick when requirements for execution are met.",
+                "id": "tornadoKick",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Tornado Kick    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 1,200 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of Lunar Nadi and Solar Nadi, as well as three Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Tornado Kick when requirements for execution are met.",
+                "potency": "1,200",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "lunarnadiandsolarnadi,aswellasthreebeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 1,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/86593521c943c9be34dd6bcf4bbcaf805b38ab3b.png",
@@ -4164,8 +7408,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to all nearby enemies with a potency of 800 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Lunar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three of the same Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Elixir Field when requirements for execution are met.",
+                "id": "elixirField",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Elixir Field    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to all nearby enemies with a potency of 800 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Lunar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three of the same Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Elixir Field when requirements for execution are met.",
+                "potency": "800",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "threeofthesamebeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 800,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5d44a1b394d5fe9d8ace8edcc742233d93127baa.png",
@@ -4176,8 +7439,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 600.<br>Additional Effect: Opens the Lunar Nadi<br>If the Lunar Nadi is already open, opens the Solar Nadi instead.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Celestial Revolution when requirements for execution are met.",
+                "id": "celestialRevolution",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Celestial Revolution    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 600.<br>Additional Effect: Opens the Lunar Nadi<br>If the Lunar Nadi is already open, opens the Solar Nadi instead.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Celestial Revolution when requirements for execution are met.",
+                "potency": "600",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "threebeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 600,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/56b3a643f6f021d073e372428af662f204d82eb5.png",
@@ -4188,8 +7470,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to all nearby enemies with a potency of 800 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Solar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three distinct Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Flint Strike when requirements for execution are met.",
+                "id": "flintStrike",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Flint Strike    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to all nearby enemies with a potency of 800 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Solar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three distinct Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Flint Strike when requirements for execution are met.",
+                "potency": "800",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "threedistinctbeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 800,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9297680db2fae6085ff7c4607b7f593f1445d0ee.png",
@@ -4200,8 +7501,26 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces damage taken by 20%.<br>Duration: 10s<br>Additional Effect: Grants Earth's Resolve upon taking damage<br>Earth's Resolve Effect: Gradually restores HP<br>Cure Potency: 100<br>Duration: 15s<br>Additional Effect: Grants Earth's Rumination<br>Duration: 30s",
+                "id": "riddleOfEarth",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Riddle of Earth    \n            Level Req.: 64    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces damage taken by 20%.<br>Duration: 10s<br>Additional Effect: Grants Earth's Resolve upon taking damage<br>Earth's Resolve Effect: Gradually restores HP<br>Cure Potency: 100<br>Duration: 15s<br>Additional Effect: Grants Earth's Rumination<br>Duration: 30s",
+                "duration": "30",
+                "grants": {
+                    "earth'sresolveupontakingdamage": -1,
+                    "earth'srumination": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "earth'sresolveupontakingdamage": -1,
+                    "earth'srumination": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f43b6c836fff7fa639c967aac3d6ef768fc1d16c.png",
@@ -4212,8 +7531,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300<br>Earth's Resolve Potency: 500<br>Can only be executed while under the effect of Earth's Rumination.",
+                "id": "earth'SReply",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Earth's Reply    \n            Level Req.: 64    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300<br>Earth's Resolve Potency: 500<br>Can only be executed while under the effect of Earth's Rumination.",
+                "earth'sresolve": "500",
+                "buffRequirement": "earth'srumination",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/615580fd49ed973d96fa084493f79bc87a2199a6.png",
@@ -4223,9 +7552,26 @@ export default {
                 "cast": "Instant",
                 "recast": "60s",
                 "cost": "-",
-                "effect": "Increases damage dealt by 15%.<br>Duration: 20s<BR>Additional Effect: Grants Fire's Rumination<br>Duration: 20s",
+                "effect": "Increases damage dealt by 15%.<br>Duration: 20s<br>Additional Effect: Grants Fire's Rumination<br>Duration: 20s",
+                "id": "riddleOfFire",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Riddle of Fire    \n            Level Req.: 68    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Increases damage dealt by 15%.<br>Duration: 20s<BR>Additional Effect: Grants Fire's Rumination<br>Duration: 20s",
+                "damageBuff": 1.15,
+                "duration": "20",
+                "grants": {
+                    "fire'srumination": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 20,
+                "grantsNumeric": {
+                    "fire'srumination": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ab70fce75ed41f0bbaa02e4bc4b5c4a2ff39d07d.png",
@@ -4236,8 +7582,19 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants Brotherhood to self and all nearby party members.<br>Brotherhood Effect: Increases damage dealt by 5%<br>Additional Effect: Allows the opening of up to ten chakra<br>Duration: 20s<br>Additional Effect: Grants Meditative Brotherhood to self and all nearby party members<br>Meditative Brotherhood Effect: 20% chance you open a chakra when party members under this effect successfully land a weaponskill or cast a spell<br>Chance is 100% when you successfully land a weaponskill or cast a spell while under the effect of Meditative Brotherhood.<br>Duration: 20s",
+                "id": "brotherhood",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Brotherhood    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants Brotherhood to self and all nearby party members.<br>Brotherhood Effect: Increases damage dealt by 5%<br>Additional Effect: Allows the opening of up to ten chakra<br>Duration: 20s<br>Additional Effect: Grants Meditative Brotherhood to self and all nearby party members<br>Meditative Brotherhood Effect: 20% chance you open a chakra when party members under this effect successfully land a weaponskill or cast a spell<br>Chance is 100% when you successfully land a weaponskill or cast a spell while under the effect of Meditative Brotherhood.<br>Duration: 20s",
+                "damageBuff": 1.05,
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5cfa2c17de4b6ddd285e621423f92b68d61cdf65.png",
@@ -4248,8 +7605,24 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces auto-attack delay by 50%.<br>Duration: 15s<br>Additional Effect: Grants Wind's Rumination<br>Duration: 15s",
+                "id": "riddleOfWind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Riddle of Wind    \n            Level Req.: 72    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces auto-attack delay by 50%.<br>Duration: 15s<br>Additional Effect: Grants Wind's Rumination<br>Duration: 15s",
+                "duration": "15",
+                "grants": {
+                    "wind'srumination": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "grantsNumeric": {
+                    "wind'srumination": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e496f61cb81a7d95c751a64c3c416faa851216f0.png",
@@ -4260,8 +7633,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
+                "id": "enlightenedMeditation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enlightened Meditation    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4609c042377d4e8c7cfd87920d95f2d48993dd3d.png",
@@ -4272,8 +7653,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200 to all enemies in a straight line before you.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "id": "enlightenment",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enlightenment    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200 to all enemies in a straight line before you.<br>Can only be executed while in combat and under the effect of five Chakra. Five chakra close upon execution.",
+                "potency": "200",
+                "buffRequirement": "fivechakra",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 200,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2e88997084591670e9454c1f089c14ccdb98a285.png",
@@ -4284,8 +7676,20 @@ export default {
                 "recast": "4s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 780. Potency increases by 80 for each Chakra open.<br>Closes all chakra upon execution.<br>Additional Effect: Increases movement speed<br>Duration: 5s<br>Critical hits with this weaponskill will not open a chakra.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "id": "six-SidedStar",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Six-sided Star    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 4s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 780. Potency increases by 80 for each Chakra open.<br>Closes all chakra upon execution.<br>Additional Effect: Increases movement speed<br>Duration: 5s<br>Critical hits with this weaponskill will not open a chakra.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "potency": "780",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 4
+                "recastNumeric": 4,
+                "durationNumeric": 5,
+                "potencyNumeric": 780,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/747483adb10812567df5653fbd0d333c179fa3dc.png",
@@ -4296,8 +7700,20 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 120 to all nearby enemies.<br>Opo-opo Form Bonus: Guarantees a critical hit<br>Damage dealt is increased when under an effect that raises critical hit rate.<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "id": "shadowOfTheDestroyer",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadow of the Destroyer    \n            Level Req.: 82    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 120 to all nearby enemies.<br>Opo-opo Form Bonus: Guarantees a critical hit<br>Damage dealt is increased when under an effect that raises critical hit rate.<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "potency": "120",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 120,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3823c3483384694af79cd67f1b7740fb3e1636c7.png",
@@ -4308,8 +7724,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Deals physical fire damage to all nearby enemies with a potency of 900 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Solar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three distinct Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Rising Phoenix when requirements for execution are met.",
+                "id": "risingPhoenix",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rising Phoenix    \n            Level Req.: 86    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Deals physical fire damage to all nearby enemies with a potency of 900 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Solar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three distinct Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Rising Phoenix when requirements for execution are met.",
+                "potency": "900",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "threedistinctbeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 900,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/99e2472d285987b1eeefc2d693796a266d120078.png",
@@ -4320,8 +7755,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 1,500 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of Lunar Nadi and Solar Nadi, as well as three Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Phantom Rush when requirements for execution are met.",
+                "id": "phantomRush",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Phantom Rush    \n            Level Req.: 90    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 1,500 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of Lunar Nadi and Solar Nadi, as well as three Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Phantom Rush when requirements for execution are met.",
+                "potency": "1,500",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "lunarnadiandsolarnadi,aswellasthreebeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 1,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/000c5561b5d49694d019252cf5bbd8db16d948aa.png",
@@ -4332,8 +7786,21 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 260.<br>Opo-opo's Fury Potency: 460<br>Opo-opo Form Bonus: Guarantees a critical hit<br>Damage dealt is increased when under an effect that raises critical hit rate.<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "id": "leapingOpo",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Leaping Opo    \n            Level Req.: 92    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 260.<br>Opo-opo's Fury Potency: 460<br>Opo-opo Form Bonus: Guarantees a critical hit<br>Damage dealt is increased when under an effect that raises critical hit rate.<br>Additional Effect: Changes form to raptor<br>Duration: 30s",
+                "potency": "260",
+                "opo-opo'sfury": "460",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 260,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8b71871e5f6a0c0fbdefea14931fc459e6f6ca58.png",
@@ -4344,8 +7811,21 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 340.<br>Raptor's Fury Potency: 540<br>Can only be executed when in raptor form.<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "id": "risingRaptor",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rising Raptor    \n            Level Req.: 92    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 340.<br>Raptor's Fury Potency: 540<br>Can only be executed when in raptor form.<br>Additional Effect: Changes form to coeurl<br>Duration: 30s",
+                "potency": "340",
+                "raptor'sfury": "540",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 340,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9314f58e4df7e3392781a926bbd0480d3a9b5c71.png",
@@ -4356,8 +7836,22 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 310.<br>370 when executed from a target's flank.<br>Coeurl's Fury Potency: 460<br>Flank Coeurl's Fury Potency: 520<br>Can only be executed when in coeurl form.<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "id": "pouncingCoeurl",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Pouncing Coeurl    \n            Level Req.: 92    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 310.<br>370 when executed from a target's flank.<br>Coeurl's Fury Potency: 460<br>Flank Coeurl's Fury Potency: 520<br>Can only be executed when in coeurl form.<br>Additional Effect: Changes form to opo-opo<br>Duration: 30s",
+                "potency": "310",
+                "coeurl'sfury": "460",
+                "flankcoeurl'sfury": "520",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 310,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/334dae96eb1b67c861a22e07a9c0f3c918130f5f.png",
@@ -4368,8 +7862,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to all nearby enemies with a potency of 900 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Lunar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three of the same Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Elixir Burst when requirements for execution are met.",
+                "id": "elixirBurst",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Elixir Burst    \n            Level Req.: 92    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to all nearby enemies with a potency of 900 for the first enemy, and 70% less for all remaining enemies.<br>Additional Effect: Opens the Lunar Nadi<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of three of the same Beast Chakra.<br><br>※This action cannot be assigned to a hotbar.<br>※Masterful Blitz changes to Elixir Burst when requirements for execution are met.",
+                "potency": "900",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "threeofthesamebeastchakra",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 900,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d57a98ac83fa1f066de448639688b34ba4342a98.png",
@@ -4380,8 +7893,19 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Wind's Rumination.",
+                "id": "wind'SReply",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Wind's Reply    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Wind's Rumination.",
+                "potency": "900",
+                "buffRequirement": "wind'srumination",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "potencyNumeric": 900,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6de38cd8ff4cddd607b2bb2afde0dd8a22774489.png",
@@ -4392,8 +7916,27 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Deals damage to all nearby enemies with a potency of 1,200 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of Fire's Rumination.",
+                "id": "fire'SReply",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fire's Reply    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Deals damage to all nearby enemies with a potency of 1,200 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Formless Fist, allowing the execution of a weaponskill that requires a certain form, without being in that form<br>Duration: 30s<br>Any additional effects associated with the executed action will also be applied.<br>Can only be executed while under the effect of Fire's Rumination.",
+                "potency": "1,200",
+                "grants": {
+                    "formlessfist": -1
+                },
+                "duration": "30",
+                "buffRequirement": "fire'srumination",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "durationNumeric": 30,
+                "potencyNumeric": 1,
+                "grantsNumeric": {
+                    "formlessfist": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b79d78f1ed471ace5708898e3388062fbd555fb.png",
@@ -4404,8 +7947,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly restores own HP.<br>Cure Potency: 800",
+                "id": "secondWind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Second Wind    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly restores own HP.<br>Cure Potency: 800",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8c9674aba5fe48e73cc80ceb4a49782c1539b942.png",
@@ -4416,8 +7967,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 3s",
+                "id": "legSweep",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Leg Sweep    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 3s",
+                "duration": "3",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 3,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f76d6999b80178e51cfedf68f3af69ce6ed5016f.png",
@@ -4428,8 +7989,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Converts a portion of physical damage dealt into HP.<br>Duration: 20s",
+                "id": "bloodbath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodbath    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Converts a portion of physical damage dealt into HP.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/84c26a86cbbb8a599e5a2441cebcd33b0064bf07.png",
@@ -4440,8 +8011,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Lowers target's physical damage dealt by 10% and magic damage dealt by 5%.<br>Duration: 15s",
+                "id": "feint",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Feint    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Lowers target's physical damage dealt by 10% and magic damage dealt by 5%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -4452,8 +8033,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -4464,8 +8055,18 @@ export default {
                 "recast": "45s",
                 "cost": "-",
                 "effect": "Nullifies all action direction requirements.<br>Duration: 10s<br>Maximum Charges: 2",
+                "id": "trueNorth",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: True North    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 45s          \n            Cost: -      \n            Effect: Nullifies all action direction requirements.<br>Duration: 10s<br>Maximum Charges: 2",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 45
+                "recastNumeric": 45,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -4616,8 +8217,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 230.",
+                "id": "trueThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: True Thrust    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 230.",
+                "potency": "230",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 230,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/85a78cf7b49d80ab94aa206b385563ffa0222346.png",
@@ -4628,8 +8239,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 280",
+                "id": "vorpalThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Vorpal Thrust    \n            Level Req.: 4    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 280",
+                "potency": "130",
+                "comboAction": "True Thrust or Raiden Thrust",
+                "comboPotency": "280",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 130,
+                "comboPotencyNumeric": 280,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/eb7e59cbec93afbdf7a3cecd0e164c545ea8dec2.png",
@@ -4640,8 +8264,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Ensures critical damage for first weaponskill used while Life Surge is active.<br>Duration: 5s<br>Increases damage dealt when under an effect that raises critical hit rate.<br>Effect cannot be applied to damage over time.<br>Additional Effect: Absorbs a portion of damage dealt as HP<br>Maximum Charges: 2",
+                "id": "lifeSurge",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Life Surge    \n            Level Req.: 6    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Ensures critical damage for first weaponskill used while Life Surge is active.<br>Duration: 5s<br>Increases damage dealt when under an effect that raises critical hit rate.<br>Effect cannot be applied to damage over time.<br>Additional Effect: Absorbs a portion of damage dealt as HP<br>Maximum Charges: 2",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b34933ec0ea122c75fd1deeb69f3b9df942dbdc1.png",
@@ -4652,8 +8286,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a ranged attack with a potency of 150.",
+                "id": "piercingTalon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Piercing Talon    \n            Level Req.: 15    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a ranged attack with a potency of 150.",
+                "potency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d5052c9c0d1bf846c9a4fb70497dd1cea97ceca6.png",
@@ -4664,8 +8308,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 250<br>Combo Bonus: Grants Power Surge<br>Power Surge Effect: Increases damage dealt by 10%<br>Duration: 30s",
+                "id": "disembowel",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Disembowel    \n            Level Req.: 18    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 250<br>Combo Bonus: Grants Power Surge<br>Power Surge Effect: Increases damage dealt by 10%<br>Duration: 30s",
+                "potency": "140",
+                "comboAction": "True Thrust or Raiden Thrust",
+                "comboPotency": "250",
+                "comboBonus": {
+                    "powersurge": -1
+                },
+                "damageBuff": 1.1,
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 250,
+                "comboBonusNumeric": {
+                    "powersurge": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/34a78b866a4906267ee8f0e93457cb22b5550b9d.png",
@@ -4676,8 +8342,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Vorpal Thrust<br>Combo Potency: 380",
+                "id": "fullThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Full Thrust    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Combo Action: Vorpal Thrust<br>Combo Potency: 380",
+                "potency": "100",
+                "comboAction": "Vorpal Thrust",
+                "comboPotency": "380",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 380,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cb90fa2f691cd58f5b068f6088550b3d56c2bd73.png",
@@ -4688,8 +8367,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Increases damage dealt by 10%.<br>Duration: 20s",
+                "id": "lanceCharge",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lance Charge    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Increases damage dealt by 10%.<br>Duration: 20s",
+                "damageBuff": 1.1,
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/15919e7dd2c5589a71f3c5115c3cb1e5b02f7572.png",
@@ -4700,8 +8390,26 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers a jumping attack with a potency of 320. Returns you to your original position after the attack is made.<br>Additional Effect: Grants Dive Ready<br>Duration: 15s",
+                "id": "jump",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Jump    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers a jumping attack with a potency of 320. Returns you to your original position after the attack is made.<br>Additional Effect: Grants Dive Ready<br>Duration: 15s",
+                "potency": "320",
+                "grants": {
+                    "diveready": -1
+                },
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 15,
+                "potencyNumeric": 320,
+                "grantsNumeric": {
+                    "diveready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a13b9738eba1cfa6331a577992a05fbf8e29b12e.png",
@@ -4712,8 +8420,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Executes a jump to a location 15 yalms behind you.<br>Cannot be executed while bound.",
+                "id": "elusiveJump",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Elusive Jump    \n            Level Req.: 35    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Executes a jump to a location 15 yalms behind you.<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1e6e09c76f8847d3caf2ee330400848219460dfa.png",
@@ -4724,8 +8440,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 110 to all enemies in a straight line before you.",
+                "id": "doomSpike",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Doom Spike    \n            Level Req.: 40    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 110 to all enemies in a straight line before you.",
+                "potency": "110",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 110,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/970713e35721fcecc8fce83a6064c984bdeb22c3.png",
@@ -4736,8 +8462,16 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Rush to a targeted enemy's location.<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "id": "wingedGlide",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Winged Glide    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Rush to a targeted enemy's location.<br>Maximum Charges: 2<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b77850f0a67953c4b4a13228788bdc1ec41c20fc.png",
@@ -4748,8 +8482,24 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>140 when executed from a target's rear.<br>Combo Action: Disembowel<br>Combo Potency: 220<br>Rear Combo Potency: 260<br>Combo Bonus: Damage over time<br>Potency: 40<br>Duration: 24s",
+                "id": "chaosThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Chaos Thrust    \n            Level Req.: 50    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>140 when executed from a target's rear.<br>Combo Action: Disembowel<br>Combo Potency: 220<br>Rear Combo Potency: 260<br>Combo Bonus: Damage over time<br>Potency: 40<br>Duration: 24s",
+                "potency": "100",
+                "comboAction": "Disembowel",
+                "comboPotency": "260",
+                "": "40",
+                "duration": "24",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 24,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 260,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b2d62c093eb2ccde88c41512eba79a759d3b1731.png",
@@ -4760,8 +8510,26 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Delivers a jumping fire-based attack to target and all enemies nearby it with a potency of 500 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Dragon's Flight<br>Duration: 30s<br>Cannot be executed while bound.",
+                "id": "dragonfireDive",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dragonfire Dive    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Delivers a jumping fire-based attack to target and all enemies nearby it with a potency of 500 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Dragon's Flight<br>Duration: 30s<br>Cannot be executed while bound.",
+                "potency": "500",
+                "grants": {
+                    "dragon'sflight": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "dragon'sflight": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/705282791cafca1896aafcb629217ccf272fa317.png",
@@ -4772,8 +8540,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases critical hit rate of self and nearby party members by 10%.<br>Duration: 20s",
+                "id": "battleLitany",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Battle Litany    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases critical hit rate of self and nearby party members by 10%.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bcf8b96ea7064ae0c532cb80fa44d59ec5fa9208.png",
@@ -4784,8 +8562,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>180 when executed from a target's flank.<br>Combo Action: Heavens' Thrust<br>Combo Potency: 300<br>Flank Combo Potency: 340",
+                "id": "fangAndClaw",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fang and Claw    \n            Level Req.: 56    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>180 when executed from a target's flank.<br>Combo Action: Heavens' Thrust<br>Combo Potency: 300<br>Flank Combo Potency: 340",
+                "potency": "140",
+                "comboAction": "Heavens' Thrust",
+                "comboPotency": "340",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 340,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/85d31ee98aca28156e6dbfcfc17473bb90d1c044.png",
@@ -4796,8 +8587,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>180 when executed from a target's rear.<br>Combo Action: Chaotic Spring<br>Combo Potency: 300<br>Rear Combo Potency: 340",
+                "id": "wheelingThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Wheeling Thrust    \n            Level Req.: 58    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>180 when executed from a target's rear.<br>Combo Action: Chaotic Spring<br>Combo Potency: 300<br>Rear Combo Potency: 340",
+                "potency": "140",
+                "comboAction": "Chaotic Spring",
+                "comboPotency": "340",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 340,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9fd17ed870b46d4f1cb7dfbbfe36232a69ffab25.png",
@@ -4808,8 +8612,29 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 280 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Life of the Dragon<br>Life of the Dragon Effect: Increases damage dealt by 15%<br>Duration: 20s<br>Additional Effect: Grants 3 stacks of Nastrond Ready<br>Duration: 20s",
+                "id": "geirskogul",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Geirskogul    \n            Level Req.: 60    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 280 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Life of the Dragon<br>Life of the Dragon Effect: Increases damage dealt by 15%<br>Duration: 20s<br>Additional Effect: Grants 3 stacks of Nastrond Ready<br>Duration: 20s",
+                "potency": "280",
+                "grants": {
+                    "lifeofthedragon": -1,
+                    "nastrondready": "3"
+                },
+                "damageBuff": 1.15,
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 20,
+                "potencyNumeric": 280,
+                "grantsNumeric": {
+                    "lifeofthedragon": -1,
+                    "nastrondready": 3
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/86993377c3b82442fd98d9ccaf2c8e007b110d3e.png",
@@ -4820,8 +8645,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all enemies in a straight line before you.<br>Combo Action: Doom Spike or Draconian Fury<br>Combo Potency: 120<br>Combo Bonus: Grants Power Surge<br>Power Surge Effect: Increases damage dealt by 10%<br>Duration: 30s",
+                "id": "sonicThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sonic Thrust    \n            Level Req.: 62    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all enemies in a straight line before you.<br>Combo Action: Doom Spike or Draconian Fury<br>Combo Potency: 120<br>Combo Bonus: Grants Power Surge<br>Power Surge Effect: Increases damage dealt by 10%<br>Duration: 30s",
+                "potency": "100",
+                "comboAction": "Doom Spike or Draconian Fury",
+                "comboPotency": "120",
+                "comboBonus": {
+                    "powersurge": -1
+                },
+                "damageBuff": 1.1,
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 120,
+                "comboBonusNumeric": {
+                    "powersurge": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1bc31e46fb90bda5697cf272e0df8b9ac8086b13.png",
@@ -4832,8 +8679,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 440.<br>Combo Action: Wheeling Thrust or Fang and Claw<br>Combo Bonus: Grants Draconian Fire<br>Duration: 30s<br>Can only be executed after successfully landing Wheeling Thrust or Fang and Claw as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Wheeling Thrust and Fang and Claw change to Drakesbane when requirements for execution are met.",
+                "id": "drakesbane",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Drakesbane    \n            Level Req.: 64    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 440.<br>Combo Action: Wheeling Thrust or Fang and Claw<br>Combo Bonus: Grants Draconian Fire<br>Duration: 30s<br>Can only be executed after successfully landing Wheeling Thrust or Fang and Claw as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Wheeling Thrust and Fang and Claw change to Drakesbane when requirements for execution are met.",
+                "potency": "440",
+                "comboAction": "Wheeling Thrust or Fang and Claw",
+                "comboBonus": {
+                    "draconianfire": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 440,
+                "comboBonusNumeric": {
+                    "draconianfire": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/838933d8bbe091490defd8b0c455c1b6cd553f21.png",
@@ -4844,8 +8710,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200.<br>Can only be executed when Dive Ready.",
+                "id": "mirageDive",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Mirage Dive    \n            Level Req.: 68    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200.<br>Can only be executed when Dive Ready.",
+                "potency": "200",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 200,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8e8ee9ce030d0945ab1983fa282569bf9359e77b.png",
@@ -4856,8 +8732,18 @@ export default {
                 "recast": "2s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 360 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while Nastrond Ready.",
+                "id": "nastrond",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Nastrond    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 2s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 360 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while Nastrond Ready.",
+                "potency": "360",
                 "castNumeric": 0,
-                "recastNumeric": 2
+                "recastNumeric": 2,
+                "potencyNumeric": 360,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/27c2b3ef23b6bbe6b322b8a0bade3e00e04727b1.png",
@@ -4868,8 +8754,29 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all enemies in a straight line before you.<br>Combo Action: Sonic Thrust<br>Combo Potency: 150<br>Combo Bonus: Grants Draconian Fire<br>Duration: 30s",
+                "id": "coerthanTorment",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Coerthan Torment    \n            Level Req.: 72    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all enemies in a straight line before you.<br>Combo Action: Sonic Thrust<br>Combo Potency: 150<br>Combo Bonus: Grants Draconian Fire<br>Duration: 30s",
+                "potency": "100",
+                "comboAction": "Sonic Thrust",
+                "comboPotency": "150",
+                "comboBonus": {
+                    "draconianfire": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 150,
+                "comboBonusNumeric": {
+                    "draconianfire": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/43bde23e743d27c8dd8c0a29020671f33fbb1ac6.png",
@@ -4880,8 +8787,26 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers a jumping attack with a potency of 400. Returns you to your original position after the attack is made.<br>Additional Effect: Grants Dive Ready<br>Duration: 15s",
+                "id": "highJump",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: High Jump    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers a jumping attack with a potency of 400. Returns you to your original position after the attack is made.<br>Additional Effect: Grants Dive Ready<br>Duration: 15s",
+                "potency": "400",
+                "grants": {
+                    "diveready": -1
+                },
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 15,
+                "potencyNumeric": 400,
+                "grantsNumeric": {
+                    "diveready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e6c9b8537cca3034858fb078bb6100232c6e23c7.png",
@@ -4892,8 +8817,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 320.<br>Additional Effect: Sharpens the Firstminds' Focus by 1<br>Can only be executed while under the effect of Draconian Fire.<br><br>※This action cannot be assigned to a hotbar.<br>※True Thrust changes to Raiden Thrust when requirements for execution are met.",
+                "id": "raidenThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Raiden Thrust    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 320.<br>Additional Effect: Sharpens the Firstminds' Focus by 1<br>Can only be executed while under the effect of Draconian Fire.<br><br>※This action cannot be assigned to a hotbar.<br>※True Thrust changes to Raiden Thrust when requirements for execution are met.",
+                "potency": "320",
+                "buffRequirement": "draconianfire",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 320,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/65fe43d4e61e67defd885819e6f7d1c8fb1c9ea8.png",
@@ -4904,8 +8840,27 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers a jumping fire-based attack to target and all enemies nearby it with a potency of 720 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Starcross Ready<br>Duration: 20s<br>Effect ends when Life of the Dragon expires.<br>Can only be executed while under the effect of Life of the Dragon.<br>Cannot be executed while bound.",
+                "id": "stardiver",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stardiver    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers a jumping fire-based attack to target and all enemies nearby it with a potency of 720 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Starcross Ready<br>Duration: 20s<br>Effect ends when Life of the Dragon expires.<br>Can only be executed while under the effect of Life of the Dragon.<br>Cannot be executed while bound.",
+                "potency": "720",
+                "grants": {
+                    "starcrossready": -1
+                },
+                "duration": "20",
+                "buffRequirement": "lifeofthedragon",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 20,
+                "potencyNumeric": 720,
+                "grantsNumeric": {
+                    "starcrossready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8d26d75ca622ec9c3ebdb2c9810f3a8981f04710.png",
@@ -4916,8 +8871,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130 to all enemies in a straight line before you.<br>Additional Effect: Sharpens the Firstminds' Focus by 1<br>Can only be executed while under the effect of Draconian Fire.<br><br>※This action cannot be assigned to a hotbar.<br>※Doom Spike changes to Draconian Fury when requirements for execution are met.",
+                "id": "draconianFury",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Draconian Fury    \n            Level Req.: 82    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130 to all enemies in a straight line before you.<br>Additional Effect: Sharpens the Firstminds' Focus by 1<br>Can only be executed while under the effect of Draconian Fire.<br><br>※This action cannot be assigned to a hotbar.<br>※Doom Spike changes to Draconian Fury when requirements for execution are met.",
+                "potency": "130",
+                "buffRequirement": "draconianfire",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d710d7f61fe3638ab7d5bb12c6e58c2585c4faa7.png",
@@ -4928,8 +8894,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Lance Barrage<br>Combo Potency: 440",
+                "id": "heavens'Thrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heavens' Thrust    \n            Level Req.: 86    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>Combo Action: Lance Barrage<br>Combo Potency: 440",
+                "potency": "140",
+                "comboAction": "Lance Barrage",
+                "comboPotency": "440",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 440,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fa6d2bfbf0b127a283fa2ca3679b3dcb23515ee0.png",
@@ -4940,8 +8919,24 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>180 when executed from a target's rear.<br>Combo Action: Spiral Blow<br>Combo Potency: 300<br>Rear Combo Potency: 340<br>Combo Bonus: Damage over time<br>Potency: 45<br>Duration: 24s",
+                "id": "chaoticSpring",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Chaotic Spring    \n            Level Req.: 86    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>180 when executed from a target's rear.<br>Combo Action: Spiral Blow<br>Combo Potency: 300<br>Rear Combo Potency: 340<br>Combo Bonus: Damage over time<br>Potency: 45<br>Duration: 24s",
+                "potency": "140",
+                "comboAction": "Spiral Blow",
+                "comboPotency": "340",
+                "": "45",
+                "duration": "24",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 24,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 340,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/40c1c2685a3b7778e1afe54476cfc68e6f2745fd.png",
@@ -4952,8 +8947,18 @@ export default {
                 "recast": "10s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 440 for the first enemy, and 50% less for all remaining enemies.<br>Firstminds' Focus Cost: 2",
+                "id": "wyrmwindThrust",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Wyrmwind Thrust    \n            Level Req.: 90    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 10s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 440 for the first enemy, and 50% less for all remaining enemies.<br>Firstminds' Focus Cost: 2",
+                "potency": "440",
                 "castNumeric": 0,
-                "recastNumeric": 10
+                "recastNumeric": 10,
+                "potencyNumeric": 440,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4d7cca717dd43f7598d848d99886ccaec3835bad.png",
@@ -4964,8 +8969,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Deals physical damage to target and all enemies nearby it with a potency of 550 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Dragon's Flight.",
+                "id": "riseOfTheDragon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rise of the Dragon    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Deals physical damage to target and all enemies nearby it with a potency of 550 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Dragon's Flight.",
+                "potency": "550",
+                "buffRequirement": "dragon'sflight",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 550,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a5743cd6a29dd664a044690a6e98f3ddeb05eb5a.png",
@@ -4976,8 +8992,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 340",
+                "id": "lanceBarrage",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lance Barrage    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 340",
+                "potency": "130",
+                "comboAction": "True Thrust or Raiden Thrust",
+                "comboPotency": "340",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 130,
+                "comboPotencyNumeric": 340,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b87f6aa2ebc0b8c4a858b76c6be82094738a6247.png",
@@ -4988,8 +9017,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 300<br>Combo Bonus: Grants Power Surge<br>Power Surge Effect: Increases damage dealt by 10%<br>Duration: 30s",
+                "id": "spiralBlow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Spiral Blow    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>Combo Action: True Thrust or Raiden Thrust<br>Combo Potency: 300<br>Combo Bonus: Grants Power Surge<br>Power Surge Effect: Increases damage dealt by 10%<br>Duration: 30s",
+                "potency": "140",
+                "comboAction": "True Thrust or Raiden Thrust",
+                "comboPotency": "300",
+                "comboBonus": {
+                    "powersurge": -1
+                },
+                "damageBuff": 1.1,
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 300,
+                "comboBonusNumeric": {
+                    "powersurge": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fa02faafe16ebea100212e1ae3b89298bc249a7f.png",
@@ -5000,8 +9051,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Deals physical damage to target and all enemies nearby it with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Starcross Ready.",
+                "id": "starcross",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Starcross    \n            Level Req.: 100    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Deals physical damage to target and all enemies nearby it with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Starcross Ready.",
+                "potency": "900",
+                "buffRequirement": "starcrossready",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 900,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b79d78f1ed471ace5708898e3388062fbd555fb.png",
@@ -5012,8 +9074,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly restores own HP.<br>Cure Potency: 800",
+                "id": "secondWind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Second Wind    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly restores own HP.<br>Cure Potency: 800",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8c9674aba5fe48e73cc80ceb4a49782c1539b942.png",
@@ -5024,8 +9094,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 3s",
+                "id": "legSweep",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Leg Sweep    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 3s",
+                "duration": "3",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 3,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f76d6999b80178e51cfedf68f3af69ce6ed5016f.png",
@@ -5036,8 +9116,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Converts a portion of physical damage dealt into HP.<br>Duration: 20s",
+                "id": "bloodbath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodbath    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Converts a portion of physical damage dealt into HP.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/84c26a86cbbb8a599e5a2441cebcd33b0064bf07.png",
@@ -5048,8 +9138,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Lowers target's physical damage dealt by 10% and magic damage dealt by 5%.<br>Duration: 15s",
+                "id": "feint",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Feint    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Lowers target's physical damage dealt by 10% and magic damage dealt by 5%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -5060,8 +9160,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -5072,8 +9182,18 @@ export default {
                 "recast": "45s",
                 "cost": "-",
                 "effect": "Nullifies all action direction requirements.<br>Duration: 10s<br>Maximum Charges: 2",
+                "id": "trueNorth",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: True North    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 45s          \n            Cost: -      \n            Effect: Nullifies all action direction requirements.<br>Duration: 10s<br>Maximum Charges: 2",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 45
+                "recastNumeric": 45,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -5188,8 +9308,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 420.<br>Additional Effect: Increases Soul Gauge by 10",
+                "id": "slice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Slice    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 420.<br>Additional Effect: Increases Soul Gauge by 10",
+                "potency": "420",
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 420,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4bab01eb43df9752e98deef097e9251647ad96df.png",
@@ -5200,8 +9331,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 260.<br>Combo Action: Slice<br>Combo Potency: 500<br>Combo Bonus: Increases Soul Gauge by 10",
+                "id": "waxingSlice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Waxing Slice    \n            Level Req.: 5    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 260.<br>Combo Action: Slice<br>Combo Potency: 500<br>Combo Bonus: Increases Soul Gauge by 10",
+                "potency": "260",
+                "comboAction": "Slice",
+                "comboPotency": "500",
+                "comboBonus": {
+                    "Soul": "10"
+                },
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 260,
+                "comboPotencyNumeric": 500,
+                "comboBonusNumeric": {
+                    "Soul": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e3e48cee91c7abf77a15f6c4c9c9630349849205.png",
@@ -5212,8 +9363,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300.<br>Additional Effect: Afflicts target with Death's Design, increasing damage you deal target by 10%<br>Duration: 30s<br>Extends duration of Death's Design by 30s to a maximum of 60s.<br>Additional Effect: Increases Soul Gauge by 10 if target is KO'd before effect expires",
+                "id": "shadowOfDeath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadow of Death    \n            Level Req.: 10    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300.<br>Additional Effect: Afflicts target with Death's Design, increasing damage you deal target by 10%<br>Duration: 30s<br>Extends duration of Death's Design by 30s to a maximum of 60s.<br>Additional Effect: Increases Soul Gauge by 10 if target is KO'd before effect expires",
+                "potency": "300",
+                "duration": "30",
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d3ae9c9673da37ea10aa4103b747163250c4a385.png",
@@ -5224,8 +9388,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 300.<br>Additional Effect: Increases Soul Gauge by 10",
+                "id": "harpe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Harpe    \n            Level Req.: 15    \n            Type: Spell     \n            Cast Time: 1.3s      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 300.<br>Additional Effect: Increases Soul Gauge by 10",
+                "potency": "300",
+                "Soul": "10",
                 "castNumeric": 1.3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2e1c97fd007f90808b2fd40ad86354b9e97447a8.png",
@@ -5236,8 +9411,24 @@ export default {
                 "recast": "20s",
                 "cost": "-",
                 "effect": "Quickly dash 15 yalms forward.<br>Additional Effect: Grants Enhanced Harpe<br>Enhanced Harpe Effect: Next Harpe can be cast immediately and will reduce recast timer of Hell's Ingress by 5s upon execution<br>Duration: 10s<br>Additional Effect: Leaves behind a Hellsgate at point of origin, and grants Threshold to self<br>Duration: 10s<br>Cannot be executed while bound.<br>Shares a recast timer with Hell's Egress.",
+                "id": "hell'SIngress",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hell's Ingress    \n            Level Req.: 20    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 20s          \n            Cost: -      \n            Effect: Quickly dash 15 yalms forward.<br>Additional Effect: Grants Enhanced Harpe<br>Enhanced Harpe Effect: Next Harpe can be cast immediately and will reduce recast timer of Hell's Ingress by 5s upon execution<br>Duration: 10s<br>Additional Effect: Leaves behind a Hellsgate at point of origin, and grants Threshold to self<br>Duration: 10s<br>Cannot be executed while bound.<br>Shares a recast timer with Hell's Egress.",
+                "grants": {
+                    "enhancedharpe": -1
+                },
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 20
+                "recastNumeric": 20,
+                "durationNumeric": 10,
+                "grantsNumeric": {
+                    "enhancedharpe": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/113b87916c7ffdb9a8007615f697f2c189c6646a.png",
@@ -5248,8 +9439,24 @@ export default {
                 "recast": "20s",
                 "cost": "-",
                 "effect": "Quickly dash 15 yalms backwards.<br>Additional Effect: Grants Enhanced Harpe<br>Enhanced Harpe Effect: Next Harpe can be cast immediately and will reduce recast timer of Hell's Egress by 5s upon execution<br>Duration: 10s<br>Additional Effect: Leaves behind a Hellsgate at point of origin, and grants Threshold to self<br>Duration: 10s<br>Cannot be executed while bound.<br>Shares a recast timer with Hell's Ingress.",
+                "id": "hell'SEgress",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hell's Egress    \n            Level Req.: 20    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 20s          \n            Cost: -      \n            Effect: Quickly dash 15 yalms backwards.<br>Additional Effect: Grants Enhanced Harpe<br>Enhanced Harpe Effect: Next Harpe can be cast immediately and will reduce recast timer of Hell's Egress by 5s upon execution<br>Duration: 10s<br>Additional Effect: Leaves behind a Hellsgate at point of origin, and grants Threshold to self<br>Duration: 10s<br>Cannot be executed while bound.<br>Shares a recast timer with Hell's Ingress.",
+                "grants": {
+                    "enhancedharpe": -1
+                },
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 20
+                "recastNumeric": 20,
+                "durationNumeric": 10,
+                "grantsNumeric": {
+                    "enhancedharpe": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/dac9dba46aa8ff673cd2e365c9468525db0ba1a2.png",
@@ -5260,8 +9467,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 160 to all nearby enemies.<br>Additional Effect: Increases Soul Gauge by 10",
+                "id": "spinningScythe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Spinning Scythe    \n            Level Req.: 25    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 160 to all nearby enemies.<br>Additional Effect: Increases Soul Gauge by 10",
+                "potency": "160",
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/aa7a7dd464459f24aa2209cddcbf8a3ebb167f0b.png",
@@ -5272,8 +9490,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 280.<br>Combo Action: Waxing Slice<br>Combo Potency: 600<br>Combo Bonus: Increases Soul Gauge by 10",
+                "id": "infernalSlice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Infernal Slice    \n            Level Req.: 30    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 280.<br>Combo Action: Waxing Slice<br>Combo Potency: 600<br>Combo Bonus: Increases Soul Gauge by 10",
+                "potency": "280",
+                "comboAction": "Waxing Slice",
+                "comboPotency": "600",
+                "comboBonus": {
+                    "Soul": "10"
+                },
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 280,
+                "comboPotencyNumeric": 600,
+                "comboBonusNumeric": {
+                    "Soul": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/31d409f8aaeae041b8150e68764e032fccd7c4c6.png",
@@ -5284,8 +9522,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Afflicts target with Death's Design, increasing damage you deal target by 10%<br>Duration: 30s<br>Extends duration of Death's Design by 30s to a maximum of 60s.<br>Additional Effect: Increases Soul Gauge by 10 if target is KO'd before effect expires",
+                "id": "whorlOfDeath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Whorl of Death    \n            Level Req.: 35    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all nearby enemies.<br>Additional Effect: Afflicts target with Death's Design, increasing damage you deal target by 10%<br>Duration: 30s<br>Extends duration of Death's Design by 30s to a maximum of 60s.<br>Additional Effect: Increases Soul Gauge by 10 if target is KO'd before effect expires",
+                "potency": "100",
+                "duration": "30",
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9977fdbbf70443f9f31f4868cba97138fbec5460.png",
@@ -5296,8 +9547,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Grants Crest of Time Borrowed to self, creating a barrier that nullifies damage totaling up to 10% of maximum HP.<br>Duration: 5s<br>Grants Crest of Time Returned to self and nearby party members within a radius of 15 yalms when barrier is completely absorbed.<br>Crest of Time Returned Effect: Gradually restores HP<br>Cure Potency: 50<br>Duration: 15s",
+                "id": "arcaneCrest",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arcane Crest    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Grants Crest of Time Borrowed to self, creating a barrier that nullifies damage totaling up to 10% of maximum HP.<br>Duration: 5s<br>Grants Crest of Time Returned to self and nearby party members within a radius of 15 yalms when barrier is completely absorbed.<br>Crest of Time Returned Effect: Gradually restores HP<br>Cure Potency: 50<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/710256a9319251859b53dd3804078cc8e35c2333.png",
@@ -5308,8 +9569,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140 to all nearby enemies.<br>Combo Action: Spinning Scythe<br>Combo Potency: 200<br>Combo Bonus: Increases Soul Gauge by 10",
+                "id": "nightmareScythe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Nightmare Scythe    \n            Level Req.: 45    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140 to all nearby enemies.<br>Combo Action: Spinning Scythe<br>Combo Potency: 200<br>Combo Bonus: Increases Soul Gauge by 10",
+                "potency": "140",
+                "comboAction": "Spinning Scythe",
+                "comboPotency": "200",
+                "comboBonus": {
+                    "Soul": "10"
+                },
+                "Soul": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 200,
+                "comboBonusNumeric": {
+                    "Soul": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f0f3d4c722f5f9b36b25ba72d3774b4b811b699d.png",
@@ -5320,8 +9601,27 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Summons your avatar to deliver an attack with a potency of 340.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Shares a recast timer with all avatar attacks except Gluttony.",
+                "id": "bloodStalk",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blood Stalk    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Summons your avatar to deliver an attack with a potency of 340.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Shares a recast timer with all avatar attacks except Gluttony.",
+                "potency": "340",
+                "grants": {
+                    "soulreaver": -1
+                },
+                "duration": "30",
+                "Soul": -50,
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 340,
+                "grantsNumeric": {
+                    "soulreaver": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ac34fd282b758c407014a47e3c30e188050307d8.png",
@@ -5332,8 +9632,27 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Summons your avatar to deliver an attack with a potency of 140 to all enemies in a cone before you.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Shares a recast timer with all avatar attacks except Gluttony.",
+                "id": "grimSwathe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Grim Swathe    \n            Level Req.: 55    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Summons your avatar to deliver an attack with a potency of 140 to all enemies in a cone before you.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Shares a recast timer with all avatar attacks except Gluttony.",
+                "potency": "140",
+                "grants": {
+                    "soulreaver": -1
+                },
+                "duration": "30",
+                "Soul": -50,
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 140,
+                "grantsNumeric": {
+                    "soulreaver": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/089e7135cc2e4e64590c18db17fbab56e0040843.png",
@@ -5344,8 +9663,19 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 520.<br>Additional Effect: Increases Soul Gauge by 50<br>Maximum Charges: 2<br>Shares a recast timer with Soul Scythe.<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "id": "soulSlice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Soul Slice    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 520.<br>Additional Effect: Increases Soul Gauge by 50<br>Maximum Charges: 2<br>Shares a recast timer with Soul Scythe.<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "potency": "520",
+                "Soul": "50",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 520,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/22ae994a06569700d3f9d51b1b999c951ca171e3.png",
@@ -5356,8 +9686,19 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 180 to all nearby enemies.<br>Additional Effect: Increases Soul Gauge by 50<br>Maximum Charges: 2<br>Shares a recast timer with Soul Slice.<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "id": "soulScythe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Soul Scythe    \n            Level Req.: 65    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 180 to all nearby enemies.<br>Additional Effect: Increases Soul Gauge by 50<br>Maximum Charges: 2<br>Shares a recast timer with Soul Slice.<br>Recast timer cannot be affected by status effects or gear attributes.",
+                "potency": "180",
+                "Soul": "50",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 180,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f8259f07fef48d2d418535404fdc672bdc852285.png",
@@ -5368,8 +9709,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 500.<br>560 when executed from a target's flank.<br>Enhanced Gibbet Potency: 560<br>Flank Enhanced Potency: 620<br>Additional Effect: Grants Enhanced Gallows<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gallows while under the effect of Enhanced Gallows.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Soul Reaver.",
+                "id": "gibbet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Gibbet    \n            Level Req.: 70    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 500.<br>560 when executed from a target's flank.<br>Enhanced Gibbet Potency: 560<br>Flank Enhanced Potency: 620<br>Additional Effect: Grants Enhanced Gallows<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gallows while under the effect of Enhanced Gallows.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Soul Reaver.",
+                "potency": "500",
+                "enhancedgibbet": "560",
+                "flankenhanced": "620",
+                "grants": {
+                    "enhancedgallows": -1
+                },
+                "duration": "60",
+                "Shroud": "10",
+                "buffRequirement": "soulreaver",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 60,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "enhancedgallows": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ae681cd40113523630db64f0e3823235db61a364.png",
@@ -5380,8 +9743,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 500.<br>560 when executed from a target's rear.<br>Enhanced Gallows Potency: 560<br>Rear Enhanced Potency: 620<br>Additional Effect: Grants Enhanced Gibbet<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gibbet while under the effect of Enhanced Gibbet.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Soul Reaver.",
+                "id": "gallows",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Gallows    \n            Level Req.: 70    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 500.<br>560 when executed from a target's rear.<br>Enhanced Gallows Potency: 560<br>Rear Enhanced Potency: 620<br>Additional Effect: Grants Enhanced Gibbet<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gibbet while under the effect of Enhanced Gibbet.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Soul Reaver.",
+                "potency": "500",
+                "enhancedgallows": "560",
+                "rearenhanced": "620",
+                "grants": {
+                    "enhancedgibbet": -1
+                },
+                "duration": "60",
+                "Shroud": "10",
+                "buffRequirement": "soulreaver",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 60,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "enhancedgibbet": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b4d685f506367e2bd3228603e7b2c4172567f933.png",
@@ -5392,8 +9777,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200 to all enemies in a cone before you.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Soul Reaver.",
+                "id": "guillotine",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Guillotine    \n            Level Req.: 70    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200 to all enemies in a cone before you.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Soul Reaver.",
+                "potency": "200",
+                "Shroud": "10",
+                "buffRequirement": "soulreaver",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 200,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/02ab830b9551480d0b5d62a24012c401a422b0bd.png",
@@ -5404,8 +9801,28 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Summons your avatar to deliver an attack with a potency of 440.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Can only be executed while under the effect of Enhanced Gibbet.<br>Shares a recast timer with all avatar attacks except Gluttony.<br><br>※This action cannot be assigned to a hotbar.<br>※Blood Stalk changes to Unveiled Gibbet when under the effect of Enhanced Gibbet.",
+                "id": "unveiledGibbet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Unveiled Gibbet    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Summons your avatar to deliver an attack with a potency of 440.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Can only be executed while under the effect of Enhanced Gibbet.<br>Shares a recast timer with all avatar attacks except Gluttony.<br><br>※This action cannot be assigned to a hotbar.<br>※Blood Stalk changes to Unveiled Gibbet when under the effect of Enhanced Gibbet.",
+                "potency": "440",
+                "grants": {
+                    "soulreaver": -1
+                },
+                "duration": "30",
+                "Soul": -50,
+                "buffRequirement": "enhancedgibbet",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 440,
+                "grantsNumeric": {
+                    "soulreaver": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/017af138fc2458f9cae561ec96f027791d1da803.png",
@@ -5416,8 +9833,28 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Summons your avatar to deliver an attack with a potency of 440.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Can only be executed while under the effect of Enhanced Gallows.<br>Shares a recast timer with all avatar attacks except Gluttony.<br><br>※This action cannot be assigned to a hotbar.<br>※Blood Stalk changes to Unveiled Gallows while under the effect of Enhanced Gallows.",
+                "id": "unveiledGallows",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Unveiled Gallows    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Summons your avatar to deliver an attack with a potency of 440.<br>Additional Effect: Grants Soul Reaver<br>Duration: 30s<br>Stack count will be reduced to 1 when already under the effect of Soul Reaver.<br>Effect cannot be stacked with Executioner.<br>Soul Gauge Cost: 50<br>Can only be executed while under the effect of Enhanced Gallows.<br>Shares a recast timer with all avatar attacks except Gluttony.<br><br>※This action cannot be assigned to a hotbar.<br>※Blood Stalk changes to Unveiled Gallows while under the effect of Enhanced Gallows.",
+                "potency": "440",
+                "grants": {
+                    "soulreaver": -1
+                },
+                "duration": "30",
+                "Soul": -50,
+                "buffRequirement": "enhancedgallows",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "durationNumeric": 30,
+                "potencyNumeric": 440,
+                "grantsNumeric": {
+                    "soulreaver": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b561271272c45fb8436bfe4dfb590b76c631687b.png",
@@ -5428,8 +9865,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases damage dealt by self and nearby party members by 3%.<br>Duration: 20s<br>Additional Effect: Grants Circle of Sacrifice to self and nearby party members<br>Duration: 5s<br>Additional Effect: Grants Bloodsown Circle to self<br>Duration: 6s<br>Circle of Sacrifice Effect: When you or party members under this effect successfully land a weaponskill or cast a spell, the reaper who applied it may be granted a stack of Immortal Sacrifice, up to a maximum of 8<br>Duration: 30s<br>Bloodsown Circle Effect: Allows you to accumulate stacks of Immortal Sacrifice from party members under the effect of your Circle of Sacrifice",
+                "id": "arcaneCircle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arcane Circle    \n            Level Req.: 72    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases damage dealt by self and nearby party members by 3%.<br>Duration: 20s<br>Additional Effect: Grants Circle of Sacrifice to self and nearby party members<br>Duration: 5s<br>Additional Effect: Grants Bloodsown Circle to self<br>Duration: 6s<br>Circle of Sacrifice Effect: When you or party members under this effect successfully land a weaponskill or cast a spell, the reaper who applied it may be granted a stack of Immortal Sacrifice, up to a maximum of 8<br>Duration: 30s<br>Bloodsown Circle Effect: Allows you to accumulate stacks of Immortal Sacrifice from party members under the effect of your Circle of Sacrifice",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/eaeec5829efd0623650ee09d1b3867ef3804c643.png",
@@ -5440,8 +9887,17 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Move instantly to the Hellsgate left behind by you.<br>Can only be executed while under the effect of Threshold.<br>Cannot be executed while bound.<br><br>※This action cannot be assigned to a hotbar.<br>※Hell's Ingress or Hell's Egress will change to Regress when requirements for execution are met.",
+                "id": "regress",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Regress    \n            Level Req.: 74    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Move instantly to the Hellsgate left behind by you.<br>Can only be executed while under the effect of Threshold.<br>Cannot be executed while bound.<br><br>※This action cannot be assigned to a hotbar.<br>※Hell's Ingress or Hell's Egress will change to Regress when requirements for execution are met.",
+                "buffRequirement": "threshold",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/933867484213377dc45cafd796ff5d934cee8906.png",
@@ -5452,8 +9908,27 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Summons your avatar to deal unaspected damage to target and all enemies nearby it with a potency of 520 for the first enemy, and 25% less for all remaining enemies.<br>Additional Effect: Grants 2 stacks of Executioner<br>Duration: 30s<br>Effect cannot be stacked with Soul Reaver.<br>Soul Gauge Cost: 50",
+                "id": "gluttony",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Gluttony    \n            Level Req.: 76    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Summons your avatar to deal unaspected damage to target and all enemies nearby it with a potency of 520 for the first enemy, and 25% less for all remaining enemies.<br>Additional Effect: Grants 2 stacks of Executioner<br>Duration: 30s<br>Effect cannot be stacked with Soul Reaver.<br>Soul Gauge Cost: 50",
+                "potency": "520",
+                "grants": {
+                    "executioner": "2"
+                },
+                "duration": "30",
+                "Soul": -50,
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "potencyNumeric": 520,
+                "grantsNumeric": {
+                    "executioner": 2
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4e389efd3504b3ed9dcd4f7633ebc9a5bb528971.png",
@@ -5464,8 +9939,25 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Offers your flesh as a vessel to your avatar, gaining maximum stacks of Lemure Shroud.<br>Duration: 30s<br>Certain actions cannot be executed while playing host to your avatar.<br>Additional Effect: Grants Oblatio<br>Duration: 30s<br>Shroud Gauge Cost: 50",
+                "id": "enshroud",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enshroud    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Offers your flesh as a vessel to your avatar, gaining maximum stacks of Lemure Shroud.<br>Duration: 30s<br>Certain actions cannot be executed while playing host to your avatar.<br>Additional Effect: Grants Oblatio<br>Duration: 30s<br>Shroud Gauge Cost: 50",
+                "duration": "30",
+                "grants": {
+                    "oblatio": -1
+                },
+                "Shroud": -50,
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "oblatio": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d2632208267baca74f7d9c19ee7a9c794034f2f0.png",
@@ -5476,8 +9968,30 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 500.<br>Enhanced Void Reaping Potency: 560<br>Additional Effect: Grants Enhanced Cross Reaping<br>Duration: 30s<br>Additional Effect: Grants Void Shroud<br>Can only be executed while under the effect of Enshrouded.<br>Recast timer cannot be affected by status effects or gear attributes.<br>Lemure Shroud Cost: 1<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.<br><br>※This action cannot be assigned to a hotbar.<br>※Gibbet changes to Void Reaping when requirements for execution are met.",
+                "id": "voidReaping",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Void Reaping    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 500.<br>Enhanced Void Reaping Potency: 560<br>Additional Effect: Grants Enhanced Cross Reaping<br>Duration: 30s<br>Additional Effect: Grants Void Shroud<br>Can only be executed while under the effect of Enshrouded.<br>Recast timer cannot be affected by status effects or gear attributes.<br>Lemure Shroud Cost: 1<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.<br><br>※This action cannot be assigned to a hotbar.<br>※Gibbet changes to Void Reaping when requirements for execution are met.",
+                "potency": "500",
+                "enhancedvoidreaping": "560",
+                "grants": {
+                    "enhancedcrossreaping": -1,
+                    "voidshroud": -1
+                },
+                "duration": "30",
+                "buffRequirement": "enshrouded",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "enhancedcrossreaping": -1,
+                    "voidshroud": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a080e4189263d80adcd79deaaac266c93798d202.png",
@@ -5488,8 +10002,30 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 500.<br>Enhanced Cross Reaping Potency: 560<br>Additional Effect: Grants Enhanced Void Reaping<br>Duration: 30s<br>Additional Effect: Grants Void Shroud<br>Can only be executed while under the effect of Lemure Shroud.<br>Lemure Shroud Cost: 1<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.<br><br>※This action cannot be assigned to a hotbar.<br>※Gallows changes to Cross Reaping when requirements for execution are met.",
+                "id": "crossReaping",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Cross Reaping    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 500.<br>Enhanced Cross Reaping Potency: 560<br>Additional Effect: Grants Enhanced Void Reaping<br>Duration: 30s<br>Additional Effect: Grants Void Shroud<br>Can only be executed while under the effect of Lemure Shroud.<br>Lemure Shroud Cost: 1<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.<br><br>※This action cannot be assigned to a hotbar.<br>※Gallows changes to Cross Reaping when requirements for execution are met.",
+                "potency": "500",
+                "enhancedcrossreaping": "560",
+                "grants": {
+                    "enhancedvoidreaping": -1,
+                    "voidshroud": -1
+                },
+                "duration": "30",
+                "buffRequirement": "lemureshroud",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "enhancedvoidreaping": -1,
+                    "voidshroud": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3b57c45ec39fc75788c9603653a77c5b95f04e67.png",
@@ -5500,8 +10036,25 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200 to all enemies in a cone before you.<br>Additional Effect: Grants Void Shroud<br>Can only be executed while under the effect of Enshrouded.<br>Lemure Shroud Cost: 1<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.<br><br>※This action cannot be assigned to a hotbar.<br>※Guillotine changes to Grim Reaping when requirements for execution are met.",
+                "id": "grimReaping",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Grim Reaping    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200 to all enemies in a cone before you.<br>Additional Effect: Grants Void Shroud<br>Can only be executed while under the effect of Enshrouded.<br>Lemure Shroud Cost: 1<br>This action does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.<br><br>※This action cannot be assigned to a hotbar.<br>※Guillotine changes to Grim Reaping when requirements for execution are met.",
+                "potency": "200",
+                "grants": {
+                    "voidshroud": -1
+                },
+                "buffRequirement": "enshrouded",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 200,
+                "grantsNumeric": {
+                    "voidshroud": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a59a5def406758cbd282cffdea8bea00a98f5e58.png",
@@ -5512,8 +10065,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Grants Soulsow to self, changing the action to Harvest Moon.<br>Cast time is instant when used outside of battle.",
+                "id": "soulsow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Soulsow    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Grants Soulsow to self, changing the action to Harvest Moon.<br>Cast time is instant when used outside of battle.",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e5f0a7dabd5ef44d08e8d5920d834f3e734169d9.png",
@@ -5524,8 +10085,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 800 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Increases Soul Gauge by 10<br>Can only be executed while under the effect of Soulsow.<br><br>※This action cannot be assigned to a hotbar.<br>※Soulsow changes to Harvest Moon when requirements for execution are met.",
+                "id": "harvestMoon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Harvest Moon    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 800 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Increases Soul Gauge by 10<br>Can only be executed while under the effect of Soulsow.<br><br>※This action cannot be assigned to a hotbar.<br>※Soulsow changes to Harvest Moon when requirements for execution are met.",
+                "potency": "800",
+                "Soul": "10",
+                "buffRequirement": "soulsow",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 800,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c9ae486399356401f032b455ea5b13f986236c82.png",
@@ -5536,8 +10109,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 280.<br>Void Shroud Cost: 2<br>Shares a recast timer with Lemure's Scythe.<br><br>※This action cannot be assigned to a hotbar.<br>※Blood Stalk changes to Lemure's Slice while under the effect of Enshrouded.",
+                "id": "lemure'SSlice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lemure's Slice    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 280.<br>Void Shroud Cost: 2<br>Shares a recast timer with Lemure's Scythe.<br><br>※This action cannot be assigned to a hotbar.<br>※Blood Stalk changes to Lemure's Slice while under the effect of Enshrouded.",
+                "potency": "280",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 280,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/479155b751c2764273ae35c1aab71ed298ad9d18.png",
@@ -5548,8 +10131,18 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to all enemies in a cone before you.<br>Void Shroud Cost: 2<br>Shares a recast timer with Lemure's Slice.<br><br>※This action cannot be assigned to a hotbar.<br>※Grim Swathe changes to Lemure's Scythe while under the effect of Enshrouded.",
+                "id": "lemure'SScythe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lemure's Scythe    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to all enemies in a cone before you.<br>Void Shroud Cost: 2<br>Shares a recast timer with Lemure's Slice.<br><br>※This action cannot be assigned to a hotbar.<br>※Grim Swathe changes to Lemure's Scythe while under the effect of Enshrouded.",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/08babf4d2bf7ce046d03f459af8fa4c9921f96cc.png",
@@ -5560,8 +10153,31 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 720 for the first enemy, and 60% less for all remaining enemies.<br>Immortal Sacrifice Cost: 1 stack<br>Potency increases up to 1,000 as stacks of Immortal Sacrifice exceed minimum cost.<br>Additional Effect: Grants Ideal Host<br>Duration: 30s<br>Additional Effect: Grants Perfectio Occulta<br>Perfectio Occulta Effect: Grants Perfectio Parata upon executing Communio<br>Duration: 30s<br>Cannot be executed while under the effect of Bloodsown Circle.<br>Consumes all stacks of Immortal Sacrifice upon execution.",
+                "id": "plentifulHarvest",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Plentiful Harvest    \n            Level Req.: 88    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 720 for the first enemy, and 60% less for all remaining enemies.<br>Immortal Sacrifice Cost: 1 stack<br>Potency increases up to 1,000 as stacks of Immortal Sacrifice exceed minimum cost.<br>Additional Effect: Grants Ideal Host<br>Duration: 30s<br>Additional Effect: Grants Perfectio Occulta<br>Perfectio Occulta Effect: Grants Perfectio Parata upon executing Communio<br>Duration: 30s<br>Cannot be executed while under the effect of Bloodsown Circle.<br>Consumes all stacks of Immortal Sacrifice upon execution.",
+                "potency": "720",
+                "grants": {
+                    "idealhost": -1,
+                    "perfectioocculta": -1,
+                    "perfectioparatauponexecutingcommunio": -1
+                },
+                "duration": "30",
+                "buffRequirement": "bloodsowncircle",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 720,
+                "grantsNumeric": {
+                    "idealhost": -1,
+                    "perfectioocculta": -1,
+                    "perfectioparatauponexecutingcommunio": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3b0daa7e454abbd2b6ce037b5c77157462fadbf7.png",
@@ -5572,8 +10188,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 1,100 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Grants Perfectio Parata when executed while Perfectio Occulta is active<br>Duration: 30s<br>Enshrouded effect expires upon execution.<br>Requires at least one stack of Lemure Shroud to execute.",
+                "id": "communio",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Communio    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: 1.3s      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 1,100 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Grants Perfectio Parata when executed while Perfectio Occulta is active<br>Duration: 30s<br>Enshrouded effect expires upon execution.<br>Requires at least one stack of Lemure Shroud to execute.",
+                "potency": "1,100",
+                "grants": {
+                    "perfectioparatawhenexecutedwhileperfectiooccultaisactive": -1
+                },
+                "duration": "30",
                 "castNumeric": 1.3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 1,
+                "grantsNumeric": {
+                    "perfectioparatawhenexecutedwhileperfectiooccultaisactive": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c30eb0a31733645a16fe4afedf837597addded77.png",
@@ -5584,8 +10218,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 530 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Enshrouded and Oblatio.<br><br>※This action cannot be assigned to a hotbar.<br>※Gluttony changes to Sacrificium when requirements for execution are met.",
+                "id": "sacrificium",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sacrificium    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 530 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Enshrouded and Oblatio.<br><br>※This action cannot be assigned to a hotbar.<br>※Gluttony changes to Sacrificium when requirements for execution are met.",
+                "potency": "530",
+                "buffRequirement": "enshroudedandoblatio",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 530,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7df5921d09e8a524ef8b7c187a9f0cb1ee181aff.png",
@@ -5596,8 +10241,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 700.<br>760 when executed from a target's flank.<br>Enhanced Gibbet Potency: 760<br>Flank Enhanced Potency: 820<br>Additional Effect: Grants Enhanced Gallows<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gallows while under the effect of Enhanced Gallows.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Executioner.<br><br>※This action cannot be assigned to a hotbar.<br>※Gibbet changes to Executioner's Gibbet when requirements for execution are met.",
+                "id": "executioner'SGibbet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Executioner's Gibbet    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 700.<br>760 when executed from a target's flank.<br>Enhanced Gibbet Potency: 760<br>Flank Enhanced Potency: 820<br>Additional Effect: Grants Enhanced Gallows<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gallows while under the effect of Enhanced Gallows.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Executioner.<br><br>※This action cannot be assigned to a hotbar.<br>※Gibbet changes to Executioner's Gibbet when requirements for execution are met.",
+                "potency": "700",
+                "enhancedgibbet": "760",
+                "flankenhanced": "820",
+                "grants": {
+                    "enhancedgallows": -1
+                },
+                "duration": "60",
+                "Shroud": "10",
+                "buffRequirement": "executioner",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 60,
+                "potencyNumeric": 700,
+                "grantsNumeric": {
+                    "enhancedgallows": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0dfc7d7951330304c328135c306fa3d54b1a9cdc.png",
@@ -5608,8 +10275,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 700.<br>760 when executed from a target's rear.<br>Enhanced Gallows Potency: 760<br>Rear Enhanced Potency: 820<br>Additional Effect: Grants Enhanced Gibbet<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gibbet while under the effect of Enhanced Gibbet.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Executioner.<br><br>※This action cannot be assigned to a hotbar.<br>※Gallows changes to Executioner's Gallows when requirements for execution are met.",
+                "id": "executioner'SGallows",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Executioner's Gallows    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 700.<br>760 when executed from a target's rear.<br>Enhanced Gallows Potency: 760<br>Rear Enhanced Potency: 820<br>Additional Effect: Grants Enhanced Gibbet<br>Duration: 60s<br>The action Blood Stalk changes to Unveiled Gibbet while under the effect of Enhanced Gibbet.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Executioner.<br><br>※This action cannot be assigned to a hotbar.<br>※Gallows changes to Executioner's Gallows when requirements for execution are met.",
+                "potency": "700",
+                "enhancedgallows": "760",
+                "rearenhanced": "820",
+                "grants": {
+                    "enhancedgibbet": -1
+                },
+                "duration": "60",
+                "Shroud": "10",
+                "buffRequirement": "executioner",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 60,
+                "potencyNumeric": 700,
+                "grantsNumeric": {
+                    "enhancedgibbet": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d732a04e72dd2c5e3c0702749e6310329b611ca8.png",
@@ -5620,8 +10309,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 300 to all enemies in a cone before you.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Executioner.<br><br>※This action cannot be assigned to a hotbar.<br>※Guillotine changes to Executioner's Guillotine when requirements for execution are met.",
+                "id": "executioner'SGuillotine",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Executioner's Guillotine    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 300 to all enemies in a cone before you.<br>Additional Effect: Increases Shroud Gauge by 10<br>Can only be executed while under the effect of Executioner.<br><br>※This action cannot be assigned to a hotbar.<br>※Guillotine changes to Executioner's Guillotine when requirements for execution are met.",
+                "potency": "300",
+                "Shroud": "10",
+                "buffRequirement": "executioner",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 300,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ab9537a1e24665b2b794656e28f58981b95b3c52.png",
@@ -5632,8 +10333,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 1,300 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Perfectio Parata.<br><br>※This action cannot be assigned to a hotbar.<br>※Communio changes to Perfectio when requirements for execution are met.",
+                "id": "perfectio",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Perfectio    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 1,300 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Perfectio Parata.<br><br>※This action cannot be assigned to a hotbar.<br>※Communio changes to Perfectio when requirements for execution are met.",
+                "potency": "1,300",
+                "buffRequirement": "perfectioparata",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 1,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b79d78f1ed471ace5708898e3388062fbd555fb.png",
@@ -5644,8 +10356,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly restores own HP.<br>Cure Potency: 800",
+                "id": "secondWind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Second Wind    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly restores own HP.<br>Cure Potency: 800",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8c9674aba5fe48e73cc80ceb4a49782c1539b942.png",
@@ -5656,8 +10376,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Stuns target.<br>Duration: 3s",
+                "id": "legSweep",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Leg Sweep    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Stuns target.<br>Duration: 3s",
+                "duration": "3",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 3,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f76d6999b80178e51cfedf68f3af69ce6ed5016f.png",
@@ -5668,8 +10398,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Converts a portion of physical damage dealt into HP.<br>Duration: 20s",
+                "id": "bloodbath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodbath    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Converts a portion of physical damage dealt into HP.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/84c26a86cbbb8a599e5a2441cebcd33b0064bf07.png",
@@ -5680,8 +10420,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Lowers target's physical damage dealt by 10% and magic damage dealt by 5%.<br>Duration: 15s",
+                "id": "feint",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Feint    \n            Level Req.: 22    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Lowers target's physical damage dealt by 10% and magic damage dealt by 5%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -5692,8 +10442,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -5704,8 +10464,18 @@ export default {
                 "recast": "45s",
                 "cost": "-",
                 "effect": "Nullifies all action direction requirements.<br>Duration: 10s<br>Maximum Charges: 2",
+                "id": "trueNorth",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: True North    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 45s          \n            Cost: -      \n            Effect: Nullifies all action direction requirements.<br>Duration: 10s<br>Maximum Charges: 2",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 45
+                "recastNumeric": 45,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -5823,8 +10593,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 160.<br>Additional Effect: 20% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "heavyShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heavy Shot    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 160.<br>Additional Effect: 20% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "160",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/58345465e1b0bb46bac9920464892ef4e51be34f.png",
@@ -5835,8 +10617,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200.<br>Can only be executed when under the effect of Hawk's Eye.",
+                "id": "straightShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Straight Shot    \n            Level Req.: 2    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200.<br>Can only be executed when under the effect of Hawk's Eye.",
+                "potency": "200",
+                "buffRequirement": "hawk'seye",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 200,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/444bd0d452881277e79be184fdb8ca6d21906014.png",
@@ -5847,8 +10640,19 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases damage dealt by 15%.<br>Duration: 20s",
+                "id": "ragingStrikes",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Raging Strikes    \n            Level Req.: 4    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases damage dealt by 15%.<br>Duration: 20s",
+                "damageBuff": 1.15,
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5628b34f3942ef93659f9f03dd2c0556b66f83ea.png",
@@ -5859,8 +10663,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Additional Effect: Venom<br>Potency: 15<br>Duration: 45s",
+                "id": "venomousBite",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Venomous Bite    \n            Level Req.: 6    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Additional Effect: Venom<br>Potency: 15<br>Duration: 45s",
+                "potency": "100",
+                "": "15",
+                "duration": "45",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 45,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fd9763578c2d9e6fca1cc0637d953ba405aa5b2b.png",
@@ -5871,8 +10688,18 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130.<br>Maximum Charges: 3<br>Shares a recast timer with Rain of Death.",
+                "id": "bloodletter",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bloodletter    \n            Level Req.: 12    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130.<br>Maximum Charges: 3<br>Shares a recast timer with Rain of Death.",
+                "potency": "130",
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/33e4423b5606c916b4c92db7a6cfb7d22d8f89ac.png",
@@ -5883,8 +10710,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Jump 10 yalms away from current target.<br>Cannot be executed while bound.",
+                "id": "repellingShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Repelling Shot    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Jump 10 yalms away from current target.<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/674767e2dcc3f57156cd13273601bd4ed337657b.png",
@@ -5895,8 +10730,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 110 to all enemies in a cone before you.<br>Additional Effect: 20% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "quickNock",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Quick Nock    \n            Level Req.: 18    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 110 to all enemies in a cone before you.<br>Additional Effect: 20% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "110",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 110,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f935382d44889e5e74a995ed49bb6db78532edd4.png",
@@ -5907,8 +10754,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140 to target and all enemies nearby it.<br>Barrage Potency: 220<br>Can only be executed while under the effect of Hawk's Eye.",
+                "id": "wideVolley",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Wide Volley    \n            Level Req.: 25    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140 to target and all enemies nearby it.<br>Barrage Potency: 220<br>Can only be executed while under the effect of Hawk's Eye.",
+                "potency": "140",
+                "barrage": "220",
+                "buffRequirement": "hawk'seye",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/798e2b8207ce793087365990d0996232238b9225.png",
@@ -5919,8 +10778,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals wind damage with a potency of 60.<br>Additional Effect: Wind damage over time<br>Potency: 20<br>Duration: 45s",
+                "id": "windbite",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Windbite    \n            Level Req.: 30    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals wind damage with a potency of 60.<br>Additional Effect: Wind damage over time<br>Potency: 20<br>Duration: 45s",
+                "potency": "60",
+                "": "20",
+                "duration": "45",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 45,
+                "potencyNumeric": 60,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7744e7d846192e0c01c11c8854e6701d3a1000e1.png",
@@ -5931,8 +10803,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants Mage's Ballad to self and all party members within 50 yalms, increasing damage dealt by 1%.<br>Duration: 45s<br>Additional Effect: 80% chance to grant Repertoire<br>This effect can trigger repeatedly while singing the Mage's Ballad.<br>Repertoire Effect: Reduces the recast time of Heartbreak Shot and Rain of Death by 7.5s<br>Additional Effect: Grants Mage's Coda<br>Can only be executed while in combat.",
+                "id": "mage'SBallad",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Mage's Ballad    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants Mage's Ballad to self and all party members within 50 yalms, increasing damage dealt by 1%.<br>Duration: 45s<br>Additional Effect: 80% chance to grant Repertoire<br>This effect can trigger repeatedly while singing the Mage's Ballad.<br>Repertoire Effect: Reduces the recast time of Heartbreak Shot and Rain of Death by 7.5s<br>Additional Effect: Grants Mage's Coda<br>Can only be executed while in combat.",
+                "duration": "45",
+                "grants": {
+                    "mage'scoda": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 45,
+                "grantsNumeric": {
+                    "mage'scoda": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e2358f71a46fe53449fdff7c7e42bb99c51987ca.png",
@@ -5943,8 +10831,18 @@ export default {
                 "recast": "45s",
                 "cost": "-",
                 "effect": "Removes one select detrimental effect from self or target party member. If the target is not enfeebled, a barrier is created nullifying the target's next detrimental effect suffered.<br>Duration: 30s",
+                "id": "theWarden'SPaean",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: The Warden's Paean    \n            Level Req.: 35    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 45s          \n            Cost: -      \n            Effect: Removes one select detrimental effect from self or target party member. If the target is not enfeebled, a barrier is created nullifying the target's next detrimental effect suffered.<br>Duration: 30s",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 45
+                "recastNumeric": 45,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/28e7d01b94a703869a9bfae6f06864154f1bd2f3.png",
@@ -5955,8 +10853,26 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants Barrage, allowing the use of Refulgent Arrow and Shadowbite. Upon execution, Refulgent Arrow will strike the selected target three times, while Shadowbite's potency will be increased to 270.<br>Duration: 10s<br>Additional Effect: Grants Resonant Arrow Ready<br>Duration: 30s",
+                "id": "barrage",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Barrage    \n            Level Req.: 38    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants Barrage, allowing the use of Refulgent Arrow and Shadowbite. Upon execution, Refulgent Arrow will strike the selected target three times, while Shadowbite's potency will be increased to 270.<br>Duration: 10s<br>Additional Effect: Grants Resonant Arrow Ready<br>Duration: 30s",
+                "potency": "be",
+                "duration": "30",
+                "grants": {
+                    "resonantarrowready": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "potencyNumeric": 0,
+                "grantsNumeric": {
+                    "resonantarrowready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d8e2b6d980867d94b2c2f3b5067e50dede5b9064.png",
@@ -5967,8 +10883,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants Army's Paeon to self and all party members within 50 yalms, increasing direct hit rate by 3%.<br>Duration: 45s<br>Additional Effect: 80% chance to grant Repertoire<br>This effect can trigger repeatedly while singing the Army's Paeon.<br>Repertoire Effect: Reduces weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay by 4%<br>Can be stacked up to 4 times.<br>Additional Effect: Grants Army's Coda<br>Can only be executed while in combat.",
+                "id": "army'SPaeon",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Army's Paeon    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants Army's Paeon to self and all party members within 50 yalms, increasing direct hit rate by 3%.<br>Duration: 45s<br>Additional Effect: 80% chance to grant Repertoire<br>This effect can trigger repeatedly while singing the Army's Paeon.<br>Repertoire Effect: Reduces weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay by 4%<br>Can be stacked up to 4 times.<br>Additional Effect: Grants Army's Coda<br>Can only be executed while in combat.",
+                "duration": "45",
+                "grants": {
+                    "army'scoda": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 45,
+                "grantsNumeric": {
+                    "army'scoda": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/86a4368f7c70f8ff48ac30768d6ee6253c73b3f5.png",
@@ -5979,8 +10911,18 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100 to target and all enemies nearby it.<br>Maximum Charges: 3<br>Shares a recast timer with Heartbreak Shot.",
+                "id": "rainOfDeath",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rain of Death    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100 to target and all enemies nearby it.<br>Maximum Charges: 3<br>Shares a recast timer with Heartbreak Shot.",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0b50ad3e2e20b0d9a5478c296c861592f0eccd41.png",
@@ -5991,8 +10933,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases direct hit rate of self and all nearby party members by 20%.<br>Duration: 20s",
+                "id": "battleVoice",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Battle Voice    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases direct hit rate of self and all nearby party members by 20%.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3f0462d7211269eb0dc49978c35f58e4e1077aae.png",
@@ -6003,8 +10955,24 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants the Wanderer's Minuet to self and all party members within 50 yalms, increasing critical hit rate by 2%.<br>Duration: 45s<br>Additional Effect: 80% chance to grant Repertoire<br>This effect can trigger repeatedly while singing the Wanderer's Minuet.<br>Repertoire Effect: Allows execution of Pitch Perfect<br>Can be stacked up to 3 times.<br>Additional Effect: Grants Wanderer's Coda<br>Can only be executed while in combat.",
+                "id": "theWanderer'SMinuet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: The Wanderer's Minuet    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants the Wanderer's Minuet to self and all party members within 50 yalms, increasing critical hit rate by 2%.<br>Duration: 45s<br>Additional Effect: 80% chance to grant Repertoire<br>This effect can trigger repeatedly while singing the Wanderer's Minuet.<br>Repertoire Effect: Allows execution of Pitch Perfect<br>Can be stacked up to 3 times.<br>Additional Effect: Grants Wanderer's Coda<br>Can only be executed while in combat.",
+                "duration": "45",
+                "grants": {
+                    "wanderer'scoda": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 45,
+                "grantsNumeric": {
+                    "wanderer'scoda": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4b5cb786bc03d337b39054027f6087b4f7cb6882.png",
@@ -6015,8 +10983,16 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Delivers an attack to the target and all enemies nearby it. Potency varies with number of Repertoire stacks, dealing full damage for the first enemy, and 50% less for all remaining enemies.<br>1 Repertoire Stack: 100<br>2 Repertoire Stacks: 220<br>3 Repertoire Stacks: 360<br>Can only be executed when the Wanderer's Minuet is active and you have at least one stack of Repertoire.",
+                "id": "pitchPerfect",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Pitch Perfect    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Delivers an attack to the target and all enemies nearby it. Potency varies with number of Repertoire stacks, dealing full damage for the first enemy, and 50% less for all remaining enemies.<br>1 Repertoire Stack: 100<br>2 Repertoire Stacks: 220<br>3 Repertoire Stacks: 360<br>Can only be executed when the Wanderer's Minuet is active and you have at least one stack of Repertoire.",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/df058855e5500505c31eda4041f74e8fe4dbdb76.png",
@@ -6027,8 +11003,18 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 260.",
+                "id": "empyrealArrow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Empyreal Arrow    \n            Level Req.: 54    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 260.",
+                "potency": "260",
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "potencyNumeric": 260,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3224b272a8cb080df1f93bfaf11d1cfec05533d8.png",
@@ -6039,8 +11025,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Additional Effect: If the target is suffering from a Caustic Bite or Stormbite effect inflicted by you, the effect timer is reset<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "ironJaws",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Iron Jaws    \n            Level Req.: 56    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Additional Effect: If the target is suffering from a Caustic Bite or Stormbite effect inflicted by you, the effect timer is reset<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "100",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f39927d0bec5c6d20e72bddd59b9a9f250c99e2c.png",
@@ -6051,8 +11049,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 400.",
+                "id": "sidewinder",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sidewinder    \n            Level Req.: 60    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 400.",
+                "potency": "400",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "potencyNumeric": 400,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6618d7a1a2770ce51edecf1c26a2937b5fc95963.png",
@@ -6063,8 +11071,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces damage taken by self and nearby party members by 15%.<br>Duration: 15s<br>Effect cannot be stacked with machinist's Tactician or dancer's Shield Samba.",
+                "id": "troubadour",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Troubadour    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces damage taken by self and nearby party members by 15%.<br>Duration: 15s<br>Effect cannot be stacked with machinist's Tactician or dancer's Shield Samba.",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d9dd6ba8d37d6319c1eafd39f665bfb7dc6953d5.png",
@@ -6075,8 +11093,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 150.<br>Additional Effect: Poison<br>Potency: 20<br>Duration: 45s<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "causticBite",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Caustic Bite    \n            Level Req.: 64    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 150.<br>Additional Effect: Poison<br>Potency: 20<br>Duration: 45s<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "150",
+                "": "20",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f40a7b8d145d3419b05d7c491c388a448773c995.png",
@@ -6087,8 +11118,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals wind damage with a potency of 100.<br>Additional Effect: Wind damage over time<br>Potency: 25<br>Duration: 45s<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "stormbite",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Stormbite    \n            Level Req.: 64    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals wind damage with a potency of 100.<br>Additional Effect: Wind damage over time<br>Potency: 25<br>Duration: 45s<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "100",
+                "": "25",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/03c3c2cabca1caf35d1c9a6ef8d0fe150e03762c.png",
@@ -6099,8 +11143,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases HP recovery via healing actions by 15% for self and nearby party members.<br>Duration: 15s",
+                "id": "nature'SMinne",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Nature's Minne    \n            Level Req.: 66    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases HP recovery via healing actions by 15% for self and nearby party members.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3595a008f1495d37a1cf915ecd72b10754e1fbc9.png",
@@ -6111,8 +11165,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 280.<br>Can only be executed when under the effect of Hawk's Eye.",
+                "id": "refulgentArrow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Refulgent Arrow    \n            Level Req.: 70    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 280.<br>Can only be executed when under the effect of Hawk's Eye.",
+                "potency": "280",
+                "buffRequirement": "hawk'seye",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 280,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/88f59edc609d2adbd323ced0d409048e30ca0b35.png",
@@ -6123,8 +11188,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 170 to target and all enemies nearby it.<br>Barrage Potency: 270<br>Can only be executed when under the effect of Hawk's Eye.",
+                "id": "shadowbite",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Shadowbite    \n            Level Req.: 72    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 170 to target and all enemies nearby it.<br>Barrage Potency: 270<br>Can only be executed when under the effect of Hawk's Eye.",
+                "potency": "170",
+                "barrage": "270",
+                "buffRequirement": "hawk'seye",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 170,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5690bdb5a291ff736672ec4e52eb99fbed475e94.png",
@@ -6135,8 +11212,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "burstShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Burst Shot    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "220",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7f89a5408c4dec6ee1ccdc71968eed0c0a3e97bc.png",
@@ -6147,8 +11236,30 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 120 to all enemies in a straight line before you.<br>Soul Voice Gauge Cost: 20 <br>Potency increases up to 600 as Soul Voice Gauge exceeds minimum cost.<br>Additional Effect: Grants Blast Arrow Ready upon execution while Soul Voice Gauge is 80 or higher<br>Duration: 10s<br>Consumes Soul Voice Gauge upon execution.",
+                "id": "apexArrow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Apex Arrow    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 120 to all enemies in a straight line before you.<br>Soul Voice Gauge Cost: 20 <br>Potency increases up to 600 as Soul Voice Gauge exceeds minimum cost.<br>Additional Effect: Grants Blast Arrow Ready upon execution while Soul Voice Gauge is 80 or higher<br>Duration: 10s<br>Consumes Soul Voice Gauge upon execution.",
+                "potency": "120",
+                "SoulVoice": -20,
+                "Potencyincreasesupto600asSoulVoice": null,
+                "grants": {
+                    "blastarrowreadyuponexecutionwhilesoulvoicegaugeis80orhigher": -1
+                },
+                "AdditionalEffect:GrantsBlastArrowReadyuponexecutionwhileSoulVoice": null,
+                "duration": "10",
+                "ConsumesSoulVoice": null,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 10,
+                "potencyNumeric": 120,
+                "grantsNumeric": {
+                    "blastarrowreadyuponexecutionwhilesoulvoicegaugeis80orhigher": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3efef1c2c0b7ffb04ab2a5e4d167bdad1fa69906.png",
@@ -6159,8 +11270,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130 to all enemies in a cone before you.<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "id": "ladonsbite",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Ladonsbite    \n            Level Req.: 82    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130 to all enemies in a cone before you.<br>Additional Effect: 35% chance of granting Hawk's Eye<br>Duration: 30s",
+                "potency": "130",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3d00d8fc59c62a0ebd964ad501cc401abddc3105.png",
@@ -6171,8 +11294,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 600 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Blast Arrow Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Apex Arrow changes to Blast Arrow when requirements for execution are met.",
+                "id": "blastArrow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blast Arrow    \n            Level Req.: 86    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 600 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Blast Arrow Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Apex Arrow changes to Blast Arrow when requirements for execution are met.",
+                "potency": "600",
+                "buffRequirement": "blastarrowready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/38d93335592c001b3839ad49b743bb4f4341eb83.png",
@@ -6183,8 +11317,24 @@ export default {
                 "recast": "110s",
                 "cost": "-",
                 "effect": "Increases damage dealt by self and nearby party members.<br>Duration: 20s<br>Effectiveness is determined by the number of different Coda active in the Song Gauge.<br>1 Coda: 2%<br>2 Coda: 4%<br>3 Coda: 6%<br>Additional Effect: Grants Radiant Encore Ready<br>Duration: 30s<br>Can only be executed when at least 1 coda is active.",
+                "id": "radiantFinale",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Radiant Finale    \n            Level Req.: 90    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 110s          \n            Cost: -      \n            Effect: Increases damage dealt by self and nearby party members.<br>Duration: 20s<br>Effectiveness is determined by the number of different Coda active in the Song Gauge.<br>1 Coda: 2%<br>2 Coda: 4%<br>3 Coda: 6%<br>Additional Effect: Grants Radiant Encore Ready<br>Duration: 30s<br>Can only be executed when at least 1 coda is active.",
+                "duration": "30",
+                "grants": {
+                    "radiantencoreready": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 110
+                "recastNumeric": 110,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "radiantencoreready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c0a5370256054855bc11136374ddbd388c3f8c98.png",
@@ -6195,8 +11345,18 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 180.<br>Maximum Charges: 3<br>Shares a recast timer with Rain of Death.",
+                "id": "heartbreakShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heartbreak Shot    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 180.<br>Maximum Charges: 3<br>Shares a recast timer with Rain of Death.",
+                "potency": "180",
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "potencyNumeric": 180,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5ecc6e2f2f492310758f85277b00eb134eec6c68.png",
@@ -6207,8 +11367,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Resonant Arrow Ready.",
+                "id": "resonantArrow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Resonant Arrow    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Resonant Arrow Ready.",
+                "potency": "600",
+                "buffRequirement": "resonantarrowready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f2f516fd00c23f16a32c6278b6d9ebd7481d41a3.png",
@@ -6219,8 +11390,17 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it.<br>Potency is determined by the number of different Coda consumed in the Radiant Finale executed prior, dealing full damage for the first enemy, and 50% less for all remaining enemies.<br>1 Coda: 500<br>2 Coda: 600<br>3 Coda: 900<br>Can only be executed while under the effect of Radiant Encore Ready.",
+                "id": "radiantEncore",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Radiant Encore    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it.<br>Potency is determined by the number of different Coda consumed in the Radiant Finale executed prior, dealing full damage for the first enemy, and 50% less for all remaining enemies.<br>1 Coda: 500<br>2 Coda: 600<br>3 Coda: 900<br>Can only be executed while under the effect of Radiant Encore Ready.",
+                "buffRequirement": "radiantencoreready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2a6b7be8517f51d8cbcc60be2ae5970668f515eb.png",
@@ -6231,8 +11411,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Afflicts target with Heavy +40%.<br>Duration: 10s",
+                "id": "legGraze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Leg Graze    \n            Level Req.: 6    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Afflicts target with Heavy +40%.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b79d78f1ed471ace5708898e3388062fbd555fb.png",
@@ -6243,8 +11433,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly restores own HP.<br>Cure Potency: 800",
+                "id": "secondWind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Second Wind    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly restores own HP.<br>Cure Potency: 800",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8b1f979d2b1428f9791f54ad0e429ea94a8d95d6.png",
@@ -6255,8 +11453,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Binds target.<br>Duration: 10s<br>Cancels auto-attack upon execution.<br>Target unbound if damage taken.",
+                "id": "footGraze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Foot Graze    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Binds target.<br>Duration: 10s<br>Cancels auto-attack upon execution.<br>Target unbound if damage taken.",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fb8b0f0ca18af4362d27f6699579bd5a18b40137.png",
@@ -6267,8 +11475,18 @@ export default {
                 "recast": "5s",
                 "cost": "-",
                 "effect": "Increases movement speed of self and nearby party members.<br>Duration: 30s<br>Effect ends when enmity is generated. Has no effect in battle.",
+                "id": "peloton",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Peloton    \n            Level Req.: 20    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 5s          \n            Cost: -      \n            Effect: Increases movement speed of self and nearby party members.<br>Duration: 30s<br>Effect ends when enmity is generated. Has no effect in battle.",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 5
+                "recastNumeric": 5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/748fe5fc8262b58e9a35aa9e4d40e67a0dd006a5.png",
@@ -6279,8 +11497,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Interrupts the use of a target's action.",
+                "id": "headGraze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Head Graze    \n            Level Req.: 24    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Interrupts the use of a target's action.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -6291,8 +11517,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -6455,8 +11691,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>Additional Effect: Increases Heat Gauge by 5",
+                "id": "splitShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Split Shot    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>Additional Effect: Increases Heat Gauge by 5",
+                "potency": "140",
+                "Heat": "5",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/63bb059658f193d08de8cd45e4a95e7bed0418b8.png",
@@ -6467,8 +11714,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Split Shot or Heated Split Shot<br>Combo Potency: 210<br>Combo Bonus: Increases Heat Gauge by 5",
+                "id": "slugShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Slug Shot    \n            Level Req.: 2    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Combo Action: Split Shot or Heated Split Shot<br>Combo Potency: 210<br>Combo Bonus: Increases Heat Gauge by 5",
+                "potency": "100",
+                "comboAction": "Split Shot or Heated Split Shot",
+                "comboPotency": "210",
+                "comboBonus": {
+                    "Heat": "5"
+                },
+                "Heat": "5",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 210,
+                "comboBonusNumeric": {
+                    "Heat": 5
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b297b6034baa7347d3a53a12910b102914ce3c3e.png",
@@ -6479,8 +11746,19 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 240.<br>Additional Effect: Increases Battery Gauge by 20<br>This weaponskill does not share a recast timer with any other actions.",
+                "id": "hotShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hot Shot    \n            Level Req.: 4    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 240.<br>Additional Effect: Increases Battery Gauge by 20<br>This weaponskill does not share a recast timer with any other actions.",
+                "potency": "240",
+                "Battery": "20",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "potencyNumeric": 240,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/55906cd43fffdf7bcc09790b1b02b19edc6b2e8e.png",
@@ -6491,8 +11769,18 @@ export default {
                 "recast": "55s",
                 "cost": "-",
                 "effect": "Guarantees that next weaponskill is a critical direct hit.<br>Duration: 5s<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>This action does not affect damage over time effects.<br>Maximum Charges: 2",
+                "id": "reassemble",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reassemble    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 55s          \n            Cost: -      \n            Effect: Guarantees that next weaponskill is a critical direct hit.<br>Duration: 5s<br>Increases damage dealt when under an effect that raises critical hit rate or direct hit rate.<br>This action does not affect damage over time effects.<br>Maximum Charges: 2",
+                "duration": "5",
                 "castNumeric": 0,
-                "recastNumeric": 55
+                "recastNumeric": 55,
+                "durationNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e6959a3306b601fc9e5987712f6d9ea247a7a566.png",
@@ -6503,8 +11791,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130.<br>Maximum Charges: 3",
+                "id": "gaussRound",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Gauss Round    \n            Level Req.: 15    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130.<br>Maximum Charges: 3",
+                "potency": "130",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7c4e991ed4e6b585ceb2dda1c03dec0278ff28f0.png",
@@ -6515,8 +11813,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140 to all enemies in a cone before you.<br>Additional Effect: Increases Heat Gauge by 5",
+                "id": "spreadShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Spread Shot    \n            Level Req.: 18    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140 to all enemies in a cone before you.<br>Additional Effect: Increases Heat Gauge by 5",
+                "potency": "140",
+                "Heat": "5",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d6d762f987ab51e9840cbf5229251838b16078b5.png",
@@ -6527,8 +11836,31 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Slug Shot or Heated Slug Shot<br>Combo Potency: 270<br>Combo Bonus: Increases Heat Gauge by 5<br>Combo Bonus: Increases Battery Gauge by 10",
+                "id": "cleanShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Clean Shot    \n            Level Req.: 26    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Combo Action: Slug Shot or Heated Slug Shot<br>Combo Potency: 270<br>Combo Bonus: Increases Heat Gauge by 5<br>Combo Bonus: Increases Battery Gauge by 10",
+                "potency": "100",
+                "comboAction": "Slug Shot or Heated Slug Shot",
+                "comboPotency": "270",
+                "comboBonus": {
+                    "Heat": "5",
+                    "Battery": "10"
+                },
+                "Heat": "5",
+                "Battery": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 270,
+                "comboBonusNumeric": {
+                    "Heat": 5,
+                    "Battery": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/092ad12e9867fd64a23a705bd0dd67215b793ae5.png",
@@ -6539,8 +11871,25 @@ export default {
                 "recast": "10s",
                 "cost": "-",
                 "effect": "Grants 5 stacks of Overheated, each stack allowing the execution of Blazing Shot or Auto Crossbow.<br>Duration: 10s<br>Overheated Effect: Increases the potency of single-target weaponskills by 20<br>Heat Gauge Cost: 50<br>Overheated effect only applicable to machinist job actions.",
+                "id": "hypercharge",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Hypercharge    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 10s          \n            Cost: -      \n            Effect: Grants 5 stacks of Overheated, each stack allowing the execution of Blazing Shot or Auto Crossbow.<br>Duration: 10s<br>Overheated Effect: Increases the potency of single-target weaponskills by 20<br>Heat Gauge Cost: 50<br>Overheated effect only applicable to machinist job actions.",
+                "grants": {
+                    "overheated": "5"
+                },
+                "duration": "10",
+                "Heat": -50,
                 "castNumeric": 0,
-                "recastNumeric": 10
+                "recastNumeric": 10,
+                "durationNumeric": 10,
+                "grantsNumeric": {
+                    "overheated": 5
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/868f1e47a66f3d747213accc2b7d37f2c4464f8e.png",
@@ -6551,8 +11900,18 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 200.<br>Additional Effect: Reduces the recast time of both Gauss Round and Ricochet by 15s<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "id": "heatBlast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heat Blast    \n            Level Req.: 35    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 200.<br>Additional Effect: Reduces the recast time of both Gauss Round and Ricochet by 15s<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "potency": "200",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 200,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7d6539171b0c158f7ca5e1ed4a112e6336601646.png",
@@ -6563,8 +11922,23 @@ export default {
                 "recast": "6s",
                 "cost": "-",
                 "effect": "Deploys a single-target battle turret which attacks using Volley Fire, dealing damage with a potency of 35.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 75.<br>Battery Gauge Cost: 50<br>Duration: 9s<br>Consumes Battery Gauge upon execution.<br>Shuts down when time expires or upon execution of Rook Overdrive.<br>Shares a recast timer with Rook Overdrive.",
+                "id": "rookAutoturret",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rook Autoturret    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 6s          \n            Cost: -      \n            Effect: Deploys a single-target battle turret which attacks using Volley Fire, dealing damage with a potency of 35.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 75.<br>Battery Gauge Cost: 50<br>Duration: 9s<br>Consumes Battery Gauge upon execution.<br>Shuts down when time expires or upon execution of Rook Overdrive.<br>Shares a recast timer with Rook Overdrive.",
+                "potency": "35",
+                "PotencyincreasesasBattery": null,
+                "Battery": -50,
+                "duration": "9",
+                "ConsumesBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 6
+                "recastNumeric": 6,
+                "durationNumeric": 9,
+                "potencyNumeric": 35,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b2703467384768bbc34517f6137898961ee5db6f.png",
@@ -6575,8 +11949,18 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Orders the rook autoturret to use Rook Overload.<br>Rook Overload Potency: 160<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 320.<br>The rook autoturret shuts down after execution. If this action is not used manually while the rook autoturret is active, it will be triggered automatically immediately before shutting down.<br>Shares a recast timer with Rook Autoturret.",
+                "id": "rookOverdrive",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rook Overdrive    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Orders the rook autoturret to use Rook Overload.<br>Rook Overload Potency: 160<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 320.<br>The rook autoturret shuts down after execution. If this action is not used manually while the rook autoturret is active, it will be triggered automatically immediately before shutting down.<br>Shares a recast timer with Rook Autoturret.",
+                "rookoverload": "160",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1ab647949d0dd2caed010390a84f687390e762d9.png",
@@ -6587,8 +11971,19 @@ export default {
                 "recast": "-",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 160.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 320.<br>The rook autoturret shuts down after execution. If this action is not used manually while the rook autoturret is active, it will be triggered automatically immediately before shutting down.<br><br>※This action cannot be assigned to a hotbar.",
+                "id": "rookOverload",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Rook Overload    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: -          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 160.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 320.<br>The rook autoturret shuts down after execution. If this action is not used manually while the rook autoturret is active, it will be triggered automatically immediately before shutting down.<br><br>※This action cannot be assigned to a hotbar.",
+                "potency": "160",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 0
+                "recastNumeric": 0,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6d73e45fbbfb35ad0a4f8b4a73753e6a06a37651.png",
@@ -6599,8 +11994,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Covers target's body in a slow-burning pitch. Action is changed to Detonator for the duration of the effect.<br>Deals damage when time expires or upon executing Detonator.<br>Potency is increased by 240 for each of your own weaponskills you land prior to the end of the effect.<br>Can be stacked up to 6 times.<br>Duration: 10s",
+                "id": "wildfire",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Wildfire    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Covers target's body in a slow-burning pitch. Action is changed to Detonator for the duration of the effect.<br>Deals damage when time expires or upon executing Detonator.<br>Potency is increased by 240 for each of your own weaponskills you land prior to the end of the effect.<br>Can be stacked up to 6 times.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4fd81a7627fd0706b03ca3685e383bf8a19518c9.png",
@@ -6611,8 +12016,17 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Ends the effect of Wildfire, dealing damage to the target.<br>Can only be executed while under the effect of Wildfire.<br><br>※This action cannot be assigned to a hotbar.<br>※Wildfire changes to Detonator when requirements for execution are met.",
+                "id": "detonator",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Detonator    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Ends the effect of Wildfire, dealing damage to the target.<br>Can only be executed while under the effect of Wildfire.<br><br>※This action cannot be assigned to a hotbar.<br>※Wildfire changes to Detonator when requirements for execution are met.",
+                "buffRequirement": "wildfire",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5556960a2e8ce389c2117d13c6d182f41943c3c9.png",
@@ -6623,8 +12037,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Deals damage to all nearby enemies with a potency of 130 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3",
+                "id": "ricochet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Ricochet    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Deals damage to all nearby enemies with a potency of 130 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3",
+                "potency": "130",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/73035ee439401fc6216782e74ce892f061d71214.png",
@@ -6635,8 +12059,18 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 160 to all enemies in a cone before you.<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "id": "autoCrossbow",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Auto Crossbow    \n            Level Req.: 52    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 160 to all enemies in a cone before you.<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "potency": "160",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cac7ff217edfabca410218ec69323060aed0caaa.png",
@@ -6647,8 +12081,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.<br>Additional Effect: Increases Heat Gauge by 5",
+                "id": "heatedSplitShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heated Split Shot    \n            Level Req.: 54    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.<br>Additional Effect: Increases Heat Gauge by 5",
+                "potency": "220",
+                "Heat": "5",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/570cc0bbf4a1478e35f52075640fd9ec6c7ed0f6.png",
@@ -6659,8 +12104,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Reduces damage taken by self and nearby party members by 15%.<br>Duration: 15s<br>Effect cannot be stacked with bard's Troubadour or dancer's Shield Samba.",
+                "id": "tactician",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Tactician    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Reduces damage taken by self and nearby party members by 15%.<br>Duration: 15s<br>Effect cannot be stacked with bard's Troubadour or dancer's Shield Samba.",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ecb2da5330a2f9bfa05671f5fa843daecde471a6.png",
@@ -6671,8 +12126,18 @@ export default {
                 "recast": "20s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 600.<br>Maximum Charges: 2<br>Shares a recast timer with Bioblaster.",
+                "id": "drill",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Drill    \n            Level Req.: 58    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 20s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 600.<br>Maximum Charges: 2<br>Shares a recast timer with Bioblaster.",
+                "potency": "600",
                 "castNumeric": 0,
-                "recastNumeric": 20
+                "recastNumeric": 20,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bb394365a76fac1c38ff540c8c81881d79680b62.png",
@@ -6683,8 +12148,28 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Heated Split Shot<br>Combo Potency: 320<br>Combo Bonus: Increases Heat Gauge by 5",
+                "id": "heatedSlugShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heated Slug Shot    \n            Level Req.: 60    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>Combo Action: Heated Split Shot<br>Combo Potency: 320<br>Combo Bonus: Increases Heat Gauge by 5",
+                "potency": "140",
+                "comboAction": "Heated Split Shot",
+                "comboPotency": "320",
+                "comboBonus": {
+                    "Heat": "5"
+                },
+                "Heat": "5",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 320,
+                "comboBonusNumeric": {
+                    "Heat": 5
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/94eaa7aadfa4d857c00551af690f42bb5d7a4a94.png",
@@ -6695,8 +12180,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Lowers target's damage dealt by 10%.<br>Duration: 10s",
+                "id": "dismantle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Dismantle    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Lowers target's damage dealt by 10%.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/57fa0a309dc4d53d5edc52aad068a93788715c4c.png",
@@ -6707,8 +12202,31 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Heated Slug Shot<br>Combo Potency: 400<br>Combo Bonus: Increases Heat Gauge by 5<br>Combo Bonus: Increases Battery Gauge by 10",
+                "id": "heatedCleanShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Heated Clean Shot    \n            Level Req.: 64    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 140.<br>Combo Action: Heated Slug Shot<br>Combo Potency: 400<br>Combo Bonus: Increases Heat Gauge by 5<br>Combo Bonus: Increases Battery Gauge by 10",
+                "potency": "140",
+                "comboAction": "Heated Slug Shot",
+                "comboPotency": "400",
+                "comboBonus": {
+                    "Heat": "5",
+                    "Battery": "10"
+                },
+                "Heat": "5",
+                "Battery": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "comboPotencyNumeric": 400,
+                "comboBonusNumeric": {
+                    "Heat": 5,
+                    "Battery": 10
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4a4a5d764fa65a4514f89fdc77ac7956e3f2e7de.png",
@@ -6719,8 +12237,26 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants Hypercharged.<br>Duration: 30s<br>Additional Effect: Grants Full Metal Machinist<br>Duration: 30s<br>Can only be executed while in combat.",
+                "id": "barrelStabilizer",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Barrel Stabilizer    \n            Level Req.: 66    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants Hypercharged.<br>Duration: 30s<br>Additional Effect: Grants Full Metal Machinist<br>Duration: 30s<br>Can only be executed while in combat.",
+                "grants": {
+                    "hypercharged.": -1,
+                    "fullmetalmachinist": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "hypercharged.": -1,
+                    "fullmetalmachinist": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c70341dbb174a9c43c76249ae4b7c40aefbbf40a.png",
@@ -6731,8 +12267,18 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 220.<br>Additional Effect: Reduces the recast time of both Double Check and Checkmate by 15s<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "id": "blazingShot",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blazing Shot    \n            Level Req.: 68    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 220.<br>Additional Effect: Reduces the recast time of both Double Check and Checkmate by 15s<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions.",
+                "potency": "220",
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 220,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2d88d4346b2dc86970c797bed3cc8ca902c26593.png",
@@ -6743,8 +12289,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers damage over time to all enemies in a cone before you.<br>Potency: 80<br>Duration: 10s<br>Effect ends upon using another action or moving (including facing a different direction).<br>Cancels auto-attack upon execution.<br>Triggers the cooldown of weaponskills upon execution. Cannot be executed during the cooldown of weaponskills.",
+                "id": "flamethrower",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Flamethrower    \n            Level Req.: 70    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers damage over time to all enemies in a cone before you.<br>Potency: 80<br>Duration: 10s<br>Effect ends upon using another action or moving (including facing a different direction).<br>Cancels auto-attack upon execution.<br>Triggers the cooldown of weaponskills upon execution. Cannot be executed during the cooldown of weaponskills.",
+                "": "80",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/23329a987c4b36fd72121e3362363a179a16d8d0.png",
@@ -6755,8 +12312,21 @@ export default {
                 "recast": "20s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 50 to all enemies in a cone before you.<br>Additional Effect: Damage over time<br>Potency: 50<br>Duration: 15s<br>Maximum Charges: 2<br>Shares a recast timer with Drill.",
+                "id": "bioblaster",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Bioblaster    \n            Level Req.: 72    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 20s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 50 to all enemies in a cone before you.<br>Additional Effect: Damage over time<br>Potency: 50<br>Duration: 15s<br>Maximum Charges: 2<br>Shares a recast timer with Drill.",
+                "potency": "50",
+                "durationPotency": 16,
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 20
+                "recastNumeric": 20,
+                "durationNumeric": 15,
+                "potencyNumeric": 50,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2d5e4d7a3787c164fa36605a5e868143326f5b9a.png",
@@ -6767,8 +12337,19 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 600.<br>Additional Effect: Increases Battery Gauge by 20<br>This weaponskill does not share a recast timer with any other actions.",
+                "id": "airAnchor",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Air Anchor    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 600.<br>Additional Effect: Increases Battery Gauge by 20<br>This weaponskill does not share a recast timer with any other actions.",
+                "potency": "600",
+                "Battery": "20",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6b7ba10a27554510b8d25429592d040331405b14.png",
@@ -6779,8 +12360,21 @@ export default {
                 "recast": "6s",
                 "cost": "-",
                 "effect": "Deploys an Automaton Queen to fight at your side.<br>Potency of Automaton Queen actions increases as Battery Gauge exceeds required cost at time of deployment.<br>Battery Gauge Cost: 50<br>Duration: 12s<br>Consumes Battery Gauge upon execution.<br>Shuts down when time expires or upon execution of Queen Overdrive.<br>Shares a recast timer with Queen Overdrive.",
+                "id": "automatonQueen",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Automaton Queen    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 6s          \n            Cost: -      \n            Effect: Deploys an Automaton Queen to fight at your side.<br>Potency of Automaton Queen actions increases as Battery Gauge exceeds required cost at time of deployment.<br>Battery Gauge Cost: 50<br>Duration: 12s<br>Consumes Battery Gauge upon execution.<br>Shuts down when time expires or upon execution of Queen Overdrive.<br>Shares a recast timer with Queen Overdrive.",
+                "PotencyofAutomatonQueenactionsincreasesasBattery": null,
+                "Battery": -50,
+                "duration": "12",
+                "ConsumesBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 6
+                "recastNumeric": 6,
+                "durationNumeric": 12,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cc0d8c0798f0a092f546726f06a8deb067ad44d3.png",
@@ -6791,8 +12385,18 @@ export default {
                 "recast": "15s",
                 "cost": "-",
                 "effect": "Orders the Automaton Queen to use Pile Bunker.<br>Pile Bunker Potency: 340<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 680.<br>The Automaton Queen shuts down after execution. If this action is not used manually while the Automaton Queen is active, it will be triggered automatically immediately before shutting down.<br>Shares a recast timer with Automaton Queen.",
+                "id": "queenOverdrive",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Queen Overdrive    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 15s          \n            Cost: -      \n            Effect: Orders the Automaton Queen to use Pile Bunker.<br>Pile Bunker Potency: 340<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 680.<br>The Automaton Queen shuts down after execution. If this action is not used manually while the Automaton Queen is active, it will be triggered automatically immediately before shutting down.<br>Shares a recast timer with Automaton Queen.",
+                "pilebunker": "340",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 15
+                "recastNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/25db329264856ae1c870925c989bad8fa6ffa067.png",
@@ -6803,8 +12407,19 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 120.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 240.<br><br>※This action cannot be assigned to a hotbar.",
+                "id": "armPunch",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm Punch    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 120.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 240.<br><br>※This action cannot be assigned to a hotbar.",
+                "potency": "120",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 120,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c8df61cf6471343f9e55b57a9b06711155b298bf.png",
@@ -6815,8 +12430,19 @@ export default {
                 "recast": "3s",
                 "cost": "-",
                 "effect": "Rushes target and delivers an attack with a potency of 240.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 480.<br><br>※This action cannot be assigned to a hotbar.",
+                "id": "rollerDash",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Roller Dash    \n            Level Req.: 80    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 3s          \n            Cost: -      \n            Effect: Rushes target and delivers an attack with a potency of 240.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 480.<br><br>※This action cannot be assigned to a hotbar.",
+                "potency": "240",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 3
+                "recastNumeric": 3,
+                "potencyNumeric": 240,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7a8751b813d4db6533661dda2d9ba29810fa287f.png",
@@ -6827,8 +12453,19 @@ export default {
                 "recast": "-",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 340.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 680.<br>If this action is not used manually while the Automaton Queen is active, it will be triggered automatically immediately before shutting down.<br><br>※This action cannot be assigned to a hotbar.",
+                "id": "pileBunker",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Pile Bunker    \n            Level Req.: 80    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: -          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 340.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 680.<br>If this action is not used manually while the Automaton Queen is active, it will be triggered automatically immediately before shutting down.<br><br>※This action cannot be assigned to a hotbar.",
+                "potency": "340",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 0
+                "recastNumeric": 0,
+                "potencyNumeric": 340,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7a419e1dcf06b3d6fba2aef9afdb340db269a304.png",
@@ -6839,8 +12476,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 160 to all enemies in a cone before you.<br>Additional Effect: Increases Heat Gauge by 10",
+                "id": "scattergun",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Scattergun    \n            Level Req.: 82    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 160 to all enemies in a cone before you.<br>Additional Effect: Increases Heat Gauge by 10",
+                "potency": "160",
+                "Heat": "10",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/80549392e28c25336dff537fe4a5ef21da71d764.png",
@@ -6851,8 +12499,19 @@ export default {
                 "recast": "-",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 390.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 780.<br>The Automaton Queen shuts down after execution. If this action is not used manually while the Automaton Queen is active, it will be triggered automatically immediately before shutting down.<br><br>※This action cannot be assigned to a hotbar.",
+                "id": "crownedCollider",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Crowned Collider    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: -          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 390.<br>Potency increases as Battery Gauge exceeds required cost at time of deployment, up to a maximum of 780.<br>The Automaton Queen shuts down after execution. If this action is not used manually while the Automaton Queen is active, it will be triggered automatically immediately before shutting down.<br><br>※This action cannot be assigned to a hotbar.",
+                "potency": "390",
+                "PotencyincreasesasBattery": null,
                 "castNumeric": 0,
-                "recastNumeric": 0
+                "recastNumeric": 0,
+                "potencyNumeric": 390,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ebcc4c4bc77ed9eb835ca7ee6c1755052a997805.png",
@@ -6863,8 +12522,27 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 600 for the first enemy, and 65% less for all remaining enemies.<br>Additional Effect: Increases Battery Gauge by 20<br>Additional Effect: Grants Excavator Ready<br>Duration: 30s<br>This weaponskill does not share a recast timer with any other actions.",
+                "id": "chainSaw",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Chain Saw    \n            Level Req.: 90    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Delivers an attack to all enemies in a straight line before you with a potency of 600 for the first enemy, and 65% less for all remaining enemies.<br>Additional Effect: Increases Battery Gauge by 20<br>Additional Effect: Grants Excavator Ready<br>Duration: 30s<br>This weaponskill does not share a recast timer with any other actions.",
+                "potency": "600",
+                "Battery": "20",
+                "grants": {
+                    "excavatorready": -1
+                },
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 30,
+                "potencyNumeric": 600,
+                "grantsNumeric": {
+                    "excavatorready": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5de8d4517d7e5179cc341ecb2d0bb63e0d716492.png",
@@ -6875,8 +12553,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 160 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3",
+                "id": "doubleCheck",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Double Check    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 160 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3",
+                "potency": "160",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f44e0b84bfe54b08662b521becbb338225ea90c9.png",
@@ -6887,8 +12575,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 160 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3",
+                "id": "checkmate",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Checkmate    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 160 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3",
+                "potency": "160",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "potencyNumeric": 160,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6e221fc321a6d40ecac7a908c5b8c144c8c693a3.png",
@@ -6899,8 +12597,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack to target and all enemies nearby it with a potency of 600 for the first enemy, and 65% less for all remaining enemies.<br>Additional Effect: Increases Battery Gauge by 20<br>Can only be executed while under the effect of Excavator Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Chain Saw changes to Excavator when requirements for execution are met.",
+                "id": "excavator",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Excavator    \n            Level Req.: 96    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack to target and all enemies nearby it with a potency of 600 for the first enemy, and 65% less for all remaining enemies.<br>Additional Effect: Increases Battery Gauge by 20<br>Can only be executed while under the effect of Excavator Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Chain Saw changes to Excavator when requirements for execution are met.",
+                "potency": "600",
+                "Battery": "20",
+                "buffRequirement": "excavatorready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9c5bb54095373de5764bcfee0205f998f57b986b.png",
@@ -6911,8 +12621,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers a critical direct hit to target and all enemies nearby it with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>This action is not affected by Reassemble.<br>Can only be executed while under the effect of Full Metal Machinist.",
+                "id": "fullMetalField",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Full Metal Field    \n            Level Req.: 100    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers a critical direct hit to target and all enemies nearby it with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Damage dealt is increased when under an effect that raises critical hit rate or direct hit rate.<br>This action is not affected by Reassemble.<br>Can only be executed while under the effect of Full Metal Machinist.",
+                "potency": "900",
+                "buffRequirement": "fullmetalmachinist",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 900,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2a6b7be8517f51d8cbcc60be2ae5970668f515eb.png",
@@ -6923,8 +12644,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Afflicts target with Heavy +40%.<br>Duration: 10s",
+                "id": "legGraze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Leg Graze    \n            Level Req.: 6    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Afflicts target with Heavy +40%.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2b79d78f1ed471ace5708898e3388062fbd555fb.png",
@@ -6935,8 +12666,16 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Instantly restores own HP.<br>Cure Potency: 800",
+                "id": "secondWind",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Second Wind    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Instantly restores own HP.<br>Cure Potency: 800",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8b1f979d2b1428f9791f54ad0e429ea94a8d95d6.png",
@@ -6947,8 +12686,18 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Binds target.<br>Duration: 10s<br>Cancels auto-attack upon execution.<br>Target unbound if damage taken.",
+                "id": "footGraze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Foot Graze    \n            Level Req.: 10    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Binds target.<br>Duration: 10s<br>Cancels auto-attack upon execution.<br>Target unbound if damage taken.",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fb8b0f0ca18af4362d27f6699579bd5a18b40137.png",
@@ -6959,8 +12708,18 @@ export default {
                 "recast": "5s",
                 "cost": "-",
                 "effect": "Increases movement speed of self and nearby party members.<br>Duration: 30s<br>Effect ends when enmity is generated. Has no effect in battle.",
+                "id": "peloton",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Peloton    \n            Level Req.: 20    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 5s          \n            Cost: -      \n            Effect: Increases movement speed of self and nearby party members.<br>Duration: 30s<br>Effect ends when enmity is generated. Has no effect in battle.",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 5
+                "recastNumeric": 5,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/748fe5fc8262b58e9a35aa9e4d40e67a0dd006a5.png",
@@ -6971,8 +12730,16 @@ export default {
                 "recast": "30s",
                 "cost": "-",
                 "effect": "Interrupts the use of a target's action.",
+                "id": "headGraze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Head Graze    \n            Level Req.: 24    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 30s          \n            Cost: -      \n            Effect: Interrupts the use of a target's action.",
                 "castNumeric": 0,
-                "recastNumeric": 30
+                "recastNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/00ff21ad3e1fb26d7b292a9d912931e7ea64daa4.png",
@@ -6983,8 +12750,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "id": "arm'SLength",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Arm's Length    \n            Level Req.: 32    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -7138,8 +12915,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals ice damage with a potency of 180.<br>Additional Effect: Grants Umbral Ice or removes Astral Fire<br>Duration: 15s",
+                "id": "blizzard",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blizzard    \n            Level Req.: 1    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals ice damage with a potency of 180.<br>Additional Effect: Grants Umbral Ice or removes Astral Fire<br>Duration: 15s",
+                "potency": "180",
+                "grants": {
+                    "umbraliceorremovesastralfire": -1
+                },
+                "duration": "15",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 180,
+                "grantsNumeric": {
+                    "umbraliceorremovesastralfire": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0f0b18de207de52d394b2ca8cb990a38e96587e0.png",
@@ -7150,8 +12945,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals fire damage with a potency of 180.<br>Additional Effect: Grants Astral Fire or removes Umbral Ice<br>Duration: 15s<br>Additional Effect: 40% chance to grant Firestarter<br>Firestarter Effect: Next Fire III will cost no MP and have no cast time<br>Duration: 30s",
+                "id": "fire",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fire    \n            Level Req.: 2    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals fire damage with a potency of 180.<br>Additional Effect: Grants Astral Fire or removes Umbral Ice<br>Duration: 15s<br>Additional Effect: 40% chance to grant Firestarter<br>Firestarter Effect: Next Fire III will cost no MP and have no cast time<br>Duration: 30s",
+                "potency": "180",
+                "grants": {
+                    "astralfireorremovesumbralice": -1
+                },
+                "duration": "30",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 180,
+                "grantsNumeric": {
+                    "astralfireorremovesumbralice": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/11343c230e7ebd41588ca8f684cb99ee13809398.png",
@@ -7162,8 +12975,16 @@ export default {
                 "recast": "5s",
                 "cost": "-",
                 "effect": "Swaps Astral Fire with a single Umbral Ice, or Umbral Ice with a single Astral Fire.",
+                "id": "transpose",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Transpose    \n            Level Req.: 4    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 5s          \n            Cost: -      \n            Effect: Swaps Astral Fire with a single Umbral Ice, or Umbral Ice with a single Astral Fire.",
                 "castNumeric": 0,
-                "recastNumeric": 5
+                "recastNumeric": 5,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/db30f0fa05ce4f541f839c5b2c57cfe0e9fb77f8.png",
@@ -7174,8 +12995,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals lightning damage with a potency of 100.<br>Additional Effect: Lightning damage over time<br>Potency: 45<br>Duration: 24s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "id": "thunder",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thunder    \n            Level Req.: 6    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals lightning damage with a potency of 100.<br>Additional Effect: Lightning damage over time<br>Potency: 45<br>Duration: 24s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "potency": "100",
+                "": "45",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c4883e7698b37e901837be6a0bcc8de043847479.png",
@@ -7186,8 +13020,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals ice damage with a potency of 80 to target and all enemies nearby it.<br>Additional Effect: Grants Umbral Ice III and removes Astral Fire<br>Duration: 15s",
+                "id": "blizzardIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blizzard II    \n            Level Req.: 12    \n            Type: Spell     \n            Cast Time: 3s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals ice damage with a potency of 80 to target and all enemies nearby it.<br>Additional Effect: Grants Umbral Ice III and removes Astral Fire<br>Duration: 15s",
+                "potency": "80",
+                "grants": {
+                    "umbraliceiiiandremovesastralfire": -1
+                },
+                "duration": "15",
                 "castNumeric": 3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 80,
+                "grantsNumeric": {
+                    "umbraliceiiiandremovesastralfire": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9b763aecc46c5559bbbccadfe866fe42d56a9597.png",
@@ -7198,8 +13050,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals unaspected damage with a potency of 100.<br>Additional Effect: 20% chance potency will double",
+                "id": "scathe",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Scathe    \n            Level Req.: 15    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals unaspected damage with a potency of 100.<br>Additional Effect: 20% chance potency will double",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/8876f1b3cf116acf7138253e0193396c75698651.png",
@@ -7210,8 +13072,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "1500 MP",
                 "effect": "Deals fire damage with a potency of 80 to target and all enemies nearby it.<br>Additional Effect: Grants Astral Fire III and removes Umbral Ice<br>Duration: 15s",
+                "id": "fireIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fire II    \n            Level Req.: 18    \n            Type: Spell     \n            Cast Time: 3s      \n            Recast Time: 2.5s          \n            Cost: 1500 MP      \n            Effect: Deals fire damage with a potency of 80 to target and all enemies nearby it.<br>Additional Effect: Grants Astral Fire III and removes Umbral Ice<br>Duration: 15s",
+                "potency": "80",
+                "grants": {
+                    "astralfireiiiandremovesumbralice": -1
+                },
+                "duration": "15",
                 "castNumeric": 3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 80,
+                "grantsNumeric": {
+                    "astralfireiiiandremovesumbralice": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/67205b06f51ddd0e07f16441e38e90d59840f1b6.png",
@@ -7222,8 +13102,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals lightning damage with a potency of 60 to target and all enemies nearby it.<br>Additional Effect: Lightning damage over time<br>Potency: 30<br>Duration: 18s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "id": "thunderIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thunder II    \n            Level Req.: 26    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals lightning damage with a potency of 60 to target and all enemies nearby it.<br>Additional Effect: Lightning damage over time<br>Potency: 30<br>Duration: 18s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "potency": "60",
+                "": "30",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 60,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/75ed92265dc2dcc6fa1e0b8f22a01258799f222d.png",
@@ -7234,8 +13127,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Creates a barrier that nullifies damage totaling up to 30% of maximum HP.<br>Duration: 20s",
+                "id": "manaward",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Manaward    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Creates a barrier that nullifies damage totaling up to 30% of maximum HP.<br>Duration: 20s",
+                "duration": "20",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 20,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1b9ba4e020c77e1768d7d15d3c8aac1e7b7d88ea.png",
@@ -7246,8 +13149,31 @@ export default {
                 "recast": "100s",
                 "cost": "-",
                 "effect": "Fully restores MP.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Additional Effect: Grants Thunderhead<br>Duration: 30s<br>Additional Effect: Grants 3 Umbral Hearts<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Additional Effect: Grants Paradox<br>Can only be executed while under the effect of Astral Fire.",
+                "id": "manafont",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Manafont    \n            Level Req.: 30    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 100s          \n            Cost: -      \n            Effect: Fully restores MP.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Additional Effect: Grants Thunderhead<br>Duration: 30s<br>Additional Effect: Grants 3 Umbral Hearts<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Additional Effect: Grants Paradox<br>Can only be executed while under the effect of Astral Fire.",
+                "grants": {
+                    "astralfireiii": -1,
+                    "thunderhead": -1,
+                    "3umbralhearts": -1,
+                    "paradox": -1
+                },
+                "duration": "30",
+                "buffRequirement": "astralfire",
                 "castNumeric": 0,
-                "recastNumeric": 100
+                "recastNumeric": 100,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "astralfireiii": -1,
+                    "thunderhead": -1,
+                    "3umbralhearts": -1,
+                    "paradox": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3ff8dcabba57f6a697d5a86fc7490884b74eddff.png",
@@ -7258,8 +13184,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "2000 MP",
                 "effect": "Deals fire damage with a potency of 280.<br>Additional Effect: Grants Astral Fire III and removes Umbral Ice<br>Duration: 15s",
+                "id": "fireIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fire III    \n            Level Req.: 35    \n            Type: Spell     \n            Cast Time: 3.5s      \n            Recast Time: 2.5s          \n            Cost: 2000 MP      \n            Effect: Deals fire damage with a potency of 280.<br>Additional Effect: Grants Astral Fire III and removes Umbral Ice<br>Duration: 15s",
+                "potency": "280",
+                "grants": {
+                    "astralfireiiiandremovesumbralice": -1
+                },
+                "duration": "15",
                 "castNumeric": 3.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 280,
+                "grantsNumeric": {
+                    "astralfireiiiandremovesumbralice": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6dbb819d3f64b93d6f6ffa23a73101c79592ae2f.png",
@@ -7270,8 +13214,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals ice damage with a potency of 280.<br>Additional Effect: Grants Umbral Ice III and removes Astral Fire<br>Duration: 15s",
+                "id": "blizzardIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blizzard III    \n            Level Req.: 35    \n            Type: Spell     \n            Cast Time: 3.5s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals ice damage with a potency of 280.<br>Additional Effect: Grants Umbral Ice III and removes Astral Fire<br>Duration: 15s",
+                "potency": "280",
+                "grants": {
+                    "umbraliceiiiandremovesastralfire": -1
+                },
+                "duration": "15",
                 "castNumeric": 3.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 280,
+                "grantsNumeric": {
+                    "umbraliceiiiandremovesastralfire": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/7dbfbe8ecadac526c0a2739cd45571f6ea2732fc.png",
@@ -7282,8 +13244,25 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Grants Umbral Ice and 1 Umbral Heart.<br>Additional Effect: Halts the expiration of Umbral Ice<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Additional Effect: Restores an amount of MP commensurate with your stacks of Umbral Ice<br>Umbral Ice I: 2,500 MP<br>Umbral Ice II: 5,000 MP<br>Umbral Ice III: 10,000 MP<br>Grants Umbral Ice III and 3 Umbral Hearts, and also restores 10,000 MP when used while outside of combat.<br>Can only be executed while under the effect of Umbral Ice.",
+                "id": "umbralSoul",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Umbral Soul    \n            Level Req.: 35    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Grants Umbral Ice and 1 Umbral Heart.<br>Additional Effect: Halts the expiration of Umbral Ice<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Additional Effect: Restores an amount of MP commensurate with your stacks of Umbral Ice<br>Umbral Ice I: 2,500 MP<br>Umbral Ice II: 5,000 MP<br>Umbral Ice III: 10,000 MP<br>Grants Umbral Ice III and 3 Umbral Hearts, and also restores 10,000 MP when used while outside of combat.<br>Can only be executed while under the effect of Umbral Ice.",
+                "grants": {
+                    "umbraliceand1umbralheart.": -1,
+                    "umbraliceiiiand3umbralhearts": -1
+                },
+                "buffRequirement": "umbralice",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "grantsNumeric": {
+                    "umbraliceand1umbralheart.": -1,
+                    "umbraliceiiiand3umbralhearts": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a26308be548e58eb346aae1b4850ceabc417f35e.png",
@@ -7294,8 +13273,25 @@ export default {
                 "recast": "2.5s",
                 "cost": "1000 MP",
                 "effect": "Deals ice damage with a potency of 120 to target and all enemies nearby it.<br>Additional Effect: Grants 3 Umbral Hearts<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Can only be executed while under the effect of Umbral Ice.",
+                "id": "freeze",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Freeze    \n            Level Req.: 40    \n            Type: Spell     \n            Cast Time: 2.8s      \n            Recast Time: 2.5s          \n            Cost: 1000 MP      \n            Effect: Deals ice damage with a potency of 120 to target and all enemies nearby it.<br>Additional Effect: Grants 3 Umbral Hearts<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Can only be executed while under the effect of Umbral Ice.",
+                "potency": "120",
+                "grants": {
+                    "3umbralhearts": -1
+                },
+                "buffRequirement": "umbralice",
                 "castNumeric": 2.8,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 120,
+                "grantsNumeric": {
+                    "3umbralhearts": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/2efb022c0715f802a88e1edef4924c075e92a53d.png",
@@ -7306,8 +13302,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals lightning damage with a potency of 120.<br>Additional Effect: Lightning damage over time<br>Potency: 50<br>Duration: 27s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "id": "thunderIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thunder III    \n            Level Req.: 45    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals lightning damage with a potency of 120.<br>Additional Effect: Lightning damage over time<br>Potency: 50<br>Duration: 27s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "potency": "120",
+                "": "50",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 120,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a8c94264a1522d4e1f80e9dcac7864eb6170d722.png",
@@ -7318,8 +13327,16 @@ export default {
                 "recast": "10s",
                 "cost": "-",
                 "effect": "Rush to a target party member's side.<br>Unable to cast if bound.",
+                "id": "aetherialManipulation",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Aetherial Manipulation    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 10s          \n            Cost: -      \n            Effect: Rush to a target party member's side.<br>Unable to cast if bound.",
                 "castNumeric": 0,
-                "recastNumeric": 10
+                "recastNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bc3d31c27d861d18280280b18a5f2e5ab0f2858e.png",
@@ -7330,8 +13347,29 @@ export default {
                 "recast": "2.5s",
                 "cost": "All MP",
                 "effect": "Deals fire damage to target and all enemies nearby it with a potency of 240 for the first enemy, and 30% less for all remaining enemies.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Additional Effect: Grants 3 stacks of Astral Soul<br>Effect ends when Astral Fire expires.<br>Can only be executed while under the effect of Astral Fire.",
+                "id": "flare",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Flare    \n            Level Req.: 50    \n            Type: Spell     \n            Cast Time: 4s      \n            Recast Time: 2.5s          \n            Cost: All MP      \n            Effect: Deals fire damage to target and all enemies nearby it with a potency of 240 for the first enemy, and 30% less for all remaining enemies.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Additional Effect: Grants 3 stacks of Astral Soul<br>Effect ends when Astral Fire expires.<br>Can only be executed while under the effect of Astral Fire.",
+                "potency": "240",
+                "grants": {
+                    "astralfireiii": -1,
+                    "astralsoul": "3"
+                },
+                "duration": "15",
+                "buffRequirement": "astralfire",
                 "castNumeric": 4,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 240,
+                "grantsNumeric": {
+                    "astralfireiii": -1,
+                    "astralsoul": 3
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f3540a1d13a0387b442767d1a4279e94d9d24097.png",
@@ -7342,8 +13380,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Connects naturally occurring ley lines to create a circle of power which, while standing within it, reduces spell cast time and recast time, and auto-attack delay by 15%.<br>Duration: 30s",
+                "id": "leyLines",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Ley Lines    \n            Level Req.: 52    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Connects naturally occurring ley lines to create a circle of power which, while standing within it, reduces spell cast time and recast time, and auto-attack delay by 15%.<br>Duration: 30s",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d370de07c30f08bd306ed3c58f0f0490b4541870.png",
@@ -7354,8 +13402,25 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals ice damage with a potency of 320.<br>Additional Effect: Grants 3 Umbral Hearts<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Can only be executed while under the effect of Umbral Ice.",
+                "id": "blizzardIv",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Blizzard IV    \n            Level Req.: 58    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals ice damage with a potency of 320.<br>Additional Effect: Grants 3 Umbral Hearts<br>Umbral Heart Bonus: Nullifies Astral Fire's MP cost increase for Fire spells and reduces MP cost for Flare by one-third<br>Can only be executed while under the effect of Umbral Ice.",
+                "potency": "320",
+                "grants": {
+                    "3umbralhearts": -1
+                },
+                "buffRequirement": "umbralice",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 320,
+                "grantsNumeric": {
+                    "3umbralhearts": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/92e87bf20382bc6359c7448008c3423724b9f0b4.png",
@@ -7366,8 +13431,25 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals fire damage with a potency of 320.<br>Additional Effect: Grants Astral Soul<br>Effect ends when Astral Fire expires.<br>Can only be executed while under the effect of Astral Fire.",
+                "id": "fireIv",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fire IV    \n            Level Req.: 60    \n            Type: Spell     \n            Cast Time: 2.8s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals fire damage with a potency of 320.<br>Additional Effect: Grants Astral Soul<br>Effect ends when Astral Fire expires.<br>Can only be executed while under the effect of Astral Fire.",
+                "potency": "320",
+                "grants": {
+                    "astralsoul": -1
+                },
+                "buffRequirement": "astralfire",
                 "castNumeric": 2.8,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 320,
+                "grantsNumeric": {
+                    "astralsoul": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f12a8a4f87f81ce00e56922f8c61c58e47e8a3c8.png",
@@ -7378,8 +13460,16 @@ export default {
                 "recast": "3s",
                 "cost": "-",
                 "effect": "Move instantly to Ley Lines drawn by you.<br>Cannot be executed while bound.",
+                "id": "betweenTheLines",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Between the Lines    \n            Level Req.: 62    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 3s          \n            Cost: -      \n            Effect: Move instantly to Ley Lines drawn by you.<br>Cannot be executed while bound.",
                 "castNumeric": 0,
-                "recastNumeric": 3
+                "recastNumeric": 3,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c141aa71c34830d6b161c667042815c5d7805320.png",
@@ -7390,8 +13480,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals lightning damage with a potency of 80 to target and all enemies nearby it.<br>Additional Effect: Lightning damage over time<br>Potency: 35<br>Duration: 21s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "id": "thunderIv",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Thunder IV    \n            Level Req.: 64    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals lightning damage with a potency of 80 to target and all enemies nearby it.<br>Additional Effect: Lightning damage over time<br>Potency: 35<br>Duration: 21s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "potency": "80",
+                "": "35",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 80,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/61cd894fc6b3e28004512ed61ffc0eb4fef170f2.png",
@@ -7402,8 +13505,18 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "The next three spells will require no cast time.<br>Duration: 15s<br>Maximum Charges: 2",
+                "id": "triplecast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Triplecast    \n            Level Req.: 66    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: The next three spells will require no cast time.<br>Duration: 15s<br>Maximum Charges: 2",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/801f21d137c07c099140d653b8a69995fc2b8404.png",
@@ -7414,8 +13527,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 60% less for all remaining enemies.<br>Polyglot Cost: 1",
+                "id": "foul",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Foul    \n            Level Req.: 70    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 60% less for all remaining enemies.<br>Polyglot Cost: 1",
+                "potency": "600",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ec2a834393b6ffaf415b043fb9e2c6d23afde9cd.png",
@@ -7426,8 +13549,27 @@ export default {
                 "recast": "2.5s",
                 "cost": "All MP",
                 "effect": "Deals fire damage with a potency of 350.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Can only be executed while under the effect of Astral Fire.",
+                "id": "despair",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Despair    \n            Level Req.: 72    \n            Type: Spell     \n            Cast Time: 3s      \n            Recast Time: 2.5s          \n            Cost: All MP      \n            Effect: Deals fire damage with a potency of 350.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Can only be executed while under the effect of Astral Fire.",
+                "potency": "350",
+                "grants": {
+                    "astralfireiii": -1
+                },
+                "duration": "15",
+                "buffRequirement": "astralfire",
                 "castNumeric": 3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 350,
+                "grantsNumeric": {
+                    "astralfireiii": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b1fcdd06d76b9eb7c7a55364b81bc3ed2674631c.png",
@@ -7438,8 +13580,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 880.<br>Polyglot Cost: 1",
+                "id": "xenoglossy",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Xenoglossy    \n            Level Req.: 80    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 880.<br>Polyglot Cost: 1",
+                "potency": "880",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 880,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f0eb5938ef101e5eddb4abf3c96c71e0f5334022.png",
@@ -7450,8 +13602,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "1500 MP",
                 "effect": "Deals fire damage with a potency of 100 to target and all enemies nearby it.<br>Additional Effect: Grants Astral Fire III and removes Umbral Ice<br>Duration: 15s",
+                "id": "highFireIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: High Fire II    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 3s      \n            Recast Time: 2.5s          \n            Cost: 1500 MP      \n            Effect: Deals fire damage with a potency of 100 to target and all enemies nearby it.<br>Additional Effect: Grants Astral Fire III and removes Umbral Ice<br>Duration: 15s",
+                "potency": "100",
+                "grants": {
+                    "astralfireiiiandremovesumbralice": -1
+                },
+                "duration": "15",
                 "castNumeric": 3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 100,
+                "grantsNumeric": {
+                    "astralfireiiiandremovesumbralice": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/32f2b5e549d388dea8d84a814380a697b9038b71.png",
@@ -7462,8 +13632,26 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Deals ice damage with a potency of 100 to target and all enemies nearby it.<br>Additional Effect: Grants Umbral Ice III and removes Astral Fire<br>Duration: 15s",
+                "id": "highBlizzardIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: High Blizzard II    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 3s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Deals ice damage with a potency of 100 to target and all enemies nearby it.<br>Additional Effect: Grants Umbral Ice III and removes Astral Fire<br>Duration: 15s",
+                "potency": "100",
+                "grants": {
+                    "umbraliceiiiandremovesastralfire": -1
+                },
+                "duration": "15",
                 "castNumeric": 3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 100,
+                "grantsNumeric": {
+                    "umbraliceiiiandremovesastralfire": -1
+                },
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/afd6e5ce788dd3a0bf9159f29de292886c3febe4.png",
@@ -7474,8 +13662,23 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Grants Polyglot.<br>Can only be executed while under the effect of Astral Fire or Umbral Ice.",
+                "id": "amplifier",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Amplifier    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Grants Polyglot.<br>Can only be executed while under the effect of Astral Fire or Umbral Ice.",
+                "grants": {
+                    "polyglot.": -1
+                },
+                "buffRequirement": "astralfireorumbralice",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "grantsNumeric": {
+                    "polyglot.": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e4dbf2ab28919eb82a4b410db2a07cf59706c011.png",
@@ -7486,8 +13689,29 @@ export default {
                 "recast": "2.5s",
                 "cost": "1600 MP",
                 "effect": "Deals unaspected damage with a potency of 500.<br>Astral Fire Bonus: Grants Astral Fire<br>Duration: 15s<br>Astral Fire Bonus: Grants Firestarter<br>Firestarter Effect: Next Fire III will require no time to cast and cost no MP<br>Duration: 30s<br>Umbral Ice Bonus: Requires no MP to cast and grants Umbral Ice<br>Duration: 15s<br>Can only be executed while under the effect of Paradox.<br><br>※This action cannot be assigned to a hotbar.<br>※Fire and Blizzard change to Paradox when requirements for execution are met.",
+                "id": "paradox",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Paradox    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 1600 MP      \n            Effect: Deals unaspected damage with a potency of 500.<br>Astral Fire Bonus: Grants Astral Fire<br>Duration: 15s<br>Astral Fire Bonus: Grants Firestarter<br>Firestarter Effect: Next Fire III will require no time to cast and cost no MP<br>Duration: 30s<br>Umbral Ice Bonus: Requires no MP to cast and grants Umbral Ice<br>Duration: 15s<br>Can only be executed while under the effect of Paradox.<br><br>※This action cannot be assigned to a hotbar.<br>※Fire and Blizzard change to Paradox when requirements for execution are met.",
+                "potency": "500",
+                "grants": {
+                    "astralfire": -1,
+                    "firestarter": -1
+                },
+                "duration": "15",
+                "buffRequirement": "paradox",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 15,
+                "potencyNumeric": 500,
+                "grantsNumeric": {
+                    "astralfire": -1,
+                    "firestarter": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1babd2b0f9ad34451ac3ac29230b2239db95065b.png",
@@ -7498,8 +13722,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals lightning damage with a potency of 150.<br>Additional Effect: Lightning damage over time<br>Potency: 60<br>Duration: 30s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "id": "highThunder",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: High Thunder    \n            Level Req.: 92    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals lightning damage with a potency of 150.<br>Additional Effect: Lightning damage over time<br>Potency: 60<br>Duration: 30s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "potency": "150",
+                "": "60",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/51a70145dcf0d8136ff82ce50713529f1cebaf84.png",
@@ -7510,8 +13747,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals lightning damage with a potency of 100 to target and all enemies nearby it.<br>Additional Effect: Lightning damage over time<br>Potency: 40<br>Duration: 24s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "id": "highThunderIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: High Thunder II    \n            Level Req.: 92    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals lightning damage with a potency of 100 to target and all enemies nearby it.<br>Additional Effect: Lightning damage over time<br>Potency: 40<br>Duration: 24s<br>Can only be cast while under the effect of Thunderhead, granted when gaining Astral Fire or Umbral Ice from an unaspected state, or changing between their influences.<br>Thunderhead Duration: 30s<br>Only one Thunder spell-induced damage over time effect per caster can be inflicted upon a single target.",
+                "potency": "100",
+                "": "40",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/44666e4299c0eded8c4af12edb67c7c9f718bda5.png",
@@ -7522,8 +13772,17 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Weave ley lines anew, setting your circle of power at a new location.<br>Can only be executed while under the effect of Ley Lines, and the effect duration will not be reset.",
+                "id": "retrace",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Retrace    \n            Level Req.: 96    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Weave ley lines anew, setting your circle of power at a new location.<br>Can only be executed while under the effect of Ley Lines, and the effect duration will not be reset.",
+                "buffRequirement": "leylines,andtheeffectdurationwillnotbereset",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1bf799ec68187691dceb2adb9dc0ea1259f03dd1.png",
@@ -7534,8 +13793,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals fire damage to target and all enemies nearby it with a potency of 400 for the first enemy, and 65% less for all remaining enemies.<br>Can only be executed when the Astral Gauge is full.",
+                "id": "flareStar",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Flare Star    \n            Level Req.: 100    \n            Type: Spell     \n            Cast Time: 3s      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals fire damage to target and all enemies nearby it with a potency of 400 for the first enemy, and 65% less for all remaining enemies.<br>Can only be executed when the Astral Gauge is full.",
+                "potency": "400",
+                "CanonlybeexecutedwhentheAstral": null,
                 "castNumeric": 3,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 400,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b45e688d81b5607246600f904aac008364db0d1e.png",
@@ -7546,8 +13816,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Lowers target's physical damage dealt by 5% and magic damage dealt by 10%.<br>Duration: 15s",
+                "id": "addle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Addle    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Lowers target's physical damage dealt by 5% and magic damage dealt by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/10e9fb5302668c923b8237ffbd4841ccc6c2edb4.png",
@@ -7558,8 +13838,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Puts target and all nearby enemies to sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "id": "sleep",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sleep    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Puts target and all nearby enemies to sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "duration": "30",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3629c6854aa559656623925e2489b60c2fa91e18.png",
@@ -7570,8 +13860,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "id": "lucidDreaming",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lucid Dreaming    \n            Level Req.: 14    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "": "55",
+                "duration": "21",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 21,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/27d401b3cfbf90c846ffeaa9f661afb4bd77ce98.png",
@@ -7582,8 +13883,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Next spell is cast immediately.<br>Duration: 10s",
+                "id": "swiftcast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Swiftcast    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Next spell is cast immediately.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/477d1e7f7115db19c344c0f5cadfcfa2ac0cdcc0.png",
@@ -7594,8 +13905,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "id": "surecast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Surecast    \n            Level Req.: 44    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "duration": "6",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 6,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
@@ -7827,8 +14148,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 130.<br>Action upgraded to Enchanted Riposte if both Black Mana and White Mana are at 20 or more.",
+                "id": "riposte",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Riposte    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 130.<br>Action upgraded to Enchanted Riposte if both Black Mana and White Mana are at 20 or more.",
+                "potency": "130",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/9fc8c455d50ec08c721f4674e7e9015f4700debe.png",
@@ -7839,8 +14170,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals unaspected damage with a potency of 170.<br>Additional Effect: Increases both Black Mana and White Mana by 2",
+                "id": "jolt",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Jolt    \n            Level Req.: 2    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals unaspected damage with a potency of 170.<br>Additional Effect: Increases both Black Mana and White Mana by 2",
+                "potency": "170",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 170,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f5a91b090922e24a43d172f2cdfb85fc4ff9423a.png",
@@ -7851,8 +14192,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "300 MP",
                 "effect": "Deals lightning damage with a potency of 360.<br>Additional Effect: Increases Black Mana by 6<br>Additional Effect: 50% chance of becoming Verfire Ready<br>Duration: 30s",
+                "id": "verthunder",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verthunder    \n            Level Req.: 4    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: 300 MP      \n            Effect: Deals lightning damage with a potency of 360.<br>Additional Effect: Increases Black Mana by 6<br>Additional Effect: 50% chance of becoming Verfire Ready<br>Duration: 30s",
+                "potency": "360",
+                "duration": "30",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 360,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ca149fa59c97f3ce000ba2cdd143dd181a25def6.png",
@@ -7863,8 +14216,18 @@ export default {
                 "recast": "35s",
                 "cost": "-",
                 "effect": "Rushes target and delivers an attack with a potency of 130.<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "id": "corps-A-Corps",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Corps-a-corps    \n            Level Req.: 6    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 35s          \n            Cost: -      \n            Effect: Rushes target and delivers an attack with a potency of 130.<br>Maximum Charges: 2<br>Cannot be executed while bound.",
+                "potency": "130",
                 "castNumeric": 0,
-                "recastNumeric": 35
+                "recastNumeric": 35,
+                "potencyNumeric": 130,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/a774e32d6c268433b5e2c56dc152cae973605e2e.png",
@@ -7875,8 +14238,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "300 MP",
                 "effect": "Deals wind damage with a potency of 360.<br>Additional Effect: Increases White Mana by 6<br>Additional Effect: 50% chance of becoming Verstone Ready<br>Duration: 30s",
+                "id": "veraero",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Veraero    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: 300 MP      \n            Effect: Deals wind damage with a potency of 360.<br>Additional Effect: Increases White Mana by 6<br>Additional Effect: 50% chance of becoming Verstone Ready<br>Duration: 30s",
+                "potency": "360",
+                "duration": "30",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 360,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/adbad46ea7684b2e5914b23c4ec7de0ecb19432d.png",
@@ -7887,8 +14262,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 120 to target and all enemies nearby it.<br>Acceleration Potency: 170<br>Additional Effect: Increases both Black Mana and White Mana by 3",
+                "id": "scatter",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Scatter    \n            Level Req.: 15    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 120 to target and all enemies nearby it.<br>Acceleration Potency: 170<br>Additional Effect: Increases both Black Mana and White Mana by 3",
+                "potency": "120",
+                "acceleration": "170",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 120,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/949abe2a408930b92fc5bc34881a60396909e623.png",
@@ -7899,8 +14285,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals lightning damage with a potency of 140 to target and all enemies nearby it.<br>Additional Effect: Increases Black Mana by 7",
+                "id": "verthunderIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verthunder II    \n            Level Req.: 18    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals lightning damage with a potency of 140 to target and all enemies nearby it.<br>Additional Effect: Increases Black Mana by 7",
+                "potency": "140",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/272b22305a75f5649d2dbe16e733e2a714b8a1c4.png",
@@ -7911,8 +14307,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals wind damage with a potency of 140 to target and all enemies nearby it.<br>Additional Effect: Increases White Mana by 7",
+                "id": "veraeroIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Veraero II    \n            Level Req.: 22    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals wind damage with a potency of 140 to target and all enemies nearby it.<br>Additional Effect: Increases White Mana by 7",
+                "potency": "140",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 140,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ce7efb90e13d0fef394abb8d2e57a09402452890.png",
@@ -7923,8 +14329,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals fire damage with a potency of 380.<br>Additional Effect: Increases Black Mana by 5<br>Can only be executed while Verfire Ready is active.",
+                "id": "verfire",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verfire    \n            Level Req.: 26    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals fire damage with a potency of 380.<br>Additional Effect: Increases Black Mana by 5<br>Can only be executed while Verfire Ready is active.",
+                "potency": "380",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 380,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/c5ddf887a06b23a2ae9426a5a6288b863b92eced.png",
@@ -7935,8 +14351,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals earth damage with a potency of 380.<br>Additional Effect: Increases White Mana by 5<br>Can only be executed while Verstone Ready is active.",
+                "id": "verstone",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verstone    \n            Level Req.: 30    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals earth damage with a potency of 380.<br>Additional Effect: Increases White Mana by 5<br>Can only be executed while Verstone Ready is active.",
+                "potency": "380",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 380,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/adef75e55602967f0c722896b45d5be518cd9dd4.png",
@@ -7947,8 +14373,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Riposte or Enchanted Riposte<br>Combo Potency: 150<br>Action upgraded to Enchanted Zwerchhau if both Black Mana and White Mana are at 15 or more.",
+                "id": "zwerchhau",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Zwerchhau    \n            Level Req.: 35    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Combo Action: Riposte or Enchanted Riposte<br>Combo Potency: 150<br>Action upgraded to Enchanted Zwerchhau if both Black Mana and White Mana are at 15 or more.",
+                "potency": "100",
+                "comboAction": "Riposte or Enchanted Riposte",
+                "comboPotency": "150",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 150,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3a7bcdd99a2d4f40c95c39ce19d97be8ee0a151b.png",
@@ -7959,8 +14398,18 @@ export default {
                 "recast": "35s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 180.<br>Additional Effect: 15-yalm backstep<br>Maximum Charges: 2<br>Cannot be executed while bound.<br>Shares a recast timer with Engagement.",
+                "id": "displacement",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Displacement    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 35s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 180.<br>Additional Effect: 15-yalm backstep<br>Maximum Charges: 2<br>Cannot be executed while bound.<br>Shares a recast timer with Engagement.",
+                "potency": "180",
                 "castNumeric": 0,
-                "recastNumeric": 35
+                "recastNumeric": 35,
+                "potencyNumeric": 180,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f07faaccae974c9f7fdd16072a406c81db81b3ad.png",
@@ -7971,8 +14420,18 @@ export default {
                 "recast": "35s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 180.<br>Maximum Charges: 2<br>Shares a recast timer with Displacement.",
+                "id": "engagement",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Engagement    \n            Level Req.: 40    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 35s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 180.<br>Maximum Charges: 2<br>Shares a recast timer with Displacement.",
+                "potency": "180",
                 "castNumeric": 0,
-                "recastNumeric": 35
+                "recastNumeric": 35,
+                "potencyNumeric": 180,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f950d18911258503ab8a8ec2fa28ca3fdb6a8a6d.png",
@@ -7983,8 +14442,18 @@ export default {
                 "recast": "25s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 480.",
+                "id": "fleche",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Fleche    \n            Level Req.: 45    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 25s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 480.",
+                "potency": "480",
                 "castNumeric": 0,
-                "recastNumeric": 25
+                "recastNumeric": 25,
+                "potencyNumeric": 480,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/292f17a2bcaebf7db4560ff8c977f64908db9917.png",
@@ -7995,8 +14464,21 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Zwerchhau or Enchanted Zwerchhau<br>Combo Potency: 230<br>Action upgraded to Enchanted Redoublement if both Black Mana and White Mana are at 15 or more.",
+                "id": "redoublement",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Redoublement    \n            Level Req.: 50    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Combo Action: Zwerchhau or Enchanted Zwerchhau<br>Combo Potency: 230<br>Action upgraded to Enchanted Redoublement if both Black Mana and White Mana are at 15 or more.",
+                "potency": "100",
+                "comboAction": "Zwerchhau or Enchanted Zwerchhau",
+                "comboPotency": "230",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "comboPotencyNumeric": 230,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/831a96d8378a68659074d13e8a1e90e0de2da5a4.png",
@@ -8007,8 +14489,24 @@ export default {
                 "recast": "55s",
                 "cost": "-",
                 "effect": "Ensures the next Verthunder III, Veraero III, or Impact can be cast immediately.<br>Duration: 20s<br>Additional Effect: Increases the potency of Impact by 50<br>Additional Effect: Ensures Verthunder III and Veraero III trigger Verfire Ready or Verstone Ready respectively<br>Additional Effect: Grants Grand Impact Ready<br>Duration: 30s<br>Maximum Charges: 2",
+                "id": "acceleration",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Acceleration    \n            Level Req.: 50    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 55s          \n            Cost: -      \n            Effect: Ensures the next Verthunder III, Veraero III, or Impact can be cast immediately.<br>Duration: 20s<br>Additional Effect: Increases the potency of Impact by 50<br>Additional Effect: Ensures Verthunder III and Veraero III trigger Verfire Ready or Verstone Ready respectively<br>Additional Effect: Grants Grand Impact Ready<br>Duration: 30s<br>Maximum Charges: 2",
+                "duration": "30",
+                "grants": {
+                    "grandimpactready": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 55
+                "recastNumeric": 55,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "grandimpactready": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fe9877c05ef3a4622f0488b580b6ea36b7446bca.png",
@@ -8019,8 +14517,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 60 to all enemies in a cone before you.<br>Action upgraded to Enchanted Moulinet if both Black Mana and White Mana are at 20 or more.",
+                "id": "moulinet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Moulinet    \n            Level Req.: 52    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 60 to all enemies in a cone before you.<br>Action upgraded to Enchanted Moulinet if both Black Mana and White Mana are at 20 or more.",
+                "potency": "60",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 60,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d23f5785bdb0f0c398a14087753ddcedab6d4e78.png",
@@ -8031,8 +14539,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "500 MP",
                 "effect": "Restores target's HP.<br>Cure Potency: 350",
+                "id": "vercure",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Vercure    \n            Level Req.: 54    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 500 MP      \n            Effect: Restores target's HP.<br>Cure Potency: 350",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e9183e5932215335efe798ce4d6422d37befaf27.png",
@@ -8043,8 +14559,18 @@ export default {
                 "recast": "35s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 420 to target and all enemies nearby it.",
+                "id": "contreSixte",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Contre Sixte    \n            Level Req.: 56    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 35s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 420 to target and all enemies nearby it.",
+                "potency": "420",
                 "castNumeric": 0,
-                "recastNumeric": 35
+                "recastNumeric": 35,
+                "potencyNumeric": 420,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/85d6955ad939bb051fe8b893c194497b9499d89e.png",
@@ -8055,8 +14581,25 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Increases own magic damage dealt by 5% and damage dealt by nearby party members by 5%.<br>Duration: 20s<br>Additional Effect: Grants Thorned Flourish<br>Duration: 30s",
+                "id": "embolden",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Embolden    \n            Level Req.: 58    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Increases own magic damage dealt by 5% and damage dealt by nearby party members by 5%.<br>Duration: 20s<br>Additional Effect: Grants Thorned Flourish<br>Duration: 30s",
+                "damageBuff": 1.05,
+                "duration": "30",
+                "grants": {
+                    "thornedflourish": -1
+                },
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "thornedflourish": -1
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5f145a66018e2f197e16b966e30c53bba09e13bd.png",
@@ -8067,8 +14610,27 @@ export default {
                 "recast": "110s",
                 "cost": "-",
                 "effect": "Grants 3 stacks of Magicked Swordplay, each stack allowing the use of Enchanted Riposte, Enchanted Zwerchhau, Enchanted Redoublement, Enchanted Moulinet, Enchanted Moulinet Deux, or Enchanted Moulinet Trois without cost.<br>Duration: 30s<br>Additional Effect: Grants 6 stacks of Manafication<br>Manafication Effect: Increases magic damage dealt by 5%<br>Duration: 30s<br>Additional Effect: Grants Prefulgence Ready upon consuming 6 stacks of Manafication<br>Duration: 30s<br>All combos are canceled upon execution of Manafication.<br>Can only be executed while in combat.",
+                "id": "manafication",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Manafication    \n            Level Req.: 60    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 110s          \n            Cost: -      \n            Effect: Grants 3 stacks of Magicked Swordplay, each stack allowing the use of Enchanted Riposte, Enchanted Zwerchhau, Enchanted Redoublement, Enchanted Moulinet, Enchanted Moulinet Deux, or Enchanted Moulinet Trois without cost.<br>Duration: 30s<br>Additional Effect: Grants 6 stacks of Manafication<br>Manafication Effect: Increases magic damage dealt by 5%<br>Duration: 30s<br>Additional Effect: Grants Prefulgence Ready upon consuming 6 stacks of Manafication<br>Duration: 30s<br>All combos are canceled upon execution of Manafication.<br>Can only be executed while in combat.",
+                "grants": {
+                    "magickedswordplay": "3",
+                    "manafication": "Prefulgence"
+                },
+                "duration": "30",
+                "damageBuff": 1.05,
                 "castNumeric": 0,
-                "recastNumeric": 110
+                "recastNumeric": 110,
+                "durationNumeric": 30,
+                "grantsNumeric": {
+                    "magickedswordplay": 3,
+                    "manafication": 0
+                },
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e2b3cc05547ba6a37ba5e883f190570d32eabb10.png",
@@ -8079,8 +14641,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals unaspected damage with a potency of 280.<br>Additional Effect: Increases both Black Mana and White Mana by 2",
+                "id": "joltIi",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Jolt II    \n            Level Req.: 62    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals unaspected damage with a potency of 280.<br>Additional Effect: Increases both Black Mana and White Mana by 2",
+                "potency": "280",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 280,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/6be6c45a105e3890f5390c26a2d5532a7e2eea43.png",
@@ -8091,8 +14663,16 @@ export default {
                 "recast": "2.5s",
                 "cost": "2400 MP",
                 "effect": "Resurrects target to a weakened state.",
+                "id": "verraise",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verraise    \n            Level Req.: 64    \n            Type: Spell     \n            Cast Time: 10s      \n            Recast Time: 2.5s          \n            Cost: 2400 MP      \n            Effect: Resurrects target to a weakened state.",
                 "castNumeric": 10,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1c5d66100b8539f4dd5779a760ccbc29f5878e6a.png",
@@ -8103,8 +14683,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage with a potency of 210 to target and all enemies nearby it.<br>Acceleration Potency: 260<br>Additional Effect: Increases both Black Mana and White Mana by 3",
+                "id": "impact",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Impact    \n            Level Req.: 66    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage with a potency of 210 to target and all enemies nearby it.<br>Acceleration Potency: 260<br>Additional Effect: Increases both Black Mana and White Mana by 3",
+                "potency": "210",
+                "acceleration": "260",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 210,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/d20080ca189b4843d89ac2faab14d42099bd2e4c.png",
@@ -8115,8 +14706,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals fire damage to target and all enemies nearby it with a potency of 620 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases Black Mana by 11<br>Additional Effect: 20% chance of becoming Verfire Ready<br>Duration: 30s<br>Chance to become Verfire Ready increases to 100% if White Mana is higher than Black Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Verthunder III and Verthunder II change to Verflare when requirements for execution are met.",
+                "id": "verflare",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verflare    \n            Level Req.: 68    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals fire damage to target and all enemies nearby it with a potency of 620 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases Black Mana by 11<br>Additional Effect: 20% chance of becoming Verfire Ready<br>Duration: 30s<br>Chance to become Verfire Ready increases to 100% if White Mana is higher than Black Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Verthunder III and Verthunder II change to Verflare when requirements for execution are met.",
+                "potency": "620",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 620,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/34f4be861c3f40879653fef7fe7039f8df1108c1.png",
@@ -8127,8 +14730,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 620 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases White Mana by 11<br>Additional Effect: 20% chance of becoming Verstone Ready<br>Duration: 30s<br>Chance to become Verstone Ready increases to 100% if Black Mana is higher than White Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Veraero III and Veraero II change to Verholy when requirements for execution are met.",
+                "id": "verholy",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verholy    \n            Level Req.: 70    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 620 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases White Mana by 11<br>Additional Effect: 20% chance of becoming Verstone Ready<br>Duration: 30s<br>Chance to become Verstone Ready increases to 100% if Black Mana is higher than White Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Veraero III and Veraero II change to Verholy when requirements for execution are met.",
+                "potency": "620",
+                "duration": "30",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 620,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/26403c905bb62b3221f7b1930e64efdd1fe13619.png",
@@ -8139,8 +14754,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Delivers an attack with a potency of 100.<br>Action upgraded to Enchanted Reprise if both Black Mana and White Mana are at 5 or more.",
+                "id": "reprise",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Reprise    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Delivers an attack with a potency of 100.<br>Action upgraded to Enchanted Reprise if both Black Mana and White Mana are at 5 or more.",
+                "potency": "100",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 100,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/fa744aa271e8cb2fae5bbe2cdb55ccf70d4685e8.png",
@@ -8151,8 +14776,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 700 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Verflare or Verholy<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Verflare or Verholy as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Jolt III and Impact change to Scorch when requirements for execution are met.",
+                "id": "scorch",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Scorch    \n            Level Req.: 80    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 700 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Verflare or Verholy<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Verflare or Verholy as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Jolt III and Impact change to Scorch when requirements for execution are met.",
+                "potency": "700",
+                "comboAction": "Verflare or Verholy",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 700,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f2798af149d31668d8e35541a3b33422478013f2.png",
@@ -8163,8 +14799,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "300 MP",
                 "effect": "Deals lightning damage with a potency of 440.<br>Additional Effect: Increases Black Mana by 6<br>Additional Effect: 50% chance of becoming Verfire Ready<br>Duration: 30s",
+                "id": "verthunderIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Verthunder III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: 300 MP      \n            Effect: Deals lightning damage with a potency of 440.<br>Additional Effect: Increases Black Mana by 6<br>Additional Effect: 50% chance of becoming Verfire Ready<br>Duration: 30s",
+                "potency": "440",
+                "duration": "30",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 440,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/1149d6e897c6342f2880c3ad304fc2aef09f93d5.png",
@@ -8175,8 +14823,20 @@ export default {
                 "recast": "2.5s",
                 "cost": "300 MP",
                 "effect": "Deals wind damage with a potency of 440.<br>Additional Effect: Increases White Mana by 6<br>Additional Effect: 50% chance of becoming Verstone Ready<br>Duration: 30s",
+                "id": "veraeroIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Veraero III    \n            Level Req.: 82    \n            Type: Spell     \n            Cast Time: 5s      \n            Recast Time: 2.5s          \n            Cost: 300 MP      \n            Effect: Deals wind damage with a potency of 440.<br>Additional Effect: Increases White Mana by 6<br>Additional Effect: 50% chance of becoming Verstone Ready<br>Duration: 30s",
+                "potency": "440",
+                "duration": "30",
                 "castNumeric": 5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "potencyNumeric": 440,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f3be0e80366bd72a864a87e41eadd964f07a5f57.png",
@@ -8187,8 +14847,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "200 MP",
                 "effect": "Deals unaspected damage with a potency of 360.<br>Additional Effect: Increases both Black Mana and White Mana by 2",
+                "id": "joltIii",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Jolt III    \n            Level Req.: 84    \n            Type: Spell     \n            Cast Time: 2s      \n            Recast Time: 2.5s          \n            Cost: 200 MP      \n            Effect: Deals unaspected damage with a potency of 360.<br>Additional Effect: Increases both Black Mana and White Mana by 2",
+                "potency": "360",
                 "castNumeric": 2,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 360,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5c95999b6491dcc5714cd7f926b03fc56b5c88dc.png",
@@ -8199,8 +14869,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Reduces magic damage taken by self and nearby party members by 10%, while increasing HP recovered by healing actions by 5%.<br>Duration: 10s",
+                "id": "magickBarrier",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Magick Barrier    \n            Level Req.: 86    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Reduces magic damage taken by self and nearby party members by 10%, while increasing HP recovered by healing actions by 5%.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/cfcb133bdbe85392f1fedadfe93b14ff5aed8b32.png",
@@ -8211,8 +14891,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 800 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Scorch<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Scorch as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Scorch changes to Resolution when requirements for execution are met.",
+                "id": "resolution",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Resolution    \n            Level Req.: 90    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to all enemies in a straight line before you with a potency of 800 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Scorch<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Scorch as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Scorch changes to Resolution when requirements for execution are met.",
+                "potency": "800",
+                "comboAction": "Scorch",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 800,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/23de2734d998406aa25f526147ebbea7f1012d67.png",
@@ -8223,8 +14914,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 700 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Thorned Flourish.",
+                "id": "viceOfThorns",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Vice of Thorns    \n            Level Req.: 92    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 700 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Thorned Flourish.",
+                "potency": "700",
+                "buffRequirement": "thornedflourish",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 700,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5be2009c3bc4bd918ee899e0c6edc953571e93a3.png",
@@ -8235,8 +14937,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "400 MP",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases both Black Mana and White Mana by 3<br>Can only be executed while under the effect of Grand Impact Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Jolt III and Impact change to Grand Impact when requirements for execution are met.",
+                "id": "grandImpact",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Grand Impact    \n            Level Req.: 96    \n            Type: Spell     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: 400 MP      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases both Black Mana and White Mana by 3<br>Can only be executed while under the effect of Grand Impact Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Jolt III and Impact change to Grand Impact when requirements for execution are met.",
+                "potency": "600",
+                "buffRequirement": "grandimpactready",
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 600,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/f3988ae5cc17fcf0b655c5820f0c25ef2ac72b43.png",
@@ -8247,8 +14960,19 @@ export default {
                 "recast": "1s",
                 "cost": "-",
                 "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 900 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Prefulgence Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Manafication changes to Prefulgence when requirements for execution are met.",
+                "id": "prefulgence",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Prefulgence    \n            Level Req.: 100    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 1s          \n            Cost: -      \n            Effect: Deals unaspected damage to target and all enemies nearby it with a potency of 900 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while under the effect of Prefulgence Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Manafication changes to Prefulgence when requirements for execution are met.",
+                "potency": "900",
+                "buffRequirement": "prefulgenceready",
                 "castNumeric": 0,
-                "recastNumeric": 1
+                "recastNumeric": 1,
+                "potencyNumeric": 900,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/bc05c7159bffb94c061a5d64130da539350bbc6e.png",
@@ -8259,8 +14983,25 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 300.<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 20 Black Mana<br>Balance Gauge Cost: 20 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Riposte changes to Enchanted Riposte when requirements for execution are met.",
+                "id": "enchantedRiposte",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Riposte    \n            Level Req.: 1    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 300.<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 20 Black Mana<br>Balance Gauge Cost: 20 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Riposte changes to Enchanted Riposte when requirements for execution are met.",
+                "potency": "300",
+                "grants": {
+                    "amanastack": -1
+                },
+                "Balance": -20,
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 300,
+                "grantsNumeric": {
+                    "amanastack": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/5ca771d95d91f9eec6795ec72317da6fc77029f3.png",
@@ -8271,8 +15012,28 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 170.<br>Combo Action: Riposte or Enchanted Riposte<br>Combo Potency: 360<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Zwerchhau changes to Enchanted Zwerchhau when requirements for execution are met.",
+                "id": "enchantedZwerchhau",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Zwerchhau    \n            Level Req.: 35    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 170.<br>Combo Action: Riposte or Enchanted Riposte<br>Combo Potency: 360<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Zwerchhau changes to Enchanted Zwerchhau when requirements for execution are met.",
+                "potency": "170",
+                "comboAction": "Riposte or Enchanted Riposte",
+                "comboPotency": "360",
+                "grants": {
+                    "amanastack": -1
+                },
+                "Balance": -15,
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 170,
+                "comboPotencyNumeric": 360,
+                "grantsNumeric": {
+                    "amanastack": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/ef85b6e60966279a1352b01b582c9bc3bfae5646.png",
@@ -8283,8 +15044,28 @@ export default {
                 "recast": "2.2s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 170.<br>Combo Action: Enchanted Zwerchhau<br>Combo Potency: 540<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Redoublement changes to Enchanted Redoublement when requirements for execution are met.",
+                "id": "enchantedRedoublement",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Redoublement    \n            Level Req.: 50    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.2s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 170.<br>Combo Action: Enchanted Zwerchhau<br>Combo Potency: 540<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Redoublement changes to Enchanted Redoublement when requirements for execution are met.",
+                "potency": "170",
+                "comboAction": "Enchanted Zwerchhau",
+                "comboPotency": "540",
+                "grants": {
+                    "amanastack": -1
+                },
+                "Balance": -15,
                 "castNumeric": 0,
-                "recastNumeric": 2.2
+                "recastNumeric": 2.2,
+                "potencyNumeric": 170,
+                "comboPotencyNumeric": 540,
+                "grantsNumeric": {
+                    "amanastack": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/4698cb3715e5b08d30ae8d80cb30c4b22daf3573.png",
@@ -8295,8 +15076,25 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 130 to all enemies in a cone before you.<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 20 Black Mana<br>Balance Gauge Cost: 20 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Moulinet changes to Enchanted Moulinet when requirements for execution are met.",
+                "id": "enchantedMoulinet",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Moulinet    \n            Level Req.: 52    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 130 to all enemies in a cone before you.<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 20 Black Mana<br>Balance Gauge Cost: 20 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Moulinet changes to Enchanted Moulinet when requirements for execution are met.",
+                "potency": "130",
+                "grants": {
+                    "amanastack": -1
+                },
+                "Balance": -20,
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 130,
+                "grantsNumeric": {
+                    "amanastack": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/e5dfc01b5048f6bef58d504d6e6f633004ad8fc7.png",
@@ -8307,8 +15105,26 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 140 to all enemies in a cone before you.<br>Combo Action: Enchanted Moulinet<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Enchanted Moulinet changes to Enchanted Moulinet Deux when requirements for execution are met.",
+                "id": "enchantedMoulinetDeux",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Moulinet Deux    \n            Level Req.: 52    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 140 to all enemies in a cone before you.<br>Combo Action: Enchanted Moulinet<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Enchanted Moulinet changes to Enchanted Moulinet Deux when requirements for execution are met.",
+                "potency": "140",
+                "comboAction": "Enchanted Moulinet",
+                "grants": {
+                    "amanastack": -1
+                },
+                "Balance": -15,
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 140,
+                "grantsNumeric": {
+                    "amanastack": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/0f1ad21893a66c8f4b9253821fee9044ba1b4464.png",
@@ -8319,8 +15135,26 @@ export default {
                 "recast": "1.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 150 to all enemies in a cone before you.<br>Combo Action: Enchanted Moulinet Deux<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Enchanted Moulinet Deux changes to Enchanted Moulinet Trois when requirements for execution are met.",
+                "id": "enchantedMoulinetTrois",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Moulinet Trois    \n            Level Req.: 52    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 1.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 150 to all enemies in a cone before you.<br>Combo Action: Enchanted Moulinet Deux<br>Additional Effect: Grants a Mana Stack<br>Balance Gauge Cost: 15 Black Mana<br>Balance Gauge Cost: 15 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Enchanted Moulinet Deux changes to Enchanted Moulinet Trois when requirements for execution are met.",
+                "potency": "150",
+                "comboAction": "Enchanted Moulinet Deux",
+                "grants": {
+                    "amanastack": -1
+                },
+                "Balance": -15,
                 "castNumeric": 0,
-                "recastNumeric": 1.5
+                "recastNumeric": 1.5,
+                "potencyNumeric": 150,
+                "grantsNumeric": {
+                    "amanastack": -1
+                },
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/18af98a63cd9850c3e064220d9237ec80aad136d.png",
@@ -8331,8 +15165,19 @@ export default {
                 "recast": "2.5s",
                 "cost": "-",
                 "effect": "Deals unaspected damage with a potency of 420.<br>Balance Gauge Cost: 5 Black Mana<br>Balance Gauge Cost: 5 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Reprise changes to Enchanted Reprise when requirements for execution are met.",
+                "id": "enchantedReprise",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Enchanted Reprise    \n            Level Req.: 76    \n            Type: Weaponskill     \n            Cast Time: Instant      \n            Recast Time: 2.5s          \n            Cost: -      \n            Effect: Deals unaspected damage with a potency of 420.<br>Balance Gauge Cost: 5 Black Mana<br>Balance Gauge Cost: 5 White Mana<br><br>※This action cannot be assigned to a hotbar.<br>※Reprise changes to Enchanted Reprise when requirements for execution are met.",
+                "potency": "420",
+                "Balance": -5,
                 "castNumeric": 0,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "potencyNumeric": 420,
+                "isInstant": true,
+                "isAbility": false,
+                "isSpell": false,
+                "isWeaponskill": true
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/b45e688d81b5607246600f904aac008364db0d1e.png",
@@ -8343,8 +15188,18 @@ export default {
                 "recast": "90s",
                 "cost": "-",
                 "effect": "Lowers target's physical damage dealt by 5% and magic damage dealt by 10%.<br>Duration: 15s",
+                "id": "addle",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Addle    \n            Level Req.: 8    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 90s          \n            Cost: -      \n            Effect: Lowers target's physical damage dealt by 5% and magic damage dealt by 10%.<br>Duration: 15s",
+                "duration": "15",
                 "castNumeric": 0,
-                "recastNumeric": 90
+                "recastNumeric": 90,
+                "durationNumeric": 15,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/10e9fb5302668c923b8237ffbd4841ccc6c2edb4.png",
@@ -8355,8 +15210,18 @@ export default {
                 "recast": "2.5s",
                 "cost": "800 MP",
                 "effect": "Puts target and all nearby enemies to sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "id": "sleep",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Sleep    \n            Level Req.: 10    \n            Type: Spell     \n            Cast Time: 2.5s      \n            Recast Time: 2.5s          \n            Cost: 800 MP      \n            Effect: Puts target and all nearby enemies to sleep.<br>Duration: 30s<br>Cancels auto-attack upon execution.",
+                "duration": "30",
                 "castNumeric": 2.5,
-                "recastNumeric": 2.5
+                "recastNumeric": 2.5,
+                "durationNumeric": 30,
+                "isInstant": false,
+                "isAbility": false,
+                "isSpell": true,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/3629c6854aa559656623925e2489b60c2fa91e18.png",
@@ -8367,8 +15232,19 @@ export default {
                 "recast": "60s",
                 "cost": "-",
                 "effect": "Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "id": "lucidDreaming",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Lucid Dreaming    \n            Level Req.: 14    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 60s          \n            Cost: -      \n            Effect: Gradually restores own MP.<br>Potency: 55<br>Duration: 21s",
+                "": "55",
+                "duration": "21",
                 "castNumeric": 0,
-                "recastNumeric": 60
+                "recastNumeric": 60,
+                "durationNumeric": 21,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/27d401b3cfbf90c846ffeaa9f661afb4bd77ce98.png",
@@ -8379,8 +15255,18 @@ export default {
                 "recast": "40s",
                 "cost": "-",
                 "effect": "Next spell is cast immediately.<br>Duration: 10s",
+                "id": "swiftcast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Swiftcast    \n            Level Req.: 18    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 40s          \n            Cost: -      \n            Effect: Next spell is cast immediately.<br>Duration: 10s",
+                "duration": "10",
                 "castNumeric": 0,
-                "recastNumeric": 40
+                "recastNumeric": 40,
+                "durationNumeric": 10,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             },
             {
                 "icon": "https://lds-img.finalfantasyxiv.com/d/477d1e7f7115db19c344c0f5cadfcfa2ac0cdcc0.png",
@@ -8391,8 +15277,18 @@ export default {
                 "recast": "120s",
                 "cost": "-",
                 "effect": "Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "id": "surecast",
+                "location": "tray",
+                "errorMessage": "",
+                "description": "Name: Surecast    \n            Level Req.: 44    \n            Type: Ability     \n            Cast Time: Instant      \n            Recast Time: 120s          \n            Cost: -      \n            Effect: Spells can be cast without interruption.<br>Additional Effect: Nullifies most knockback and draw-in effects<br>Duration: 6s",
+                "duration": "6",
                 "castNumeric": 0,
-                "recastNumeric": 120
+                "recastNumeric": 120,
+                "durationNumeric": 6,
+                "isInstant": true,
+                "isAbility": true,
+                "isSpell": false,
+                "isWeaponskill": false
             }
         ],
         "traits": [
