@@ -8,6 +8,10 @@ export interface Action {
     recast: string;
     cost: string;
     effect: string;
+    isInstant: boolean;
+    isAbility: boolean;
+    isSpell: boolean;
+    isWeaponskill: boolean;
     description?: string;
     location?: string;
     errorMessage?: string;
@@ -22,6 +26,13 @@ export interface Action {
     durationPotency?: number;
     startTime?: number;
     timeTaken?: number;
+    castNumeric?: number;
+    recastNumeric?: number;
+    durationNumeric?: number;
+    potencyNumeric?: number;
+    comboPotencyNumeric?: number;
+    comboBonusNumeric?: Record<string, number>;
+    grantsNumeric?: Record<string, number>;
 }
 
 export interface JobGuideJson {

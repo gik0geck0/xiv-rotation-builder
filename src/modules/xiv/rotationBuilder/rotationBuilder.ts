@@ -26,19 +26,19 @@ export default class RotationBuilder extends LightningElement {
         const GCDTime = 2.5;
         const waitTime = 0.7;
 
-        if (actionList[0].cast === 'Instant') {
+        if (actionList[0].isInstant) {
             currTime = waitTime;
         } else {
-            currTime = parseFloat(actionList[0].cast);
+            currTime = (actionList[0].castNumeric || 0);
         }
 
         let timedList: [Action, number][] = [[actionList[0], currTime]];
         let usedActions: [string, number][] = [
-            [actionList[0].name, parseFloat(actionList[0].recast)]
+            [actionList[0].name, (actionList[0].recastNumeric || 0)]
         ];
 
         let lastGCD: [string, number] = [actionList[0].name, currTime];
-        if (actionList[0].type === 'Ability') {
+        if (actionList[0].isAbility) {
             lastGCD[1] = -1;
         }
 
@@ -51,8 +51,8 @@ export default class RotationBuilder extends LightningElement {
                 }
             }
 
-            if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
-                if (currAction.cast === 'Instant') {
+            if (currAction.isSpell || currAction.isWeaponskill) {
+                if (currAction.isInstant) {
                     if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
                         currTime = lastGCD[1] + GCDTime + waitTime;
                     } else {
@@ -60,9 +60,9 @@ export default class RotationBuilder extends LightningElement {
                     }
                 } else {
                     if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
-                        currTime = lastGCD[1] + GCDTime + parseFloat(currAction.cast);
+                        currTime = lastGCD[1] + GCDTime + (currAction.castNumeric || 0);
                     } else {
-                        currTime += parseFloat(currAction.cast);
+                        currTime += (currAction.castNumeric || 0);
                     }
                 }
                 timedList.push([currAction, Math.round(currTime * 10) / 10]);
@@ -72,14 +72,14 @@ export default class RotationBuilder extends LightningElement {
                 timedList.push([currAction, Math.round(currTime * 10) / 10]);
             }
 
-            if (currAction.cast !== 'Instant') {
-                if (parseFloat(currAction.recast) >= parseFloat(currAction.cast)) {
+            if (!currAction.isInstant) {
+                if ((currAction.recastNumeric || 0) >= (currAction.castNumeric || 0)) {
                     usedActions.push([currAction.name, currTime]);
                 } else {
-                    usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)]);
+                    usedActions.push([currAction.name, currTime + (currAction.recastNumeric || 0)]);
                 }
             } else {
-                usedActions.push([currAction.name, currTime + parseFloat(currAction.recast)]);
+                usedActions.push([currAction.name, currTime + (currAction.recastNumeric || 0)]);
             }
         }
 
@@ -95,32 +95,36 @@ export default class RotationBuilder extends LightningElement {
             const currTime = timedList[i][1];
 
             if (hasOwnProperty(currAction, 'damageBuff')) {
-                currBuffs.push([currAction, currTime, currTime + parseFloat(currAction.duration || '0')]);
+                currBuffs.push([currAction, currTime, currTime + (currAction.durationNumeric || 0)]);
             }
 
-            if (hasOwnProperty(currAction, 'grants') && currAction.grants) {
-                for (let k = 0; k < Object.keys(currAction.grants).length; k++) {
+            if (hasOwnProperty(currAction, 'grants') && currAction.grantsNumeric) {
+                const grantKeys = Object.keys(currAction.grantsNumeric);
+
+                for (let k = 0; k < grantKeys.length; k++) {
                     currBuffs.push([
-                        Object.keys(currAction.grants)[k].toLowerCase(),
-                        parseFloat(currAction.grants[Object.keys(currAction.grants)[k]]),
+                        grantKeys[k].toLowerCase(),
+                        currAction.grantsNumeric[grantKeys[k]],
                         currTime,
                         currTime + 30
                     ]);
                 }
             }
 
-            if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name && currAction.comboBonus) {
-                for (let k = 0; k < Object.keys(currAction.comboBonus).length; k++) {
+            if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name && currAction.comboBonusNumeric) {
+                const comboKeys = Object.keys(currAction.comboBonusNumeric);
+
+                for (let k = 0; k < comboKeys.length; k++) {
                     currBuffs.push([
-                        Object.keys(currAction.comboBonus)[k].toLowerCase(),
-                        parseFloat(currAction.comboBonus[Object.keys(currAction.comboBonus)[k]]),
+                        comboKeys[k].toLowerCase(),
+                        currAction.comboBonusNumeric[comboKeys[k]],
                         currTime,
                         currTime + 30
                     ]);
                 }
             }
 
-            if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
+            if (currAction.isSpell || currAction.isWeaponskill) {
                 lastAction = currAction;
             }
         }
@@ -146,7 +150,7 @@ export default class RotationBuilder extends LightningElement {
                 if (currBuffs[j].length === 3) {
                     if (currTime <= currBuffs[j][2] && currTime >= currBuffs[j][1]) {
                         if (hasOwnProperty(currBuffs[j][0], 'damageBuff')) {
-                            buffAmt = parseFloat(currBuffs[j][0].damageBuff);
+                            buffAmt = currBuffs[j][0].damageBuff;
                         } else if (hasOwnProperty(currAction, currBuffs[j][0])) {
                             extraPotency = currBuffs[j][0];
                         }
@@ -154,21 +158,21 @@ export default class RotationBuilder extends LightningElement {
                 }
             }
 
-            if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
+            if (currAction.isSpell || currAction.isWeaponskill) {
                 if (extraPotency != null) {
-                    totalPotency += parseFloat(currAction[extraPotency]) * buffAmt;
+                    totalPotency += currAction[extraPotency] * buffAmt;
                     stacksUsed = -1;
                 } else if (currAction.comboAction === lastAction.name && hasOwnProperty(currAction, 'comboAction')) {
-                    totalPotency += parseFloat(currAction.comboPotency || '0') * buffAmt;
+                    totalPotency += (currAction.comboPotencyNumeric || 0) * buffAmt;
                 } else if (hasOwnProperty(currAction, 'potency')) {
-                    totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
+                    totalPotency += (currAction.potencyNumeric || 0) * buffAmt;
                 }
                 lastAction = currAction;
             }
 
-            if (currAction.type === 'Ability') {
+            if (currAction.isAbility) {
                 if (hasOwnProperty(currAction, 'potency')) {
-                    totalPotency += parseFloat(currAction.potency || '0') * buffAmt;
+                    totalPotency += (currAction.potencyNumeric || 0) * buffAmt;
                 }
             }
             extraPotency = null;
@@ -195,7 +199,7 @@ export default class RotationBuilder extends LightningElement {
         } else {
             const timedList = this.findTimes(actionList);
             timedList.forEach((timedAction, i) => {
-                const castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast);
+                const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
                 if (i === 0) {
                     actionList[0].startTime = timedAction[1] - castTime;
                     actionList[0].timeTaken = castTime;

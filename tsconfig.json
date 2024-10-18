@@ -36,7 +36,7 @@
             "xiv/utils": ["src/modules/xiv/utils/utils.ts"]
         }
     },
-    "include": ["src/modules/**/*", "src/modules/xiv/defaultSnippets/jobSnippets/**/*.json"],
+    "include": ["src/modules/**/*", "src/modules/xiv/defaultSnippets/jobSnippets/**/*.json", "scripts/parseEffect.ts"],
     "exclude": [
         "build",
         "node_modules/**",
