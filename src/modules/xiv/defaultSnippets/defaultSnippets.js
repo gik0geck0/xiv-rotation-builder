@@ -1,19 +1,19 @@
-import pld from './jobSnippets/pld/pld.json';
-import war from './jobSnippets/war/war.json';
-import drk from './jobSnippets/drk/drk.json';
-import gnb from './jobSnippets/gnb/gnb.json';
-import whm from './jobSnippets/whm/whm.json';
-import ast from './jobSnippets/ast/ast.json';
-import sge from './jobSnippets/sge/sge.json';
-import drg from './jobSnippets/drg/drg.json';
-import sam from './jobSnippets/sam/sam.json';
-import rpr from './jobSnippets/rpr/rpr.json';
-import brd from './jobSnippets/brd/brd.json';
-import mch from './jobSnippets/mch/mch.json';
-import dnc from './jobSnippets/dnc/dnc.json';
-import blm from './jobSnippets/blm/blm.json';
-import rdm from './jobSnippets/rdm/rdm.json';
-import pct from './jobSnippets/pct/pct.json';
+import pld from './jobSnippets/pld.json';
+import war from './jobSnippets/war.json';
+import drk from './jobSnippets/drk.json';
+import gnb from './jobSnippets/gnb.json';
+import whm from './jobSnippets/whm.json';
+import ast from './jobSnippets/ast.json';
+import sge from './jobSnippets/sge.json';
+import drg from './jobSnippets/drg.json';
+import sam from './jobSnippets/sam.json';
+import rpr from './jobSnippets/rpr.json';
+import brd from './jobSnippets/brd.json';
+import mch from './jobSnippets/mch.json';
+import dnc from './jobSnippets/dnc.json';
+import blm from './jobSnippets/blm.json';
+import rdm from './jobSnippets/rdm.json';
+import pct from './jobSnippets/pct.json';
 
 /**
  * TS Def
