@@ -172,7 +172,10 @@ export function parseEffect(action: Action): void {
             for (let j = 0; j < line.indexOf('Potency:'); j++) {
                 potencyName += line[j].toLowerCase();
             }
-            action[potencyName] = line[line.indexOf('Potency:') + 1];
+            if (!action.alternatePotencies) {
+                action.alternatePotencies = {};
+            }
+            action.alternatePotencies[potencyName] = line[line.indexOf('Potency:') + 1];
         }
 
         //Checks for buff/effect granting

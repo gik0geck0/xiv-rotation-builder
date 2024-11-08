@@ -20,6 +20,7 @@ export interface Action {
     comboAction?: string;
     comboPotency?: string;
     comboBonus?: Record<string, any>;
+    alternatePotencies?: Record<string, number>;
     grants?: Record<string, any>;
     buffRequirement?: string;
     damageBuff?: number;

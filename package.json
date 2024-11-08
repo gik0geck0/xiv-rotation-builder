@@ -9,6 +9,7 @@
     "type": "module",
     "scripts": {
         "build": "tsc -b",
+        "build:scripts": "tsc -b scripts",
         "clean": "rimraf -rf __lwr_cache__ site dist lib coverage tsconfig.tsbuildinfo",
         "lint": "eslint ./src/**/*.ts ./src/**/*.js",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",

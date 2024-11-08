@@ -29,12 +29,16 @@ type Action = {
     { name: "Throw", damage: 3 }
   ];
   
+  enum LogLevel {
+    Summary = 0,
+    Verbose
+  }
   // Set log level (1 for verbose, 0 for summary)
-  const LOG_LEVEL = 0;
+  const LOG_LEVEL: LogLevel = LogLevel.Summary;
   
   // Function to calculate the score by multiplying damages in order
   function score(actions: Action[]): number {
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
     return actions.reduce((acc, action) => acc * action.damage, 1); // Start with 1 to avoid reducing an empty array
@@ -44,11 +48,11 @@ type Action = {
   
   // Selection: choose the best child node (based on UCB1 or similar heuristic)
   function select(node: TreeNode): TreeNode {
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Selecting node. Current children: ", node.children.map(c => c.action?.name));
     }
     if (node.children.length === 0) {
-      if (LOG_LEVEL === 1) {
+      if (LOG_LEVEL > 0) {
         console.log("[LOG] No children found during selection!");
       }
       return node; // No selection possible
@@ -60,7 +64,7 @@ type Action = {
       node.children[0] // Ensure we have at least one child to avoid empty reduce
     );
   
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Selected node: ", selectedNode.action?.name);
     }
     return selectedNode;
@@ -68,7 +72,7 @@ type Action = {
   
   // Expansion: create a new child node for each unexplored action
   function expand(node: TreeNode): void {
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Expanding node: ", node.action?.name);
     }
   
@@ -84,14 +88,14 @@ type Action = {
       node.children.push(newNode);
     });
   
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Expanded with new children: ", node.children.map(c => c.action?.name));
     }
   }
   
   // Simulation: fixed length of actions and calculate score
   function simulate(node: TreeNode): number {
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Simulating from node: ", node.action?.name);
     }
   
@@ -101,16 +105,16 @@ type Action = {
     while (randomActions.length < 10) {
       const randomAction = weightedRandomAction(); // Use weighted random selection
       randomActions.push(randomAction);
-      if (LOG_LEVEL === 1) {
+      if (LOG_LEVEL > 0) {
         console.log("[LOG] Added action during simulation: ", randomAction.name);
       }
     }
   
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Simulated actions (in order): ", randomActions.map(a => a.name));
     }
     const calculatedScore = score(randomActions); // Multiply damages
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Simulated score: ", calculatedScore);
     }
     return calculatedScore;
@@ -136,14 +140,14 @@ type Action = {
   // Backpropagation: propagate score back up the tree
   function backpropagate(node: TreeNode, result: number): void {
     let currentNode: TreeNode | null = node;
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Backpropagating result: ", result, " from node: ", node.action?.name);
     }
   
     while (currentNode !== null) {
       currentNode.visits += 1;
       currentNode.score += result;
-      if (LOG_LEVEL === 1) {
+      if (LOG_LEVEL > 0) {
         console.log("[LOG] Updated node: ", currentNode.action?.name, " -> Visits: ", currentNode.visits, ", Score: ", currentNode.score);
       }
       currentNode = currentNode.parent; // Move up to the parent node
@@ -156,7 +160,7 @@ type Action = {
     let bestActionSequence: Action[] = []; // To track the best action sequence
   
     for (let i = 0; i < iterations; i++) {
-      if (LOG_LEVEL === 1) {
+      if (LOG_LEVEL > 0) {
         console.log(`[LOG] Iteration: ${i + 1}`);
       }
   
@@ -164,7 +168,7 @@ type Action = {
       let node = root;
   
       if (node.children.length === 0) {
-        if (LOG_LEVEL === 1) {
+        if (LOG_LEVEL > 0) {
           console.log("[LOG] Root node has no children. Expanding root.");
         }
         expand(node);
@@ -197,7 +201,7 @@ type Action = {
   
     const actionList = bestNode.actionSequence.map(a => `${a.name} ${a.damage}`).join(" * ");
     
-    if (LOG_LEVEL === 1) {
+    if (LOG_LEVEL > 0) {
       console.log("[LOG] Best node after MCTS: ", bestNode.action?.name, " with score: ", bestNode.score);
     }
   
