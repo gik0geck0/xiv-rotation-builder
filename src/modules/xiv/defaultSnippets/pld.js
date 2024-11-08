@@ -83,6 +83,72 @@ export default {
                             "action": "Atonement"
                         }
                     ]
+                },
+                {
+                    "name": "v1",
+                    "description": "State of PLD in 7.05",
+                    "actions": [
+                        {
+                            "action": "Holy Spirit"
+                        },
+                        {
+                            "action": "Fast Blade"
+                        },
+                        {
+                            "action": "Riot Blade"
+                        },
+                        {
+                            "action": "Royal Authority"
+                        },
+                        {
+                            "action": "Fight or Flight"
+                        },
+                        {
+                            "action": "Imperator"
+                        },
+                        {
+                            "action": "Confiteor"
+                        },
+                        {
+                            "action": "Circle of Scorn"
+                        },
+                        {
+                            "action": "Expiacion"
+                        },
+                        {
+                            "action": "Blade of Faith"
+                        },
+                        {
+                            "action": "Intervene"
+                        },
+                        {
+                            "action": "Blade of Truth"
+                        },
+                        {
+                            "action": "Intervene"
+                        },
+                        {
+                            "action": "Blade of Valor"
+                        },
+                        {
+                            "action": "Blade of Honor"
+                        },
+                        {
+                            "action": "Goring Blade"
+                        },
+                        {
+                            "action": "Atonement"
+                        },
+                        {
+                            "action": "Supplication"
+                        },
+                        {
+                            "action": "Sepulchre"
+                        },
+                        {
+                            "action": "Holy Spirit"
+                        }
+                    ]
                 }
             ]
         },
@@ -126,7 +192,7 @@ export default {
                             "action": "Circle of Scorn"
                         },
                         {
-                            "action": "Expacion"
+                            "action": "Expiacion"
                         },
                         {
                             "action": "Confiteor"
@@ -179,14 +245,17 @@ export default {
         {
             "name": "123",
             "description": "shorthand for 1-2-3 combo",
-            "actions": [
-                {
-                    "shortcut": "12"
-                },
-                {
-                    "action": "Royal Authority"
-                }
-            ]
+            "versions": [{
+                "name": "v0",
+                "actions": [
+                    {
+                        "shortcut": "12"
+                    },
+                    {
+                        "action": "Royal Authority"
+                    }
+                ]
+            }]
         },
         {
             "name": "Atonements",
@@ -228,6 +297,39 @@ export default {
                     "action": "Blade of Valor"
                 }
             ]
+        },
+        {
+            "name": "Quick Combo",
+            "description": "Full combo starting with 1-2-3",
+            "versions": [
+                {
+                    "name": "v0",
+                    "description": "Full combo as of 7.05",
+                    "actions": [
+                        {
+                            "action": "Fast Blade"
+                        },
+                        {
+                            "action": "Riot Blade"
+                        },
+                        {
+                            "action": "Royal Authority"
+                        },
+                        {
+                            "action": "Atonement"
+                        },
+                        {
+                            "action": "Supplication"
+                        },
+                        {
+                            "action": "Sepulchre"
+                        },
+                        {
+                            "action": "Holy Spirit"
+                        }
+                    ]
+                }
+            ]
         }
     ]
-}
+};
