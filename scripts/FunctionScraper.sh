@@ -134,8 +134,20 @@ curl https://na.finalfantasyxiv.com/jobguide/whitemage/ | sed '0,/Simple Mode/!d
 outputFile 'whitemage'
 
 #Add scholar with pet actions
+curl https://na.finalfantasyxiv.com/jobguide/scholar/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/scholar/ | sed -n '/trait_action/,/Simple Mode/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
+curl https://na.finalfantasyxiv.com/jobguide/scholar/ | sed '0,/Simple Mode/!d'| sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' > XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/scholar/ | sed '0,/Simple Mode/!d'| grep -E 'class="job__skill_icon"' |sed -e 's/<div class="job__skill_icon"><img src=//'| sed -e 's/ width="40" height="40" alt=""><\/div>//'| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/$/,/' > XIVSkillIcon.txt
+outputFile 'scholar'
 
 #Add astrologian with Arcana
+curl https://na.finalfantasyxiv.com/jobguide/astrologian/ | sed '0,/Arcana<span/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/astrologian/ | sed -n '/Role Actions/,/Traits/{//!p}' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' >> XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/astrologian/ | sed -n '/trait_action/,/Simple Mode/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
+curl https://na.finalfantasyxiv.com/jobguide/astrologian/ | sed '0,/Arcana<span/!d' | sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' > XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/astrologian/ | sed -n '/Role Actions/,/Job Gauge/{//!p}' | sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' >> XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/astrologian/ | sed '0,/Simple Mode/!d'| grep -E 'class="job__skill_icon"' |sed -e 's/<div class="job__skill_icon"><img src=//'| sed -e 's/ width="40" height="40" alt=""><\/div>//'| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/$/,/' > XIVSkillIcon.txt
+outputFile 'astrologian'
 
 
 curl https://na.finalfantasyxiv.com/jobguide/sage/ | sed '0,/trait_action/!d' | grep -E 'strong|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
@@ -157,9 +169,18 @@ curl https://na.finalfantasyxiv.com/jobguide/dragoon/ | sed '0,/Combo Sequence/!
 outputFile 'dragoon'
 
 #Ninja, needs Ninjutsu (Combo Sequence)
+curl https://na.finalfantasyxiv.com/jobguide/ninja/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/ninja/ | sed -n '/trait_action/,/Combo Sequence/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
+curl https://na.finalfantasyxiv.com/jobguide/ninja/ | sed '0,/Combo Sequence/!d'| sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' > XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/ninja/ | sed '0,/Combo Sequence/!d'| grep -E 'class="job__skill_icon"' |sed -e 's/<div class="job__skill_icon"><img src=//'| sed -e 's/ width="40" height="40" alt=""><\/div>//'| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/$/,/' > XIVSkillIcon.txt
+outputFile 'ninja'
 
 #Samurai, needs Iaijutsu (Combo Sequence)
-
+curl https://na.finalfantasyxiv.com/jobguide/samurai/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/samurai/ | sed -n '/trait_action/,/Combo Sequence/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
+curl https://na.finalfantasyxiv.com/jobguide/samurai/ | sed '0,/Combo Sequence/!d'| sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' > XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/samurai/ | sed '0,/Combo Sequence/!d'| grep -E 'class="job__skill_icon"' |sed -e 's/<div class="job__skill_icon"><img src=//'| sed -e 's/ width="40" height="40" alt=""><\/div>//'| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/$/,/' > XIVSkillIcon.txt
+outputFile 'samurai'
 
 curl https://na.finalfantasyxiv.com/jobguide/reaper/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
 curl https://na.finalfantasyxiv.com/jobguide/reaper/ | sed -n '/trait_action/,/Combo Sequence/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
@@ -180,6 +201,11 @@ curl https://na.finalfantasyxiv.com/jobguide/machinist/ | sed '0,/Combo Sequence
 outputFile 'machinist'
 
 # Add Dancer, needs step actions
+curl https://na.finalfantasyxiv.com/jobguide/dancer/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/dancer/ | sed -n '/trait_action/,/Combo Sequence/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
+curl https://na.finalfantasyxiv.com/jobguide/dancer/ | sed '0,/Combo Sequence/!d'| sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' > XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/dancer/ | sed '0,/Combo Sequence/!d'| grep -E 'class="job__skill_icon"' |sed -e 's/<div class="job__skill_icon"><img src=//'| sed -e 's/ width="40" height="40" alt=""><\/div>//'| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/$/,/' > XIVSkillIcon.txt
+outputFile 'dancer'
 
 curl https://na.finalfantasyxiv.com/jobguide/blackmage/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
 curl https://na.finalfantasyxiv.com/jobguide/blackmage/ | sed -n '/trait_action/,/Combo Sequence/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
@@ -188,6 +214,11 @@ curl https://na.finalfantasyxiv.com/jobguide/blackmage/ | sed '0,/Combo Sequence
 outputFile 'blackmage'
 
  #Add Summoner, needs pet actions
+ curl https://na.finalfantasyxiv.com/jobguide/summoner/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
+curl https://na.finalfantasyxiv.com/jobguide/summoner/ | sed -n '/trait_action/,/Simple Mode/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
+curl https://na.finalfantasyxiv.com/jobguide/summoner/ | sed '0,/Simple Mode/!d'| sed -n '/<td class="content">/,/<\/td>/p' | sed -n '/<td class="content">/,/<\/td>/{ /<td class="content">/! { /<\/td>/! p}  } ' | sed '/<div/,/<\/div>/d' | sed 's/<\/a>//g' | sed 's/<\/div>//g' | sed '/^[[:space:]]*$/d' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"//g' | sed 's/$/\"/' | sed 's/^/\"/' > XIVEffect.txt
+curl https://na.finalfantasyxiv.com/jobguide/summoner/ | sed '0,/Simple Mode/!d'| grep -E 'class="job__skill_icon"' |sed -e 's/<div class="job__skill_icon"><img src=//'| sed -e 's/ width="40" height="40" alt=""><\/div>//'| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/$/,/' > XIVSkillIcon.txt
+outputFile 'summoner'
 
 curl https://na.finalfantasyxiv.com/jobguide/redmage/ | sed '0,/trait_action/!d' | grep -E '<strong>|class="cast"|class="recast"|class="classification"|class="cost"|Lv. ' | sed 's/<[^>]*>//g'|sed 's/Lv. //g' |sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVNums.txt
 curl https://na.finalfantasyxiv.com/jobguide/redmage/ | sed -n '/trait_action/,/Combo Sequence/p ' | grep -E '<strong>|Lv.' | sed 's/<[^>]*>//g'|sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'| sed 's/^/\"/'| sed 's/$/\",/' > XIVTraits.txt
