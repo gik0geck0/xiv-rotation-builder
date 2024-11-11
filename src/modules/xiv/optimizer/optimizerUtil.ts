@@ -30,7 +30,8 @@ type Action = {
   ];
   
   // Set log level (1 for verbose, 0 for summary)
-  const LOG_LEVEL = 0;
+  type LogLevel = 0 | 1;
+  const LOG_LEVEL: LogLevel = 0;
   
   // Function to calculate the score by multiplying damages in order
   function score(actions: Action[]): number {
@@ -222,3 +223,28 @@ type Action = {
   // Try running MCTS with 1 10 100 10000 iterations 
   const bestNode = monteCarloTreeSearch(root, 10000);
   
+
+export class MCTSOptimizer {
+  job: string;
+  setting: string;
+  duration: number;
+  gcd: number;
+
+  constructor(job: string, setting: string, duration: number, gcd: number) {
+    this.job = job;
+    this.setting = setting;
+    this.duration = duration;
+    this.gcd = gcd;
+
+    // For now, just alert the received values
+    alert(
+      `MCTS Initialized:\nJob: ${this.job}\nSetting: ${this.setting}\nDuration: ${this.duration} seconds\nGCD: ${this.gcd} seconds`
+    );
+  }
+
+  // Monte Carlo Tree Search main loop (dummy function for now)
+  monteCarloTreeSearch(iterations: number): void {
+    console.log(`[LOG] Running MCTS with ${iterations} iterations`);
+    // Here you can add the logic for running the MCTS using the stored parameters
+  }
+}

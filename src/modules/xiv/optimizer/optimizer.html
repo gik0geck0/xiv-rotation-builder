@@ -1,44 +1,33 @@
-<template>
-    <div class="container">
-        <h1>Rotation Optimizer</h1>
-        <form onsubmit={handleSubmit}>
-            <!-- Job selection -->
-            <label for="jobSelector">Choose a Job:</label>
-            <select name="jobSelector" id="jobSelector" onchange={changeJob}>
-                <template for:each={jobList} for:item="jobName" for:index="idx">
-                    <option key={jobName.t} value={jobName}>{jobName}</option>
-                </template>
-            </select>
+<form onsubmit={handleSubmit}>
+    <label for="jobSelector">Choose a Job:</label>
+    <select name="jobSelector" id="jobSelector" onchange={changeJob}>
+        <template for:each={jobList} for:item="jobName" for:index="idx">
+            <option key={jobName.t} value={jobName}>{jobName}</option>
+        </template>
+    </select>
 
-            <!-- Simulation setting -->
-            <lightning-radio-group 
-                name="radioGroup"
-                label="Choose Optimizer Strategy"
-                options={options}
-                value={optStrategyValue}
-                type="radio">
-            </lightning-radio-group>
-    
-            <!-- Duration Input -->
-            <!-- <lex-slider label="Volume" size="x-small"></lex-slider> -->
+    <lightning-radio-group 
+        name="radioGroup"
+        label="Choose Optimizer Strategy"
+        options={options}
+        value={optStrategyValue}
+        type="radio">
+    </lightning-radio-group>
 
-            <div class="duration-input">
-                <label for="duration">Enter Duration (seconds):</label>
-                <input type="number" id="duration" name="duration" step="1" min="1" value={sliderValue} required/>
-            </div>
-
-            <!-- GCD Input -->
-            <div class="gcd-input">
-                <label for="gcd">Enter GCD (Global Cooldown):</label>
-                <input type="number" id="gcd" name="gcd" step="0.01" min="0.5" value="2.5" required/>
-            </div>
-
-            <lightning-button 
-                variant="brand" 
-                label="Optimize" 
-                title="Primary action" 
-                onclick={handleClick}>
-            </lightning-button>
-        </form>
+    <div class="duration-input">
+        <label for="duration">Enter Duration (seconds):</label>
+        <input type="number" id="duration" name="duration" step="1" min="1" value={sliderValue} required/>
     </div>
-</template>
+
+    <div class="gcd-input">
+        <label for="gcd">Enter GCD (Global Cooldown):</label>
+        <input type="number" id="gcd" name="gcd" step="0.01" min="0.5" value="2.5" required/>
+    </div>
+
+    <lightning-button 
+        variant="brand" 
+        label="Optimize" 
+        title="Primary action" 
+        onclick={handleSubmit}>
+    </lightning-button>
+</form>
