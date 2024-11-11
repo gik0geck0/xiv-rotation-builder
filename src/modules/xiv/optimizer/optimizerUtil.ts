@@ -192,7 +192,7 @@ function monteCarloTreeSearch(root: TreeNode, iterations: number): TreeNode {
   // Return the best action list found in the entire MCTS process
   const bestActionList = bestActionSequence.slice(0, 10); // Slice to the first 10 actions if necessary
   const bestActionListStr = bestActionList.map(a => a.name).join(" * ");
-  alert(`[LOG] Best action list: ${bestActionListStr} with Damage: ${bestDamage} `);
+  alert(`Optimizer complete, ran for ${iterations} itterations. \n Best action list: ${bestActionListStr} with Damage: ${bestDamage} `);
   console.log(`[LOG] Best action list: ${bestActionListStr}`);
   console.log(`[LOG] Best found damage: ${bestDamage}`);
 

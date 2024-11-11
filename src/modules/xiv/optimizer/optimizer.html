@@ -16,8 +16,9 @@
                 label="Choose Optimizer Strategy"
                 options={options}
                 value={optStrategyValue}
-                type="radio">
-            </lightning-radio-group>
+                type="radio"
+                onchange={handleRadioChange}>
+          </lightning-radio-group>
 
             <!-- Duration Input -->
             <div class="duration-input">
