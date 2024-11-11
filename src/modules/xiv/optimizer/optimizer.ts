@@ -54,8 +54,7 @@ export default class Optimizer extends LightningElement {
     // alert(`Selected Job: ${jobValue}\nSelected Setting: ${strategyValue}\nDuration: ${durationValue} seconds\nGCD: ${gcd} seconds`);
   
     // Call the optimizer with these values
-    const optimizer = new MCTSOptimizer(jobValue, strategyValue, durationValue, gcd);
-    optimizer.monteCarloTreeSearch(1000);
+    new MCTSOptimizer(jobValue, strategyValue, durationValue, gcd);
   }
   
   
