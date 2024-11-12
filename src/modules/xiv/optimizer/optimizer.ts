@@ -55,11 +55,9 @@ export default class Optimizer extends LightningElement {
     console.log('Selected strategy:', this.optStrategyValue); // Debugging line
   }
 
-
   // Check and send the value when the form is submitted
   handleSubmit(event: Event): void {
     event.preventDefault(); // Prevent the default form submission behavior
-
 
     const selectedJob = this.template?.querySelector('[name="jobSelector"]') as HTMLSelectElement | null;
     const selectedDuration = this.template?.querySelector('[name="duration"]') as HTMLInputElement | null;
