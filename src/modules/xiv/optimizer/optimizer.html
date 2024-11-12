@@ -39,5 +39,31 @@
                 onclick={handleSubmit}>
             </lightning-button>
         </form>
+        <br>
+        <div class="output">
+            <h1>Rotation:</h1>
+            <ol
+                class="sortable-list"
+                id ="outputs"
+            >
+            <template for:each={jobActions} for:item="action" for:index="idx">
+                <li key={action.t}>
+                <xiv-job-icon
+                    class="action"
+                    key={action.t}
+                    job-abv={job}
+                    action-id={action.id}
+                    location={action.location}
+                    name = {action.name}
+                >
+                </xiv-job-icon>
+                {action.name}
+                </li>
+            </template>
+            </ol>
+            <h1>Potency: <lightning-formatted-rich-text value={potency}></lightning-formatted-rich-text>
+            </h1>
+            
+        </div>
     </div>
 </template>
