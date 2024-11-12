@@ -1,6 +1,7 @@
-import { LightningElement } from 'lwc';
+import { LightningElement} from 'lwc';
 import { getJobNames } from 'xiv/actionRepository';
 import { MCTSOptimizer } from './optimizerUtil';
+import type { Action } from 'xiv/actionData';
 
 // Enum for Strategy Type
 enum StrategyType {
@@ -9,9 +10,20 @@ enum StrategyType {
   Balanced = 'balanced',
 }
 
+// let mcts: MCTSOptimizer;
+
+//factory
+function MCTSFactory(jobValue: string, strategyValue: string, durationValue: number, gcdValue: number): MCTSOptimizer {
+  return new MCTSOptimizer(jobValue, strategyValue, durationValue, gcdValue);
+}
+
+
 export default class Optimizer extends LightningElement {
   job = 'paladin';
   jobList = getJobNames();
+  jobActions: Action[] = [];
+  skillDetails: string = '';
+  potency: number = 0;
 
   // Set the type of optStrategyValue to be StrategyType, initialized to Breadth
   optStrategyValue: StrategyType = StrategyType.Breadth;
@@ -28,6 +40,14 @@ export default class Optimizer extends LightningElement {
   myValue = 20;
   sliderValue = 60;
 
+  //Handles job changes and makes sure the output has the correct job.
+  changeJob(): void {
+    const currentJob = this.template?.querySelector('[name="jobSelector"]') as HTMLSelectElement;
+    this.job = currentJob.value;
+    this.jobActions = [];
+    this.potency = 0;
+  }
+
   // Update optStrategyValue when the radio button is changed
   handleRadioChange(event: Event): void {
     const selectedOption = (event.target as HTMLInputElement).value as StrategyType;
@@ -35,9 +55,11 @@ export default class Optimizer extends LightningElement {
     console.log('Selected strategy:', this.optStrategyValue); // Debugging line
   }
 
+
   // Check and send the value when the form is submitted
   handleSubmit(event: Event): void {
     event.preventDefault(); // Prevent the default form submission behavior
+
 
     const selectedJob = this.template?.querySelector('[name="jobSelector"]') as HTMLSelectElement | null;
     const selectedDuration = this.template?.querySelector('[name="duration"]') as HTMLInputElement | null;
@@ -69,6 +91,10 @@ export default class Optimizer extends LightningElement {
     console.log('GCD:', gcd);
 
     // Call the optimizer with these values
-    new MCTSOptimizer(jobValue, strategyValue, durationValue, gcd);
+    const mcts = MCTSFactory(jobValue, strategyValue, durationValue, gcd);
+    this.jobActions = mcts.bestActions.filter((action): action is Action => action !== undefined);
+    this.potency = mcts.bestPotency;
+    console.log(this.potency);
+    console.log(this.jobActions);
   }
 }
