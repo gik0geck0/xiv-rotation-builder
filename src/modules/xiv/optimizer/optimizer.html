@@ -16,12 +16,11 @@
                 label="Choose Optimizer Strategy"
                 options={options}
                 value={optStrategyValue}
-                type="radio">
-            </lightning-radio-group>
-    
-            <!-- Duration Input -->
-            <lex-slider label="Volume" size="x-small"></lex-slider>
+                type="radio"
+                onchange={handleRadioChange}>
+          </lightning-radio-group>
 
+            <!-- Duration Input -->
             <div class="duration-input">
                 <label for="duration">Enter Duration (seconds):</label>
                 <input type="number" id="duration" name="duration" step="1" min="1" value={sliderValue} required/>
@@ -37,7 +36,7 @@
                 variant="brand" 
                 label="Optimize" 
                 title="Primary action" 
-                onclick={handleClick}>
+                onclick={handleSubmit}>
             </lightning-button>
         </form>
     </div>
