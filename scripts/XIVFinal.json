@@ -139,7 +139,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Take all damage intended for another party member as long as said member remains within 10 yalms.<br>Does not activate with certain attacks.<br>Duration: 12s<br>Oath Gauge Cost: 50"
+               "effect": "Take all damage intended for another party member as long as said member remains within 20 yalms.<br>Does not activate with certain attacks.<br>Duration: 12s<br>Oath Gauge Cost: 50"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/af5ddb89ddd5ade6706afe571f45aa6028e1925b.png",
@@ -232,6 +232,16 @@
                "effect": "Deals unaspected damage with a potency of 400.<BR>Divine Might Potency: 500<br>Requiescat Potency: 700<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400"
           },
           {
+               "icon": "https://lds-img.finalfantasyxiv.com/d/c841f5c954aa4e31bd1d82ffd00f863eb944a386.png",
+               "name": "Intervene",
+               "level": "66",
+               "type": "Ability",
+               "cast": "Instant",
+               "recast": "30s",
+               "cost": "-",
+               "effect": "Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 2<br>Cannot be executed while bound."
+          },
+          {
                "icon": "https://lds-img.finalfantasyxiv.com/d/acbcd4de5a1839e4fd8c96ae05eb4109caed9ca1.png",
                "name": "Requiescat",
                "level": "68",
@@ -239,7 +249,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s"
+               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions, and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b570dfda793945b3bb8fddef02b1a865b8a04b32.png",
@@ -260,16 +270,6 @@
                "recast": "2.5s",
                "cost": "1000 MP",
                "effect": "Deals unaspected damage with a potency of 100 to all nearby enemies.<br>Divine Might Potency: 200<br>Requiescat Potency: 300<br>The effect of Divine Might will be prioritized over Requiescat when under the effect of both.<br>Additional Effect: Restores own HP<br>Cure Potency: 400"
-          },
-          {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/c841f5c954aa4e31bd1d82ffd00f863eb944a386.png",
-               "name": "Intervene",
-               "level": "74",
-               "type": "Ability",
-               "cast": "Instant",
-               "recast": "30s",
-               "cost": "-",
-               "effect": "Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 2<br>Cannot be executed while bound."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/f59cb1517f2f26c490a87d58366b5bccff372f19.png",
@@ -449,7 +449,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -987,7 +987,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -1259,7 +1259,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Reduces magic vulnerability by 20%.<br>Duration: 10s"
+               "effect": "Reduces physical damage taken by 10% and magic damage taken by 20%.<br>Duration: 10s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/968fc4ccd880ca468fff7b34680e793a80ffdab1.png",
@@ -1299,7 +1299,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Deals unaspected damage with a potency of 240 to target and all enemies nearby it.<br>Additional Effect: Restores own HP<br>Cure Potency: 200<br>Additional Effect: Restores MP<br>Shares a recast timer with Carve and Spit."
+               "effect": "Deals unaspected damage with a potency of 240 to target and all enemies nearby it.<br>Additional Effect: Restores own HP<br>Cure Potency: 500<br>Additional Effect: Restores MP<br>Shares a recast timer with Carve and Spit."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/6bbe53b6e1f87598b98967ae9d29e4337a7afadd.png",
@@ -1309,7 +1309,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Delivers a threefold attack with a potency of 540.<br>Additional Effect: Restores MP<br>Shares a recast timer with Abyssal Drain."
+               "effect": "Delivers a threefold attack with a potency of 540.<br>Additional Effect: Restores own HP<br>Cure Potency: 500<br>Additional Effect: Restores MP<br>Shares a recast timer with Abyssal Drain."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4e5cbcae7dcf48cf8e3522d308f0c86df9114f0d.png",
@@ -1319,7 +1319,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 580.<br>Blood Gauge Cost: 50"
+               "effect": "Delivers an attack with a potency of 600.<br>Blood Gauge Cost: 50"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/ea30bbaacc0da577820f8b027cec26738c1be840.png",
@@ -1330,6 +1330,16 @@
                "recast": "2.5s",
                "cost": "-",
                "effect": "Delivers an attack with a potency of 240 to all nearby enemies.<br>Blood Gauge Cost: 50"
+          },
+          {
+               "icon": "https://lds-img.finalfantasyxiv.com/d/1dc1a1d830e5355e2cd251531e85932c24ba1b8d.png",
+               "name": "Dark Missionary",
+               "level": "66",
+               "type": "Ability",
+               "cast": "Instant",
+               "recast": "90s",
+               "cost": "-",
+               "effect": "Reduces physical damage taken by 5% and magic damage taken by 10% for self and nearby party members.<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/fbf4ae3878ecc04c6201114ce6b0aadf26bef857.png",
@@ -1370,16 +1380,6 @@
                "recast": "1s",
                "cost": "3000 MP",
                "effect": "Deals unaspected damage with a potency of 460.<br>Additional Effect: Grants Darkside, increasing damage dealt by 10%<br>Duration: 30s<br>Extends Darkside duration by 30s to a maximum of 60s.<br>Shares a recast timer with Flood of Shadow."
-          },
-          {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/1dc1a1d830e5355e2cd251531e85932c24ba1b8d.png",
-               "name": "Dark Missionary",
-               "level": "76",
-               "type": "Ability",
-               "cast": "Instant",
-               "recast": "90s",
-               "cost": "-",
-               "effect": "Reduces magic damage taken by self and nearby party members by 10%.<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/5150a7bff7be43d689f896e7be140f4720a23f6e.png",
@@ -1439,7 +1439,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 600.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Bloodspiller changes to Scarlet Delirium while under the effect of Delirium."
+               "effect": "Delivers an attack with a potency of 620.<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Bloodspiller changes to Scarlet Delirium while under the effect of Delirium."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/cc157e7338d9b4c32f880aed1838519933bc6797.png",
@@ -1449,7 +1449,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 700.<br>Combo Action: Scarlet Delirium<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Scarlet Delirium changes to Comeuppance when requirements for execution are met."
+               "effect": "Delivers an attack with a potency of 720.<br>Combo Action: Scarlet Delirium<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Scarlet Delirium changes to Comeuppance when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2510476b643976c09c1b42f6eb9f011b7de6902c.png",
@@ -1459,7 +1459,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 800.<br>Combo Action: Comeuppance<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Comeuppance changes to Torcleaver when requirements for execution are met."
+               "effect": "Delivers an attack with a potency of 820.<br>Combo Action: Comeuppance<br>Additional Effect: Restores MP<br>Can only be executed while under the effect of Delirium.<br><br>※This action cannot be assigned to a hotbar.<br>※Comeuppance changes to Torcleaver when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/77ef69ee0efdb439996373d7e47f2744a7604b10.png",
@@ -1539,7 +1539,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -1617,7 +1617,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/b60557edca3b093463f0f0c0c04dc3895855e9f8.png",
                "name": "Melee Mastery II",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Hard Slash to 300, Syphon Strike to 240, Souleater to 260, Stalwart Soul to 120, Carve and Spit to 540, Bloodspiller to 580, and Quietus to 240."
+               "effect": "Increases the potency of Hard Slash to 300, Syphon Strike to 240, Souleater to 260, Stalwart Soul to 120, Carve and Spit to 540, Bloodspiller to 600, and Quietus to 240."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/ebbf5df2554905cdaf3a26d5fe2f02b0ad53b6bb.png",
@@ -1629,7 +1629,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/1cff25d23e5fb4e97a96aee32c8b2e4082c2c516.png",
                "name": "Enhanced Living Shadow III",
                "level": "Lv. 100",
-               "effect": "Grants the effect of Scorn after executing Living Shadow.<br>Duration: 30s<br><br>Additionally upgrades Carve and Spit executed by your simulacrum to Disesteem, which delivers an attack to all enemies in a straight line before it with a potency of 620 for the first enemy, and 25% less for all remaining enemies."
+               "effect": "Grants the effect of Scorn after executing Living Shadow.<br>Duration: 30s<br>Additionally upgrades Carve and Spit executed by your simulacrum to Disesteem, which delivers an attack to all enemies in a straight line before it with a potency of 620 for the first enemy, and 25% less for all remaining enemies."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/ad8de6373f0bc939fd654a579d6d06ad123c958b.png",
@@ -1785,7 +1785,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Grants Regen to target.<br>Cure Potency: 200<br>Duration: 18s<br>Maximum Charges: 2"
+               "effect": "Grants Regen to target.<br>Cure Potency: 300<br>Duration: 18s<br>Maximum Charges: 2"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/58257f726f8a2f793622a654e5b0b2df36b372ad.png",
@@ -1795,7 +1795,7 @@
                "cast": "Instant",
                "recast": "360s",
                "cost": "-",
-               "effect": "Reduces HP to 1 and renders you impervious to most attacks.<br>Duration: 10s"
+               "effect": "Reduces HP by 50% of maximum and renders you impervious to most attacks.<br>Duration: 10s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/7edeee63ceea914fd74fc091aa99a84b290a57b1.png",
@@ -1865,7 +1865,7 @@
                "cast": "Instant",
                "recast": "90s",
                "cost": "-",
-               "effect": "Reduces magic damage taken by self and nearby party members by 10%.<br>Duration: 15s"
+               "effect": "Reduces physical damage taken by 5% and magic damage taken by 10% for self and nearby party members.<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/059baae88deccf4ffdc31f8afd0074ec4589f81f.png",
@@ -1965,7 +1965,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 220.<br>Can only be executed when Ready to Blast.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Hypervelocity when requirements for execution are met."
+               "effect": "Delivers an attack with a potency of 200.<br>Can only be executed when Ready to Blast.<br><br>※This action cannot be assigned to a hotbar.<br>※Continuation changes to Hypervelocity when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/9431f382886a5bac654058624ed21082deaae9d9.png",
@@ -1975,7 +1975,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Delivers an attack to all nearby enemies with a potency of 1,200 for the first enemy, and 15% less for all remaining enemies.<br>Cartridge Cost: 2<br>This weaponskill does not share a recast timer with any other actions."
+               "effect": "Delivers an attack to all nearby enemies with a potency of 1,200 for the first enemy, and 15% less for all remaining enemies.<br>Cartridge Cost: 1<br>This weaponskill does not share a recast timer with any other actions."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/c6aa9ac9d9d3b144c6c5d955616edbecbb40d19a.png",
@@ -2085,7 +2085,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4abd24800cb0999fff8ea79ed1085a7b5f8b14cb.png",
@@ -2169,7 +2169,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/b60557edca3b093463f0f0c0c04dc3895855e9f8.png",
                "name": "Melee Mastery II",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Keen Edge to 300, Brutal Shell to 240, Solid Barrel to 240, Burst Strike to 460, Gnashing Fang to 500, Savage Claw to 560, Wicked Talon to 620, Jugular Rip to 240, Abdomen Tear to 280, Eye Gouge to 320, Blasting Zone to 800, and Hypervelocity to 220."
+               "effect": "Increases the potency of Keen Edge to 300, Brutal Shell to 240, Solid Barrel to 240, Burst Strike to 460, Gnashing Fang to 500, Savage Claw to 560, Wicked Talon to 620, Jugular Rip to 240, Abdomen Tear to 280, Eye Gouge to 320, Blasting Zone to 800, and Hypervelocity to 200."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/0388c677531ad523e8c897686069e587b5eaca68.png",
@@ -2314,7 +2314,7 @@
                "name": "Holy",
                "level": "45",
                "type": "Spell",
-               "cast": "2.5s",
+               "cast": "1.5s",
                "recast": "2.5s",
                "cost": "400 MP",
                "effect": "Deals unaspected damage with a potency of 140 to all nearby enemies.<br>Additional Effect: Stun<br>Duration: 4s"
@@ -2467,7 +2467,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 1,320 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed when the Blood Lily is in full bloom."
+               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 1,360 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed when the Blood Lily is in full bloom."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/9582c5aa6ffa9abf82db6140916020235a003a20.png",
@@ -2497,14 +2497,14 @@
                "cast": "1.5s",
                "recast": "2.5s",
                "cost": "400 MP",
-               "effect": "Deals unaspected damage with a potency of 330."
+               "effect": "Deals unaspected damage with a potency of 340."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/eceb9103dbf8066a8b6c8bce2e84df7552f1a074.png",
                "name": "Holy III",
                "level": "82",
                "type": "Spell",
-               "cast": "2.5s",
+               "cast": "1.5s",
                "recast": "2.5s",
                "cost": "400 MP",
                "effect": "Deals unaspected damage with a potency of 150 to all nearby enemies.<br>Additional Effect: Stun<br>Duration: 4s"
@@ -2574,7 +2574,7 @@
                "name": "Esuna",
                "level": "10",
                "type": "Spell",
-               "cast": "1s",
+               "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
                "effect": "Removes a single detrimental effect from target."
@@ -2727,7 +2727,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/faebcc03aa187f6f45319b41b7336431d1722fc4.png",
                "name": "White Magic Mastery",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Dia and its damage over time to 75, Afflatus Misery to 1,320, and Glare III to 330."
+               "effect": "Increases the potency of Dia and its damage over time to 75, Afflatus Misery to 1,360, and Glare III to 340."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/6e19d26c224d8df136427dc9d65b2b8adcda20d7.png",
@@ -2834,7 +2834,7 @@
                "type": "Spell",
                "cast": "2s",
                "recast": "2.5s",
-               "cost": "1000 MP",
+               "cost": "900 MP",
                "effect": "Restores target's HP.<br>Cure Potency: 300<br>Additional Effect: Grants Galvanize to target, nullifying damage equaling 180% of the amount of HP restored. When critical HP is restored, also grants Catalyze, nullifying damage equaling 180% the amount of HP restored.<br>Duration: 30s<br>Effect cannot be stacked with certain sage barrier effects."
           },
           {
@@ -2844,7 +2844,7 @@
                "type": "Spell",
                "cast": "2s",
                "recast": "2.5s",
-               "cost": "1000 MP",
+               "cost": "900 MP",
                "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 200<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 160% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with certain sage barrier effects."
           },
           {
@@ -3134,7 +3134,7 @@
                "type": "Spell",
                "cast": "2s",
                "recast": "2.5s",
-               "cost": "1000 MP",
+               "cost": "900 MP",
                "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 200<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 180% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with certain sage barrier effects."
           },
           {
@@ -3154,7 +3154,7 @@
                "type": "Spell",
                "cast": "Instant",
                "recast": "2.5s",
-               "cost": "1000 MP",
+               "cost": "900 MP",
                "effect": "Restores target's HP.<br>Cure Potency: 360<br>Additional Effect: Grants Galvanize to target, nullifying damage equaling 180% of the amount of HP restored. When critical HP is restored, also grants Catalyze, nullifying damage equaling 180% the amount of HP restored.<br>Duration: 30s<br>Effect cannot be stacked with certain sage barrier effects.<br>Can only be executed while under the effect of Seraphism.<br><br>※This action cannot be assigned to a hotbar.<br>※Adloquium changes to Manifestation when requirements for execution are met."
           },
           {
@@ -3164,7 +3164,7 @@
                "type": "Spell",
                "cast": "Instant",
                "recast": "2.5s",
-               "cost": "1000 MP",
+               "cost": "900 MP",
                "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 240<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 180% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with certain sage barrier effects.<br>Can only be executed while under the effect of Seraphism.<br><br>※This action cannot be assigned to a hotbar.<br>※Concitation changes to Accession when requirements for execution are met."
           },
           {
@@ -3282,7 +3282,7 @@
                "name": "Esuna",
                "level": "10",
                "type": "Spell",
-               "cast": "1s",
+               "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
                "effect": "Order pet to move to a specified location."
@@ -3850,7 +3850,7 @@
                "name": "Esuna",
                "level": "10",
                "type": "Spell",
-               "cast": "1s",
+               "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
                "effect": "Removes a single detrimental effect from target."
@@ -3988,7 +3988,7 @@
                "effect": "Allows the accumulation of charges for consecutive uses of Celestial Intersection.<br>Maximum Charges: 2"
           },
           {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/b6a9c01931066dd4d28235ea22c332cb20b7a4a1.png",
+               "icon": "https://lds-img.finalfantasyxiv.com/d/a090c83cbfb2beec994dca8843649936ddf0a42d.png",
                "name": "Enhanced Divination",
                "level": "Lv. 92",
                "effect": "Grants Divining upon executing Divination.<br>Duration: 30s"
@@ -4064,7 +4064,7 @@
                "type": "Spell",
                "cast": "2s",
                "recast": "2.5s",
-               "cost": "800 MP",
+               "cost": "700 MP",
                "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 300"
           },
           {
@@ -4114,7 +4114,7 @@
                "type": "Spell",
                "cast": "Instant",
                "recast": "1.5s",
-               "cost": "900 MP",
+               "cost": "800 MP",
                "effect": "Restores target's HP.<br>Cure Potency: 300<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 180％ of the amount of HP restored. When critical HP is restored, also grants Differential Diagnosis, nullifying damage equaling 180% the amount of HP restored.<br>Duration: 30s<br>Effect cannot be stacked with Eukrasian Prognosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Diagnosis changes to Eukrasian Diagnosis when requirements for execution are met."
           },
           {
@@ -4124,7 +4124,7 @@
                "type": "Spell",
                "cast": "Instant",
                "recast": "1.5s",
-               "cost": "900 MP",
+               "cost": "800 MP",
                "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 320% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with those of Eukrasian Diagnosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Prognosis changes to Eukrasian Prognosis when requirements for execution are met."
           },
           {
@@ -4325,7 +4325,7 @@
                "cast": "1.5s",
                "recast": "2.5s",
                "cost": "400 MP",
-               "effect": "Deals unaspected damage with a potency of 360.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170"
+               "effect": "Deals unaspected damage with a potency of 370.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/7a2ab72f418459265a3ab33cb5f73955114ffc72.png",
@@ -4375,7 +4375,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 360 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Addersting Cost: 1"
+               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 370 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Addersting Cost: 1"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/db444cd7e3849561b5394b75c2e7eaabbdf394e8.png",
@@ -4395,7 +4395,7 @@
                "cast": "1.5s",
                "recast": "120s",
                "cost": "700 MP",
-               "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 360 for the first enemy, and 40% less for all remaining enemies.<br>Additional Effect: Restores own HP and the HP of all party members within a radius of 20 yalms<br>Cure Potency: 600<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Recast timer cannot be affected by status effects or gear attributes."
+               "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 370 for the first enemy, and 40% less for all remaining enemies.<br>Additional Effect: Restores own HP and the HP of all party members within a radius of 20 yalms<br>Cure Potency: 600<br>Additional Effect: Restores HP to targets under the effect of Kardion granted by you<br>Cure Potency: 170<br>Recast timer cannot be affected by status effects or gear attributes."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/9d4fec42b917590f53bfa7ccc1691c083afd7a3c.png",
@@ -4414,7 +4414,7 @@
                "type": "Spell",
                "cast": "Instant",
                "recast": "1.5s",
-               "cost": "900 MP",
+               "cost": "800 MP",
                "effect": "Restores own HP and the HP of all nearby party members.<br>Cure Potency: 100<br>Additional Effect: Erects a magicked barrier which nullifies damage equaling 360% of the amount of HP restored<br>Duration: 30s<br>Effect cannot be stacked with those of Eukrasian Diagnosis or scholar's Galvanize.<br>Can only be executed while under the effect of Eukrasia.<br><br>※This action cannot be assigned to a hotbar.<br>※Prognosis changes to Eukrasian Prognosis II when requirements for execution are met."
           },
           {
@@ -4442,7 +4442,7 @@
                "name": "Esuna",
                "level": "10",
                "type": "Spell",
-               "cast": "1s",
+               "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
                "effect": "Removes a single detrimental effect from target."
@@ -4571,7 +4571,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/faebcc03aa187f6f45319b41b7336431d1722fc4.png",
                "name": "Magick Mastery",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Dosis III to 360, Toxikon II to 360, and Pneuma to 360."
+               "effect": "Increases the potency of Dosis III to 370, Toxikon II to 370, and Pneuma to 370."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/d94311ab094fe93f3afe0bacc9aca872e10b9bee.png",
@@ -4633,7 +4633,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action."
+               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.<br>Can only be executed while less than five chakra are open."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/c5bf98a4d13a858dc2c4932408eefe77c4f173c1.png",
@@ -4703,7 +4703,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action."
+               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.<br>Can only be executed while less than five chakra are open."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/d5392c32b9d05bda3c0a4ee45c1d13cce2dee9e1.png",
@@ -4773,7 +4773,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action."
+               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.<br>Can only be executed while less than five chakra are open."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/20a6e6104d8cad0e109bd0f56e1d26689017b871.png",
@@ -4893,7 +4893,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action."
+               "effect": "Opens a chakra. Up to five chakra can be opened at once.<br>Opens all five chakra when used outside of combat.<br>Triggers the cooldown of weaponskills upon execution.<br>Conversely, execution of weaponskills triggers the cooldown of this action.<br>Can only be executed while less than five chakra are open."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4609c042377d4e8c7cfd87920d95f2d48993dd3d.png",
@@ -5053,7 +5053,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -5235,7 +5235,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers a ranged attack with a potency of 150."
+               "effect": "Delivers a ranged attack with a potency of 200.<br>Enhanced Piercing Talon Potency: 350"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/d5052c9c0d1bf846c9a4fb70497dd1cea97ceca6.png",
@@ -5285,7 +5285,7 @@
                "cast": "Instant",
                "recast": "30s",
                "cost": "-",
-               "effect": "Executes a jump to a location 15 yalms behind you.<br>Cannot be executed while bound."
+               "effect": "Executes a jump to a location 15 yalms behind you.<br>Additional Effect: Grants Enhanced Piercing Talon<br>Duration: 15s<br>Cannot be executed while bound."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/1e6e09c76f8847d3caf2ee330400848219460dfa.png",
@@ -5365,7 +5365,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 280 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Life of the Dragon<br>Life of the Dragon Effect: Increases damage dealt by 15%<br>Duration: 20s<br>Additional Effect: Grants 3 stacks of Nastrond Ready<br>Duration: 20s"
+               "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 280 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Life of the Dragon<br>Life of the Dragon Effect: Increases damage dealt by 15%<br>Duration: 20s<br>Additional Effect: Grants Nastrond Ready<br>Duration: 20s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/86993377c3b82442fd98d9ccaf2c8e007b110d3e.png",
@@ -5395,7 +5395,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 200.<br>Can only be executed when Dive Ready."
+               "effect": "Delivers an attack with a potency of 380.<br>Can only be executed when Dive Ready."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/8e8ee9ce030d0945ab1983fa282569bf9359e77b.png",
@@ -5405,7 +5405,7 @@
                "cast": "Instant",
                "recast": "2s",
                "cost": "-",
-               "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 360 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while Nastrond Ready."
+               "effect": "Delivers an attack to all enemies in a straight line before you with a potency of 720 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while Nastrond Ready."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/27c2b3ef23b6bbe6b322b8a0bade3e00e04727b1.png",
@@ -5445,7 +5445,7 @@
                "cast": "Instant",
                "recast": "30s",
                "cost": "-",
-               "effect": "Delivers a jumping fire-based attack to target and all enemies nearby it with a potency of 720 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Starcross Ready<br>Duration: 20s<br>Effect ends when Life of the Dragon expires.<br>Can only be executed while under the effect of Life of the Dragon.<br>Cannot be executed while bound."
+               "effect": "Delivers a jumping fire-based attack to target and all enemies nearby it with a potency of 820 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Grants Starcross Ready<br>Duration: 20s<br>Effect ends when Life of the Dragon expires.<br>Can only be executed while under the effect of Life of the Dragon.<br>Cannot be executed while bound."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/8d26d75ca622ec9c3ebdb2c9810f3a8981f04710.png",
@@ -5525,7 +5525,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Deals physical damage to target and all enemies nearby it with a potency of 900 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Starcross Ready."
+               "effect": "Deals physical damage to target and all enemies nearby it with a potency of 1,000 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Starcross Ready."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2b79d78f1ed471ace5708898e3388062fbd555fb.png",
@@ -5575,7 +5575,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -5599,7 +5599,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/c9d5b7f74c9107188eec0bb2cad21e3081113382.png",
                "name": "Life of the Dragon",
                "level": "Lv. 70",
-               "effect": "Upgrades Blood of the Dragon to Life of the Dragon.<br>Life of the Dragon Effect: Increases damage dealt by 15%<br>Upon successfully landing Geirskogul, grants 3 stacks of Nastrond Ready.<br>Duration: 20s"
+               "effect": "Upgrades Blood of the Dragon to Life of the Dragon.<br>Life of the Dragon Effect: Increases damage dealt by 15%<br>Upon successfully landing Geirskogul, grants Nastrond Ready.<br>Duration: 20s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/487203b1d939fa5da7aaec335a10c30bae150ca5.png",
@@ -5611,7 +5611,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/4da1e6e139afd6c3c1d6db696410641aab50b31d.png",
                "name": "Lance Mastery",
                "level": "Lv. 76",
-               "effect": "Increases the potency of True Thrust to 230, Vorpal Thrust to 130, and Disembowel to 140.<br>Grants Draconian Fire if Drakesbane is executed following Fang and Claw or Wheeling Thrust.<br>Duration: 30s<br>Effect of Draconian Fire ends upon execution of any melee weaponskill.<br>Upgrades True Thrust to Raiden Thrust while under the effect of Draconian Fire."
+               "effect": "Increases the potency of True Thrust to 230, Vorpal Thrust to 130, Piercing Talon to 200, Enhanced Piercing Talon to 350, and Disembowel to 140.<br>Grants Draconian Fire if Drakesbane is executed following Fang and Claw or Wheeling Thrust.<br>Duration: 30s<br>Effect of Draconian Fire ends upon execution of any melee weaponskill.<br>Upgrades True Thrust to Raiden Thrust while under the effect of Draconian Fire."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/a5cb24b338a7fda93626df156a3a6ef0352103a0.png",
@@ -5641,7 +5641,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/2f3e1a3378cc09d6e54c6be2a920c432b47845cc.png",
                "name": "Lance Mastery III",
                "level": "Lv. 90",
-               "effect": "Increases the potency of Geirskogul to 280 and Nastrond to 360.<br>Allows for the sharpening of the Firstminds' Focus upon successfully landing Raiden Thrust or Draconian Fury, up to a maximum of 2 units."
+               "effect": "Increases the potency of Geirskogul to 280 and Nastrond to 720.<br>Allows for the sharpening of the Firstminds' Focus upon successfully landing Raiden Thrust or Draconian Fury, up to a maximum of 2 units."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/9620c52ce9377062039809fc58e3b38a00872b97.png",
@@ -5653,7 +5653,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/4c948f409f459cc6cc4983962f78d071f06ef5b8.png",
                "name": "Melee Mastery",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Fang and Claw to 140, Wheeling Thrust to 140, Drakesbane to 440, Raiden Thrust to 320, Stardiver to 720, Heavens' Thrust to 140, Chaotic Spring to 140, and Wyrmwind Thrust to 440."
+               "effect": "Increases the potency of Fang and Claw to 140, Wheeling Thrust to 140, Drakesbane to 440, Raiden Thrust to 320, Stardiver to 820, Heavens' Thrust to 140, Chaotic Spring to 140, and Wyrmwind Thrust to 440."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/846403f0c92dee00d9b075f5133f9eb5096afdc1.png",
@@ -5731,7 +5731,7 @@
                "cast": "Instant",
                "recast": "2.12s",
                "cost": "-",
-               "effect": "Delivers a ranged attack with a potency of 120.<br>Additional Effect: Increases Ninki Gauge by 5"
+               "effect": "Delivers a ranged attack with a potency of 200.<br>Additional Effect: Increases Ninki Gauge by 5"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b36d71590151a6f7f3d5fd616933f452bc9eeb68.png",
@@ -5871,7 +5871,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Delivers a threefold attack, each hit with a potency of 150."
+               "effect": "Delivers a threefold attack, each hit with a potency of 180."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/c802df3d7abd5e50889d1cc5e97cf64eb1610afa.png",
@@ -5891,7 +5891,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 300.<br>Additional Effect: Increases target's damage taken by 5%<br>Duration: 20s<br>Additional Effect: Increases the chance of additional items being dropped by target if Dokumori is dealt before, or as, the finishing blow<br>Additional Effect: Increases Ninki Gauge by 40<br>Additional Effect: Grants Higi<br>Duration: 30s"
+               "effect": "Delivers a critical hit to all enemies in a cone before you with a potency of 300 for the first enemy, and 25% less for all remaining enemies.<br>Additional Effect: Increases target's damage taken by 5%<br>Duration: 20s<br>Additional Effect: Increases the chance of additional items being dropped by target if Dokumori is dealt before, or as, the finishing blow<br>Additional Effect: Increases Ninki Gauge by 40<br>Additional Effect: Grants Higi<br>Duration: 30s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/7fa8283b30b9ac35aada60984cbfaf01d3268c95.png",
@@ -5911,7 +5911,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Temporarily converts each of the three mudra into a ninjutsu action. Executing one of these actions will convert the remaining mudra into different ninjutsu actions until all three have been executed or the Ten Chi Jin effect expires.<br>Duration: 6s<br>Additional Effect: Grants Tenri Jindo Ready<br>Duration: 30s<br>Only ninjutsu available while active. The same ninjutsu cannot be executed twice.<br>Cannot be executed while under the effect of Kassatsu. Effect ends upon moving."
+               "effect": "Temporarily converts each of the three mudra into a ninjutsu action. Executing one of these actions will convert the remaining mudra into different ninjutsu actions until all three have been executed or the Ten Chi Jin effect expires.<br>Duration: 6s<br>Additional Effect: Grants Tenri Jindo Ready<br>Duration: 30s<br>Only ninjutsu available while active. The same ninjutsu cannot be executed twice.<br>Cannot be executed while under the effect of Kassatsu."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/9c7d1c58eb10c5d105f1ee98a21f84a031d26518.png",
@@ -5981,7 +5981,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Deals damage to all nearby enemies with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Afflicts target with Kunai's Bane<br>Kunai's Bane Effect: Increases damage you deal target by 10%<br>Duration: 15s<br>Can only be executed while Hidden."
+               "effect": "Deals damage to target and all enemies nearby it with a potency of 600 for the first enemy, and 50% less for all remaining enemies.<br>Additional Effect: Afflicts target with Kunai's Bane<br>Kunai's Bane Effect: Increases damage you deal target by 10%<br>Duration: 15s<br>Can only be executed while Hidden."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/cb1fc6f802ae442daa8ead243f4f9f49bf9525f4.png",
@@ -6151,7 +6151,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -6241,7 +6241,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/b60557edca3b093463f0f0c0c04dc3895855e9f8.png",
                "name": "Melee Mastery II",
                "level": "Lv. 84",
-               "effect": "Increases the potency of Spinning Edge to 220 and Gust Slash to 160."
+               "effect": "Increases the potency of Spinning Edge to 220, Gust Slash to 160, and Throwing Dagger to 200."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/d937810c86fa7fd6eebe009864850eafee3e1c12.png",
@@ -6333,7 +6333,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers a ranged attack with a potency of 100.<br>Enhanced Enpi Bonus Potency: 270<br>Additional Effect: Increases Kenki Gauge by 10"
+               "effect": "Delivers a ranged attack with a potency of 100.<br>Enhanced Enpi Potency: 270<br>Additional Effect: Increases Kenki Gauge by 10"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/64dcd53611773e2f2c981bc01877937b5331df8c.png",
@@ -6441,7 +6441,7 @@
                "level": "54",
                "type": "Ability",
                "cast": "Instant",
-               "recast": "10s",
+               "recast": "5s",
                "cost": "-",
                "effect": "Rushes target and delivers an attack with a potency of 100.<br>Kenki Gauge Cost: 10<br>Cannot be executed while bound."
           },
@@ -6583,7 +6583,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 230.<br>Additional Effect: Increases Kenki Gauge by 5"
+               "effect": "Delivers an attack with a potency of 240.<br>Additional Effect: Increases Kenki Gauge by 5"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4f7a3ffda80a03425ae8a4001c4f4c2412012047.png",
@@ -6593,7 +6593,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Delivers an attack to all enemies in a cone before you with a potency of 820 for the first enemy, and 60% less for all remaining enemies.<br>Kenki Gauge Cost: 50<br>Can only be executed while under the effect of Zanshin Ready."
+               "effect": "Delivers an attack to all enemies in a cone before you with a potency of 900 for the first enemy, and 60% less for all remaining enemies.<br>Kenki Gauge Cost: 50<br>Can only be executed while under the effect of Zanshin Ready."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/3db719d146f5af6ef728a9d8d093aa26553ce690.png",
@@ -6733,7 +6733,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -6769,7 +6769,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/c54d56abfcd872e0c91d3759851982328da139d2.png",
                "name": "Enhanced Iaijutsu",
                "level": "Lv. 74",
-               "effect": "Reduces Iaijutsu cast time to 1.3 seconds.<br>Also grants Tsubame-gaeshi Ready after excecuting iaijutsu excluding Higanbana.<br>Duration: 30s"
+               "effect": "Reduces Iaijutsu cast time to 1.3 seconds.<br>Also grants Tsubame-gaeshi Ready after executing iaijutsu excluding Higanbana.<br>Duration: 30s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/1651419c5c39dd98ff974b56f6b0a9942a13b473.png",
@@ -7061,7 +7061,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Increases damage dealt by self and nearby party members by 3%.<br>Duration: 20s<br>Additional Effect: Grants Circle of Sacrifice to self and nearby party members<br>Duration: 5s<br>Additional Effect: Grants Bloodsown Circle to self<br>Duration: 6s<br>Circle of Sacrifice Effect: When you or party members under this effect successfully land a weaponskill or cast a spell, the reaper who applied it may be granted a stack of Immortal Sacrifice, up to a maximum of 8<br>Duration: 30s<br>Bloodsown Circle Effect: Allows you to accumulate stacks of Immortal Sacrifice from party members under the effect of your Circle of Sacrifice"
+               "effect": "Increases damage dealt by self and nearby party members by 3%.<br>Duration: 20s<br>Additional Effect: Grants Circle of Sacrifice to self and nearby party members<br>Duration: 5s<br>Additional Effect: Grants Bloodsown Circle to self<br>Duration: 6s<br>Circle of Sacrifice Effect: When you or party members under this effect successfully land a weaponskill or ability, or cast a spell, the reaper who applied it may be granted a stack of Immortal Sacrifice, up to a maximum of 8<br>Duration: 30s<br>Bloodsown Circle Effect: Allows you to accumulate stacks of Immortal Sacrifice from party members under the effect of your Circle of Sacrifice"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/eaeec5829efd0623650ee09d1b3867ef3804c643.png",
@@ -7281,7 +7281,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2d62e72f5da6d52e189c1ed10dfbd602625fc536.png",
@@ -7793,7 +7793,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           }
       ],
       "traits": [
@@ -8157,7 +8157,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 140.<br>Combo Action: Heated Slug Shot<br>Combo Potency: 400<br>Combo Bonus: Increases Heat Gauge by 5<br>Combo Bonus: Increases Battery Gauge by 10"
+               "effect": "Delivers an attack with a potency of 160.<br>Combo Action: Heated Slug Shot<br>Combo Potency: 420<br>Combo Bonus: Increases Heat Gauge by 5<br>Combo Bonus: Increases Battery Gauge by 10"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4a4a5d764fa65a4514f89fdc77ac7956e3f2e7de.png",
@@ -8177,7 +8177,7 @@
                "cast": "Instant",
                "recast": "1.5s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 220.<br>Additional Effect: Reduces the recast time of both Double Check and Checkmate by 15s<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions."
+               "effect": "Delivers an attack with a potency of 240.<br>Additional Effect: Reduces the recast time of both Double Check and Checkmate by 15s<br>Can only be executed when firearm is Overheated.<br>This weaponskill does not share a recast timer with any other actions. Upon execution, the recast timer for this action will be applied to all other weaponskills and magic actions."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2d88d4346b2dc86970c797bed3cc8ca902c26593.png",
@@ -8187,7 +8187,7 @@
                "cast": "Instant",
                "recast": "60s",
                "cost": "-",
-               "effect": "Delivers damage over time to all enemies in a cone before you.<br>Potency: 80<br>Duration: 10s<br>Effect ends upon using another action or moving (including facing a different direction).<br>Cancels auto-attack upon execution.<br>Triggers the cooldown of weaponskills upon execution. Cannot be executed during the cooldown of weaponskills."
+               "effect": "Delivers damage over time to all enemies in a cone before you.<br>Potency: 100<br>Duration: 10s<br>Effect ends upon using another action or moving (including facing a different direction).<br>Cancels auto-attack upon execution.<br>Triggers the cooldown of weaponskills upon execution. Cannot be executed during the cooldown of weaponskills."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/23329a987c4b36fd72121e3362363a179a16d8d0.png",
@@ -8297,7 +8297,7 @@
                "cast": "Instant",
                "recast": "30s",
                "cost": "-",
-               "effect": "Delivers an attack to target and all enemies nearby it with a potency of 160 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3"
+               "effect": "Delivers an attack to target and all enemies nearby it with a potency of 170 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/f44e0b84bfe54b08662b521becbb338225ea90c9.png",
@@ -8307,7 +8307,7 @@
                "cast": "Instant",
                "recast": "30s",
                "cost": "-",
-               "effect": "Delivers an attack to target and all enemies nearby it with a potency of 160 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3"
+               "effect": "Delivers an attack to target and all enemies nearby it with a potency of 170 for the first enemy, and 50% less for all remaining enemies.<br>Maximum Charges: 3"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/6e221fc321a6d40ecac7a908c5b8c144c8c693a3.png",
@@ -8387,7 +8387,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           }
       ],
       "traits": [
@@ -8497,7 +8497,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/b60557edca3b093463f0f0c0c04dc3895855e9f8.png",
                "name": "Marksman's Mastery II",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Auto Crossbow to 160, Heated Split Shot to 220, Heated Slug Shot to 140, Heated Clean Shot to 140, and Scattergun to 160."
+               "effect": "Increases the potency of Auto Crossbow to 160, Heated Split Shot to 220, Heated Slug Shot to 140, Heated Clean Shot to 160, Blazing Shot to 240, and Scattergun to 160."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/28f091ab4b400b52cb77f45488cd87386ba45998.png",
@@ -8605,7 +8605,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Delivers an attack with a potency of 150.<br>Additional Effect: 50% chance of granting Threefold Fan Dance<br>Duration: 30s<br>Can only be executed while in possession of Fourfold Feathers."
+               "effect": "Delivers an attack with a potency of 180.<br>Additional Effect: 50% chance of granting Threefold Fan Dance<br>Duration: 30s<br>Can only be executed while in possession of Fourfold Feathers."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/e233509e4d32c5f7aef385766026a3e161d2d142.png",
@@ -8715,7 +8715,7 @@
                "cast": "Instant",
                "recast": "1s",
                "cost": "-",
-               "effect": "Delivers an attack to target and all enemies nearby it with a potency of 200 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Threefold Fan Dance."
+               "effect": "Delivers an attack to target and all enemies nearby it with a potency of 220 for the first enemy, and 50% less for all remaining enemies.<br>Can only be executed while under the effect of Threefold Fan Dance."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/2b0f0944de8d90ce1e9413cc3294bde99b7e1d7a.png",
@@ -8935,7 +8935,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Creates a barrier nullifying most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: Slow +20% when barrier is struck<br>Duration: 15s"
+               "effect": "Nullifies most knockback and draw-in effects.<br>Duration: 6s<br>Additional Effect: When you are struck by a physical attack, the striker will be afflicted with Slow +20%<br>Duration: 15s"
           }
       ],
       "traits": [
@@ -9015,7 +9015,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/4c948f409f459cc6cc4983962f78d071f06ef5b8.png",
                "name": "Dynamic Dancer",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Cascade to 220, Fountain to 120, Reverse Cascade to 280, Fountainfall to 340, Double Standard Finish to 850, Quadruple Technical Finish to 1,300, Saber Dance to 520, and Fan Dance IV to 420."
+               "effect": "Increases the potency of Cascade to 220, Fountain to 120, Double Standard Finish to 850, Reverse Cascade to 280, Fan Dance to 180, Fountainfall to 340, Fan Dance III to 220, Quadruple Technical Finish to 1,300, Saber Dance to 520, and Fan Dance IV to 420."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/755e03aa52e57a1f2e5b6796e74a6ce0be288e1d.png",
@@ -9210,7 +9210,7 @@
                "name": "Flare",
                "level": "50",
                "type": "Spell",
-               "cast": "4s",
+               "cast": "3s",
                "recast": "2.5s",
                "cost": "All MP",
                "effect": "Deals fire damage to target and all enemies nearby it with a potency of 240 for the first enemy, and 30% less for all remaining enemies.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Additional Effect: Grants 3 stacks of Astral Soul<br>Effect ends when Astral Fire expires.<br>Can only be executed while under the effect of Astral Fire."
@@ -9223,7 +9223,7 @@
                "cast": "Instant",
                "recast": "120s",
                "cost": "-",
-               "effect": "Connects naturally occurring ley lines to create a circle of power which, while standing within it, reduces spell cast time and recast time, and auto-attack delay by 15%.<br>Duration: 30s"
+               "effect": "Connects naturally occurring ley lines to create a circle of power which, while standing within it, reduces spell cast time and recast time, and auto-attack delay by 15%.<br>Duration: 30s<br>Maximum Charges: 2<br>Cannot be executed while under the effect of Ley Lines."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/d370de07c30f08bd306ed3c58f0f0490b4541870.png",
@@ -9290,7 +9290,7 @@
                "name": "Despair",
                "level": "72",
                "type": "Spell",
-               "cast": "3s",
+               "cast": "Instant",
                "recast": "2.5s",
                "cost": "All MP",
                "effect": "Deals fire damage with a potency of 350.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Can only be executed while under the effect of Astral Fire."
@@ -9343,7 +9343,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "1600 MP",
-               "effect": "Deals unaspected damage with a potency of 500.<br>Astral Fire Bonus: Grants Astral Fire<br>Duration: 15s<br>Astral Fire Bonus: Grants Firestarter<br>Firestarter Effect: Next Fire III will require no time to cast and cost no MP<br>Duration: 30s<br>Umbral Ice Bonus: Requires no MP to cast and grants Umbral Ice<br>Duration: 15s<br>Can only be executed while under the effect of Paradox.<br><br>※This action cannot be assigned to a hotbar.<br>※Fire and Blizzard change to Paradox when requirements for execution are met."
+               "effect": "Deals unaspected damage with a potency of 520.<br>Astral Fire Bonus: Grants Astral Fire<br>Duration: 15s<br>Astral Fire Bonus: Grants Firestarter<br>Firestarter Effect: Next Fire III will require no time to cast and cost no MP<br>Duration: 30s<br>Umbral Ice Bonus: Requires no MP to cast and grants Umbral Ice<br>Duration: 15s<br>Can only be executed while under the effect of Paradox.<br><br>※This action cannot be assigned to a hotbar.<br>※Fire and Blizzard change to Paradox when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/1babd2b0f9ad34451ac3ac29230b2239db95065b.png",
@@ -9561,7 +9561,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/56e64c6a8875472651cd1280bcdb3d879c7aabdf.png",
                "name": "Enhanced Enochian IV",
                "level": "Lv. 96",
-               "effect": "Improves Enochian's magic damage increase to 33%."
+               "effect": "Improves Enochian's magic damage increase to 32%."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/cd30af36c468ebc29ca7b8eba0a922a05dc6adf8.png",
@@ -9573,7 +9573,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/72fc6ff01df8c8581add7a77a3c64f969f854083.png",
                "name": "Enhanced Astral Fire",
                "level": "Lv. 100",
-               "effect": "Grants a stack of Astral Soul upon landing Fire IV or Flare.<br>Maximum Stacks: 6"
+               "effect": "Grants a stack of Astral Soul upon landing Fire IV or Flare.<br>Maximum Stacks: 6<br>Allows for the immediate casting of Despair."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/0948538a89b748ec2d1f2c6c8ad2afe383a740d3.png",
@@ -9591,55 +9591,79 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/bd8aefe983c379ed726996e5030785d492cef722.png",
                "name": "Fire",
                "level": "Blizzard",
-               "effect": "Deals fire damage with a potency of 4,000.<br>Requires no cast time when cast under the effect of Umbral Ice.<br>Additional Effect: Afflicts target with a stack of Astral Warmth, up to a maximum of 3<br>Duration: 15s<br>Effect cannot be stacked with Umbral Freeze.<br>Additional Effect: Grants Astral Fire II<br>Duration: 30s<br>Effect cannot be stacked with Umbral Ice.<br><br>※Action changes to Fire IV while under the effect of Astral Fire II."
+               "effect": "Deals fire damage with a potency of 6,000.<br>Additional Effect: Grants Astral Fire<br>Duration: 15s<br>Effect cannot be stacked with Umbral Ice.<br>Additional Effect: Grants Paradox<br>Duration: 15s<br><br>※Action changes to Fire III upon execution."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/dc24fffcea464a6f5f4ae83c893e89f31ca6a274.png",
                "name": "Burst",
                "level": "Paradox",
-               "effect": "Deals ice damage with a potency of 4,000.<br>Requires no cast time when cast under the effect of Astral Fire.<br>Additional Effect: Afflicts target with a stack of Umbral Freeze, up to a maximum of 3<br>Duration: 15s<br>Effect cannot be stacked with Astral Warmth.<br>Additional Effect: Grants Umbral Ice II<br>Duration: 30s<br>Effect cannot be stacked with Astral Fire.<br><br>※Action changes to Blizzard IV while under the effect of Umbral Ice II."
+               "effect": "Deals ice damage with a potency of 4,500.<br>Additional Effect: Grants Umbral Ice<br>Duration: 15s<br>Effect cannot be stacked with Astral Fire.<br>Additional Effect: Grants Paradox<br>Duration: 15s<br><br>※Action changes to Blizzard III upon execution."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/f2047323e6e33591811d0303209137f0f841cd81.png",
-               "name": "Night Wing",
-               "level": "Aetherial Manipulation",
-               "effect": "Deals lightning damage to all nearby enemies with a potency of 16,000.<br>Additional Effect: Creates a barrier around self that absorbs damage equivalent to a heal of 16,000 potency<br>Duration: 10s<br>This action does not share a recast timer with any other actions."
+               "name": "Xenoglossy",
+               "level": "Lethargy",
+               "effect": "Deals lightning damage to all nearby enemies with a potency of 12,000.<br>Additional Effect: Creates a barrier around self that absorbs damage equivalent to a heal of 12,000 potency<br>Duration: 10s<br>This action does not share a recast timer with any other actions."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/1fd314a320e0ffcf7b928a1e8edb882a7803a7a9.png",
-               "name": "Superflare",
-               "level": "Fire IV",
-               "effect": "Deals unaspected damage with a potency of 8,000.<br>Additional Effect: Increases target's stacks of Astral Warmth or Umbral Freeze to maximum<br>Duration: 15s<br>This action does not share a recast timer with any other actions."
+               "name": "Aetherial Manipulation",
+               "level": "Elemental Weave",
+               "effect": "Deals unaspected damage with a potency of 6,000.<br>Additional Effect: Increases your stacks of Astral Fire or Umbral Ice to maximum<br>Duration: 15s<br>Can only be executed while under the effect of Paradox.<br>This action does not share a recast timer with any other actions."
           },
           {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/39b84e9b07f19b7d4fd195171668fc71d98d438b.png",
-               "name": "Flare",
-               "level": "Blizzard IV",
-               "effect": "Afflicts target and all enemies nearby it with Half-asleep.<br>Duration: 3s<br>Half-asleep Effect: Targets succumb to Sleep when effect expires<br>Duration: 3s<br>Targets struck while under the effect of Sleep will take additional damage with a potency of 8,000, and effect will dissipate."
+               "icon": "https://lds-img.finalfantasyxiv.com/d/8d1d9703cb27200f8d56f29cdcf335d1dc7f1101.png",
+               "name": "Fire III",
+               "level": "Fire IV",
+               "effect": "Deals unaspected damage with a potency of 12,000.<br>Potency is reduced to 8,000 when your HP is below 50%, but absorbs 200% of damage dealt as HP.<br>Maximum Charges: 2<br>This action does not share a recast timer with any other actions."
+          },
+          {
+               "icon": "https://lds-img.finalfantasyxiv.com/d/d892d6cb9e7656c7331d7a7336127ca55292e3c5.png",
+               "name": "High Fire II",
+               "level": "Flare",
+               "effect": "Lowers target's damage dealt by 25%.<br>Duration: 4s<br>Additional Effect: Heavy +75%<br>Duration: 4s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b7bfe048da3d02b5572be0dfa123d46be0ca3784.png",
-               "name": "Freeze",
-               "level": "Foul",
-               "effect": "Rush to a targeted enemy's or party member's location.<br>Additional Effect: Grants Swiftcast<br>Swiftcast Effect: Next spell can be cast immediately<br>Duration: 10s<br>Maximum Charges: 2<br>Cannot be executed while bound."
+               "name": "Blizzard III",
+               "level": "Blizzard IV",
+               "effect": "Rush to a targeted enemy's or party member's location.<br>Cannot be executed while bound."
           },
           {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/6864c3e2bb745d9715492532ad74a4277ea5b2ab.png",
-               "name": "Soul Resonance",
-               "level": "Standard-issue Elixir",
-               "effect": "Deals damage to nearby enemies with a potency of 3,000 up to a maximum of 9,000 for every stack of Astral Warmth or Umbral Freeze they have accumulated.<br>Additional Effect: Enemies under the effect of Astral Warmth are afflicted with Burns, dealing fire damage over time<br>Potency: 3,000<br>Duration: 6s<br>Duration increases by 3s for each additional stack of Astral Warmth, up to a maximum of 12s.<br>Additional Effect: Enemies under the effect of Umbral Freeze are afflicted with a status ailment commensurate with the number of stacks accumulated<br>1 Stack: Heavy<br>2 Stacks: Bind<br>3 Stacks: Deep Freeze<br>Duration: 2s<br>Maximum Charges: 2"
+               "icon": "https://lds-img.finalfantasyxiv.com/d/149acbbde977039fb3ec6373b8b17b9a87e3079e.png",
+               "name": "High Blizzard II",
+               "level": "Freeze",
+               "effect": "Changes to Wreath of Fire while under the effect of Astral Fire, or Wreath of Ice while under the effect of Umbral Ice."
+          },
+          {
+               "icon": "https://lds-img.finalfantasyxiv.com/d/a4377a1577e112a8ad4bc7edb0d6bdcadda363ba.png",
+               "name": "Wreath of Fire",
+               "level": "Wreath of Ice",
+               "effect": "Deals fire damage with a potency of 8,000.<br>Additional Effect: Grants Astral Fire II<br>Duration: 15s<br>Effect cannot be stacked with Umbral Ice.<br>Can only be executed while under the effect of Astral Fire.<br><br>※Action changes to Fire IV upon execution.<br>※This action cannot be assigned to a hotbar."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/c19670b228b7a32f1555a892ad6c6f6cf5a299eb.png",
-               "name": "Recuperate",
-               "level": "Purify",
-               "effect": "Deals fire damage with a potency of 6,000.<br>Additional Effect: Afflicts target with a stack of Astral Warmth, up to a maximum of 3<br>Duration: 15s<br>Effect cannot be stacked with Umbral Freeze.<br>Additional Effect: Grants Astral Fire III<br>Duration: 30s<br>Effect cannot be stacked with Umbral Ice.<br>Can only be executed while under the effect of Astral Fire II.<br><br>※Action changes to Flare while under the effect of Astral Fire III.<br>※This action cannot be assigned to a hotbar."
+               "name": "Flare Star",
+               "level": "Frost Star",
+               "effect": "Deals fire damage with a potency of 10,000.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Effect cannot be stacked with Umbral Ice.<br>Can only be executed while under the effect of Astral Fire II.<br><br>※Action changes to High Fire II upon execution.<br>※This action cannot be assigned to a hotbar."
+          },
+          {
+               "icon": "https://lds-img.finalfantasyxiv.com/d/2ca4ab1694ca1efcaa13a0fa7e56272629ba9d17.png",
+               "name": "Soul Resonance",
+               "level": "Standard-issue Elixir",
+               "effect": "Deals fire damage to target and all enemies nearby it with a potency of 12,000 for the first enemy, and 8,000 for all remaining enemies.<br>Additional Effect: Grants Astral Fire<br>Duration: 15s<br>Effect cannot be stacked with Umbral Ice<br>Can only be executed while under the effect of Astral Fire III.<br><br>※Action changes to Fire III upon execution.<br>※This action cannot be assigned to a hotbar."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/e741977a1edf3dd9346fda665513f44e2f3657f4.png",
+               "name": "Recuperate",
+               "level": "Purify",
+               "effect": "Deals fire damage with a potency of 12,000 to target and all enemies nearby it.<br>Additional Effect: Grants Astral Fire III<br>Duration: 15s<br>Effect cannot be stacked with Umbral Ice.<br>Can only be executed while under the effect of Soul Resonance.<br><br>※This action cannot be assigned to a hotbar."
+          },
+          {
+               "icon": "https://lds-img.finalfantasyxiv.com/d/3f8508e9dd5fbda8b464b1184456225d8a3fba63.png",
                "name": "Guard",
                "level": "Sprint",
-               "effect": "Deals fire damage with a potency of 12,000 to target and 8,000 to all enemies nearby it.<br>Additional Effect: Afflicts target with a stack of Astral Warmth, up to a maximum of 3<br>Duration: 15s<br>Effect cannot be stacked with Umbral Freeze.<br>Can only be executed while under the effect of Astral Fire III.<br>Astral Fire III effect expires upon execution.<br><br>※This action cannot be assigned to a hotbar."
+               "effect": "Deals ice damage with a potency of 6,000.<br>Additional Effect: Grants Umbral Ice II<br>Duration: 15s<br>Effect cannot be stacked with Astral Fire.<br>Can only be executed while under the effect of Umbral Ice.<br><br>※Action changes to Blizzard IV upon execution.<br>※This action cannot be assigned to a hotbar."
           }
       ]
   },
@@ -10273,7 +10297,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Rushes forward and delivers a fire attack to target and all enemies nearby it with a potency of 490 for the first enemy, and 65% less for all remaining enemies.<br>Can only be executed while under the effect of Ifrit's Favor.<br>Cannot be executed while bound.<br><br>※This action cannot be assigned to a hotbar.<br>※Astral Flow changes to Crimson Cyclone when requirements for execution are met."
+               "effect": "Rushes forward and delivers a fire attack to target and all enemies nearby it with a potency of 490 for the first enemy, and 65% less for all remaining enemies.<br>Additional Effect: Grants Crimson Strike Ready<br>Effect ends upon execution of certain summoner actions.<br>Can only be executed while under the effect of Ifrit's Favor.<br>Cannot be executed while bound.<br><br>※This action cannot be assigned to a hotbar.<br>※Astral Flow changes to Crimson Cyclone when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/a63bb4e29d20c938e1b68ea0dc0ab64c3a8a9fdf.png",
@@ -10283,7 +10307,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "-",
-               "effect": "Deals fire damage to target and all enemies nearby it with a potency of 490 for the first enemy, and 65% less for all remaining enemies.<br>Combo Action: Crimson Cyclone<br><br>※This action cannot be assigned to a hotbar.<br>※Crimson Cyclone changes to Crimson Strike when requirements for execution are met."
+               "effect": "Deals fire damage to target and all enemies nearby it with a potency of 490 for the first enemy, and 65% less for all remaining enemies.<br>Can only be executed while under the effect of Crimson Strike Ready.<br><br>※This action cannot be assigned to a hotbar.<br>※Crimson Cyclone changes to Crimson Strike when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/735d3aabed75539866193ca97b356367f818821f.png",
@@ -10403,7 +10427,7 @@
                "cast": "Instant",
                "recast": "20s",
                "cost": "-",
-               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 700 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while in Lightwyrm Trance.<br><br>※This action cannot be assigned to a hotbar.<br>※Astral Flow changes to Sunflare when requirements for execution are met."
+               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 800 for the first enemy, and 60% less for all remaining enemies.<br>Can only be executed while in Lightwyrm Trance.<br><br>※This action cannot be assigned to a hotbar.<br>※Astral Flow changes to Sunflare when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/4deaaa9815c4b1bd5fc52e76019d9192342568b9.png",
@@ -10921,7 +10945,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
-               "effect": "Deals fire damage to target and all enemies nearby it with a potency of 620 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases Black Mana by 11<br>Additional Effect: 20% chance of becoming Verfire Ready<br>Duration: 30s<br>Chance to become Verfire Ready increases to 100% if White Mana is higher than Black Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Verthunder III and Verthunder II change to Verflare when requirements for execution are met."
+               "effect": "Deals fire damage to target and all enemies nearby it with a potency of 650 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases Black Mana by 11<br>Additional Effect: 20% chance of becoming Verfire Ready<br>Duration: 30s<br>Chance to become Verfire Ready increases to 100% if White Mana is higher than Black Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Verthunder III and Verthunder II change to Verflare when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/34f4be861c3f40879653fef7fe7039f8df1108c1.png",
@@ -10931,7 +10955,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
-               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 620 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases White Mana by 11<br>Additional Effect: 20% chance of becoming Verstone Ready<br>Duration: 30s<br>Chance to become Verstone Ready increases to 100% if Black Mana is higher than White Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Veraero III and Veraero II change to Verholy when requirements for execution are met."
+               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 650 for the first enemy, and 60% less for all remaining enemies.<br>Additional Effect: Increases White Mana by 11<br>Additional Effect: 20% chance of becoming Verstone Ready<br>Duration: 30s<br>Chance to become Verstone Ready increases to 100% if Black Mana is higher than White Mana at time of execution.<br>Mana Stack Cost: 3<br><br>※This action cannot be assigned to a hotbar.<br>※Veraero III and Veraero II change to Verholy when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/26403c905bb62b3221f7b1930e64efdd1fe13619.png",
@@ -10951,7 +10975,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
-               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 700 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Verflare or Verholy<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Verflare or Verholy as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Jolt III and Impact change to Scorch when requirements for execution are met."
+               "effect": "Deals unaspected damage to target and all enemies nearby it with a potency of 750 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Verflare or Verholy<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Verflare or Verholy as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Jolt III and Impact change to Scorch when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/f2798af149d31668d8e35541a3b33422478013f2.png",
@@ -11001,7 +11025,7 @@
                "cast": "Instant",
                "recast": "2.5s",
                "cost": "400 MP",
-               "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 800 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Scorch<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Scorch as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Scorch changes to Resolution when requirements for execution are met."
+               "effect": "Deals unaspected damage to all enemies in a straight line before you with a potency of 850 for the first enemy, and 60% less for all remaining enemies.<br>Combo Action: Scorch<br>Additional Effect: Increases both Black Mana and White Mana by 4<br>Can only be executed after successfully landing Scorch as a combo action.<br><br>※This action cannot be assigned to a hotbar.<br>※Scorch changes to Resolution when requirements for execution are met."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/23de2734d998406aa25f526147ebbea7f1012d67.png",
@@ -11243,7 +11267,7 @@
                "icon": "https://lds-img.finalfantasyxiv.com/d/faebcc03aa187f6f45319b41b7336431d1722fc4.png",
                "name": "Enchanted Blade Mastery",
                "level": "Lv. 94",
-               "effect": "Increases the potency of Enchanted Riposte to 300, Verfire to 380, Verstone to 380, Enchanted Zwerchhau to 170, Fleche to 480, Enchanted Redoublement to 170, Contre Sixte to 420, Verflare to 620, Verholy to 620, Enchanted Reprise to 420, Scorch to 700, Veraero III to 440, Verthunder III to 440, and Resolution to 800."
+               "effect": "Increases the potency of Enchanted Riposte to 300, Verfire to 380, Verstone to 380, Enchanted Zwerchhau to 170, Fleche to 480, Enchanted Redoublement to 170, Contre Sixte to 420, Verflare to 650, Verholy to 650, Enchanted Reprise to 420, Scorch to 750, Veraero III to 440, Verthunder III to 440, and Resolution to 850."
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/f88ff137a14d846648c1a350b6927826b0e0c316.png",
