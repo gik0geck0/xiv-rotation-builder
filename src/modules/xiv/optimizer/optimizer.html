@@ -16,12 +16,11 @@
                 label="Choose Optimizer Strategy"
                 options={options}
                 value={optStrategyValue}
-                type="radio">
-            </lightning-radio-group>
-    
-            <!-- Duration Input -->
-            <lex-slider label="Volume" size="x-small"></lex-slider>
+                type="radio"
+                onchange={handleRadioChange}>
+          </lightning-radio-group>
 
+            <!-- Duration Input -->
             <div class="duration-input">
                 <label for="duration">Enter Duration (seconds):</label>
                 <input type="number" id="duration" name="duration" step="1" min="1" value={sliderValue} required/>
@@ -37,8 +36,34 @@
                 variant="brand" 
                 label="Optimize" 
                 title="Primary action" 
-                onclick={handleClick}>
+                onclick={handleSubmit}>
             </lightning-button>
         </form>
+        <br>
+        <div class="output">
+            <h1>Rotation:</h1>
+            <ol
+                class="sortable-list"
+                id ="outputs"
+            >
+            <template for:each={jobActions} for:item="action" for:index="idx">
+                <li key={action.t}>
+                <xiv-job-icon
+                    class="action"
+                    key={action.t}
+                    job-abv={job}
+                    action-id={action.id}
+                    location={action.location}
+                    name = {action.name}
+                >
+                </xiv-job-icon>
+                {action.name}
+                </li>
+            </template>
+            </ol>
+            <h1>Potency: <lightning-formatted-rich-text value={potency}></lightning-formatted-rich-text>
+            </h1>
+            
+        </div>
     </div>
 </template>
