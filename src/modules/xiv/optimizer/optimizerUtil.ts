@@ -28,7 +28,15 @@ export class MCTSOptimizer {
   bestActions: Action[];
   bestPotency: number;
 
+  result!: any[];
+
  // MCTS core functions
+
+ // Function to retreive the result of calculatePotency
+ setResult(actions: Action[]): void {
+    const timedList = findTimes(actions, this.gcd);
+    this.result = calculatePotency(timedList);
+ }
 
  // Function to calculate the score based on action potency
  score(actions: Action[]): number {
@@ -36,9 +44,9 @@ export class MCTSOptimizer {
         console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
     // Calculate the score based on potency (or any other metric you are using)
-    const timedActions = findTimes(actions);
-    const damage = calculatePotency(timedActions)[0];
-  
+    this.setResult(actions);
+    const damage = this.result[0];
+
     // Check if the current damage is better than the best known damage
     if (damage > this.bestDamage) {
         this.bestDamage = damage; // Update the best damage
@@ -113,14 +121,22 @@ select(node: TreeNode): TreeNode {
     }
   
     const randomActions: Action[] = [...node.actionSequence]; // Start with the sequence from this node
-  
-    while (randomActions.length < 10) {
+    let time = 0; // Begin timing
+
+    // Add random actions to list until duration is met
+    while (time < this.duration) {
         const randomAction = this.weightedRandomAction();
         randomActions.push(randomAction);
+
+        this.setResult(randomActions);
+        time = this.result[2]; // Progressively increases as randomActions list gets more actions
+
         if (LOG_LEVEL === 1) {
             console.log("[LOG] Added action during simulation: ", randomAction.name);
         }
     }
+
+    randomActions.pop(); // Pop the last action of the list going over duration
   
     if (LOG_LEVEL === 1) {
         console.log("[LOG] Simulated actions (in order): ", randomActions.map(a => a.name));
@@ -219,7 +235,7 @@ select(node: TreeNode): TreeNode {
     console.log(`[LOG] Best action list: ${bestActionListStr}`);
     console.log(`[LOG] Best found damage: ${this.bestDamage}`);
   
-    return [bestActionList, this.bestDamage]; // Or any other logic to return the final best node
+    return [this.bestActionSequence, this.bestDamage]; // Or any other logic to return the final best node
   }
 
   constructor(job: string, setting: string, duration: number, gcd: number) {
