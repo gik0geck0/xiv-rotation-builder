@@ -33,7 +33,7 @@ export default class RotationBuilder extends LightningElement {
             (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
                 'Potency Per Second: Add actions to receive a pps.';
         } else {
-            const timedList = findTimes(actionList);
+            const timedList = findTimes(actionList, 2.5);
             timedList.forEach((timedAction, i) => {
                 const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
                 if (i === 0) {
@@ -110,9 +110,8 @@ export default class RotationBuilder extends LightningElement {
     }
 }
 
-export function findTimes(actionList: Action[]): [Action, number][] {
+export function findTimes(actionList: Action[], GCDTime: number): [Action, number][] {
     let currTime = 0;
-    const GCDTime = 2.5;
     const waitTime = 0.7;
 
     if (actionList[0].isInstant) {
@@ -269,5 +268,5 @@ export function calculatePotency(timedList: [Action, number][]): any[] {
 
     const PPS = Math.round((totalPotency / currTime) * 100) / 100;
 
-    return [totalPotency, PPS];
+    return [totalPotency, PPS, currTime];
 }
