@@ -10,6 +10,7 @@ export default class RotationBuilder extends LightningElement {
     job: string = 'paladin';
     jobActions: Action[] = getJobActions(this.job);
     totalPotency: number = 0;
+    gcdTime: number = 2.5;
     mockActionList: Action[] = [].map(() => getActionInfo('paladin', '')).filter((action): action is Action => action !== undefined);
     jobList: string[] = getJobNames() as string[];
     skillDetails: string = '';
@@ -73,6 +74,10 @@ export default class RotationBuilder extends LightningElement {
         this.mockActionList = [...this.mockActionList];
 
         this.validation(this.mockActionList, this.job);
+    }
+
+    updateGCD(gcd: number): void {
+        this.gcdTime = gcd;
     }
 
     clearList(): void {
