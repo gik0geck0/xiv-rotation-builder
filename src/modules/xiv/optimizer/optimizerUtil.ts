@@ -1,6 +1,6 @@
 import type { Action } from 'xiv/actionData';
 import { getJobActions } from 'xiv/actionRepository';
-import { findTimes, getBuffs, calculatePotency } from 'xiv/rotationBuilder';
+import { findTimes, calculatePotency, timeActionList, sumTimeTaken } from 'xiv/rotationBuilder';
 
 type TreeNode = {
   action: Action | null;
@@ -28,15 +28,7 @@ export class MCTSOptimizer {
   bestActions: Action[];
   bestPotency: number;
 
-  result!: any[];
-
  // MCTS core functions
-
- // Function to retreive the result of calculatePotency
- setResult(actions: Action[]): void {
-    const timedList = findTimes(actions, this.gcd);
-    this.result = calculatePotency(timedList);
- }
 
  // Function to calculate the score based on action potency
  score(actions: Action[]): number {
@@ -44,8 +36,7 @@ export class MCTSOptimizer {
         console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
     // Calculate the score based on potency (or any other metric you are using)
-    this.setResult(actions);
-    const damage = this.result[0];
+    const damage = calculatePotency(findTimes(actions, this.gcd));
 
     // Check if the current damage is better than the best known damage
     if (damage > this.bestDamage) {
@@ -128,8 +119,8 @@ select(node: TreeNode): TreeNode {
         const randomAction = this.weightedRandomAction();
         randomActions.push(randomAction);
 
-        this.setResult(randomActions);
-        time = this.result[2]; // Progressively increases as randomActions list gets more actions
+        timeActionList(randomActions, findTimes(randomActions, this.gcd));
+        time = sumTimeTaken(randomActions); // Progressively increases as randomActions list gets more actions
 
         if (LOG_LEVEL === 1) {
             console.log("[LOG] Added action during simulation: ", randomAction.name);
