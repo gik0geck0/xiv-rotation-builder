@@ -22,7 +22,7 @@ export default class RotationBuilder extends LightningElement {
         this.jobActions = getJobActions(this.job);
     }
 
-    validation(actionList: Action[], job: string): any[] {
+    validation(actionList: Action[], job: string): number {
         actionList.forEach(action => {
             action.location = 'list';
             action.errorMessage = '';
@@ -34,25 +34,12 @@ export default class RotationBuilder extends LightningElement {
             (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
                 'Potency Per Second: Add actions to receive a pps.';
         } else {
-            const timedList = findTimes(actionList, 2.5);
-            timedList.forEach((timedAction, i) => {
-                const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
-                if (i === 0) {
-                    actionList[0].startTime = timedAction[1] - castTime;
-                    actionList[0].timeTaken = castTime;
-                } else {
-                    actionList[i].startTime = timedAction[1] - castTime;
-                    actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
-                }
-                if (i === timedList.length - 1) {
-                    actionList[i].timeTaken = castTime;
-                }
-            });
-
+            const timedList = findTimes(actionList, this.gcdTime);
+            timeActionList(actionList, timedList);
             return calculatePotency(timedList);
         }
 
-        return [0,0];
+        return 0;
     }
 
     addTimelineAction(e: CustomEvent): void {
@@ -113,6 +100,27 @@ export default class RotationBuilder extends LightningElement {
         card.style.visibility = 'hidden';
         this.errorDetails = '';
     }
+}
+
+export function sumTimeTaken(actionList: Action[]): number {
+    const totalTime = actionList.reduce((sum, action) => sum + (action.timeTaken || 0), 0);
+    return totalTime;
+}
+
+export function timeActionList(actionList: Action[], timedList: [Action, number][]): void {
+    timedList.forEach((timedAction, i) => {
+        const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
+        if (i === 0) {
+            actionList[0].startTime = timedAction[1] - castTime;
+            actionList[0].timeTaken = castTime;
+        } else {
+            actionList[i].startTime = timedAction[1] - castTime;
+            actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
+        }
+        if (i === timedList.length - 1) {
+            actionList[i].timeTaken = castTime;
+        }
+    });
 }
 
 export function findTimes(actionList: Action[], GCDTime: number): [Action, number][] {
