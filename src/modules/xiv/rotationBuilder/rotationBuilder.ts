@@ -48,12 +48,19 @@ export default class RotationBuilder extends LightningElement {
         );
         this.mockActionList = [...this.mockActionList];
 
-        const results = this.validation(this.mockActionList, this.job);
+        const totalPotency = this.validation(this.mockActionList, this.job);
+
+        let time = 0;
+        this.mockActionList.forEach(action => {
+            time += (action.timeTaken || 0);
+        });
+
+        const PPS = Math.round((totalPotency / time) * 100) / 100;
 
         (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
-            `Total Potency: ${results[0]}`;
+            `Total Potency: ${totalPotency}`;
         (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
-            `Potency Per Second: ${results[1]}`;
+            `Potency Per Second: ${PPS}`;
     }
 
     removeAction(e: CustomEvent): void {
@@ -233,7 +240,7 @@ export function getBuffs(timedList: [Action, number][]): any[] {
     return currBuffs;
 }
 
-export function calculatePotency(timedList: [Action, number][]): any[] {
+export function calculatePotency(timedList: [Action, number][]): number {
     let currTime = 0;
     let totalPotency = 0;
     let currBuffs = getBuffs(timedList);
@@ -279,7 +286,5 @@ export function calculatePotency(timedList: [Action, number][]): any[] {
         extraPotency = null;
     }
 
-    const PPS = Math.round((totalPotency / currTime) * 100) / 100;
-
-    return [totalPotency, PPS, currTime];
+    return totalPotency;
 }
