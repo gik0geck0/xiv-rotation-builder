@@ -13,8 +13,8 @@ enum StrategyType {
 // let mcts: MCTSOptimizer;
 
 //factory
-function MCTSFactory(jobValue: string, strategyValue: string, durationValue: number, gcdValue: number): MCTSOptimizer {
-  return new MCTSOptimizer(jobValue, strategyValue, durationValue, gcdValue);
+function MCTSFactory(jobValue: string, strategyValue: string, durationValue: number, gcdValue: number, iterationsValue: number): MCTSOptimizer {
+  return new MCTSOptimizer(jobValue, strategyValue, durationValue, gcdValue, iterationsValue);
 }
 
 
@@ -62,11 +62,12 @@ export default class Optimizer extends LightningElement {
     const selectedJob = this.template?.querySelector('[name="jobSelector"]') as HTMLSelectElement | null;
     const selectedDuration = this.template?.querySelector('[name="duration"]') as HTMLInputElement | null;
     const gcdValue = this.template?.querySelector('[name="gcd"]') as HTMLInputElement | null;
+    const iterations = this.template?.querySelector('[name="iterations"]') as HTMLInputElement | null;
 
     // Validation to ensure elements are found and have values
     if (!selectedJob || !selectedJob.value ||
         !selectedDuration || !selectedDuration.value ||
-        !gcdValue || !gcdValue.value) {
+        !gcdValue || !gcdValue.value || !iterations) {
       alert('Please ensure all inputs are filled.');
       return;
     }
@@ -75,6 +76,7 @@ export default class Optimizer extends LightningElement {
     const strategyValue = this.optStrategyValue; // Strategy should be of type StrategyType
     const durationValue = Number(selectedDuration.value);
     const gcd = Number(gcdValue.value);
+    const iterationsValue = Number(iterations.value);
 
     // Check if the strategy value is valid (this will be redundant since we're using the enum)
     if (!Object.values(StrategyType).includes(strategyValue)) {
@@ -87,9 +89,10 @@ export default class Optimizer extends LightningElement {
     console.log('Selected Setting:', strategyValue);  // Log to check value
     console.log('Duration:', durationValue);
     console.log('GCD:', gcd);
+    console.log('Iterations:', iterationsValue);
 
     // Call the optimizer with these values
-    const mcts = MCTSFactory(jobValue, strategyValue, durationValue, gcd);
+    const mcts = MCTSFactory(jobValue, strategyValue, durationValue, gcd, iterationsValue);
     this.jobActions = mcts.bestActions.filter((action): action is Action => action !== undefined);
     this.potency = mcts.bestPotency;
     console.log(this.potency);

@@ -11,7 +11,7 @@ type TreeNode = {
 };
 
 type LogLevel = 0 | 1;
-const LOG_LEVEL: LogLevel = 0;
+const LOG_LEVEL: LogLevel = 1;
 
 // The MCTS optimizer class
 export class MCTSOptimizer {
@@ -26,6 +26,7 @@ export class MCTSOptimizer {
   gcd: number;
   bestActions: Action[];
   bestPotency: number;
+  iterations: number;
 
  // MCTS core functions
 
@@ -259,7 +260,7 @@ weightedRandomAction(): Action {
     return [bestActionList, this.bestDamage]; // Or any other logic to return the final best node
   }
 
-  constructor(job: string, setting: string, duration: number, gcd: number) {
+  constructor(job: string, setting: string, duration: number, gcd: number, iterations: number) {
       this.job = job;
       this.setting = setting;
       this.duration = duration;
@@ -269,6 +270,7 @@ weightedRandomAction(): Action {
       this.bestDamage = -Infinity;
       this.bestActionSequence = [];
       this.actions = getJobActions(this.job);
+      this.iterations = iterations;
 
     // Root node (starting point of the tree)
     this.root = {
@@ -283,11 +285,11 @@ weightedRandomAction(): Action {
 
       // For now, just alert the received values
       if (LOG_LEVEL === 1) {
-        alert(`MCTS Initialized:\nJob: ${this.job}\nSetting: ${this.setting}\nDuration: ${this.duration} seconds\nGCD: ${this.gcd} seconds`);
+        alert(`MCTS Initialized:\nJob: ${this.job}\nSetting: ${this.setting}\nDuration: ${this.duration} seconds\nGCD: ${this.gcd} seconds\nIterations: ${this.iterations}`);
       }
       
       // Fetch job actions and start MCTS optimization
-      const result = this.monteCarloTreeSearch(this.root, 100000);
+      const result = this.monteCarloTreeSearch(this.root, iterations);
       this.bestActions = result[0];
       this.bestPotency = result[1];
   }
