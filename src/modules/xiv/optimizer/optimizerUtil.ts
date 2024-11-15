@@ -131,21 +131,70 @@ select(node: TreeNode): TreeNode {
     return calculatedScore;
   }
 
-  // Returns a randomly selected action based on weighted potency
-    weightedRandomAction(): Action {
-        const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
-        const randomValue = Math.random() * totalScore;
+//   // Returns a randomly selected action based on weighted potency
+//     weightedRandomAction(): Action {
+//         const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
+//         const randomValue = Math.random() * totalScore;
 
-        let cumulative = 0;
-        for (const action of this.actions) {
-            cumulative += (action.potencyNumeric || 0); // Use potency as weight
-            if (cumulative >= randomValue) {
-                return action;
-            }
+//         let cumulative = 0;
+//         for (const action of this.actions) {
+//             cumulative += (action.potencyNumeric || 0); // Use potency as weight
+//             if (cumulative >= randomValue) {
+//                 return action;
+//             }
+//         }
+
+//         return this.actions[0]; // Fallback
+//   }
+
+// Returns a randomly selected action based on the setting and weighted potency
+weightedRandomAction(): Action {
+    let weightedActions: { action: Action, weight: number }[];
+    const baseWeight = 100;
+
+    if (this.setting === "breadth") {
+        // Weights are more uniform, but include potency to a lesser degree
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: baseWeight + (action.potencyNumeric || 0) * .2
+        }));
+    } else if (this.setting === "depth") {
+        // Weights are proportional to potency to prioritize depth
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: (action.potencyNumeric || 0) * 2
+        }));
+    } else if (this.setting === "balanced") {
+        // Accounts for potencies but also maintains some uniformity
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: baseWeight + (action.potencyNumeric || 0) * .5
+        }));
+    } else {
+        // Default to using potency as weight
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: (action.potencyNumeric || 0)
+        }));
+    }
+
+    // Calculate cumulative weights for random selection
+    const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
+    const randomValue = Math.random() * totalWeightedScore;
+
+    let cumulative = 0;
+    for (const entry of weightedActions) {
+        cumulative += entry.weight;
+        if (cumulative >= randomValue) // and calculatePotency doesn't throw an error for that action
+        {
+            return entry.action;
         }
+    }
 
-        return this.actions[0]; // Fallback
-  }
+    // Fallback in case of rounding issues
+    return this.actions[0];
+}
+
 
   // Backpropagates the result of the simulation up the tree
   backpropagate(node: TreeNode, result: number): void {
