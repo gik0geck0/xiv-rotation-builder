@@ -2,19 +2,13 @@ import { LightningElement} from 'lwc';
 import { getJobNames } from 'xiv/actionRepository';
 import { MCTSOptimizer } from './optimizerUtil';
 import type { Action } from 'xiv/actionData';
+import { MCTSOptimizerWithWorker } from './optWorker';
 
 // Enum for Strategy Type
 enum StrategyType {
   Breadth = 'breadth',
   Depth = 'depth',
   Balanced = 'balanced',
-}
-
-// let mcts: MCTSOptimizer;
-
-//factory
-function MCTSFactory(jobValue: string, strategyValue: string, durationValue: number, gcdValue: number): MCTSOptimizer {
-  return new MCTSOptimizer(jobValue, strategyValue, durationValue, gcdValue);
 }
 
 
@@ -88,8 +82,9 @@ export default class Optimizer extends LightningElement {
     console.log('Duration:', durationValue);
     console.log('GCD:', gcd);
 
-    // Call the optimizer with these values
-    const mcts = MCTSFactory(jobValue, strategyValue, durationValue, gcd);
+    // Call the optimizer worker with these values
+    const mcts = new MCTSOptimizerWithWorker(jobValue, strategyValue, durationValue, gcd, 1000);
+
     this.jobActions = mcts.bestActions.filter((action): action is Action => action !== undefined);
     this.potency = mcts.bestPotency;
     console.log(this.potency);

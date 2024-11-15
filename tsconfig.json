@@ -20,7 +20,8 @@
         "paths": {
             "xiv/optimizer":[
                 "src/modules/xiv/optimizer/optimizer.ts",
-                "src/modules/xiv/optimizer/optimizerUtil.ts"
+                "src/modules/xiv/optimizer/optimizerUtil.ts",
+                "src/modules/xiv/optimizer/optWorker.ts"
             ],
             "xiv/actionData": [
                 "src/modules/xiv/actionData/actionData.ts"

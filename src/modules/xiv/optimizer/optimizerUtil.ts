@@ -26,6 +26,7 @@ export class MCTSOptimizer {
   gcd: number;
   bestActions: Action[];
   bestPotency: number;
+  itterations: number;
 
  // MCTS core functions
 
@@ -210,7 +211,7 @@ select(node: TreeNode): TreeNode {
     }
   
     // Return the best action list found in the entire MCTS process
-    bestActionList = this.bestActionSequence.slice(0, 10); // Slice to the first 10 actions if necessary
+    bestActionList = this.bestActionSequence.filter((action): action is Action => action !== undefined); // Slice to the first 10 actions if necessary
     bestActionListStr = bestActionList.map(a => a.name).join(" * ");
     if (LOG_LEVEL === 1) {
       alert(`Optimizer complete, ran for ${iterations} itterations. \n Best action list: ${bestActionListStr} with Damage: ${this.bestDamage} `);
@@ -221,7 +222,7 @@ select(node: TreeNode): TreeNode {
     return [bestActionList, this.bestDamage]; // Or any other logic to return the final best node
   }
 
-  constructor(job: string, setting: string, duration: number, gcd: number) {
+  constructor(job: string, setting: string, duration: number, gcd: number, itterations: number) {
       this.job = job;
       this.setting = setting;
       this.duration = duration;
@@ -231,6 +232,7 @@ select(node: TreeNode): TreeNode {
       this.bestDamage = -Infinity;
       this.bestActionSequence = [];
       this.actions = getJobActions(this.job);
+      this.itterations = itterations;
 
     // Root node (starting point of the tree)
     this.root = {
@@ -249,7 +251,7 @@ select(node: TreeNode): TreeNode {
       }
       
       // Fetch job actions and start MCTS optimization
-      const result = this.monteCarloTreeSearch(this.root, 1000);
+      const result = this.monteCarloTreeSearch(this.root, itterations);
       this.bestActions = result[0];
       this.bestPotency = result[1];
   }
