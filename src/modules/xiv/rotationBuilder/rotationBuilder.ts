@@ -104,7 +104,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime: numb
     }
 
     const timedList = findTimes(actionList, gcdTime);
-    timeActionList(actionList, timedList);
+    timeActionList(actionList, timedList, gcdTime);
     const totalPotency = calculatePotency(timedList);
 
     return totalPotency;
@@ -128,21 +128,56 @@ export function addActionToTimeline(actionList: Action[], job: string, actionNam
 
 export function sumTimeTaken(actionList: Action[], gcdTime: number): number {
     const timedList = findTimes(actionList, gcdTime);
-    const totalTime = timedList.reduce((sum, [, time]) => sum + time, 0);
+    const totalTime = timedList.reduce((sum, [action, ]) => sum + (action.timeTaken || 0), 0);
     return totalTime;
 }
 
-export function timeActionList(actionList: Action[], timedList: [Action, number][]): void {
+// Function to time how long each action of the action list takes to execute and at what time each action begins on the timeline
+export function timeActionList(actionList: Action[], timedList: [Action, number][], gcdTime: number): void {
     timedList.forEach((timedAction, i) => {
-        const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
-        if (i === 0) {
+        let castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0); // Always begin with the assumption that there exists a slight delay time to execute instant actions
+
+        // Scenario 1. GCD action immediately after GCD action: GCD time in between GCD actions
+        // Scenario 2. Two GCD actions with an oGCD action in between: GCD time between GCD actions
+        // Scenario 3. Two GCD actions with two oGCD actions in between: GCD time between GCD actions
+        // Scenario 4. GCD action and oGCD action with two oGCD actions in between: GCD time between GCD action and last oGCD action
+        const needsGCD = (
+            (i > 0 && (actionList[i - 1]?.isWeaponskill || actionList[i - 1]?.isSpell) && !actionList[i]?.isAbility) ||
+            (i > 1 && (actionList[i - 2]?.isWeaponskill || actionList[i - 2]?.isSpell) && !actionList[i]?.isAbility && actionList[i - 1]?.isAbility) ||
+            (i > 2 && (actionList[i - 3]?.isWeaponskill || actionList[i - 3]?.isSpell) && !actionList[i]?.isAbility && actionList[i - 1]?.isAbility && actionList[i - 2]?.isAbility) ||
+            (i > 2 && actionList[i]?.isAbility && actionList[i - 1]?.isAbility && actionList[i - 2]?.isAbility && (actionList[i - 3]?.isWeaponskill || actionList[i - 3]?.isSpell))
+        ) && castTime < gcdTime;
+
+        // Get the index of the most recent GCD action
+        const mostRecentSkillSpell = (() => {
+            for (let j = i - 1; j >= 0; j--) {
+                if (!actionList[j].isAbility) {
+                    return j;
+                }
+            }
+
+            return -1;
+        })();
+
+        if (i === 0) { // First Action in Timeline
             actionList[0].startTime = timedAction[1] - castTime;
             actionList[0].timeTaken = castTime;
-        } else {
-            actionList[i].startTime = timedAction[1] - castTime;
+        } else { // All Other Actions
+            if (needsGCD && mostRecentSkillSpell !== -1) { // Scenario 4
+                actionList[i].startTime = (actionList[mostRecentSkillSpell].startTime || 0) + gcdTime;
+            } else if (needsGCD) { // Scenario 1, 2, and 3
+                actionList[i].startTime = (actionList[i - 1].startTime || 0) + gcdTime;
+            } else { // !needsGCD
+                actionList[i].startTime = (actionList[i - 1].startTime || 0) + castTime;
+            }
+        
+            // Always adjust the previous action's time
             actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
         }
-        if (i === timedList.length - 1) {
+
+        if (i === timedList.length - 1) { // Last Action in Timeline
+            // If single action, default to original cast time. Otherwise, use true cast time
+            castTime = timedList.length === 1 ? castTime : (timedAction[0].castNumeric || 0);
             actionList[i].timeTaken = castTime;
         }
     });
