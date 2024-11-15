@@ -138,12 +138,11 @@ export class MCTSOptimizer {
 
 // Returns a randomly selected action based on the setting and weighted potency
 weightedRandomAction(): Action {
-    const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
     let weightedActions: { action: Action, weight: number }[];
+    const baseWeight = 100;
 
     if (this.setting === "breadth") {
         // Weights are more uniform, but include potency to a lesser degree
-        const baseWeight = 100;
         weightedActions = this.actions.map(action => ({
             action,
             weight: baseWeight + (action.potencyNumeric || 0) * .2
@@ -156,7 +155,6 @@ weightedRandomAction(): Action {
         }));
     } else if (this.setting === "balanced") {
         // Accounts for potencies but also maintains some uniformity
-        const baseWeight = 100;
         weightedActions = this.actions.map(action => ({
             action,
             weight: baseWeight + (action.potencyNumeric || 0) * .5
