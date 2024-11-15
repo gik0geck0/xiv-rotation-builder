@@ -11,7 +11,7 @@ type TreeNode = {
 };
 
 type LogLevel = 0 | 1;
-const LOG_LEVEL: LogLevel = 1;
+const LOG_LEVEL: LogLevel = 0;
 
 // The MCTS optimizer class
 export class MCTSOptimizer {
