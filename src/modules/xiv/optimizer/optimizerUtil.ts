@@ -53,24 +53,35 @@ export class MCTSOptimizer {
   }
 
  // Selects the best child node based on visits and score
- select(node: TreeNode): TreeNode {
+// Selects the best child node based on visits and score
+select(node: TreeNode): TreeNode {
     if (LOG_LEVEL === 1) {
         console.log("[LOG] Selecting node. Current children: ", node.children.map(c => c.action?.name));
     }
     if (node.children.length === 0) {
         return node; // No selection possible
     }
-  
-    const selectedNode = node.children.reduce((bestChild, currentChild) => 
-      currentChild.visits === 0 ? currentChild : (bestChild.score > currentChild.score ? bestChild : currentChild),
-      node.children[0] // Ensure we have at least one child to avoid empty reduce
-    );
-  
+
+    // Filter out children that have not been visited
+    const unvisitedChildren = node.children.filter(child => child.visits === 0);
+    
+    let selectedNode;
+    if (unvisitedChildren.length > 0) {
+        // If there are unvisited nodes, pick one randomly
+        selectedNode = unvisitedChildren[Math.floor(Math.random() * unvisitedChildren.length)];
+    } else {
+        // Otherwise, pick the one with the highest score
+        selectedNode = node.children.reduce((bestChild, currentChild) => 
+            bestChild.score > currentChild.score ? bestChild : currentChild
+        );
+    }
+
     if (LOG_LEVEL === 1) {
         console.log("[LOG] Selected node: ", selectedNode.action?.name);
     }
     return selectedNode;
-  }
+}
+
 
   // Expands the current node with all possible child actions
   expand(node: TreeNode): void {
