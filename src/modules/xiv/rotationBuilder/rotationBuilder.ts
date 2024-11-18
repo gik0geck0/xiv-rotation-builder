@@ -104,7 +104,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime: numb
     }
 
     const timedList = findTimes(actionList, gcdTime);
-    timeActionList(actionList, timedList, gcdTime);
+    timeActionList(actionList, gcdTime);
     const totalPotency = calculatePotency(timedList);
 
     return totalPotency;
@@ -127,15 +127,15 @@ export function addActionToTimeline(actionList: Action[], job: string, actionNam
 }
 
 export function sumTimeTaken(actionList: Action[], gcdTime: number): number {
-    const timedList = findTimes(actionList, gcdTime);
-    const totalTime = timedList.reduce((sum, [action, ]) => sum + (action.timeTaken || 0), 0);
+    timeActionList(actionList, gcdTime);
+    const totalTime = actionList.reduce((sum, action) => sum + (action.timeTaken || 0), 0);
     return totalTime;
 }
 
 // Function to time how long each action of the action list takes to execute and at what time each action begins on the timeline
-export function timeActionList(actionList: Action[], timedList: [Action, number][], gcdTime: number): void {
-    timedList.forEach((timedAction, i) => {
-        let castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0); // Always begin with the assumption that there exists a slight delay time to execute instant actions
+export function timeActionList(actionList: Action[], gcdTime: number): void {
+    for (let i = 0; i < actionList.length; i++) {
+        let castTime = actionList[i].isInstant ? 0.7 : (actionList[i].castNumeric || 0); // Always begin with the assumption that there exists a slight delay time to execute instant actions
 
         // Scenario 1. GCD action immediately after GCD action: GCD time in between GCD actions
         // Scenario 2. Two GCD actions with an oGCD action in between: GCD time between GCD actions
@@ -160,7 +160,7 @@ export function timeActionList(actionList: Action[], timedList: [Action, number]
         })();
 
         if (i === 0) { // First Action in Timeline
-            actionList[0].startTime = timedAction[1] - castTime;
+            actionList[0].startTime = 0;
             actionList[0].timeTaken = castTime;
         } else { // All Other Actions
             if (needsGCD && mostRecentSkillSpell !== -1) { // Scenario 4
@@ -172,78 +172,39 @@ export function timeActionList(actionList: Action[], timedList: [Action, number]
             }
         
             // Always adjust the previous action's time
-            actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
+            actionList[i - 1].timeTaken = (actionList[i].startTime || 0) - (actionList[i - 1].startTime || 0);
         }
 
-        if (i === timedList.length - 1) { // Last Action in Timeline
+        if (i === actionList.length - 1) { // Last Action in Timeline
             // If single action, default to original cast time. Otherwise, use true cast time
-            castTime = timedList.length === 1 ? castTime : (timedAction[0].castNumeric || 0);
+            castTime = actionList.length === 1 ? castTime : (actionList[i].castNumeric || 0);
             actionList[i].timeTaken = castTime;
         }
-    });
+    }
 }
 
 export function findTimes(actionList: Action[], GCDTime: number): [Action, number][] {
+    timeActionList(actionList, GCDTime);
+
     let currTime = 0;
     const waitTime = 0.7;
 
-    if (actionList[0].isInstant) {
-        currTime = waitTime;
+    if (actionList.length === 1) {
+        currTime = actionList[0].isInstant ? waitTime : (actionList[0].castNumeric || 0);
     } else {
-        currTime = (actionList[0].castNumeric || 0);
+        currTime = actionList[0].isInstant ? 0 : (actionList[0].castNumeric || 0);
     }
 
     let timedList: [Action, number][] = [[actionList[0], currTime]];
-    let usedActions: [string, number][] = [
-        [actionList[0].name, (actionList[0].recastNumeric || 0)]
-    ];
-
-    let lastGCD: [string, number] = [actionList[0].name, currTime];
-    if (actionList[0].isAbility) {
-        lastGCD[1] = -1;
-    }
 
     for (let i = 1; i < actionList.length; i++) {
         const currAction = actionList[i];
 
-        for (let j = 0; j < usedActions.length; j++) {
-            if (currAction.name === usedActions[j][0] && currTime < usedActions[j][1]) {
-                currTime = usedActions[j][1];
-            }
-        }
-
-        if (currAction.isSpell || currAction.isWeaponskill) {
-            if (currAction.isInstant) {
-                if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
-                    currTime = lastGCD[1] + GCDTime + waitTime;
-                } else {
-                    currTime += waitTime;
-                }
-            } else {
-                if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
-                    currTime = lastGCD[1] + GCDTime + (currAction.castNumeric || 0);
-                } else {
-                    currTime += (currAction.castNumeric || 0);
-                }
-            }
-            timedList.push([currAction, Math.round(currTime * 10) / 10]);
-            lastGCD = [currAction.name, Math.round(currTime * 10) / 10];
-        } else {
-            currTime += waitTime;
-            timedList.push([currAction, Math.round(currTime * 10) / 10]);
-        }
-
-        if (!currAction.isInstant) {
-            if ((currAction.recastNumeric || 0) >= (currAction.castNumeric || 0)) {
-                usedActions.push([currAction.name, currTime]);
-            } else {
-                usedActions.push([currAction.name, currTime + (currAction.recastNumeric || 0)]);
-            }
-        } else {
-            usedActions.push([currAction.name, currTime + (currAction.recastNumeric || 0)]);
-        }
+        currTime += (actionList[i - 1].timeTaken || 0);
+        timedList.push([currAction, Math.round(currTime * 10) / 10]);
     }
 
+    console.log(timedList);
     return timedList;
 }
 
