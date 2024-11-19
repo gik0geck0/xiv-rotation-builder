@@ -38,7 +38,7 @@ export default class Optimizer extends LightningElement {
   }
 
   myValue = 20;
-  sliderValue = 60;
+  sliderValue = 30;
 
   //Handles job changes and makes sure the output has the correct job.
   changeJob(): void {
