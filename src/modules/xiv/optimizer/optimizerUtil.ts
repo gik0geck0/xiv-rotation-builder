@@ -27,6 +27,7 @@ export class MCTSOptimizer {
   gcd: number;
   bestActions: Action[];
   bestPotency: number;
+  iterations: number;
 
  // MCTS core functions
 
@@ -139,21 +140,70 @@ select(node: TreeNode): TreeNode {
     return calculatedScore;
   }
 
-  // Returns a randomly selected action based on weighted potency
-    weightedRandomAction(): Action {
-        const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
-        const randomValue = Math.random() * totalScore;
+//   // Returns a randomly selected action based on weighted potency
+//     weightedRandomAction(): Action {
+//         const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
+//         const randomValue = Math.random() * totalScore;
 
-        let cumulative = 0;
-        for (const action of this.actions) {
-            cumulative += (action.potencyNumeric || 0); // Use potency as weight
-            if (cumulative >= randomValue) {
-                return action;
-            }
+//         let cumulative = 0;
+//         for (const action of this.actions) {
+//             cumulative += (action.potencyNumeric || 0); // Use potency as weight
+//             if (cumulative >= randomValue) {
+//                 return action;
+//             }
+//         }
+
+//         return this.actions[0]; // Fallback
+//   }
+
+// Returns a randomly selected action based on the setting and weighted potency
+weightedRandomAction(): Action {
+    let weightedActions: { action: Action, weight: number }[];
+    const baseWeight = 100;
+
+    if (this.setting === "breadth") {
+        // Weights are more uniform, but include potency to a lesser degree
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: baseWeight + (action.potencyNumeric || 0) * .2
+        }));
+    } else if (this.setting === "depth") {
+        // Weights are proportional to potency to prioritize depth
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: (action.potencyNumeric || 0) * 2
+        }));
+    } else if (this.setting === "balanced") {
+        // Accounts for potencies but also maintains some uniformity
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: baseWeight + (action.potencyNumeric || 0) * .5
+        }));
+    } else {
+        // Default to using potency as weight
+        weightedActions = this.actions.map(action => ({
+            action,
+            weight: (action.potencyNumeric || 0)
+        }));
+    }
+
+    // Calculate cumulative weights for random selection
+    const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
+    const randomValue = Math.random() * totalWeightedScore;
+
+    let cumulative = 0;
+    for (const entry of weightedActions) {
+        cumulative += entry.weight;
+        if (cumulative >= randomValue) // and calculatePotency doesn't throw an error for that action
+        {
+            return entry.action;
         }
+    }
 
-        return this.actions[0]; // Fallback
-  }
+    // Fallback in case of rounding issues
+    return this.actions[0];
+}
+
 
   // Backpropagates the result of the simulation up the tree
   backpropagate(node: TreeNode, result: number): void {
@@ -232,7 +282,7 @@ select(node: TreeNode): TreeNode {
     return [this.bestActionSequence, this.bestDamage]; // Or any other logic to return the final best node
   }
 
-  constructor(job: string, setting: string, duration: number, gcd: number) {
+  constructor(job: string, setting: string, duration: number, gcd: number, iterations: number) {
       this.job = job;
       this.setting = setting;
       this.duration = duration;
@@ -242,6 +292,7 @@ select(node: TreeNode): TreeNode {
       this.bestDamage = -Infinity;
       this.bestActionSequence = [];
       this.actions = getJobActions(this.job);
+      this.iterations = iterations;
 
     // Root node (starting point of the tree)
     this.root = {
@@ -256,11 +307,11 @@ select(node: TreeNode): TreeNode {
 
       // For now, just alert the received values
       if (LOG_LEVEL === 1) {
-        alert(`MCTS Initialized:\nJob: ${this.job}\nSetting: ${this.setting}\nDuration: ${this.duration} seconds\nGCD: ${this.gcd} seconds`);
+        alert(`MCTS Initialized:\nJob: ${this.job}\nSetting: ${this.setting}\nDuration: ${this.duration} seconds\nGCD: ${this.gcd} seconds\nIterations: ${this.iterations}`);
       }
       
       // Fetch job actions and start MCTS optimization
-      const result = this.monteCarloTreeSearch(this.root, 1000);
+      const result = this.monteCarloTreeSearch(this.root, iterations);
       this.bestActions = result[0];
       this.bestPotency = result[1];
   }
