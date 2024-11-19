@@ -195,7 +195,7 @@ export function findTimes(actionList: Action[], GCDTime: number): [Action, numbe
         currTime = actionList[0].isInstant ? 0 : (actionList[0].castNumeric || 0);
     }
 
-    let timedList: [Action, number][] = [[actionList[0], currTime]];
+    const timedList: [Action, number][] = [[actionList[0], currTime]];
 
     for (let i = 1; i < actionList.length; i++) {
         const currAction = actionList[i];
