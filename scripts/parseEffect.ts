@@ -122,7 +122,7 @@ export function parseEffect(action: Action): void {
                         }
                         action.comboBonus = {
                             ...action.comboBonus,
-                            [buffName]: -1
+                            [buffName]: 1
                         };
                     }
                 }
@@ -222,7 +222,7 @@ export function parseEffect(action: Action): void {
                     }
                     buffName += line[j].toLowerCase();
                 }
-                action.grants = { ...action.grants, [buffName]: -1 };
+                action.grants = { ...action.grants, [buffName]: 1 };
             }
         }
 
