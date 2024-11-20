@@ -206,11 +206,13 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
         // Handle invalid actions
         if (invalidActionList.length > 0) {
-            invalidActionList.forEach(invalidAction => {
-                const [action, index, message] = invalidAction;
-                actionList[index].location = 'invalid';
-                actionList[index].errorMessage = message;
-            });
+            if(draw){
+                invalidActionList.forEach(invalidAction => {
+                    const [action, index, message] = invalidAction;
+                    actionList[index].location = 'invalid';
+                    actionList[index].errorMessage = message;
+                });
+            }
             // return -1 if the actions are invalid
             return -1;
         } else {
