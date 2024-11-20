@@ -1,7 +1,6 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
 import type { Action } from 'xiv/actionData'; // Assuming you have an Action interface
-import { JobGuide } from 'xiv/actionData';
 
 function hasOwnProperty(obj: any, property: string): boolean {
     return Object.prototype.hasOwnProperty.call(obj, property);
@@ -187,12 +186,11 @@ export default class RotationBuilder extends LightningElement {
     }
 
     validation(actionList: Action[], job: string): void {
-        // Initializing the action list
         actionList.forEach(action => {
             action.location = 'list';
             action.errorMessage = '';
         });
-    
+
         if (actionList.length === 0) {
             (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
                 'Total Potency: Add actions to receive a potency.';
@@ -200,11 +198,8 @@ export default class RotationBuilder extends LightningElement {
                 'Potency Per Second: Add actions to receive a pps.';
         } else {
             const timedList = this.findTimes(actionList);
-    
-            // Setting startTime and timeTaken for each action in the timed list
             timedList.forEach((timedAction, i) => {
-                let castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
-                
+                const castTime = timedAction[0].isInstant ? 0.7 : (timedAction[0].castNumeric || 0);
                 if (i === 0) {
                     actionList[0].startTime = timedAction[1] - castTime;
                     actionList[0].timeTaken = castTime;
@@ -212,108 +207,12 @@ export default class RotationBuilder extends LightningElement {
                     actionList[i].startTime = timedAction[1] - castTime;
                     actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
                 }
-                
                 if (i === timedList.length - 1) {
                     actionList[i].timeTaken = castTime;
                 }
             });
-    
-            // Initializing gauge amounts
-            const gaugeAmounts: Record<string, number>[] = [];
-            Object.keys(JobGuide[job].gauges).forEach(gauge => {
-                gaugeAmounts.push({ [gauge]: 0 });
-            });
-    
-            // Validation check
-            const invalidActionList: [Action, number, string][] = [];
-            const buffList = this.getBuffs(timedList);
-    
-            timedList.forEach((timedAction, i) => {
-                const currAction = timedAction[0];
-    
-                // Checking gauge requirements
-                gaugeAmounts.forEach((gauge, j) => {
-                    const gaugeName = Object.keys(gauge)[0];
-                    const newGaugeValue = currAction.cast === 'Instant'
-                        ? 5 * Math.floor((timedAction[1] - 0.7) / 2.5)
-                        : 5 * Math.floor((timedAction[1] - parseFloat(currAction.cast || '0')) / 2.5);
-    
-                    gaugeAmounts[j][gaugeName] = newGaugeValue;
-    
-                    if (currAction.hasOwnProperty(gaugeName)) {
-                        if ((gaugeAmounts[j][gaugeName] + currAction[gaugeName]) < 0) {
-                            invalidActionList.push([
-                                currAction,
-                                i,
-                                `Not enough ${gaugeName} to cast ${currAction.name}.`
-                            ]);
-                        } else {
-                            gauge[gaugeName] += currAction[gaugeName];
-                        }
-                    }
-                });
-    
-                // Buff requirement check
-                if (currAction.hasOwnProperty('buffRequirement')) {
-                    let buffCheck = 0;
-    
-                    buffList.forEach(buff => {
-                        if (buff[0] === currAction.buffRequirement) {
-                            buffCheck++;
-                            if (buff.length === 4) {
-                                if (timedAction[1] < buff[2] || timedAction[1] > buff[3]) {
-                                    invalidActionList.push([
-                                        currAction,
-                                        i,
-                                        `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`
-                                    ]);
-                                } else if (buff[1] < 1) {
-                                    invalidActionList.push([
-                                        currAction,
-                                        i,
-                                        `You are missing stacks of the ${currAction.buffRequirement} to cast ${currAction.name}.`
-                                    ]);
-                                } else {
-                                    buff[1] -= 1;
-                                }
-                            } else {
-                                if (timedAction[1] < buff[1] || timedAction[1] > buff[2]) {
-                                    invalidActionList.push([
-                                        currAction,
-                                        i,
-                                        `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`
-                                    ]);
-                                }
-                            }
-                        }
-                    });
-    
-                    if (buffCheck < 1) {
-                        invalidActionList.push([
-                            currAction,
-                            i,
-                            `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`
-                        ]);
-                    }
-                }
-            });
-    
-            // Handle invalid actions
-            if (invalidActionList.length > 0) {
-                (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
-                    'Total Potency: Unable to calculate potency with invalid action(s).';
-                (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
-                    'Potency Per Second: Unable to calculate pps with invalid action(s).';
-    
-                invalidActionList.forEach(invalidAction => {
-                    const [action, index, message] = invalidAction;
-                    actionList[index].location = 'invalid';
-                    actionList[index].errorMessage = message;
-                });
-            } else {
-                // Run the calculation if valid
-                this.calculatePotency(timedList);
-            }
+
+            this.calculatePotency(timedList);
         }
     }
 
