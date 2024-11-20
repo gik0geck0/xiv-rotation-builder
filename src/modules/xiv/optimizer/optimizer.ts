@@ -17,13 +17,13 @@ function MCTSFactory(jobValue: string, strategyValue: string, durationValue: num
   return new MCTSOptimizer(jobValue, strategyValue, durationValue, gcdValue, iterationsValue);
 }
 
-
 export default class Optimizer extends LightningElement {
   job = 'paladin';
   jobList = getJobNames();
   jobActions: Action[] = [];
   skillDetails: string = '';
   potency: number = 0;
+  sliderValue = 30;
 
   // Set the type of optStrategyValue to be StrategyType, initialized to Breadth
   optStrategyValue: StrategyType = StrategyType.Breadth;
@@ -37,8 +37,7 @@ export default class Optimizer extends LightningElement {
     ];
   }
 
-  myValue = 20;
-  sliderValue = 30;
+
 
   //Handles job changes and makes sure the output has the correct job.
   changeJob(): void {
@@ -75,6 +74,7 @@ export default class Optimizer extends LightningElement {
     const jobValue = selectedJob.value;
     const strategyValue = this.optStrategyValue; // Strategy should be of type StrategyType
     const durationValue = Number(selectedDuration.value);
+    this.sliderValue = Number(selectedDuration.value);
     const gcd = Number(gcdValue.value);
     const iterationsValue = Number(iterations.value);
 
