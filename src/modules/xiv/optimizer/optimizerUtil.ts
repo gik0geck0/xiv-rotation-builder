@@ -1,6 +1,6 @@
 import type { Action } from 'xiv/actionData';
 import { getJobActions } from 'xiv/actionRepository';
-import { findTimes, calculatePotency, timeActionList, sumTimeTaken } from 'xiv/rotationBuilder';
+import { findTimes, calculatePotency, timeActionList, sumTimeTaken, validateActions } from 'xiv/rotationBuilder';
 
 type TreeNode = {
   action: Action | null;
@@ -37,7 +37,7 @@ export class MCTSOptimizer {
         console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
     // Calculate the score based on potency (or any other metric you are using)
-    const damage = calculatePotency(findTimes(actions, this.gcd));
+    const damage = validateActions(actions, this.job, this.gcd, false);
 
     // Check if the current damage is better than the best known damage
     if (damage > this.bestDamage) {

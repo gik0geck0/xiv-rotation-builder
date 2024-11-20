@@ -24,7 +24,7 @@ export default class RotationBuilder extends LightningElement {
     }
 
     validation(actionList: Action[], job: string): number {
-        const totalPotency = validateActions(actionList, job, this.gcdTime);
+        const totalPotency = validateActions(actionList, job, this.gcdTime, true);
 
         if (totalPotency === 0) {
             (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
@@ -94,35 +94,15 @@ export default class RotationBuilder extends LightningElement {
     }
 }
 
-// export function validateActions(actionList: Action[], job: string, gcdTime: number): number {
-//     actionList.forEach(action => {
-//         action.location = 'list';
-//         action.errorMessage = '';
-//     });
-
-//     if (actionList.length === 0) {
-//         return 0;
-//     }
-
-//     const timedList = findTimes(actionList, gcdTime);
-//     timeActionList(actionList, gcdTime);
-//     const totalPotency = calculatePotency(timedList);
-
-//     return totalPotency;
-// }
-
-export function validateActions(actionList: Action[], job: string, gcdTime : number): number {
-    // Initializing the action list
-    actionList.forEach(action => {
-        action.location = 'list';
-        action.errorMessage = '';
-    });
+export function validateActions(actionList: Action[], job: string, gcdTime : number, draw : boolean): number {
+    if(draw){
+        actionList.forEach(action => {
+            action.location = 'list';
+            action.errorMessage = '';
+        });
+    }
 
     if (actionList.length === 0) {
-        // (this.template?.querySelector('lightning-card.potencyLabel') as HTMLElement).title =
-        //     'Total Potency: Add actions to receive a potency.';
-        // (this.template?.querySelector('lightning-card.ppsLabel') as HTMLElement).title =
-        //     'Potency Per Second: Add actions to receive a pps.';
         return 0;
     } else {
         const timedList = findTimes(actionList, gcdTime);
@@ -248,7 +228,7 @@ export function addActionToTimeline(actionList: Action[], job: string, actionNam
         );
     }
 
-    const totalPotency = validateActions(actionList, job, gdcTime);
+    const totalPotency = validateActions(actionList, job, gdcTime, true);
 
     const time = sumTimeTaken(actionList, gdcTime);
     const PPS = time ? Math.round((totalPotency / time) * 100) / 100 : 0;
