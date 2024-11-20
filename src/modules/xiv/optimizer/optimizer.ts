@@ -23,6 +23,8 @@ export default class Optimizer extends LightningElement {
   jobActions: Action[] = [];
   skillDetails: string = '';
   potency: number = 0;
+  time: number = 0;
+  potencyPerSecond: number = 0;
   sliderValue = 30;
 
   // Set the type of optStrategyValue to be StrategyType, initialized to Breadth
@@ -45,6 +47,7 @@ export default class Optimizer extends LightningElement {
     this.job = currentJob.value;
     this.jobActions = [];
     this.potency = 0;
+    this.time = 0;
   }
 
   // Update optStrategyValue when the radio button is changed
@@ -95,7 +98,12 @@ export default class Optimizer extends LightningElement {
     const mcts = MCTSFactory(jobValue, strategyValue, durationValue, gcd, iterationsValue);
     this.jobActions = mcts.bestActions.filter((action): action is Action => action !== undefined);
     this.potency = mcts.bestPotency;
+    this.time = mcts.bestTime;
+    this.potencyPerSecond = (this.potency / this.time);
     console.log(this.potency);
+    console.log(this.time);
     console.log(this.jobActions);
+    console.log(this.potencyPerSecond);
+
   }
 }

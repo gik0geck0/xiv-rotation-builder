@@ -28,6 +28,7 @@ export class MCTSOptimizer {
   bestActions: Action[];
   bestPotency: number;
   iterations: number;
+  bestTime: number;
 
  // MCTS core functions
 
@@ -308,7 +309,7 @@ weightedRandomAction(): Action {
     }
   }
 
-  monteCarloTreeSearch(root: TreeNode, iterations: number): [Action[], number] {
+  monteCarloTreeSearch(root: TreeNode, iterations: number): [Action[], number, number] {
     let maxDamage = 0;
     let bestActionSequenceInSearch: Action[] = [];
     let bestActionList: Action[] = [];
@@ -365,7 +366,7 @@ weightedRandomAction(): Action {
     console.log(`[LOG] Best found damage: ${this.bestDamage}`);
     console.log(`[LOG] Best found time: ${bestActionListTime}`);
   
-    return [this.bestActionSequence, this.bestDamage]; // Or any other logic to return the final best node
+    return [this.bestActionSequence, this.bestDamage, bestActionListTime]; // Or any other logic to return the final best node
   }
 
   constructor(job: string, setting: string, duration: number, gcd: number, iterations: number) {
@@ -400,5 +401,6 @@ weightedRandomAction(): Action {
       const result = this.monteCarloTreeSearch(this.root, iterations);
       this.bestActions = result[0];
       this.bestPotency = result[1];
+      this.bestTime = result[2];
   }
 }
