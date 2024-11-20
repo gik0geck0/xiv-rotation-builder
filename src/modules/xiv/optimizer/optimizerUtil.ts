@@ -157,6 +157,54 @@ select(node: TreeNode): TreeNode {
 //   }
 
 // Returns a randomly selected action based on the setting and weighted potency
+// weightedRandomAction(): Action {
+//     let weightedActions: { action: Action, weight: number }[];
+//     const baseWeight = 100;
+
+//     if (this.setting === "breadth") {
+//         // Weights are more uniform, but include potency to a lesser degree
+//         weightedActions = this.actions.map(action => ({
+//             action,
+//             weight: baseWeight + (action.potencyNumeric || 0) * .2
+//         }));
+//     } else if (this.setting === "depth") {
+//         // Weights are proportional to potency to prioritize depth
+//         weightedActions = this.actions.map(action => ({
+//             action,
+//             weight: (action.potencyNumeric || 0) * 2
+//         }));
+//     } else if (this.setting === "balanced") {
+//         // Accounts for potencies but also maintains some uniformity
+//         weightedActions = this.actions.map(action => ({
+//             action,
+//             weight: baseWeight + (action.potencyNumeric || 0) * .5
+//         }));
+//     } else {
+//         // Default to using potency as weight
+//         weightedActions = this.actions.map(action => ({
+//             action,
+//             weight: (action.potencyNumeric || 0)
+//         }));
+//     }
+
+//     // Calculate cumulative weights for random selection
+//     const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
+//     const randomValue = Math.random() * totalWeightedScore;
+
+//     let cumulative = 0;
+//     for (const entry of weightedActions) {
+//         cumulative += entry.weight;
+//         if (cumulative >= randomValue) // and calculatePotency doesn't throw an error for that action
+//         {
+//             return entry.action;
+//         }
+//     }
+
+//     // Fallback in case of rounding issues
+//     return this.actions[0];
+// }
+
+// Returns a randomly selected action based on the setting and weighted potency
 weightedRandomAction(): Action {
     let weightedActions: { action: Action, weight: number }[];
     const baseWeight = 100;
@@ -165,19 +213,56 @@ weightedRandomAction(): Action {
         // Weights are more uniform, but include potency to a lesser degree
         weightedActions = this.actions.map(action => ({
             action,
-            weight: baseWeight + (action.potencyNumeric || 0) * .2
+            weight: baseWeight + (action.potencyNumeric || 0) * .02
         }));
     } else if (this.setting === "depth") {
         // Weights are proportional to potency to prioritize depth
+        // This takes much longer but yeilds better results
         weightedActions = this.actions.map(action => ({
             action,
-            weight: (action.potencyNumeric || 0) * 2
+            weight: (action.potencyNumeric || 0) * 10
         }));
+
+        weightedActions.sort(() => Math.random() - 0.5); //shuffle them for randomness when selecting
+
+        // Initialize a frequency map
+        const frequencyMap = new Map<Action, number>();
+
+        // Run the selection process multiple times
+        for (let i = 0; i < 200; i++) {
+            // Shuffle the actions for randomness
+            const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
+            const randomValue = Math.random() * totalWeightedScore;
+
+            let cumulative = 0;
+            for (const entry of weightedActions) {
+                cumulative += entry.weight;
+                if (cumulative >= randomValue) {
+                    // Count the selection in the frequency map
+                    frequencyMap.set(entry.action, (frequencyMap.get(entry.action) || 0) + 1);
+                    break;
+                }
+            }
+        }
+
+        //Determine the action with the highest frequency
+        let mostFrequentAction;
+        let maxFrequency = -1;
+        for (const [action, frequency] of frequencyMap) {
+            if (frequency > maxFrequency) {
+                mostFrequentAction = action;
+                maxFrequency = frequency;
+            }
+        }
+
+        //Return the most frequently selected action
+        return mostFrequentAction;
+
     } else if (this.setting === "balanced") {
         // Accounts for potencies but also maintains some uniformity
         weightedActions = this.actions.map(action => ({
             action,
-            weight: baseWeight + (action.potencyNumeric || 0) * .5
+            weight: baseWeight + ((action.potencyNumeric || 0) * Math.random())
         }));
     } else {
         // Default to using potency as weight
@@ -188,6 +273,7 @@ weightedRandomAction(): Action {
     }
 
     // Calculate cumulative weights for random selection
+    weightedActions.sort(() => Math.random() - 0.5); //shuffle them for randomness when selecting
     const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
     const randomValue = Math.random() * totalWeightedScore;
 
@@ -199,7 +285,7 @@ weightedRandomAction(): Action {
             return entry.action;
         }
     }
-
+   
     // Fallback in case of rounding issues
     return this.actions[0];
 }
