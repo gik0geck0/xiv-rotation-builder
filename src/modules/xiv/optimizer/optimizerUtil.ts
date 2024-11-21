@@ -12,7 +12,7 @@ type TreeNode = {
 };
 
 type LogLevel = 0 | 1;
-const LOG_LEVEL: LogLevel = 0;
+const LOG_LEVEL: LogLevel = 1;
 
 // The MCTS optimizer class
 export class MCTSOptimizer {
@@ -38,7 +38,7 @@ export class MCTSOptimizer {
         console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
     // Calculate the score based on potency (or any other metric you are using)
-    const damage = validateActions(actions, this.job, this.gcd, false);
+    const damage = validateActions(actions, this.job, this.gcd, false)[0];
 
     // Check if the current damage is better than the best known damage
     if (damage > this.bestDamage) {
@@ -121,7 +121,7 @@ select(node: TreeNode): TreeNode {
         const randomAction = this.weightedRandomAction();
         randomActions.push(randomAction);
 
-        //time = sumTimeTaken(randomActions, this.gcd); // Progressively increases as randomActions list gets more actions
+        time = validateActions(randomActions, this.job, this.gcd, false)[1]; // Progressively increases as randomActions list gets more actions
 
         if (LOG_LEVEL === 1) {
             console.log("[LOG] Added action during simulation: ", randomAction.name);
