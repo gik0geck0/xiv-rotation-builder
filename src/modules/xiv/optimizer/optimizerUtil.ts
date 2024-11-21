@@ -1,6 +1,6 @@
 import type { Action } from 'xiv/actionData';
 import { getJobActions } from 'xiv/actionRepository';
-import { findTimes, calculatePotency, timeActionList, sumTimeTaken, validateActions } from 'xiv/rotationBuilder';
+import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
 
 type TreeNode = {
   action: Action | null;
@@ -121,7 +121,7 @@ select(node: TreeNode): TreeNode {
         const randomAction = this.weightedRandomAction();
         randomActions.push(randomAction);
 
-        time = sumTimeTaken(randomActions, this.gcd); // Progressively increases as randomActions list gets more actions
+        //time = sumTimeTaken(randomActions, this.gcd); // Progressively increases as randomActions list gets more actions
 
         if (LOG_LEVEL === 1) {
             console.log("[LOG] Added action during simulation: ", randomAction.name);
@@ -358,13 +358,11 @@ weightedRandomAction(): Action {
     // Return the best action list found in the entire MCTS process
     bestActionList = this.bestActionSequence.slice(0, 10); // Slice to the first 10 actions if necessary
     bestActionListStr = bestActionList.map(a => a.name).join(" + ");
-    bestActionListTime = sumTimeTaken(this.bestActionSequence, this.gcd);
     if (LOG_LEVEL === 1) {
       alert(`Optimizer complete, ran for ${iterations} itterations. \n Best action list: ${bestActionListStr} with Damage: ${this.bestDamage} `);
     }
     console.log(`[LOG] Best action list: ${bestActionListStr}`);
     console.log(`[LOG] Best found damage: ${this.bestDamage}`);
-    console.log(`[LOG] Best found time: ${bestActionListTime}`);
   
     return [this.bestActionSequence, this.bestDamage, bestActionListTime]; // Or any other logic to return the final best node
   }
