@@ -234,66 +234,87 @@ export function findTimes(actionList: Action[], GCDTime: number): [Action, numbe
     let currTime = 0;
     const waitTime = 0.7;
 
-    // Initialize the timed list and tracking variables
-    const timedList: [Action, number][] = [];
-    const usedActions: Record<string, number> = {}; // Map action names to cooldown expiration times
-    let lastGCDTime = 0;
-
-    // Parse numeric values for cast and recast times
-    actionList.forEach(action => {
-        action.castNumeric = action.cast === "Instant" ? 0 : parseFloat(action.cast || "0");
-        action.recastNumeric = parseFloat(action.recast || "0");
-        action.isInstant = action.cast === "Instant";
-    });
-
-    // Process the first action
-    const firstAction = actionList[0];
-    currTime = firstAction.isInstant ? waitTime : firstAction.castNumeric!;
-    timedList.push([firstAction, currTime]);
-
-    if (firstAction.isWeaponskill || firstAction.isSpell) {
-        lastGCDTime = currTime - (firstAction.isInstant ? waitTime : firstAction.castNumeric!);
+    // Process the first action outside the loop
+    if (actionList[0].cast === 'Instant') {
+        currTime = waitTime;
+    } else {
+        currTime = actionList[0].castNumeric!; // Use the numeric cast time
     }
-    usedActions[firstAction.name] = currTime + firstAction.recastNumeric!;
+
+    // Initialize the timed list with the first action
+    const timedList: [Action, number][] = [[actionList[0], currTime]];
+
+    // Track when actions can be reused
+    const usedActions: [string, number][] = [[actionList[0].name, actionList[0].recastNumeric!]];
+
+    // Track the last GCD action
+    let lastTime = 0;
+    let lastGCD: [string, number] = [actionList[0].name, lastTime];
+
+    // If the first action is an ability, mark it as not a GCD (-1)
+    if (actionList[0].type === 'Ability') {
+        lastGCD[1] = -1;
+    }
 
     // Process the rest of the actions
     for (let i = 1; i < actionList.length; i++) {
         const currAction = actionList[i];
 
-        // Ensure the action is not on cooldown
-        if (usedActions[currAction.name] && currTime < usedActions[currAction.name]) {
-            currTime = usedActions[currAction.name];
+        // Ensure the action is off cooldown
+        for (let j = 0; j < usedActions.length; j++) {
+            if (
+                currAction.name === usedActions[j][0] &&
+                currTime < usedActions[j][1]
+            ) {
+                currTime = usedActions[j][1];
+            }
         }
 
         // Handle GCD actions
-        if (currAction.isWeaponskill || currAction.isSpell) {
-            if (currAction.isInstant) {
-                if (currTime <= lastGCDTime + GCDTime && lastGCDTime >= 0) {
-                    currTime = lastGCDTime + GCDTime + waitTime;
+        if (currAction.type === 'Spell' || currAction.type === 'Weaponskill') {
+            if (currAction.cast === 'Instant') {
+                // Instant actions
+                if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
+                    currTime = lastGCD[1] + GCDTime + waitTime;
                 } else {
                     currTime += waitTime;
                 }
+                lastTime = currTime - waitTime;
             } else {
-                if (currTime <= lastGCDTime + GCDTime && lastGCDTime >= 0) {
-                    currTime = lastGCDTime + GCDTime + currAction.castNumeric!;
+                // Non-instant actions
+                if (currTime <= lastGCD[1] + GCDTime && lastGCD[1] !== -1) {
+                    currTime = lastGCD[1] + GCDTime + currAction.castNumeric!;
                 } else {
                     currTime += currAction.castNumeric!;
                 }
+                lastTime = currTime - currAction.castNumeric!;
             }
-            lastGCDTime = currTime - (currAction.isInstant ? waitTime : currAction.castNumeric!);
+
+            // Add the action to the timed list
+            const currPair: [Action, number] = [currAction, Math.round(currTime * 10) / 10];
+            timedList.push(currPair);
+
+            // Update the last GCD action
+            lastGCD = [currAction.name, Math.round(lastTime * 10) / 10];
         } else {
-            // Handle abilities (weavable actions)
+            // Handle abilities (non-GCD actions)
             currTime += waitTime;
+            const currPair: [Action, number] = [currAction, Math.round(currTime * 10) / 10];
+            timedList.push(currPair);
         }
 
-        // Add to timed list
-        timedList.push([currAction, Math.round(currTime * 10) / 10]);
-
-        // Update cooldown tracking
-        usedActions[currAction.name] = currTime + currAction.recastNumeric!;
+        // Add the action to the used actions list for cooldown tracking
+        if (currAction.cast !== 'Instant') {
+            if (currAction.recastNumeric! >= currAction.castNumeric!) {
+                usedActions.push([currAction.name, currTime]);
+            } else {
+                usedActions.push([currAction.name, lastTime + currAction.recastNumeric!]);
+            }
+        } else {
+            usedActions.push([currAction.name, lastTime + currAction.recastNumeric!]);
+        }
     }
 
-    console.log(timedList);
     return timedList;
 }
 
