@@ -12,7 +12,7 @@ type TreeNode = {
 };
 
 type LogLevel = 0 | 1;
-const LOG_LEVEL: LogLevel = 1;
+const LOG_LEVEL: LogLevel = 0;
 
 // The MCTS optimizer class
 export class MCTSOptimizer {
@@ -38,12 +38,16 @@ export class MCTSOptimizer {
         console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
     // Calculate the score based on potency (or any other metric you are using)
-    const damage = validateActions(actions, this.job, this.gcd, false)[0];
+    const result = validateActions(actions, this.job, this.gcd, false);
+
+    const damage = result[0];
+    const time = result[1];
 
     // Check if the current damage is better than the best known damage
     if (damage > this.bestDamage) {
         this.bestDamage = damage; // Update the best damage
         this.bestActionSequence = [...actions]; // Update the best action sequence
+        this.bestTime = time; 
         if (LOG_LEVEL === 1) {
             console.log("[LOG] New best sequence found:", this.bestActionSequence.map(a => a.name).join(" * "));
             console.log("[LOG] New best damage:", this.bestDamage);
@@ -53,7 +57,6 @@ export class MCTSOptimizer {
     return damage;
   }
 
- // Selects the best child node based on visits and score
 // Selects the best child node based on visits and score
 select(node: TreeNode): TreeNode {
     if (LOG_LEVEL === 1) {
@@ -73,7 +76,7 @@ select(node: TreeNode): TreeNode {
     } else {
         // Otherwise, pick the one with the highest score
         selectedNode = node.children.reduce((bestChild, currentChild) => 
-            bestChild.score > currentChild.score ? bestChild : currentChild
+        bestChild.score > currentChild.score ? bestChild : currentChild
         );
     }
 
@@ -114,14 +117,38 @@ select(node: TreeNode): TreeNode {
     }
   
     const randomActions: Action[] = [...node.actionSequence]; // Start with the sequence from this node
-    let time = 0; // Begin timing
+    let result = validateActions(randomActions, this.job, this.gcd, false);
+    let valid = result[0];
+    let time = result[1]; 
 
-    // Add random actions to list until duration is met
+    // If we are starting with something invalid return -1
+    if(valid === -1){
+        console.log("[LOG] Invalid action in list: ", randomActions.map(a => a.name).join(" * "));
+        return -1;
+    }
+
+
+    // Else we add random valid actions to list until duration is met
     while (time < this.duration) {
-        const randomAction = this.weightedRandomAction();
+        let randomAction = this.weightedRandomAction();
         randomActions.push(randomAction);
 
-        time = validateActions(randomActions, this.job, this.gcd, false)[1]; // Progressively increases as randomActions list gets more actions
+        result = validateActions(randomActions, this.job, this.gcd, false);
+        valid = result[0];
+        time =  result[1]; // Progressively increases as randomActions list gets more actions
+
+        if(valid === -1){
+            console.log("[LOG] Invalid action list: ", randomActions.map(a => a.name).join(" * "));
+            const invalidChild = node.children.find(child => child.action === randomAction);
+
+            if (invalidChild) {
+                console.log("[LOG] Marrking invalid action: ", randomAction?.name + " " + invalidChild?.visits);
+                invalidChild.visits++;
+            }            
+
+            randomActions.pop();
+            continue;
+        }
 
         if (LOG_LEVEL === 1) {
             console.log("[LOG] Added action during simulation: ", randomAction.name);
@@ -356,7 +383,7 @@ weightedRandomAction(): Action {
     }
   
     // Return the best action list found in the entire MCTS process
-    bestActionList = this.bestActionSequence.slice(0, 10); // Slice to the first 10 actions if necessary
+    bestActionList = this.bestActionSequence.slice(0, 10); // Slice to the first 10 actions to clean up logs
     bestActionListStr = bestActionList.map(a => a.name).join(" + ");
     if (LOG_LEVEL === 1) {
       alert(`Optimizer complete, ran for ${iterations} itterations. \n Best action list: ${bestActionListStr} with Damage: ${this.bestDamage} `);
