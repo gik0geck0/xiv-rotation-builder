@@ -391,7 +391,7 @@ weightedRandomAction(): Action {
     console.log(`[LOG] Best action list: ${bestActionListStr}`);
     console.log(`[LOG] Best found damage: ${this.bestDamage}`);
   
-    return [this.bestActionSequence, this.bestDamage, bestActionListTime]; // Or any other logic to return the final best node
+    return [this.bestActionSequence, this.bestDamage, this.bestTime]; // Or any other logic to return the final best node
   }
 
   constructor(job: string, setting: string, duration: number, gcd: number, iterations: number) {
