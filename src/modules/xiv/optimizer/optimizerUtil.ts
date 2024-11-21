@@ -123,14 +123,16 @@ select(node: TreeNode): TreeNode {
 
     // If we are starting with something invalid return -1
     if(valid === -1){
-        console.log("[LOG] Invalid action in list: ", randomActions.map(a => a.name).join(" * "));
+        if(LOG_LEVEL === 1){
+            console.log("[LOG] Invalid action in list: ", randomActions.map(a => a.name).join(" * "));
+        }
         return -1;
     }
 
 
     // Else we add random valid actions to list until duration is met
     while (time < this.duration) {
-        let randomAction = this.weightedRandomAction();
+        let randomAction = this.weightedRandomAction(randomActions[randomActions.length -1]);
         randomActions.push(randomAction);
 
         result = validateActions(randomActions, this.job, this.gcd, false);
@@ -138,11 +140,15 @@ select(node: TreeNode): TreeNode {
         time =  result[1]; // Progressively increases as randomActions list gets more actions
 
         if(valid === -1){
-            console.log("[LOG] Invalid action list: ", randomActions.map(a => a.name).join(" * "));
+            if(LOG_LEVEL === 1){
+                console.log("[LOG] Invalid action list: ", randomActions.map(a => a.name).join(" * "));
+            }
             const invalidChild = node.children.find(child => child.action === randomAction);
 
             if (invalidChild) {
-                console.log("[LOG] Marrking invalid action: ", randomAction?.name + " " + invalidChild?.visits);
+                if(LOG_LEVEL === 1){
+                    console.log("[LOG] Marrking invalid action: ", randomAction?.name + " " + invalidChild?.visits);
+                }
                 invalidChild.visits++;
             }            
 
@@ -233,23 +239,48 @@ select(node: TreeNode): TreeNode {
 // }
 
 // Returns a randomly selected action based on the setting and weighted potency
-weightedRandomAction(): Action {
+weightedRandomAction(lastAction: Action): Action {
     let weightedActions: { action: Action, weight: number }[];
     const baseWeight = 100;
 
     if (this.setting === "breadth") {
         // Weights are more uniform, but include potency to a lesser degree
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: baseWeight + (action.potencyNumeric || 0) * .02
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0) * 0.02
+                        : (action.potencyNumeric || 0) * 0.02
+                )
+            };
+        });
+        
     } else if (this.setting === "depth") {
         // Weights are proportional to potency to prioritize depth
         // This takes much longer but yeilds better results
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: (action.potencyNumeric || 0) * 10
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0)
+                        : (action.potencyNumeric || 0)
+                )
+            };
+        });
 
         weightedActions.sort(() => Math.random() - 0.5); //shuffle them for randomness when selecting
 
@@ -257,7 +288,7 @@ weightedRandomAction(): Action {
         const frequencyMap = new Map<Action, number>();
 
         // Run the selection process multiple times
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 100; i++) {
             // Shuffle the actions for randomness
             const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
             const randomValue = Math.random() * totalWeightedScore;
@@ -288,16 +319,40 @@ weightedRandomAction(): Action {
 
     } else if (this.setting === "balanced") {
         // Accounts for potencies but also maintains some uniformity
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: baseWeight + ((action.potencyNumeric || 0) * Math.random())
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0) * Math.random()
+                        : (action.potencyNumeric || 0) * Math.random()
+                )
+            };
+        });
     } else {
         // Default to using potency as weight
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: (action.potencyNumeric || 0)
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0)
+                        : (action.potencyNumeric || 0)
+                )
+            };
+        });
     }
 
     // Calculate cumulative weights for random selection
@@ -310,9 +365,14 @@ weightedRandomAction(): Action {
         cumulative += entry.weight;
         if (cumulative >= randomValue) // and calculatePotency doesn't throw an error for that action
         {
+            if(LOG_LEVEL === 1){
+                if(entry.action?.comboAction === lastAction.name){
+                    console.log(`[LOG] Using combo action: ${entry.action.name} (combo with ${lastAction.name})`);
+                }
+            }
+            }
             return entry.action;
         }
-    }
    
     // Fallback in case of rounding issues
     return this.actions[0];
@@ -342,7 +402,7 @@ weightedRandomAction(): Action {
     let bestActionList: Action[] = [];
     let bestActionListStr: string = '';
     let bestActionListTime: number = 0;
-  
+    
     for (let i = 0; i < iterations; i++) {
         if (LOG_LEVEL === 1) {
             console.log(`[LOG] Iteration: ${i + 1}`);
