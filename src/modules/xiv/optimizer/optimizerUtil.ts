@@ -69,7 +69,7 @@ select(node: TreeNode): TreeNode {
     }
 
     // Filter out children that have not been visited
-    const unvisitedChildren = node.children.filter(child => child.visits === 0);
+    const unvisitedChildren = node.children.filter(child => child.visits <= (this.iterations/ (this.actions.length + 1)));
     
     let selectedNode;
     if (unvisitedChildren.length > 0) {
@@ -398,6 +398,16 @@ weightedRandomAction(lastAction: Action): Action {
     }
   }
 
+  countNodes(node: TreeNode | null): number {
+    if (!node) return 0;
+
+    let count = 1; // Count the current node
+    for (const child of node.children) {
+      count += this.countNodes(child); // Add the count of child nodes recursively
+    }
+    return count;
+  }
+
   monteCarloTreeSearch(root: TreeNode, iterations: number): [Action[], number, number] {
     let maxDamage = 0;
     let bestActionSequenceInSearch: Action[] = [];
@@ -438,7 +448,7 @@ weightedRandomAction(lastAction: Action): Action {
         if (result > maxDamage) {
             maxDamage = result;
             bestActionSequenceInSearch = node.actionSequence.slice(); // Copy the best sequence found in this iteration
-            if (LOG_LEVEL === 1) {
+            if (LOG_LEVEL === 0) {
                 console.log(`[LOG] Updated best sequence: ${bestActionSequenceInSearch.map(a => a.name).join(" * ")}`);
             }
         }
@@ -452,7 +462,9 @@ weightedRandomAction(lastAction: Action): Action {
     }
     console.log(`[LOG] Best action list: ${bestActionListStr}`);
     console.log(`[LOG] Best found damage: ${this.bestDamage}`);
-  
+
+    console.log(`[LOG] Seached: ${this.countNodes(this.root)} nodes of the tree`);
+
     return [this.bestActionSequence, this.bestDamage, this.bestTime]; // Or any other logic to return the final best node
   }
 
