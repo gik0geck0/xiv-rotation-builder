@@ -225,36 +225,43 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
                 }
 
                 // Validate the preceding action
-                const precedingAction = timedList[precedingActionIndex] ? timedList[precedingActionIndex][0] : null;
-            if (precedingAction && invalidActionList.find(([action]) => action.name === precedingAction.name)) {
-                // If preceding action is invalid, mark the current action as invalid
-                invalidActionList.push([
-                    currAction,
-                    i,
-                    `${currAction.name} cannot be executed because the required preceding action ${precedingActionName} is invalid.`
-                ]);
-            } else {
-                // Validate the preceding action (existing logic)
-                if (precedingActionIndex === -1 || timedList[precedingActionIndex][1] >= timedAction[1]) {
-                    invalidActionList.push([
-                        currAction,
-                        i,
-                        `${currAction.name} cannot be executed because the required action ${precedingActionName} was not executed beforehand.`
-                    ]);
-                } else {
-                    // Check for duplicate currAction.name after precedingActionName and before currAction
-                    for (let j = precedingActionIndex + 1; j < i; j++) {
-                        if (timedList[j][0].id === currAction.id) {
-                            invalidActionList.push([
-                                currAction,
-                                i,
-                                `${currAction.name} cannot be executed because it appears after ${precedingActionName} but before it is properly executed.`
-                            ]);
+                if (currAction.hasOwnProperty('transformsFrom')) {
+                    const precedingActionName = currAction.transformsFrom;
+                    let precedingActionIndex = -1;
+                
+                    // Find the most recent valid preceding action with isWeaponskill or isSpell
+                    for (let j = i - 1; j >= 0; j--) {
+                        const previousAction = timedList[j][0];
+                        if (previousAction.name === precedingActionName &&
+                            (previousAction.isWeaponskill || previousAction.isSpell)) {
+                            precedingActionIndex = j;
+                            break;
+                        } else if (previousAction.isAbility) {
+                            // Allow abilities to occur in between
+                            continue;
+                        } else if (previousAction.isWeaponskill || previousAction.isSpell) {
+                            // If another weaponskill or spell is encountered before the required action
+                            precedingActionIndex = -1; // Reset the index as the required action is no longer valid
                             break;
                         }
                     }
+                
+                    // Validate the preceding action
+                    const precedingAction = timedList[precedingActionIndex] ? timedList[precedingActionIndex][0] : null;
+                    if (!precedingAction || invalidActionList.find(([action]) => action.name === precedingAction.name)) {
+                        invalidActionList.push([
+                            currAction,
+                            i,
+                            `${currAction.name} cannot be executed because the required preceding action ${precedingActionName} is invalid or missing.`
+                        ]);
+                    } else if (timedList[precedingActionIndex][1] >= timedAction[1]) {
+                        invalidActionList.push([
+                            currAction,
+                            i,
+                            `${currAction.name} cannot be executed because the required action ${precedingActionName} was not executed beforehand.`
+                        ]);
+                    }
                 }
-            }
             }
         });
 
