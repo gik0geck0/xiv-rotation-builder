@@ -280,6 +280,16 @@ export function parseEffect(action: Action): void {
             if (!isNaN(buffVal)) {
                 action.damageBuff = buffVal;
             }
+        } 
+        
+        // Parse transformsFrom logic
+        if (line.includes('changes') && line.includes('to')) {
+            const fullLine = splitEffect[i].join(' ');
+            if (fullLine.includes('※')) { // Process only if "※" exists
+                let beforeChanges = fullLine.split('changes to')[0].trim();
+                beforeChanges = beforeChanges.replace('※', '').trim(); // Remove "※"
+                action.transformsFrom = beforeChanges;
+            }
         }
     }
 }

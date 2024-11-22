@@ -26,6 +26,7 @@ export interface Action {
     durationPotency?: number;
     startTime?: number;
     timeTaken?: number;
+    transformsFrom?: string;
     castNumeric?: number;
     recastNumeric?: number;
     durationNumeric?: number;
