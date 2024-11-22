@@ -1,6 +1,8 @@
 import type { Action } from 'xiv/actionData';
 import { getJobActions } from 'xiv/actionRepository';
-import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
+import { validateActions } from 'xiv/rotationBuilder';
+//import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
+
 
 type TreeNode = {
   action: Action | null;
@@ -132,7 +134,7 @@ select(node: TreeNode): TreeNode {
 
     // Else we add random valid actions to list until duration is met
     while (time < this.duration) {
-        let randomAction = this.weightedRandomAction(randomActions[randomActions.length -1]);
+        const randomAction = this.weightedRandomAction(randomActions[randomActions.length -1]);
         randomActions.push(randomAction);
 
         result = validateActions(randomActions, this.job, this.gcd, false);
@@ -401,7 +403,7 @@ weightedRandomAction(lastAction: Action): Action {
     let bestActionSequenceInSearch: Action[] = [];
     let bestActionList: Action[] = [];
     let bestActionListStr: string = '';
-    let bestActionListTime: number = 0;
+    //let bestActionListTime: number = 0;
     
     for (let i = 0; i < iterations; i++) {
         if (LOG_LEVEL === 1) {
