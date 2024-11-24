@@ -1,4 +1,3 @@
-import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
 import type { Action } from 'xiv/actionData'; // Assuming you have an Action interface
 import { JobGuide } from 'xiv/actionData';
 
@@ -21,7 +20,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
         // Setting startTime and timeTaken for each action in the timed list
         timedList.forEach((timedAction, i) => {
-            let castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
+            const castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
             
             if (i === 0) {
                 actionList[0].startTime = timedAction[1] - castTime;
@@ -270,7 +269,7 @@ export function findTimes(actionList: Action[], GCDTime: number): [Action, numbe
 
 
 export function getBuffs(timedList: [Action, number][]): any[] {
-    let currBuffs: any[] = [];
+    const currBuffs: any[] = [];
     let lastAction: Action | null = null;
 
     for (let i = 0; i < timedList.length; i++) {
@@ -318,15 +317,15 @@ export function getBuffs(timedList: [Action, number][]): any[] {
 export function calculatePotency(timedList: [Action, number][]): number[] {
     let currTime = 0;
     let totalPotency = 0;
-    let currBuffs = getBuffs(timedList);
+    const currBuffs = getBuffs(timedList);
     let buffAmt = 1;
     let lastAction: any = {};
     let extraPotency: any = null;
-    let stacksUsed = 0;
+    //let stacksUsed = 0;
 
     for (let i = 0; i < timedList.length; i++) {
         buffAmt = 1;
-        let currAction = timedList[i][0];
+        const currAction = timedList[i][0];
         currTime = timedList[i][1];
 
         for (let j = 0; j < currBuffs.length; j++) {
@@ -344,7 +343,7 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
         if (currAction.isSpell || currAction.isWeaponskill) {
             if (extraPotency != null) {
                 totalPotency += currAction[extraPotency] * buffAmt;
-                stacksUsed = -1;
+                //const stacksUsed = -1;
             } else if (currAction.comboAction === lastAction.name && hasOwnProperty(currAction, 'comboAction')) {
                 totalPotency += (currAction.comboPotencyNumeric || 0) * buffAmt;
             } else if (hasOwnProperty(currAction, 'potency')) {

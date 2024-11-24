@@ -2,7 +2,6 @@ import { LightningElement } from 'lwc';
 import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
 import type { Action } from 'xiv/actionData'; // Assuming you have an Action interface
 import { validateActions } from './rotationBuilderUtil';
-import { JobGuide } from 'xiv/actionData';
 
 export default class RotationBuilder extends LightningElement {
     job: string = 'paladin';
@@ -14,7 +13,7 @@ export default class RotationBuilder extends LightningElement {
     skillDetails: string = '';
     errorDetails: string = '';
 
-    changeJob() {
+    changeJob(): void {
         this.job = (this.template?.querySelector('select') as HTMLSelectElement).value;
         this.mockActionList = [].map(() => getActionInfo(this.job, '')).filter((action): action is Action => action !== undefined);
         this.jobActions = getJobActions(this.job);
