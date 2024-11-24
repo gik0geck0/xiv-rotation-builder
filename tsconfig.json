@@ -37,6 +37,9 @@
             "xiv/rotationBuilder": [
                 "src/modules/xiv/rotationBuilder/rotationBuilder.ts"
             ],
+            "xiv/rotationBuilderUtil": [
+                "src/modules/xiv/rotationBuilder/rotationBuilderUtil.ts"
+            ],
             "xiv/utils": ["src/modules/xiv/utils/utils.ts"]
         }
     },
