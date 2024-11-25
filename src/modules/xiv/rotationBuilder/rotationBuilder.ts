@@ -169,45 +169,41 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
             // Buff requirement check
             if (currAction.hasOwnProperty('buffRequirement')) {
-                let buffCheck = 0;
+                const buffRequirement = currAction.buffRequirement;
+                const relevantBuffs = buffList.filter(buff => buff.name === buffRequirement);
 
-                buffList.forEach(buff => {
-                    if (buff[0] === currAction.buffRequirement) {
-                        buffCheck++;
-                        if (buff.length === 4) {
-                            if (timedAction[1] < buff[2] || timedAction[1] > buff[3]) {
-                                invalidActionList.push([
-                                    currAction,
-                                    i,
-                                    `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`
-                                ]);
-                            } else if (buff[1] < 1) {
-                                invalidActionList.push([
-                                    currAction,
-                                    i,
-                                    `You are missing stacks of the ${currAction.buffRequirement} to cast ${currAction.name}.`
-                                ]);
+                if (relevantBuffs.length === 0) {
+                    invalidActionList.push([
+                        currAction,
+                        i,
+                        `${buffRequirement} is not active at this time to cast ${currAction.name}.`
+                    ]);
+                } else {
+                    let isBuffValid = false;
+
+                    for (const buff of relevantBuffs) {
+                        if (timedAction[1] >= buff.startTime && timedAction[1] <= buff.endTime) {
+                            if (buff.value > 0) {
+                                buff.value -= 1; // Consume a stack
+                                isBuffValid = true;
+                                break;
                             } else {
-                                buff[1] -= 1;
-                            }
-                        } else {
-                            if (timedAction[1] < buff[1] || timedAction[1] > buff[2]) {
                                 invalidActionList.push([
                                     currAction,
                                     i,
-                                    `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`
+                                    `You are missing stacks of the ${buffRequirement} to cast ${currAction.name}.`
                                 ]);
                             }
                         }
                     }
-                });
 
-                if (buffCheck < 1) {
-                    invalidActionList.push([
-                        currAction,
-                        i,
-                        `${currAction.buffRequirement} is not active at this time to cast ${currAction.name}`
-                    ]);
+                    if (!isBuffValid) {
+                        invalidActionList.push([
+                            currAction,
+                            i,
+                            `${buffRequirement} is not active at this time to cast ${currAction.name}.`
+                        ]);
+                    }
                 }
             }
 
@@ -367,44 +363,40 @@ export function findTimes(actionList: Action[], GCDTime: number): [Action, numbe
 
 export function getBuffs(timedList: [Action, number][]): any[] {
     let currBuffs: any[] = [];
-    let lastAction: Action | null = null;
 
     for (let i = 0; i < timedList.length; i++) {
         const currAction = timedList[i][0];
         const currTime = timedList[i][1];
 
         if (hasOwnProperty(currAction, 'damageBuff')) {
-            currBuffs.push([currAction, currTime, currTime + (currAction.durationNumeric || 0)]);
+            currBuffs.push({ 
+                name: 'damageBuff', 
+                value: currAction.damageBuff, 
+                startTime: currTime, 
+                endTime: currTime + (currAction.durationNumeric || 0)
+            });
         }
 
         if (hasOwnProperty(currAction, 'grants') && currAction.grantsNumeric) {
-            const grantKeys = Object.keys(currAction.grantsNumeric);
-
-            for (let k = 0; k < grantKeys.length; k++) {
-                currBuffs.push([
-                    grantKeys[k].toLowerCase(),
-                    currAction.grantsNumeric[grantKeys[k]],
-                    currTime,
-                    currTime + 30
-                ]);
-            }
+            Object.entries(currAction.grantsNumeric).forEach(([key, value]) => {
+                currBuffs.push({
+                    name: key.toLowerCase(),
+                    value,
+                    startTime: currTime,
+                    endTime: currTime + 30
+                });
+            });
         }
 
-        if (lastAction && hasOwnProperty(currAction, 'comboBonus') && currAction.comboAction === lastAction.name && currAction.comboBonusNumeric) {
-            const comboKeys = Object.keys(currAction.comboBonusNumeric);
-
-            for (let k = 0; k < comboKeys.length; k++) {
-                currBuffs.push([
-                    comboKeys[k].toLowerCase(),
-                    currAction.comboBonusNumeric[comboKeys[k]],
-                    currTime,
-                    currTime + 30
-                ]);
-            }
-        }
-
-        if (currAction.isSpell || currAction.isWeaponskill) {
-            lastAction = currAction;
+        if (hasOwnProperty(currAction, 'comboBonus') && currAction.comboBonusNumeric) {
+            Object.entries(currAction.comboBonusNumeric).forEach(([key, value]) => {
+                currBuffs.push({
+                    name: key.toLowerCase(),
+                    value,
+                    startTime: currTime,
+                    endTime: currTime + 30
+                });
+            });
         }
     }
 
@@ -415,47 +407,48 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
     let currTime = 0;
     let totalPotency = 0;
     let currBuffs = getBuffs(timedList);
-    let buffAmt = 1;
-    let lastAction: any = {};
-    let extraPotency: any = null;
-    let stacksUsed = 0;
+    let lastAction: Action | null = null;
 
     for (let i = 0; i < timedList.length; i++) {
-        buffAmt = 1;
         let currAction = timedList[i][0];
         currTime = timedList[i][1];
+        let buffMultiplier = 1;
+        let extraPotency = 0;
 
-        for (let j = 0; j < currBuffs.length; j++) {
-            if (currBuffs[j].length === 3) {
-                if (currTime <= currBuffs[j][2] && currTime >= currBuffs[j][1]) {
-                    if (hasOwnProperty(currBuffs[j][0], 'damageBuff')) {
-                        buffAmt = currBuffs[j][0].damageBuff;
-                    } else if (hasOwnProperty(currAction, currBuffs[j][0])) {
-                        extraPotency = currBuffs[j][0];
-                    }
+        // Apply active buffs
+        currBuffs = currBuffs.filter(buff => buff.endTime > currTime); // Remove expired buffs
+
+        for (let buff of currBuffs) {
+            if (buff.startTime <= currTime) {
+                if (buff.name === 'damageBuff') {
+                    buffMultiplier *= buff.value;
+                } else if (hasOwnProperty(currAction, buff.name)) {
+                    extraPotency += currAction[buff.name] || 0;
+
+                    // Remove the buff after use
+                    currBuffs = currBuffs.filter(activeBuff => activeBuff !== buff);
                 }
             }
         }
 
+        // Calculate potency based on action type
         if (currAction.isSpell || currAction.isWeaponskill) {
-            if (extraPotency != null) {
-                totalPotency += currAction[extraPotency] * buffAmt;
-                stacksUsed = -1;
-            } else if (currAction.comboAction === lastAction.name && hasOwnProperty(currAction, 'comboAction')) {
-                totalPotency += (currAction.comboPotencyNumeric || 0) * buffAmt;
+            if (extraPotency > 0) {
+                totalPotency += extraPotency * buffMultiplier;
+            } else if (currAction.comboAction === lastAction?.name && hasOwnProperty(currAction, 'comboAction')) {
+                totalPotency += (currAction.comboPotencyNumeric || 0) * buffMultiplier;
             } else if (hasOwnProperty(currAction, 'potency')) {
-                totalPotency += (currAction.potencyNumeric || 0) * buffAmt;
+                totalPotency += (currAction.potencyNumeric || 0) * buffMultiplier;
             }
             lastAction = currAction;
         }
 
         if (currAction.isAbility) {
             if (hasOwnProperty(currAction, 'potency')) {
-                totalPotency += (currAction.potencyNumeric || 0) * buffAmt;
+                totalPotency += (currAction.potencyNumeric || 0) * buffMultiplier;
             }
         }
-        extraPotency = null;
     }
 
-    return [totalPotency, currTime ];
+    return [totalPotency, currTime];
 }
