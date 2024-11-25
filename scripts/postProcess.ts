@@ -45,8 +45,13 @@ for (const jobName in XIVFinal) {
             }
 
             if(action.potency) {
-                const parsedPotency = parseFloat(action.potency);
-                action.potencyNumeric = !isNaN(parsedPotency) ? parsedPotency : 0;
+                if (action.potency.includes(',')) {
+                    const parsedPotency = parseFloat(action.potency.replace(',', ''));
+                    action.potencyNumeric = !isNaN(parsedPotency) ? parsedPotency : 0;
+                } else {
+                    const parsedPotency = parseFloat(action.potency);
+                    action.potencyNumeric = !isNaN(parsedPotency) ? parsedPotency : 0;
+                }
             }
 
             if(action.comboPotency) {
