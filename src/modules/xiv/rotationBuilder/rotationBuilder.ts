@@ -414,6 +414,7 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
         currTime = timedList[i][1];
         let buffMultiplier = 1;
         let extraPotency = 0;
+        let priorityBuffUsed = false;
 
         // Apply active buffs
         currBuffs = currBuffs.filter(buff => buff.endTime > currTime); // Remove expired buffs
@@ -422,10 +423,17 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
             if (currBuffs[j].startTime <= currTime && currBuffs[j].value > 0) {
                 if (currBuffs[j].name === 'damageBuff') {
                     buffMultiplier *= currBuffs[j].value;
-                } else if (hasOwnProperty(currAction, currBuffs[j].name)) {
-                    extraPotency += currAction[currBuffs[j].name] || 0;
-                    currBuffs[j].value--;
+                } else if (hasOwnProperty(currAction, currBuffs[j].name) && !priorityBuffUsed) {
+                    if (hasOwnProperty(currAction, 'priorityBuff') && (currBuffs[j].name === currAction.priorityBuff || !currBuffs.some(buff => buff.name === currAction.priorityBuff))) {
+                        extraPotency += currAction[currBuffs[j].name] || 0;
+                        currBuffs[j].value--;
+                    }
                 }
+            }
+
+            if (currBuffs[j].value === 0) {
+                currBuffs.splice(j, 1);
+                j--;
             }
         }
 

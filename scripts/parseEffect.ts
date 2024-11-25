@@ -282,6 +282,20 @@ export function parseEffect(action: Action): void {
             }
         } 
         
+        if (
+            line.includes('will') &&
+            line.includes('be') &&
+            line.includes('prioritized') &&
+            line.includes('over')
+        ) {
+            const combinedLine = line.join(' ');
+            const priority = combinedLine.match(/(?:\b[A-Z][a-z]*\b\s*)+(?=will)/);
+            
+            if (priority) {
+                action.priorityBuff = priority[0].trim().split(/\s+/).join('').toLowerCase();
+            }
+        }
+
         // Parse transformsFrom logic
         if (line.includes('changes') && line.includes('to')) {
             const fullLine = splitEffect[i].join(' ');

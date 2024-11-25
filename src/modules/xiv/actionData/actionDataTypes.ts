@@ -22,6 +22,7 @@ export interface Action {
     comboBonus?: Record<string, any>;
     grants?: Record<string, any>;
     buffRequirement?: string;
+    priorityBuff?: string;
     damageBuff?: number;
     durationPotency?: number;
     startTime?: number;
