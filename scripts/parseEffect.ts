@@ -172,7 +172,7 @@ export function parseEffect(action: Action): void {
             for (let j = 0; j < line.indexOf('Potency:'); j++) {
                 potencyName += line[j].toLowerCase();
             }
-            action[potencyName] = line[line.indexOf('Potency:') + 1];
+            action[potencyName] = parseFloat(line[line.indexOf('Potency:') + 1].replace(',', ''));
         }
 
         //Checks for buff/effect granting
