@@ -424,27 +424,37 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
                     buffMultiplier *= buff.value;
                 } else if (hasOwnProperty(currAction, buff.name)) {
                     extraPotency += currAction[buff.name] || 0;
-
+                    console.log(extraPotency);
                     // Remove the buff after use
                     currBuffs = currBuffs.filter(activeBuff => activeBuff !== buff);
                 }
             }
         }
 
-        // Calculate potency based on action type
-        if (currAction.isSpell || currAction.isWeaponskill) {
-            if (extraPotency > 0) {
-                totalPotency += extraPotency * buffMultiplier;
-            } else if (currAction.comboAction === lastAction?.name && hasOwnProperty(currAction, 'comboAction')) {
-                totalPotency += (currAction.comboPotencyNumeric || 0) * buffMultiplier;
-            } else if (hasOwnProperty(currAction, 'potency')) {
+        // Handle transformsFrom potency
+        if (hasOwnProperty(currAction, 'transformsFrom')) {
+            const precedingAction = timedList.find(
+                ([action, time]) => action.name === currAction.transformsFrom && time < currTime
+            )?.[0];
+
+            if (precedingAction) {
+                // Apply any additional potency rules or buffs related to the transformed action
                 totalPotency += (currAction.potencyNumeric || 0) * buffMultiplier;
             }
-            lastAction = currAction;
-        }
+        } else {
+            // Calculate potency based on action type
+            if (currAction.isSpell || currAction.isWeaponskill) {
+                if (extraPotency > 0) {
+                    totalPotency += extraPotency * buffMultiplier;
+                } else if (currAction.comboAction === lastAction?.name && hasOwnProperty(currAction, 'comboAction')) {
+                    totalPotency += (currAction.comboPotencyNumeric || 0) * buffMultiplier;
+                } else if (hasOwnProperty(currAction, 'potency')) {
+                    totalPotency += (currAction.potencyNumeric || 0) * buffMultiplier;
+                }
+                lastAction = currAction;
+            }
 
-        if (currAction.isAbility) {
-            if (hasOwnProperty(currAction, 'potency')) {
+            if (currAction.isAbility && hasOwnProperty(currAction, 'potency')) {
                 totalPotency += (currAction.potencyNumeric || 0) * buffMultiplier;
             }
         }
