@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
 import type { Action } from 'xiv/actionData'; // Assuming you have an Action interface
-import { validateActions } from './rotationBuilderUtil';
+import { JobGuide } from 'xiv/actionData';
 
 function hasOwnProperty(obj: any, property: string): boolean {
     return Object.prototype.hasOwnProperty.call(obj, property);

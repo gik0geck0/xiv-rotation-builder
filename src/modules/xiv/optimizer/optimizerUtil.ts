@@ -1,6 +1,6 @@
 import type { Action } from 'xiv/actionData';
 import { getJobActions } from 'xiv/actionRepository';
-import { validateActions } from 'xiv/rotationBuilderUtil';
+import { validateActions } from 'xiv/rotationBuilder';
 //import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
 
 
