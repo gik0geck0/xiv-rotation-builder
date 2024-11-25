@@ -418,15 +418,13 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
         // Apply active buffs
         currBuffs = currBuffs.filter(buff => buff.endTime > currTime); // Remove expired buffs
 
-        for (let buff of currBuffs) {
-            if (buff.startTime <= currTime) {
-                if (buff.name === 'damageBuff') {
-                    buffMultiplier *= buff.value;
-                } else if (hasOwnProperty(currAction, buff.name)) {
-                    extraPotency += currAction[buff.name] || 0;
-                    console.log(extraPotency);
-                    // Remove the buff after use
-                    currBuffs = currBuffs.filter(activeBuff => activeBuff !== buff);
+        for (let j = 0; j < currBuffs.length; j ++) {
+            if (currBuffs[j].startTime <= currTime && currBuffs[j].value > 0) {
+                if (currBuffs[j].name === 'damageBuff') {
+                    buffMultiplier *= currBuffs[j].value;
+                } else if (hasOwnProperty(currAction, currBuffs[j].name)) {
+                    extraPotency += currAction[currBuffs[j].name] || 0;
+                    currBuffs[j].value--;
                 }
             }
         }
@@ -437,8 +435,9 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
                 ([action, time]) => action.name === currAction.transformsFrom && time < currTime
             )?.[0];
 
-            if (precedingAction) {
-                // Apply any additional potency rules or buffs related to the transformed action
+            if (extraPotency > 0) { // Check for extra potency from buffs first
+                totalPotency += extraPotency * buffMultiplier
+            } else if (precedingAction) { // Potency if there is no extra potency 
                 totalPotency += (currAction.potencyNumeric || 0) * buffMultiplier;
             }
         } else {
