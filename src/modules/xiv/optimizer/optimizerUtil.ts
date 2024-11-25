@@ -477,46 +477,46 @@ weightedRandomAction(lastAction: Action): Action {
       this.bestPotency = -Infinity;
       this.bestDamage = -Infinity;
       this.bestActionSequence = [];
-      //this.actions = getJobActions(this.job);
+      this.actions = getJobActions(this.job);
       this.iterations = iterations;
 
-        this.actions = [];
-        let nextAction = getActionInfo(this.job, "Holy Spirit");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Fast Blade");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Riot Blade");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Royal Authority");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Fight or Flight");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Imperator");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Confiteor");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Circle of Scorn");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Expiacion");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Blade of Faith");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Blade of Truth");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Intervene");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Blade of Valor");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Blade of Honor");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Goring Blade");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Atonement");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Supplication");
-        if(nextAction){ this.actions.push(nextAction)}
-        nextAction = getActionInfo(this.job, "Sepulchre");
-        if(nextAction){ this.actions.push(nextAction)}
+        // this.actions = [];
+        // let nextAction = getActionInfo(this.job, "Holy Spirit");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Fast Blade");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Riot Blade");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Royal Authority");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Fight or Flight");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Imperator");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Confiteor");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Circle of Scorn");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Expiacion");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Blade of Faith");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Blade of Truth");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Intervene");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Blade of Valor");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Blade of Honor");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Goring Blade");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Atonement");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Supplication");
+        // if(nextAction){ this.actions.push(nextAction)}
+        // nextAction = getActionInfo(this.job, "Sepulchre");
+        // if(nextAction){ this.actions.push(nextAction)}
 
 
     // Root node (starting point of the tree)
