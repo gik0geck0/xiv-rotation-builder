@@ -396,14 +396,44 @@ export function getBuffs(timedList: [Action, number][]): any[] {
         }
 
         if (hasOwnProperty(currAction, 'comboBonus') && currAction.comboBonusNumeric) {
-            Object.entries(currAction.comboBonusNumeric).forEach(([key, value]) => {
-                currBuffs.push({
-                    name: key.toLowerCase(),
-                    value,
-                    startTime: currTime,
-                    endTime: currTime + 30
+            // Check if the comboAction chain is valid
+            let isComboValid = false;
+        
+            if (currAction.comboAction) {
+                // Find the index of currAction.comboAction
+                const comboActionIndex = timedList.findIndex(
+                    ([action, time]) => action.name === currAction.comboAction && time < currTime
+                );
+        
+                if (comboActionIndex !== -1) {
+                    const comboAction = timedList[comboActionIndex][0];
+        
+                    // Check if comboAction itself has a comboAction and validate it
+                    if (comboAction.comboAction) {
+                        const secondaryComboActionIndex = timedList.findIndex(
+                            ([action, time]) =>
+                                action.name === comboAction.comboAction && time < timedList[comboActionIndex][1]
+                        );
+        
+                        isComboValid = secondaryComboActionIndex !== -1;
+                    } else {
+                        // No secondary comboAction, so combo chain is valid
+                        isComboValid = true;
+                    }
+                }
+            }
+        
+            if (isComboValid) {
+                // Add comboBonus to currBuffs if combo chain is valid
+                Object.entries(currAction.comboBonusNumeric).forEach(([key, value]) => {
+                    currBuffs.push({
+                        name: key.toLowerCase(),
+                        value,
+                        startTime: currTime,
+                        endTime: currTime + 30,
+                    });
                 });
-            });
+            }
         }
     }
 
