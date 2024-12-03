@@ -208,7 +208,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
             }
 
             // Checking transformsFrom dependency
-            if (currAction.hasOwnProperty('transformsFrom')) {
+            if (currAction.hasOwnProperty('transformsFrom') && !currAction.isAbility) {
                 const precedingActionName = currAction.transformsFrom;
                 let precedingActionIndex = -1;
 
@@ -222,35 +222,42 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
                 // Validate the preceding action
                 const precedingAction = timedList[precedingActionIndex] ? timedList[precedingActionIndex][0] : null;
-            if (precedingAction && invalidActionList.find(([action]) => action.name === precedingAction.name)) {
-                // If preceding action is invalid, mark the current action as invalid
-                invalidActionList.push([
-                    currAction,
-                    i,
-                    `${currAction.name} cannot be executed because the required preceding action ${precedingActionName} is invalid.`
-                ]);
-            } else {
-                // Validate the preceding action (existing logic)
-                if (precedingActionIndex === -1 || timedList[precedingActionIndex][1] >= timedAction[1]) {
+                if (precedingAction && invalidActionList.find(([action]) => action.name === precedingAction.name)) {
+                    // If preceding action is invalid, mark the current action as invalid
                     invalidActionList.push([
                         currAction,
                         i,
-                        `${currAction.name} cannot be executed because the required action ${precedingActionName} was not executed beforehand.`
+                        `${currAction.name} cannot be executed because the required preceding action ${precedingActionName} is invalid.`
                     ]);
                 } else {
-                    // Check for duplicate currAction.name after precedingActionName and before currAction
-                    for (let j = precedingActionIndex + 1; j < i; j++) {
-                        if (timedList[j][0].id === currAction.id) {
-                            invalidActionList.push([
-                                currAction,
-                                i,
-                                `${currAction.name} cannot be executed because it appears after ${precedingActionName} but before it is properly executed.`
-                            ]);
-                            break;
+                    // Validate the preceding action (existing logic)
+                    if (precedingActionIndex === -1 || timedList[precedingActionIndex][1] >= timedAction[1]) {
+                        invalidActionList.push([
+                            currAction,
+                            i,
+                            `${currAction.name} cannot be executed because the required action ${precedingActionName} was not executed beforehand.`
+                        ]);
+                    } else {
+                        // Check for duplicate currAction.name after precedingActionName and before currAction
+                        for (let j = precedingActionIndex + 1; j < i; j++) {
+                            if (timedList[j][0].id === currAction.id) {
+                                invalidActionList.push([
+                                    currAction,
+                                    i,
+                                    `${currAction.name} cannot be executed because it appears after ${precedingActionName} but before it is properly executed.`
+                                ]);
+                                break;
+                            } else if (timedList[j][0].isSpell || timedList[j][0].isWeaponskill) {
+                                invalidActionList.push([
+                                    currAction,
+                                    i,
+                                    `${currAction.name} cannot be executed because it appears after ${timedList[j][0].name} and not it's required preceding action.`
+                                ]);
+                                break;
+                            }
                         }
                     }
                 }
-            }
             }
         });
 
