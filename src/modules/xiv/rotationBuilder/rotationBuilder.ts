@@ -102,8 +102,9 @@ export default class RotationBuilder extends LightningElement {
     }
 }
 
-export function validateActions(actionList: Action[], job: string, gcdTime : number, draw : boolean): number[] {
-    if(draw){
+// Function the validate the list of Actions, ensuring they meet the requirements of execution
+export function validateActions(actionList: Action[], job: string, gcdTime: number, draw: boolean): number[] {
+    if (draw) {
         actionList.forEach(action => {
             action.location = 'list';
             action.errorMessage = '';
@@ -112,172 +113,205 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
     if (actionList.length === 0) {
         return [0, 0];
-    } else {
-        const timedList = findTimes(actionList, gcdTime);
+    }
 
-        // Setting startTime and timeTaken for each action in the timed list
-        timedList.forEach((timedAction, i) => {
-            const castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
-            
-            if (i === 0) {
-                actionList[0].startTime = timedAction[1] - castTime;
-                actionList[0].timeTaken = castTime;
+    const timedList = findTimes(actionList, gcdTime);
+
+    // Setting startTime and timeTaken for each action in the timed list
+    timedList.forEach((timedAction, i) => {
+        const castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
+        if (i === 0) {
+            actionList[0].startTime = timedAction[1] - castTime;
+            actionList[0].timeTaken = castTime;
+        } else {
+            actionList[i].startTime = timedAction[1] - castTime;
+            actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
+        }
+        if (i === timedList.length - 1) {
+            actionList[i].timeTaken = castTime;
+        }
+    });
+
+    // Initializing gauge amounts
+    const gaugeAmounts: Record<string, number>[] = [];
+    Object.keys(JobGuide[job].gauges).forEach(gauge => {
+        gaugeAmounts.push({ [gauge]: 0 });
+    });
+
+    const invalidActionList: [Action, number, string][] = [];
+    const buffList = getBuffs(timedList);
+
+    timedList.forEach((timedAction, i) => {
+        const currAction = timedAction[0];
+
+        // Gauge requirements validation
+        gaugeValidation(gaugeAmounts, currAction, timedAction, invalidActionList, i);
+
+        // Buff requirement validation
+        buffValidation(buffList, currAction, timedAction, invalidActionList, i);
+
+        // Checking transformsFrom dependency
+        transformationValidation(timedList, currAction, timedAction, invalidActionList, i);
+    });
+
+    // Handle invalid actions
+    if (invalidActionList.length > 0) {
+        if (draw) {
+            invalidActionList.forEach(([, index, message]) => {
+                actionList[index].location = 'invalid';
+                actionList[index].errorMessage = message;
+            });
+        }
+        return [-1, 0];
+    }
+
+    // Run the calculation if valid
+    return calculatePotency(timedList);
+}
+
+// START VALIDATION HELPER FUNCTIONS //
+
+// Validation Helper Function: Gauges
+function gaugeValidation(
+    gaugeAmounts: Record<string, number>[], 
+    currAction: Action, 
+    timedAction: [Action, number], 
+    invalidActionList: [Action, number, string][], 
+    index: number
+): void {
+    gaugeAmounts.forEach((gauge, j) => {
+        const gaugeName = Object.keys(gauge)[0];
+        const newGaugeValue = currAction.cast === 'Instant'
+            ? 5 * Math.floor((timedAction[1] - 0.7) / 2.5)
+            : 5 * Math.floor((timedAction[1] - parseFloat(currAction.cast || '0')) / 2.5);
+
+        gaugeAmounts[j][gaugeName] = newGaugeValue;
+
+        // Check for gauge resources needed to use an Action
+        if (Object.prototype.hasOwnProperty.call(currAction, gaugeName)) {
+            if ((gaugeAmounts[j][gaugeName] + currAction[gaugeName]) < 0) {
+                invalidActionList.push([
+                    currAction,
+                    index,
+                    `Not enough ${gaugeName} to cast ${currAction.name}.`
+                ]);
             } else {
-                actionList[i].startTime = timedAction[1] - castTime;
-                actionList[i - 1].timeTaken = actionList[i].startTime - (actionList[i - 1].startTime || 0);
+                gauge[gaugeName] += currAction[gaugeName];
             }
-            
-            if (i === timedList.length - 1) {
-                actionList[i].timeTaken = castTime;
-            }
-        });
+        }
+    });
+}
 
-        // Initializing gauge amounts
-        const gaugeAmounts: Record<string, number>[] = [];
-        Object.keys(JobGuide[job].gauges).forEach(gauge => {
-            gaugeAmounts.push({ [gauge]: 0 });
-        });
+// Validation Helper Function: Buffs
+function buffValidation(
+    buffList: Buff[], 
+    currAction: Action, 
+    timedAction: [Action, number], 
+    invalidActionList: [Action, number, string][], 
+    index: number
+): void {
+    // Ensure the required buffs to execute an Action are active
+    if (currAction?.buffRequirement) {
+        const { buffRequirement, name: actionName } = currAction;
+        const relevantBuffs = buffList.filter(buff => buff.name === buffRequirement);
 
-        // Validation check
-        const invalidActionList: [Action, number, string][] = [];
-        const buffList = getBuffs(timedList);
-
-        timedList.forEach((timedAction, i) => {
-            const currAction = timedAction[0];
-
-            // Checking gauge requirements
-            gaugeAmounts.forEach((gauge, j) => {
-                const gaugeName = Object.keys(gauge)[0];
-                const newGaugeValue = currAction.cast === 'Instant'
-                    ? 5 * Math.floor((timedAction[1] - 0.7) / 2.5)
-                    : 5 * Math.floor((timedAction[1] - parseFloat(currAction.cast || '0')) / 2.5);
-
-                gaugeAmounts[j][gaugeName] = newGaugeValue;
-
-                if (Object.prototype.hasOwnProperty.call(currAction, gaugeName)) {
-                    if ((gaugeAmounts[j][gaugeName] + currAction[gaugeName]) < 0) {
-                        invalidActionList.push([
-                            currAction,
-                            i,
-                            `Not enough ${gaugeName} to cast ${currAction.name}.`
-                        ]);
-                    } else {
-                        gauge[gaugeName] += currAction[gaugeName];
-                    }
+        if (!relevantBuffs.length) {
+            invalidActionList.push([
+                currAction,
+                index,
+                `${buffRequirement} is not active at this time to cast ${actionName}.`
+            ]);
+        } else {
+            const isBuffValid = relevantBuffs.some(buff => {
+                const isInTimeRange = timedAction[1] >= buff.startTime && timedAction[1] <= buff.endTime;
+                if (isInTimeRange && buff.value > 0) {
+                    buff.value -= 1; // Consume a stack
+                    return true;
                 }
+                if (isInTimeRange && buff.value <= 0) {
+                    invalidActionList.push([
+                        currAction,
+                        index,
+                        `You are missing stacks of the ${buffRequirement} to cast ${actionName}.`
+                    ]);
+                }
+                return false;
             });
 
-            // Buff requirement check
-            if (Object.prototype.hasOwnProperty.call(currAction, 'buffRequirement')) {
-                const buffRequirement = currAction.buffRequirement;
-                const relevantBuffs = buffList.filter(buff => buff.name === buffRequirement);
-
-                if (relevantBuffs.length === 0) {
-                    invalidActionList.push([
-                        currAction,
-                        i,
-                        `${buffRequirement} is not active at this time to cast ${currAction.name}.`
-                    ]);
-                } else {
-                    let isBuffValid = false;
-
-                    for (const buff of relevantBuffs) {
-                        if (timedAction[1] >= buff.startTime && timedAction[1] <= buff.endTime) {
-                            if (buff.value > 0) {
-                                buff.value -= 1; // Consume a stack
-                                isBuffValid = true;
-                                break;
-                            } else {
-                                invalidActionList.push([
-                                    currAction,
-                                    i,
-                                    `You are missing stacks of the ${buffRequirement} to cast ${currAction.name}.`
-                                ]);
-                            }
-                        }
-                    }
-
-                    if (!isBuffValid) {
-                        invalidActionList.push([
-                            currAction,
-                            i,
-                            `${buffRequirement} is not active at this time to cast ${currAction.name}.`
-                        ]);
-                    }
-                }
+            if (!isBuffValid) {
+                invalidActionList.push([
+                    currAction,
+                    index,
+                    `${buffRequirement} is not active at this time to cast ${actionName}.`
+                ]);
             }
-
-            // Checking transformsFrom dependency
-            if (Object.prototype.hasOwnProperty.call(currAction, 'transformsFrom') && !currAction.isAbility) {
-                const precedingActionName = currAction.transformsFrom;
-                let precedingActionIndex = -1;
-
-                // Find the index of the preceding action
-                for (let j = 0; j < i; j++) {
-                    if (timedList[j][0].name === precedingActionName) {
-                        precedingActionIndex = j;
-                        break;
-                    }
-                }
-
-                // Validate the preceding action
-                const precedingAction = timedList[precedingActionIndex] ? timedList[precedingActionIndex][0] : null;
-                if (precedingAction && invalidActionList.find(([action]) => action.name === precedingAction.name)) {
-                    // If preceding action is invalid, mark the current action as invalid
-                    invalidActionList.push([
-                        currAction,
-                        i,
-                        `${currAction.name} cannot be executed because the required preceding action ${precedingActionName} is invalid.`
-                    ]);
-                } else {
-                    // Validate the preceding action (existing logic)
-                    if (precedingActionIndex === -1 || timedList[precedingActionIndex][1] >= timedAction[1]) {
-                        invalidActionList.push([
-                            currAction,
-                            i,
-                            `${currAction.name} cannot be executed because the required action ${precedingActionName} was not executed beforehand.`
-                        ]);
-                    } else {
-                        // Check for duplicate currAction.name after precedingActionName and before currAction
-                        for (let j = precedingActionIndex + 1; j < i; j++) {
-                            if (timedList[j][0].id === currAction.id) {
-                                invalidActionList.push([
-                                    currAction,
-                                    i,
-                                    `${currAction.name} cannot be executed because it appears after ${precedingActionName} but before it is properly executed.`
-                                ]);
-                                break;
-                            } else if (timedList[j][0].isSpell || timedList[j][0].isWeaponskill) {
-                                invalidActionList.push([
-                                    currAction,
-                                    i,
-                                    `${currAction.name} cannot be executed because it appears after ${timedList[j][0].name} and not it's required preceding action.`
-                                ]);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        // Handle invalid actions
-        if (invalidActionList.length > 0) {
-            if(draw){
-                invalidActionList.forEach(invalidAction => {
-                    const [, index, message] = invalidAction;
-                    actionList[index].location = 'invalid';
-                    actionList[index].errorMessage = message;
-                });
-            }
-            // return -1 if the actions are invalid
-            return [-1, 0];
-        } else {
-            // Run the calculation if valid
-            return calculatePotency(timedList);
         }
     }
 }
+
+// Validation Helper Function: transformsFrom
+function transformationValidation(
+    timedList: [Action, number][], 
+    currAction: Action, 
+    timedAction: [Action, number], 
+    invalidActionList: [Action, number, string][], 
+    index: number
+): void {
+    // Ensure Actions that transform/change into others can only be execute in order without interuption
+    if (Object.prototype.hasOwnProperty.call(currAction, 'transformsFrom') && !currAction.isAbility) {
+        const precedingActionName = currAction.transformsFrom;
+        let precedingActionIndex = -1;
+
+        // Find the index of the preceding action
+        for (let j = 0; j < index; j++) {
+            if (timedList[j][0].name === precedingActionName) {
+                precedingActionIndex = j;
+                break;
+            }
+        }
+
+        // Validate the preceding action
+        const precedingAction = timedList[precedingActionIndex] ? timedList[precedingActionIndex][0] : null;
+        if (precedingAction && invalidActionList.find(([action]) => action.name === precedingAction.name)) {
+            // If preceding action is invalid, mark the current action as invalid
+            invalidActionList.push([
+                currAction,
+                index,
+                `${currAction.name} cannot be executed because the required preceding action ${precedingActionName} is invalid.`
+            ]);
+        } else {
+            // Validate the preceding action (existing logic)
+            if (precedingActionIndex === -1 || timedList[precedingActionIndex][1] >= timedAction[1]) {
+                invalidActionList.push([
+                    currAction,
+                    index,
+                    `${currAction.name} cannot be executed because the required action ${precedingActionName} was not executed beforehand.`
+                ]);
+            } else {
+                // Check for duplicate currAction.name after precedingActionName and before currAction
+                for (let j = precedingActionIndex + 1; j < index; j++) {
+                    if (timedList[j][0].id === currAction.id) {
+                        invalidActionList.push([
+                            currAction,
+                            index,
+                            `${currAction.name} cannot be executed because it appears after ${precedingActionName} but before it is properly executed.`
+                        ]);
+                        break;
+                    } else if (timedList[j][0].isSpell || timedList[j][0].isWeaponskill) {
+                        invalidActionList.push([
+                            currAction,
+                            index,
+                            `${currAction.name} cannot be executed because it appears after ${timedList[j][0].name} and not it's required preceding action.`
+                        ]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// END VALIDATION HELPER FUNCTIONS //
 
 export function findTimes(actionList: Action[], GCDTime: number): [Action, number][] {
     let currTime = 0;
@@ -367,7 +401,7 @@ export function findTimes(actionList: Action[], GCDTime: number): [Action, numbe
     return timedList;
 }
 
-
+// Function to find all the buffs applied by Actions in the sequence
 export function getBuffs(timedList: [Action, number][]): Buff[] {
     const currBuffs: Buff[] = [];
 
@@ -375,6 +409,7 @@ export function getBuffs(timedList: [Action, number][]): Buff[] {
         const currAction = timedList[i][0];
         const currTime = timedList[i][1];
 
+        // Add any 'damageBuff' an Action may apply
         if (hasOwnProperty(currAction, 'damageBuff')) {
             currBuffs.push({ 
                 name: 'damageBuff', 
@@ -384,6 +419,7 @@ export function getBuffs(timedList: [Action, number][]): Buff[] {
             });
         }
 
+        // Add each 'grants' buff that an Action may apply
         if (hasOwnProperty(currAction, 'grants') && currAction.grantsNumeric) {
             Object.entries(currAction.grantsNumeric).forEach(([key, value]) => {
                 currBuffs.push({
@@ -395,32 +431,31 @@ export function getBuffs(timedList: [Action, number][]): Buff[] {
             });
         }
 
+        // Add an Action's 'comboBonus' buff if it exists and if all Actions necessary to satisfy the combo are present
         if (hasOwnProperty(currAction, 'comboBonus') && currAction.comboBonusNumeric) {
             // Check if the comboAction chain is valid
             let isComboValid = false;
         
-            if (currAction.comboAction) {
-                // Find the index of currAction.comboAction
-                const comboActionIndex = timedList.findIndex(
-                    ([action, time]) => action.name === currAction.comboAction && time < currTime
+            // Find the index of currAction.comboAction
+            const comboActionIndex = timedList.findIndex(
+                ([action, time]) => action.name === currAction.comboAction && time < currTime
+            );
+    
+            // comboAction doesn't exist in the sequence, skip to next Action
+            if (comboActionIndex === -1) continue;
+
+            const actionInCombo = timedList[comboActionIndex][0];
+
+            // Check if the action in the combo itself has a comboAction and validate it
+            if (actionInCombo.comboAction) {
+                const secondaryComboActionIndex = timedList.findIndex(
+                    ([action, time]) => action.name === actionInCombo.comboAction && time < timedList[comboActionIndex][1]
                 );
-        
-                if (comboActionIndex !== -1) {
-                    const comboAction = timedList[comboActionIndex][0];
-        
-                    // Check if comboAction itself has a comboAction and validate it
-                    if (comboAction.comboAction) {
-                        const secondaryComboActionIndex = timedList.findIndex(
-                            ([action, time]) =>
-                                action.name === comboAction.comboAction && time < timedList[comboActionIndex][1]
-                        );
-        
-                        isComboValid = secondaryComboActionIndex !== -1;
-                    } else {
-                        // No secondary comboAction, so combo chain is valid
-                        isComboValid = true;
-                    }
-                }
+
+                isComboValid = secondaryComboActionIndex !== -1;
+            } else {
+                // No secondary comboAction, so combo chain is valid
+                isComboValid = true;
             }
         
             if (isComboValid) {
@@ -440,6 +475,7 @@ export function getBuffs(timedList: [Action, number][]): Buff[] {
     return currBuffs;
 }
 
+// Function to calculate the total potency of a list of Actions
 export function calculatePotency(timedList: [Action, number][]): number[] {
     let currTime = 0;
     let totalPotency = 0;
@@ -453,14 +489,15 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
         let extraPotency = 0;
         const priorityBuffUsed = false;
 
-        // Apply active buffs
-        currBuffs = currBuffs.filter(buff => buff.endTime > currTime); // Remove expired buffs
+        // Remove expired buffs
+        currBuffs = currBuffs.filter(buff => buff.endTime > currTime); 
 
+        // Apply active buffs
         for (let j = 0; j < currBuffs.length; j ++) {
             if (currBuffs[j].startTime <= currTime && currBuffs[j].value > 0) {
                 if (currBuffs[j].name === 'damageBuff') {
                     buffMultiplier *= currBuffs[j].value;
-                } else if (hasOwnProperty(currAction, currBuffs[j].name) && !priorityBuffUsed) {
+                } else if (hasOwnProperty(currAction, currBuffs[j].name) && !priorityBuffUsed) { // Make sure priority buffs are used first
                     if (hasOwnProperty(currAction, 'priorityBuff') && (currBuffs[j].name === currAction.priorityBuff || !currBuffs.some(buff => buff.name === currAction.priorityBuff))) {
                         extraPotency += currAction[currBuffs[j].name] || 0;
                         currBuffs[j].value--;
