@@ -1,9 +1,9 @@
 import { LightningElement } from 'lwc';
 import { getActionInfo, getJobNames, getJobActions } from 'xiv/actionRepository';
-import type { Action } from 'xiv/actionData'; // Assuming you have an Action interface
+import type { Action, Buff } from 'xiv/actionData'; // Assuming you have an Action interface
 import { JobGuide } from 'xiv/actionData';
 
-function hasOwnProperty(obj: any, property: string): boolean {
+function hasOwnProperty(obj: Action, property: string): boolean {
     return Object.prototype.hasOwnProperty.call(obj, property);
 }
 
@@ -117,7 +117,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
         // Setting startTime and timeTaken for each action in the timed list
         timedList.forEach((timedAction, i) => {
-            let castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
+            const castTime = timedAction[0].cast === 'Instant' ? 0.7 : parseFloat(timedAction[0].cast || '0.7');
             
             if (i === 0) {
                 actionList[0].startTime = timedAction[1] - castTime;
@@ -154,7 +154,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
 
                 gaugeAmounts[j][gaugeName] = newGaugeValue;
 
-                if (currAction.hasOwnProperty(gaugeName)) {
+                if (Object.prototype.hasOwnProperty.call(currAction, gaugeName)) {
                     if ((gaugeAmounts[j][gaugeName] + currAction[gaugeName]) < 0) {
                         invalidActionList.push([
                             currAction,
@@ -168,7 +168,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
             });
 
             // Buff requirement check
-            if (currAction.hasOwnProperty('buffRequirement')) {
+            if (Object.prototype.hasOwnProperty.call(currAction, 'buffRequirement')) {
                 const buffRequirement = currAction.buffRequirement;
                 const relevantBuffs = buffList.filter(buff => buff.name === buffRequirement);
 
@@ -208,7 +208,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
             }
 
             // Checking transformsFrom dependency
-            if (currAction.hasOwnProperty('transformsFrom') && !currAction.isAbility) {
+            if (Object.prototype.hasOwnProperty.call(currAction, 'transformsFrom') && !currAction.isAbility) {
                 const precedingActionName = currAction.transformsFrom;
                 let precedingActionIndex = -1;
 
@@ -265,7 +265,7 @@ export function validateActions(actionList: Action[], job: string, gcdTime : num
         if (invalidActionList.length > 0) {
             if(draw){
                 invalidActionList.forEach(invalidAction => {
-                    const [action, index, message] = invalidAction;
+                    const [, index, message] = invalidAction;
                     actionList[index].location = 'invalid';
                     actionList[index].errorMessage = message;
                 });
@@ -368,8 +368,8 @@ export function findTimes(actionList: Action[], GCDTime: number): [Action, numbe
 }
 
 
-export function getBuffs(timedList: [Action, number][]): any[] {
-    let currBuffs: any[] = [];
+export function getBuffs(timedList: [Action, number][]): Buff[] {
+    const currBuffs: Buff[] = [];
 
     for (let i = 0; i < timedList.length; i++) {
         const currAction = timedList[i][0];
@@ -378,7 +378,7 @@ export function getBuffs(timedList: [Action, number][]): any[] {
         if (hasOwnProperty(currAction, 'damageBuff')) {
             currBuffs.push({ 
                 name: 'damageBuff', 
-                value: currAction.damageBuff, 
+                value: currAction.damageBuff || 0, 
                 startTime: currTime, 
                 endTime: currTime + (currAction.durationNumeric || 0)
             });
@@ -447,11 +447,11 @@ export function calculatePotency(timedList: [Action, number][]): number[] {
     let lastAction: Action | null = null;
 
     for (let i = 0; i < timedList.length; i++) {
-        let currAction = timedList[i][0];
+        const currAction = timedList[i][0];
         currTime = timedList[i][1];
         let buffMultiplier = 1;
         let extraPotency = 0;
-        let priorityBuffUsed = false;
+        const priorityBuffUsed = false;
 
         // Apply active buffs
         currBuffs = currBuffs.filter(buff => buff.endTime > currTime); // Remove expired buffs

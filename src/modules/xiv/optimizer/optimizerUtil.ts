@@ -1,5 +1,5 @@
 import type { Action } from 'xiv/actionData';
-import { getJobActions, getActionInfo } from 'xiv/actionRepository';
+import { getJobActions } from 'xiv/actionRepository';
 import { validateActions } from 'xiv/rotationBuilder';
 //import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
 
@@ -175,70 +175,6 @@ select(node: TreeNode): TreeNode {
     }
     return calculatedScore;
   }
-
-//   // Returns a randomly selected action based on weighted potency
-//     weightedRandomAction(): Action {
-//         const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
-//         const randomValue = Math.random() * totalScore;
-
-//         let cumulative = 0;
-//         for (const action of this.actions) {
-//             cumulative += (action.potencyNumeric || 0); // Use potency as weight
-//             if (cumulative >= randomValue) {
-//                 return action;
-//             }
-//         }
-
-//         return this.actions[0]; // Fallback
-//   }
-
-// Returns a randomly selected action based on the setting and weighted potency
-// weightedRandomAction(): Action {
-//     let weightedActions: { action: Action, weight: number }[];
-//     const baseWeight = 100;
-
-//     if (this.setting === "breadth") {
-//         // Weights are more uniform, but include potency to a lesser degree
-//         weightedActions = this.actions.map(action => ({
-//             action,
-//             weight: baseWeight + (action.potencyNumeric || 0) * .2
-//         }));
-//     } else if (this.setting === "depth") {
-//         // Weights are proportional to potency to prioritize depth
-//         weightedActions = this.actions.map(action => ({
-//             action,
-//             weight: (action.potencyNumeric || 0) * 2
-//         }));
-//     } else if (this.setting === "balanced") {
-//         // Accounts for potencies but also maintains some uniformity
-//         weightedActions = this.actions.map(action => ({
-//             action,
-//             weight: baseWeight + (action.potencyNumeric || 0) * .5
-//         }));
-//     } else {
-//         // Default to using potency as weight
-//         weightedActions = this.actions.map(action => ({
-//             action,
-//             weight: (action.potencyNumeric || 0)
-//         }));
-//     }
-
-//     // Calculate cumulative weights for random selection
-//     const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
-//     const randomValue = Math.random() * totalWeightedScore;
-
-//     let cumulative = 0;
-//     for (const entry of weightedActions) {
-//         cumulative += entry.weight;
-//         if (cumulative >= randomValue) // and calculatePotency doesn't throw an error for that action
-//         {
-//             return entry.action;
-//         }
-//     }
-
-//     // Fallback in case of rounding issues
-//     return this.actions[0];
-// }
 
 // Returns a randomly selected action based on the setting and weighted potency
 weightedRandomAction(lastAction: Action): Action {
@@ -479,44 +415,6 @@ weightedRandomAction(lastAction: Action): Action {
       this.bestActionSequence = [];
       this.actions = getJobActions(this.job);
       this.iterations = iterations;
-
-        // this.actions = [];
-        // let nextAction = getActionInfo(this.job, "Holy Spirit");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Fast Blade");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Riot Blade");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Royal Authority");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Fight or Flight");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Imperator");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Confiteor");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Circle of Scorn");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Expiacion");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Blade of Faith");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Blade of Truth");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Intervene");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Blade of Valor");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Blade of Honor");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Goring Blade");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Atonement");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Supplication");
-        // if(nextAction){ this.actions.push(nextAction)}
-        // nextAction = getActionInfo(this.job, "Sepulchre");
-        // if(nextAction){ this.actions.push(nextAction)}
 
 
     // Root node (starting point of the tree)
