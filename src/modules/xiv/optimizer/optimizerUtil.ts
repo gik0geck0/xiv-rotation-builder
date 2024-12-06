@@ -3,7 +3,12 @@ import { getJobActions } from 'xiv/actionRepository';
 import { validateActions } from 'xiv/rotationBuilder';
 //import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
 
+//See readme for documentation
 
+// MCTS Tree Node
+// Contains the action that it is, its parent, the set of its children
+// The number of times its been visited by MCTS random sampling
+// And the best score using it / the sequence of actions that leads to that score
 type TreeNode = {
   action: Action | null;
   parent: TreeNode | null;
@@ -13,26 +18,30 @@ type TreeNode = {
   actionSequence: Action[];
 };
 
+// Log level 0 is off 1 is on
 type LogLevel = 0 | 1;
-const LOG_LEVEL: LogLevel = 0;
+const LOG_LEVEL: LogLevel = 0; // To enable verbose logging, will lead to major slowdown for high itterations 
 
 // The MCTS optimizer class
 export class MCTSOptimizer {
-  actions: Action[];
-  bestDamage: number; 
-  bestActionSequence: Action[];
-  root: TreeNode;
+  actions: Action[]; // Set of job actions 
+  bestDamage: number; // Highest potency found 
+  bestActionSequence: Action[]; // Sequence with that highest potency 
+  root: TreeNode; // Root of the tree, where its children are all possible actions
 
+  // Inputs from optimizer form 
   job: string;
   setting: string;
   duration: number;
   gcd: number;
+  iterations: number;
+
+  // Used for form outputs 
   bestActions: Action[];
   bestPotency: number;
-  iterations: number;
   bestTime: number;
 
- // MCTS core functions
+ // MCTS core functions, described in depth in the readme 
 
  // Function to calculate the score based on action potency
  score(actions: Action[]): number {
