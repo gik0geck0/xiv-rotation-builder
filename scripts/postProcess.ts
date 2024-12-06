@@ -45,7 +45,7 @@ for (const jobName in XIVFinal) {
             }
 
             if(action.potency) {
-                const parsedPotency = parseFloat(action.potency);
+                const parsedPotency = parseFloat(action.potency.replace(',', ''));
                 action.potencyNumeric = !isNaN(parsedPotency) ? parsedPotency : 0;
             }
 
@@ -62,7 +62,7 @@ for (const jobName in XIVFinal) {
                     const parsedValue = parseFloat(value);
 
                     if(!isNaN(parsedValue)) {
-                        comboBonusNumeric[key] = parsedValue;
+                        comboBonusNumeric[key] = Math.abs(parsedValue);
                     } else {
                         comboBonusNumeric[key] = 0;
                     }
@@ -79,7 +79,7 @@ for (const jobName in XIVFinal) {
                     const parsedValue = parseFloat(value);
 
                     if(!isNaN(parsedValue)) {
-                        grantsNumeric[key] = parsedValue;
+                        grantsNumeric[key] = Math.abs(parsedValue);
                     } else {
                         grantsNumeric[key] = 0;
                     }

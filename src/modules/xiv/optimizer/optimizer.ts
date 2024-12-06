@@ -17,13 +17,15 @@ function MCTSFactory(jobValue: string, strategyValue: string, durationValue: num
   return new MCTSOptimizer(jobValue, strategyValue, durationValue, gcdValue, iterationsValue);
 }
 
-
 export default class Optimizer extends LightningElement {
   job = 'paladin';
   jobList = getJobNames();
   jobActions: Action[] = [];
   skillDetails: string = '';
   potency: number = 0;
+  time: number = 0;
+  potencyPerSecond: number = 0;
+  sliderValue = 30;
 
   // Set the type of optStrategyValue to be StrategyType, initialized to Breadth
   optStrategyValue: StrategyType = StrategyType.Breadth;
@@ -37,8 +39,7 @@ export default class Optimizer extends LightningElement {
     ];
   }
 
-  myValue = 20;
-  sliderValue = 60;
+
 
   //Handles job changes and makes sure the output has the correct job.
   changeJob(): void {
@@ -46,6 +47,7 @@ export default class Optimizer extends LightningElement {
     this.job = currentJob.value;
     this.jobActions = [];
     this.potency = 0;
+    this.time = 0;
   }
 
   // Update optStrategyValue when the radio button is changed
@@ -75,6 +77,7 @@ export default class Optimizer extends LightningElement {
     const jobValue = selectedJob.value;
     const strategyValue = this.optStrategyValue; // Strategy should be of type StrategyType
     const durationValue = Number(selectedDuration.value);
+    this.sliderValue = Number(selectedDuration.value);
     const gcd = Number(gcdValue.value);
     const iterationsValue = Number(iterations.value);
 
@@ -95,7 +98,12 @@ export default class Optimizer extends LightningElement {
     const mcts = MCTSFactory(jobValue, strategyValue, durationValue, gcd, iterationsValue);
     this.jobActions = mcts.bestActions.filter((action): action is Action => action !== undefined);
     this.potency = mcts.bestPotency;
+    this.time = mcts.bestTime;
+    this.potencyPerSecond = (this.potency / this.time);
     console.log(this.potency);
+    console.log(this.time);
     console.log(this.jobActions);
+    console.log(this.potencyPerSecond);
+
   }
 }

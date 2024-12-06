@@ -19,13 +19,15 @@ export interface Action {
     duration?: string;
     comboAction?: string;
     comboPotency?: string;
-    comboBonus?: Record<string, any>;
-    grants?: Record<string, any>;
+    comboBonus?: Record<string, string>;
+    grants?: Record<string, string>;
     buffRequirement?: string;
+    priorityBuff?: string;
     damageBuff?: number;
     durationPotency?: number;
     startTime?: number;
     timeTaken?: number;
+    transformsFrom?: string;
     castNumeric?: number;
     recastNumeric?: number;
     durationNumeric?: number;
@@ -35,10 +37,17 @@ export interface Action {
     grantsNumeric?: Record<string, number>;
 }
 
+export interface Buff {
+    name: string;
+    value: number;
+    startTime: number;
+    endTime: number;
+};
+
 export interface JobGuideJson {
     [jobName: string]: {
-        gauges: Record<string, any>;
+        gauges: Record<string, number>;
         actions: Action[];
-        traits?: Record<string, any>[];
+        traits?: Record<string, string>[];
     };
 }

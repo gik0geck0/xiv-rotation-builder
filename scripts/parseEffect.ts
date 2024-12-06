@@ -122,7 +122,7 @@ export function parseEffect(action: Action): void {
                         }
                         action.comboBonus = {
                             ...action.comboBonus,
-                            [buffName]: -1
+                            [buffName]: 1
                         };
                     }
                 }
@@ -172,7 +172,7 @@ export function parseEffect(action: Action): void {
             for (let j = 0; j < line.indexOf('Potency:'); j++) {
                 potencyName += line[j].toLowerCase();
             }
-            action[potencyName] = line[line.indexOf('Potency:') + 1];
+            action[potencyName] = parseFloat(line[line.indexOf('Potency:') + 1].replace(',', ''));
         }
 
         //Checks for buff/effect granting
@@ -222,7 +222,7 @@ export function parseEffect(action: Action): void {
                     }
                     buffName += line[j].toLowerCase();
                 }
-                action.grants = { ...action.grants, [buffName]: -1 };
+                action.grants = { ...action.grants, [buffName]: 1 };
             }
         }
 
@@ -279,6 +279,30 @@ export function parseEffect(action: Action): void {
                 1 + parseFloat(line[line.indexOf('dealt') + 2].replace('%', '')) / 100;
             if (!isNaN(buffVal)) {
                 action.damageBuff = buffVal;
+            }
+        } 
+        
+        if (
+            line.includes('will') &&
+            line.includes('be') &&
+            line.includes('prioritized') &&
+            line.includes('over')
+        ) {
+            const combinedLine = line.join(' ');
+            const priority = combinedLine.match(/(?:\b[A-Z][a-z]*\b\s*)+(?=will)/);
+            
+            if (priority) {
+                action.priorityBuff = priority[0].trim().split(/\s+/).join('').toLowerCase();
+            }
+        }
+
+        // Parse transformsFrom logic
+        if (line.includes('changes') && line.includes('to')) {
+            const fullLine = splitEffect[i].join(' ');
+            if (fullLine.includes('※')) { // Process only if "※" exists
+                let beforeChanges = fullLine.split('changes to')[0].trim();
+                beforeChanges = beforeChanges.replace('※', '').trim(); // Remove "※"
+                action.transformsFrom = beforeChanges;
             }
         }
     }

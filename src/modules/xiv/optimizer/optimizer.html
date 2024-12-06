@@ -47,6 +47,12 @@
         </form>
         <br>
         <div class="output">
+            <h1>Potency: <lightning-formatted-rich-text value={potency}></lightning-formatted-rich-text>
+            </h1>
+            <h1>Time: <lightning-formatted-rich-text value={time}></lightning-formatted-rich-text>
+            </h1>
+            <h1>PPS: <lightning-formatted-rich-text value={potencyPerSecond}></lightning-formatted-rich-text>
+            </h1>
             <h1>Rotation:</h1>
             <ol
                 class="sortable-list"
@@ -67,9 +73,6 @@
                 </li>
             </template>
             </ol>
-            <h1>Potency: <lightning-formatted-rich-text value={potency}></lightning-formatted-rich-text>
-            </h1>
-            
         </div>
     </div>
 </template>

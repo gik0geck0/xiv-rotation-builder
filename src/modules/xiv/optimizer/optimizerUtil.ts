@@ -1,6 +1,14 @@
 import type { Action } from 'xiv/actionData';
 import { getJobActions } from 'xiv/actionRepository';
+import { validateActions } from 'xiv/rotationBuilder';
+//import { findTimes, calculatePotency, validateActions } from 'xiv/rotationBuilder';
 
+//See readme for documentation
+
+// MCTS Tree Node
+// Contains the action that it is, its parent, the set of its children
+// The number of times its been visited by MCTS random sampling
+// And the best score using it / the sequence of actions that leads to that score
 type TreeNode = {
   action: Action | null;
   parent: TreeNode | null;
@@ -10,39 +18,47 @@ type TreeNode = {
   actionSequence: Action[];
 };
 
+// Log level 0 is off 1 is on
 type LogLevel = 0 | 1;
-const LOG_LEVEL: LogLevel = 0;
+const LOG_LEVEL: LogLevel = 0; // To enable verbose logging, will lead to major slowdown for high itterations 
 
 // The MCTS optimizer class
 export class MCTSOptimizer {
-  actions: Action[];
-  bestDamage: number; 
-  bestActionSequence: Action[];
-  root: TreeNode;
+  actions: Action[]; // Set of job actions 
+  bestDamage: number; // Highest potency found 
+  bestActionSequence: Action[]; // Sequence with that highest potency 
+  root: TreeNode; // Root of the tree, where its children are all possible actions
 
+  // Inputs from optimizer form 
   job: string;
   setting: string;
   duration: number;
   gcd: number;
-  bestActions: Action[];
-  bestPotency: number;
   iterations: number;
 
- // MCTS core functions
+  // Used for form outputs 
+  bestActions: Action[];
+  bestPotency: number;
+  bestTime: number;
+
+ // MCTS core functions, described in depth in the readme 
 
  // Function to calculate the score based on action potency
  score(actions: Action[]): number {
     if (LOG_LEVEL === 1) {
         console.log("[LOG] Calculating score for actions: ", actions.map(a => a.name));
     }
-    
     // Calculate the score based on potency (or any other metric you are using)
-    const damage = actions.reduce((acc, action) => acc * (Number(action.potencyNumeric) || 1), 1);
-  
+    const result = validateActions(actions, this.job, this.gcd, false);
+
+    const damage = result[0];
+    const time = result[1];
+
     // Check if the current damage is better than the best known damage
     if (damage > this.bestDamage) {
         this.bestDamage = damage; // Update the best damage
         this.bestActionSequence = [...actions]; // Update the best action sequence
+        this.bestTime = time; 
         if (LOG_LEVEL === 1) {
             console.log("[LOG] New best sequence found:", this.bestActionSequence.map(a => a.name).join(" * "));
             console.log("[LOG] New best damage:", this.bestDamage);
@@ -52,7 +68,6 @@ export class MCTSOptimizer {
     return damage;
   }
 
- // Selects the best child node based on visits and score
 // Selects the best child node based on visits and score
 select(node: TreeNode): TreeNode {
     if (LOG_LEVEL === 1) {
@@ -63,7 +78,7 @@ select(node: TreeNode): TreeNode {
     }
 
     // Filter out children that have not been visited
-    const unvisitedChildren = node.children.filter(child => child.visits === 0);
+    const unvisitedChildren = node.children.filter(child => child.visits <= (this.iterations/ (this.actions.length + 1)));
     
     let selectedNode;
     if (unvisitedChildren.length > 0) {
@@ -72,7 +87,7 @@ select(node: TreeNode): TreeNode {
     } else {
         // Otherwise, pick the one with the highest score
         selectedNode = node.children.reduce((bestChild, currentChild) => 
-            bestChild.score > currentChild.score ? bestChild : currentChild
+        bestChild.score > currentChild.score ? bestChild : currentChild
         );
     }
 
@@ -113,14 +128,52 @@ select(node: TreeNode): TreeNode {
     }
   
     const randomActions: Action[] = [...node.actionSequence]; // Start with the sequence from this node
-  
-    while (randomActions.length < 10) {
-        const randomAction = this.weightedRandomAction();
+    let result = validateActions(randomActions, this.job, this.gcd, false);
+    let valid = result[0];
+    let time = result[1]; 
+
+    // If we are starting with something invalid return -1
+    if(valid === -1){
+        if(LOG_LEVEL === 1){
+            console.log("[LOG] Invalid action in list: ", randomActions.map(a => a.name).join(" * "));
+        }
+        return -1;
+    }
+
+
+    // Else we add random valid actions to list until duration is met
+    while (time < this.duration) {
+        const randomAction = this.weightedRandomAction(randomActions[randomActions.length -1]);
         randomActions.push(randomAction);
+
+        result = validateActions(randomActions, this.job, this.gcd, false);
+        valid = result[0];
+        time =  result[1]; // Progressively increases as randomActions list gets more actions
+
+        if(valid === -1){
+            if(LOG_LEVEL === 1){
+                console.log("[LOG] Invalid action list: ", randomActions.map(a => a.name).join(" * "));
+            }
+            const invalidChild = node.children.find(child => child.action === randomAction);
+
+            if (invalidChild) {
+                if(LOG_LEVEL === 1){
+                    console.log("[LOG] Marrking invalid action: ", randomAction?.name + " " + invalidChild?.visits);
+                }
+                invalidChild.visits++;
+            }            
+
+            randomActions.pop();
+            continue;
+        }
+
         if (LOG_LEVEL === 1) {
             console.log("[LOG] Added action during simulation: ", randomAction.name);
+            console.log("[LOG] Current Time: ", time)
         }
     }
+
+    randomActions.pop(); // Pop the last action of the list going over duration
   
     if (LOG_LEVEL === 1) {
         console.log("[LOG] Simulated actions (in order): ", randomActions.map(a => a.name));
@@ -132,54 +185,125 @@ select(node: TreeNode): TreeNode {
     return calculatedScore;
   }
 
-//   // Returns a randomly selected action based on weighted potency
-//     weightedRandomAction(): Action {
-//         const totalScore = this.actions.reduce((sum, action) => sum + (action.potencyNumeric || 0), 0);
-//         const randomValue = Math.random() * totalScore;
-
-//         let cumulative = 0;
-//         for (const action of this.actions) {
-//             cumulative += (action.potencyNumeric || 0); // Use potency as weight
-//             if (cumulative >= randomValue) {
-//                 return action;
-//             }
-//         }
-
-//         return this.actions[0]; // Fallback
-//   }
-
 // Returns a randomly selected action based on the setting and weighted potency
-weightedRandomAction(): Action {
+weightedRandomAction(lastAction: Action): Action {
     let weightedActions: { action: Action, weight: number }[];
     const baseWeight = 100;
 
     if (this.setting === "breadth") {
         // Weights are more uniform, but include potency to a lesser degree
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: baseWeight + (action.potencyNumeric || 0) * .2
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0) * 0.02
+                        : (action.potencyNumeric || 0) * 0.02
+                )
+            };
+        });
+        
     } else if (this.setting === "depth") {
         // Weights are proportional to potency to prioritize depth
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: (action.potencyNumeric || 0) * 2
-        }));
+        // This takes much longer but yeilds better results
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0)
+                        : (action.potencyNumeric || 0)
+                )
+            };
+        });
+
+        weightedActions.sort(() => Math.random() - 0.5); //shuffle them for randomness when selecting
+
+        // Initialize a frequency map
+        const frequencyMap = new Map<Action, number>();
+
+        // Run the selection process multiple times
+        for (let i = 0; i < 100; i++) {
+            // Shuffle the actions for randomness
+            const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
+            const randomValue = Math.random() * totalWeightedScore;
+
+            let cumulative = 0;
+            for (const entry of weightedActions) {
+                cumulative += entry.weight;
+                if (cumulative >= randomValue) {
+                    // Count the selection in the frequency map
+                    frequencyMap.set(entry.action, (frequencyMap.get(entry.action) || 0) + 1);
+                    break;
+                }
+            }
+        }
+
+        //Determine the action with the highest frequency
+        let mostFrequentAction;
+        let maxFrequency = -1;
+        for (const [action, frequency] of frequencyMap) {
+            if (frequency > maxFrequency) {
+                mostFrequentAction = action;
+                maxFrequency = frequency;
+            }
+        }
+
+        //Return the most frequently selected action
+        return mostFrequentAction;
+
     } else if (this.setting === "balanced") {
         // Accounts for potencies but also maintains some uniformity
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: baseWeight + (action.potencyNumeric || 0) * .5
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0) * Math.random()
+                        : (action.potencyNumeric || 0) * Math.random()
+                )
+            };
+        });
     } else {
         // Default to using potency as weight
-        weightedActions = this.actions.map(action => ({
-            action,
-            weight: (action.potencyNumeric || 0)
-        }));
+        weightedActions = this.actions.map(action => {
+            const isCombo = action?.comboAction === lastAction.name;
+        
+            if (isCombo && LOG_LEVEL === 1) {
+                console.log(`[LOG] Combo action found: ${action.name} (combo with ${lastAction.name})`);
+            }
+        
+            return {
+                action,
+                weight: baseWeight + (
+                    isCombo
+                        ? (action.comboPotencyNumeric || 0)
+                        : (action.potencyNumeric || 0)
+                )
+            };
+        });
     }
 
     // Calculate cumulative weights for random selection
+    weightedActions.sort(() => Math.random() - 0.5); //shuffle them for randomness when selecting
     const totalWeightedScore = weightedActions.reduce((sum, entry) => sum + entry.weight, 0);
     const randomValue = Math.random() * totalWeightedScore;
 
@@ -188,10 +312,15 @@ weightedRandomAction(): Action {
         cumulative += entry.weight;
         if (cumulative >= randomValue) // and calculatePotency doesn't throw an error for that action
         {
+            if(LOG_LEVEL === 1){
+                if(entry.action?.comboAction === lastAction.name){
+                    console.log(`[LOG] Using combo action: ${entry.action.name} (combo with ${lastAction.name})`);
+                }
+            }
+            }
             return entry.action;
         }
-    }
-
+   
     // Fallback in case of rounding issues
     return this.actions[0];
 }
@@ -214,12 +343,23 @@ weightedRandomAction(): Action {
     }
   }
 
-  monteCarloTreeSearch(root: TreeNode, iterations: number): [Action[], number] {
+  countNodes(node: TreeNode | null): number {
+    if (!node) return 0;
+
+    let count = 1; // Count the current node
+    for (const child of node.children) {
+      count += this.countNodes(child); // Add the count of child nodes recursively
+    }
+    return count;
+  }
+
+  monteCarloTreeSearch(root: TreeNode, iterations: number): [Action[], number, number] {
     let maxDamage = 0;
     let bestActionSequenceInSearch: Action[] = [];
     let bestActionList: Action[] = [];
     let bestActionListStr: string = '';
-  
+    //let bestActionListTime: number = 0;
+    
     for (let i = 0; i < iterations; i++) {
         if (LOG_LEVEL === 1) {
             console.log(`[LOG] Iteration: ${i + 1}`);
@@ -253,22 +393,24 @@ weightedRandomAction(): Action {
         if (result > maxDamage) {
             maxDamage = result;
             bestActionSequenceInSearch = node.actionSequence.slice(); // Copy the best sequence found in this iteration
-            if (LOG_LEVEL === 1) {
+            if (LOG_LEVEL === 0) {
                 console.log(`[LOG] Updated best sequence: ${bestActionSequenceInSearch.map(a => a.name).join(" * ")}`);
             }
         }
     }
   
     // Return the best action list found in the entire MCTS process
-    bestActionList = this.bestActionSequence.slice(0, 10); // Slice to the first 10 actions if necessary
-    bestActionListStr = bestActionList.map(a => a.name).join(" * ");
+    bestActionList = this.bestActionSequence.slice(0, 10); // Slice to the first 10 actions to clean up logs
+    bestActionListStr = bestActionList.map(a => a.name).join(" + ");
     if (LOG_LEVEL === 1) {
       alert(`Optimizer complete, ran for ${iterations} itterations. \n Best action list: ${bestActionListStr} with Damage: ${this.bestDamage} `);
     }
     console.log(`[LOG] Best action list: ${bestActionListStr}`);
     console.log(`[LOG] Best found damage: ${this.bestDamage}`);
-  
-    return [bestActionList, this.bestDamage]; // Or any other logic to return the final best node
+
+    console.log(`[LOG] Seached: ${this.countNodes(this.root)} nodes of the tree`);
+
+    return [this.bestActionSequence, this.bestDamage, this.bestTime]; // Or any other logic to return the final best node
   }
 
   constructor(job: string, setting: string, duration: number, gcd: number, iterations: number) {
@@ -283,6 +425,7 @@ weightedRandomAction(): Action {
       this.actions = getJobActions(this.job);
       this.iterations = iterations;
 
+
     // Root node (starting point of the tree)
     this.root = {
         action: null,
@@ -293,15 +436,15 @@ weightedRandomAction(): Action {
         actionSequence: []
     };
 
-
       // For now, just alert the received values
       if (LOG_LEVEL === 1) {
         alert(`MCTS Initialized:\nJob: ${this.job}\nSetting: ${this.setting}\nDuration: ${this.duration} seconds\nGCD: ${this.gcd} seconds\nIterations: ${this.iterations}`);
       }
       
-      // Fetch job actions and start MCTS optimization
-      const result = this.monteCarloTreeSearch(this.root, iterations);
-      this.bestActions = result[0];
-      this.bestPotency = result[1];
+    // Fetch job actions and start MCTS optimization
+    const result = this.monteCarloTreeSearch(this.root, iterations);
+    this.bestActions = result[0];
+    this.bestPotency = result[1];
+    this.bestTime = result[2];
   }
 }

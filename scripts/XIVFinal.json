@@ -92,16 +92,6 @@
                "effect": "Delivers an attack with a potency of 100.<br>Combo Action: Riot Blade<br>Combo Potency: 330"
           },
           {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/d7e7cf097286ae99e6637242596a14832a9edf8f.png",
-               "name": "Spirits Within",
-               "level": "30",
-               "type": "Ability",
-               "cast": "Instant",
-               "recast": "30s",
-               "cost": "-",
-               "effect": "Delivers an attack with a potency of 270.<br>Additional Effect: Restores MP"
-          },
-          {
                "icon": "https://lds-img.finalfantasyxiv.com/d/e622516a93fd2298b9fd40e0d2d60c3fc8485c5a.png",
                "name": "Sheltron",
                "level": "35",
@@ -240,16 +230,6 @@
                "recast": "30s",
                "cost": "-",
                "effect": "Rushes target and delivers an attack with a potency of 150.<br>Maximum Charges: 2<br>Cannot be executed while bound."
-          },
-          {
-               "icon": "https://lds-img.finalfantasyxiv.com/d/acbcd4de5a1839e4fd8c96ae05eb4109caed9ca1.png",
-               "name": "Requiescat",
-               "level": "68",
-               "type": "Ability",
-               "cast": "Instant",
-               "recast": "60s",
-               "cost": "-",
-               "effect": "Deals unaspected damage with a potency of 320.<br>Additional Effect: Grants 4 stacks of Requiescat<br>Requiescat Effect: Increases the potency of Holy Spirit,&nbsp;Holy Circle, and all Confiteor combo actions, and spells will require no cast time<br>Additional Effect: Grants Confiteor Ready<br>Duration: 30s"
           },
           {
                "icon": "https://lds-img.finalfantasyxiv.com/d/b570dfda793945b3bb8fddef02b1a865b8a04b32.png",
