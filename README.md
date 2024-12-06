@@ -17,9 +17,9 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 - Select a job
 - Select actions
 - Weave abilities
-- See potency per section
+- See potency and potency per second
 #### Optimizer
-To get an optimized roatation simply
+To get an optimized rotation simply
 1. Select a job 
 2. Select an optimization strategy 
 3. Choose the desired rotation duration
